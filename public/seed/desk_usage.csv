@@ -1,0 +1,122 @@
+Desk,Strategy,Application,Criticality,Attestation,Attested On
+Active Fixed Income,Global Credit,Bloomberg Terminals,Critical,Attested,2026-09-05
+Active Fixed Income,Global Credit,CRIMS (STOM PMS),Critical,Not yet attested,
+Active Fixed Income,Global Credit,Power BI Service,Nice to have,Attested,2026-09-03
+Active Fixed Income,Global Credit,S: Drive,Nice to have,Attested,2026-09-12
+Active Fixed Income,Global Credit,BBG AIM,Critical,Attested,2026-09-30
+Active Fixed Income,Global Credit,Bloomberg EMSX,Nice to have,Attested,2026-09-02
+Active Fixed Income,Global Credit,Charles River IMS,Critical,Attested,2026-09-14
+Active Fixed Income,Global Credit,MarketAxess,Important,Attested,2026-09-08
+Active Fixed Income,Global Credit,TradeWeb,Critical,Not yet attested,
+Active Fixed Income,Global Credit,Credit Research Hub,Critical,Attested,2026-09-08
+Active Fixed Income,Global Credit,Aladdin Risk,Critical,Attested,2026-09-19
+Active Fixed Income,Emerging Market Debt,Bloomberg Terminals,Critical,Not yet attested,
+Active Fixed Income,Emerging Market Debt,CRIMS (STOM PMS),Critical,Attested,2026-09-08
+Active Fixed Income,Emerging Market Debt,Power BI Service,Critical,Attested,2026-09-10
+Active Fixed Income,Emerging Market Debt,S: Drive,Important,Attested,2026-09-18
+Active Fixed Income,Emerging Market Debt,BBG AIM,Critical,Attested,2026-09-19
+Active Fixed Income,Emerging Market Debt,Bloomberg EMSX,Important,Attested,2026-09-04
+Active Fixed Income,Emerging Market Debt,Charles River IMS,Critical,Attested,2026-09-12
+Active Fixed Income,Emerging Market Debt,MarketAxess,Critical,Attested,2026-09-19
+Active Fixed Income,Emerging Market Debt,TradeWeb,Critical,Attested,2026-09-16
+Active Fixed Income,Emerging Market Debt,Credit Research Hub,Nice to have,Not yet attested,
+Active Fixed Income,Emerging Market Debt,Aladdin Risk,Critical,Attested,2026-09-15
+Active Fixed Income,Sovereign Rates,Bloomberg Terminals,Critical,Not yet attested,
+Active Fixed Income,Sovereign Rates,CRIMS (STOM PMS),Critical,Attested,2026-09-10
+Active Fixed Income,Sovereign Rates,Power BI Service,Critical,Attested,2026-09-23
+Active Fixed Income,Sovereign Rates,S: Drive,Critical,Attested,2026-09-19
+Active Fixed Income,Sovereign Rates,BBG AIM,Critical,Attested,2026-09-17
+Active Fixed Income,Sovereign Rates,Bloomberg EMSX,Important,Attested,2026-09-24
+Active Fixed Income,Sovereign Rates,Charles River IMS,Critical,Not yet attested,
+Active Fixed Income,Sovereign Rates,MarketAxess,Important,Attested,2026-09-04
+Active Fixed Income,Sovereign Rates,TradeWeb,Nice to have,Not yet attested,
+Active Fixed Income,Sovereign Rates,Credit Research Hub,Critical,Attested,2026-09-05
+Active Fixed Income,Sovereign Rates,Aladdin Risk,Critical,Not yet attested,
+Index Equity,Developed Index,Bloomberg Terminals,Critical,Not yet attested,
+Index Equity,Developed Index,CRIMS (STOM PMS),Critical,Attested,2026-09-22
+Index Equity,Developed Index,Power BI Service,Critical,Attested,2026-09-11
+Index Equity,Developed Index,S: Drive,Nice to have,Attested,2026-09-20
+Index Equity,Developed Index,Bloomberg Port,Important,Not yet attested,
+Index Equity,Developed Index,OMS (Legacy),Critical,Attested,2026-09-09
+Index Equity,Developed Index,Scope,Important,Attested,2026-09-02
+Index Equity,Developed Index,FactSet Workstation,Nice to have,Attested,2026-09-21
+Index Equity,Developed Index,Axioma Risk Analytics,Nice to have,Not yet attested,
+Index Equity,Factor Index,Bloomberg Terminals,Critical,Attested,2026-09-23
+Index Equity,Factor Index,CRIMS (STOM PMS),Critical,Not yet attested,
+Index Equity,Factor Index,Power BI Service,Nice to have,Attested,2026-09-01
+Index Equity,Factor Index,S: Drive,Important,Attested,2026-09-06
+Index Equity,Factor Index,Bloomberg Port,Nice to have,Attested,2026-09-16
+Index Equity,Factor Index,OMS (Legacy),Critical,Attested,2026-09-25
+Index Equity,Factor Index,Scope,Important,Attested,2026-09-24
+Index Equity,Factor Index,FactSet Workstation,Critical,Not yet attested,
+Index Equity,Factor Index,Axioma Risk Analytics,Important,Not yet attested,
+LDI & Solutions,Pension Hedging,Bloomberg Terminals,Critical,Attested,2026-09-06
+LDI & Solutions,Pension Hedging,CRIMS (STOM PMS),Critical,Not yet attested,
+LDI & Solutions,Pension Hedging,Power BI Service,Important,Attested,2026-09-29
+LDI & Solutions,Pension Hedging,S: Drive,Critical,Not yet attested,
+LDI & Solutions,Pension Hedging,Aladdin Risk,Critical,Attested,2026-09-23
+LDI & Solutions,Pension Hedging,CRIMS (Legacy),Important,Attested,2026-09-22
+LDI & Solutions,Pension Hedging,OTC-X,Important,Attested,2026-09-05
+LDI & Solutions,Pension Hedging,Liquidity Ladder (EUC),Critical,Not yet attested,
+LDI & Solutions,Pension Hedging,Refinitiv Eikon,Critical,Attested,2026-09-08
+LDI & Solutions,Buy & Maintain,Bloomberg Terminals,Critical,Attested,2026-09-01
+LDI & Solutions,Buy & Maintain,CRIMS (STOM PMS),Critical,Not yet attested,
+LDI & Solutions,Buy & Maintain,Power BI Service,Nice to have,Attested,2026-09-09
+LDI & Solutions,Buy & Maintain,S: Drive,Important,Attested,2026-09-05
+LDI & Solutions,Buy & Maintain,Aladdin Risk,Critical,Not yet attested,
+LDI & Solutions,Buy & Maintain,CRIMS (Legacy),Nice to have,Attested,2026-09-20
+LDI & Solutions,Buy & Maintain,OTC-X,Nice to have,Attested,2026-09-05
+LDI & Solutions,Buy & Maintain,Liquidity Ladder (EUC),Critical,Not yet attested,
+LDI & Solutions,Buy & Maintain,Refinitiv Eikon,Important,Not yet attested,
+Multi-Asset,Diversified Growth,Bloomberg Terminals,Critical,Not yet attested,
+Multi-Asset,Diversified Growth,CRIMS (STOM PMS),Critical,Not yet attested,
+Multi-Asset,Diversified Growth,Power BI Service,Important,Attested,2026-09-16
+Multi-Asset,Diversified Growth,S: Drive,Nice to have,Not yet attested,
+Multi-Asset,Diversified Growth,Bloomberg Port,Critical,Attested,2026-09-03
+Multi-Asset,Diversified Growth,FactSet Workstation,Critical,Not yet attested,
+Multi-Asset,Diversified Growth,ESG Scorecard,Critical,Attested,2026-09-11
+Multi-Asset,Diversified Growth,Aladdin Risk,Critical,Attested,2026-09-04
+Multi-Asset,Diversified Growth,Refinitiv Eikon,Critical,Attested,2026-09-18
+Multi-Asset,Retirement Income,Bloomberg Terminals,Critical,Attested,2026-09-12
+Multi-Asset,Retirement Income,CRIMS (STOM PMS),Critical,Attested,2026-09-03
+Multi-Asset,Retirement Income,Power BI Service,Critical,Not yet attested,
+Multi-Asset,Retirement Income,S: Drive,Critical,Attested,2026-09-12
+Multi-Asset,Retirement Income,Bloomberg Port,Nice to have,Attested,2026-09-16
+Multi-Asset,Retirement Income,FactSet Workstation,Critical,Attested,2026-09-28
+Multi-Asset,Retirement Income,ESG Scorecard,Important,Not yet attested,
+Multi-Asset,Retirement Income,Aladdin Risk,Critical,Not yet attested,
+Multi-Asset,Retirement Income,Refinitiv Eikon,Important,Attested,2026-09-03
+Cash & Liquidity,Sterling Liquidity,Bloomberg Terminals,Critical,Attested,2026-09-04
+Cash & Liquidity,Sterling Liquidity,CRIMS (STOM PMS),Critical,Attested,2026-09-24
+Cash & Liquidity,Sterling Liquidity,Power BI Service,Important,Not yet attested,
+Cash & Liquidity,Sterling Liquidity,S: Drive,Nice to have,Attested,2026-09-17
+Cash & Liquidity,Sterling Liquidity,Cash Hub,Critical,Attested,2026-09-07
+Cash & Liquidity,Sterling Liquidity,Cash Forecast Model.xlsx (EUC),Critical,Not yet attested,
+Cash & Liquidity,Sterling Liquidity,Liquidity Ladder (EUC),Critical,Not yet attested,
+Cash & Liquidity,Sterling Liquidity,Quasar,Nice to have,Attested,2026-09-25
+Cash & Liquidity,Sterling Liquidity,TradeWeb,Nice to have,Attested,2026-09-21
+Cash & Liquidity,Short-Term Credit,Bloomberg Terminals,Critical,Attested,2026-09-23
+Cash & Liquidity,Short-Term Credit,CRIMS (STOM PMS),Critical,Attested,2026-09-17
+Cash & Liquidity,Short-Term Credit,Power BI Service,Important,Attested,2026-09-12
+Cash & Liquidity,Short-Term Credit,S: Drive,Critical,Attested,2026-09-21
+Cash & Liquidity,Short-Term Credit,Cash Hub,Critical,Attested,2026-09-20
+Cash & Liquidity,Short-Term Credit,Cash Forecast Model.xlsx (EUC),Critical,Not yet attested,
+Cash & Liquidity,Short-Term Credit,Liquidity Ladder (EUC),Critical,Not yet attested,
+Cash & Liquidity,Short-Term Credit,Quasar,Important,Attested,2026-09-07
+Cash & Liquidity,Short-Term Credit,TradeWeb,Nice to have,Not yet attested,
+Real Assets,Private Credit,Bloomberg Terminals,Critical,Attested,2026-09-24
+Real Assets,Private Credit,CRIMS (STOM PMS),Critical,Attested,2026-09-01
+Real Assets,Private Credit,Power BI Service,Important,Not yet attested,
+Real Assets,Private Credit,S: Drive,Important,Attested,2026-09-23
+Real Assets,Private Credit,Credit Research Hub,Nice to have,Attested,2026-09-15
+Real Assets,Private Credit,ESG Scorecard,Nice to have,Attested,2026-09-12
+Real Assets,Private Credit,STT Alpha DP,Critical,Attested,2026-09-04
+Real Assets,Private Credit,Alice,Critical,Not yet attested,
+Real Assets,Property Debt,Bloomberg Terminals,Critical,Attested,2026-09-11
+Real Assets,Property Debt,CRIMS (STOM PMS),Critical,Attested,2026-09-16
+Real Assets,Property Debt,Power BI Service,Nice to have,Attested,2026-09-16
+Real Assets,Property Debt,S: Drive,Nice to have,Attested,2026-09-26
+Real Assets,Property Debt,Credit Research Hub,Nice to have,Attested,2026-09-27
+Real Assets,Property Debt,ESG Scorecard,Nice to have,Attested,2026-09-30
+Real Assets,Property Debt,STT Alpha DP,Important,Attested,2026-09-16
+Real Assets,Property Debt,Alice,Critical,Not yet attested,

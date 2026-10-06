@@ -1,0 +1,38 @@
+Category,Term,Parent / Note
+Kirsty Cat,UI,Application
+Kirsty Cat,Data,Foundation
+Kirsty Cat,Data Tfr,Foundation
+Kirsty Cat,Engine,Foundation
+Cap L2,PM,
+Cap L2,Trading,
+Cap L2,Research,
+Cap L2,Other,
+Cap L3,Portfolio Management,
+Cap L3,Manage Portfolio,
+Cap L3,Execution,
+Cap L3,All,
+Cap L3,NON-Inv,
+Cap L3,Tech,
+Users,Inv,
+Users,Ops,
+Users,Distn,
+Users,ALL,
+Desk,Active Fixed Income,
+Desk,Index Equity,
+Desk,LDI & Solutions,
+Desk,Multi-Asset,
+Desk,Cash & Liquidity,
+Desk,Real Assets,
+Strategy,Global Credit,Active Fixed Income
+Strategy,Emerging Market Debt,Active Fixed Income
+Strategy,Sovereign Rates,Active Fixed Income
+Strategy,Developed Index,Index Equity
+Strategy,Factor Index,Index Equity
+Strategy,Pension Hedging,LDI & Solutions
+Strategy,Buy & Maintain,LDI & Solutions
+Strategy,Diversified Growth,Multi-Asset
+Strategy,Retirement Income,Multi-Asset
+Strategy,Sterling Liquidity,Cash & Liquidity
+Strategy,Short-Term Credit,Cash & Liquidity
+Strategy,Private Credit,Real Assets
+Strategy,Property Debt,Real Assets

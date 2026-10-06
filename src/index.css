@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Segoe UI', Inter, system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --color-accent-50: #eef5fc;
+  --color-accent-100: #d8e8f8;
+  --color-accent-200: #b3d1f0;
+  --color-accent-500: #2b84d6;
+  --color-accent-600: #0f6cbd;
+  --color-accent-700: #0c5a9e;
+  --color-accent-800: #0a4a82;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* tabular figures everywhere numbers are compared */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-accent-100);
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.16s ease-out;
+}
