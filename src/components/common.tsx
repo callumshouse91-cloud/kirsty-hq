@@ -148,7 +148,7 @@ export function Stat({ label, value, sub, onClick, tone }: { label: string; valu
         type="button"
         onClick={onClick}
         disabled={!onClick}
-        className={cx('num mt-0.5 self-start text-left text-2xl font-semibold tracking-tight', tone === 'amber' ? 'text-amber-700' : 'text-slate-900', onClick && 'hover:text-accent-700 hover:underline decoration-2 underline-offset-4')}
+        className={cx('num mt-1 self-start text-left text-[26px] leading-none font-bold tracking-tight', tone === 'amber' ? 'text-amber-700' : 'text-navy', onClick && 'hover:text-accent-700 hover:underline decoration-2 underline-offset-4')}
       >
         {value}
       </button>

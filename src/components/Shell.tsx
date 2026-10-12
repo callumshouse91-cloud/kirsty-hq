@@ -1,5 +1,6 @@
 import { Building2, FileInput, LayoutDashboard, Layers, RotateCcw, Search, Table2, Tags } from 'lucide-react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { brandOn, LOGO_SRC } from '../lib/brand'
 import { href, useRoute, type Screen } from '../router'
 import { useStore } from '../store'
 import { useUi } from '../ui-store'
@@ -143,12 +144,12 @@ export function Shell({ children }: { children: ReactNode }) {
   const openIssues = useStore((s) => s.issues.filter((i) => i.status === 'Open').length)
   return (
     <div className="flex h-full min-w-0">
-      <aside className="flex w-56 shrink-0 flex-col border-r border-slate-200 bg-slate-50/70">
+      <aside className="flex w-56 shrink-0 flex-col border-r border-slate-200 bg-panel">
         <div className="flex h-14 items-center gap-2.5 border-b border-slate-200 px-4">
-          <img src="/favicon.svg" alt="" className="h-7 w-7" />
+          {brandOn ? <img src={LOGO_SRC} alt="L&G" className="h-8 w-auto" /> : <img src="/favicon.svg" alt="" className="h-7 w-7" />}
           <div className="leading-tight">
-            <div className="text-[13px] font-semibold text-slate-900">Investments</div>
-            <div className="text-xs text-slate-500">Tech Map</div>
+            <div className="font-display text-[13px] font-bold text-ink">Investments</div>
+            <div className="text-[11px] tracking-wide text-slate-500 uppercase">Tech Map</div>
           </div>
         </div>
         <nav className="flex-1 space-y-0.5 p-2">
@@ -157,8 +158,8 @@ export function Shell({ children }: { children: ReactNode }) {
               key={n.screen}
               href={href(n.screen)}
               className={cx(
-                'flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] font-medium',
-                screen === n.screen ? 'bg-white text-accent-700 shadow-sm ring-1 ring-slate-200' : 'text-slate-600 hover:bg-white/70 hover:text-slate-900',
+                'relative flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] font-medium transition-colors',
+                screen === n.screen ? 'bg-white font-bold text-navy shadow-sm ring-1 ring-slate-200 before:absolute before:inset-y-1.5 before:left-0 before:w-[3px] before:rounded-full before:bg-accent-600' : 'text-slate-600 hover:bg-white/70 hover:text-ink',
               )}
             >
               <span className={screen === n.screen ? 'text-accent-600' : 'text-slate-400'}>{n.icon}</span>
@@ -171,7 +172,7 @@ export function Shell({ children }: { children: ReactNode }) {
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex h-14 shrink-0 items-center gap-4 border-b border-slate-200 bg-white px-5">
-          <span className="hidden text-sm font-semibold whitespace-nowrap text-slate-800 xl:block">Investments Tech Map</span>
+          <span className="hidden font-display text-sm font-bold whitespace-nowrap text-ink xl:block">Investments Tech Map</span>
           <div className="flex flex-1 justify-center">
             <GlobalSearch />
           </div>

@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { FoundationLink, Stat } from '../components/common'
 import { Button, Card, cx, EmptyState, PageHeader, Td, Th } from '../components/ui'
+import { AXIS_LABEL_TICK, AXIS_TICK, BRAND } from '../lib/brand'
 import { foundationReach } from '../lib/graph'
 import { BLANK } from '../lib/pivot'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
@@ -10,7 +11,6 @@ import { navigate } from '../router'
 import { useDataState, useLayerMap } from '../store'
 import { ATTESTED } from '../types'
 
-const ACCENT = '#0f6cbd'
 
 interface CostDatum {
   capL2: string
@@ -107,23 +107,23 @@ export function Overview() {
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={costData} layout="vertical" margin={{ top: 0, right: 56, bottom: 0, left: 0 }} barCategoryGap={10}>
-                <CartesianGrid horizontal={false} stroke="#eef2f6" />
-                <XAxis type="number" tickFormatter={(v: number) => `£${fmtNum(v)}k`} tick={{ fontSize: 11, fill: '#64748b' }} axisLine={false} tickLine={false} />
-                <YAxis type="category" dataKey="capL2" width={88} tick={{ fontSize: 12, fill: '#334155' }} axisLine={{ stroke: '#cbd5e1' }} tickLine={false} />
+                <CartesianGrid horizontal={false} stroke={BRAND.grid} />
+                <XAxis type="number" tickFormatter={(v: number) => `£${fmtNum(v)}k`} tick={AXIS_TICK} axisLine={false} tickLine={false} />
+                <YAxis type="category" dataKey="capL2" width={88} tick={AXIS_LABEL_TICK} axisLine={{ stroke: '#cbd5e1' }} tickLine={false} />
                 <Tooltip cursor={{ fill: 'rgba(15,108,189,0.06)' }} content={<CostTooltip />} />
                 <Bar
                   dataKey="cost"
                   radius={[0, 4, 4, 0]}
                   maxBarSize={22}
                   className="cursor-pointer"
-                  label={{ position: 'right', formatter: (v: unknown) => fmtK(Number(v)), fontSize: 11, fill: '#334155' }}
+                  label={{ position: 'right', formatter: (v: unknown) => fmtK(Number(v)), fontSize: 11, fill: BRAND.ink }}
                   onClick={(d: { payload?: CostDatum }) => {
                     const c = d.payload?.capL2
                     if (c && c !== BLANK) navigate('explorer', { rows: 'capL3', col: 'layer', measure: 'cost', where: `capL2:${c}` })
                   }}
                 >
                   {costData.map((d) => (
-                    <Cell key={d.capL2} fill={ACCENT} />
+                    <Cell key={d.capL2} fill={BRAND.blue} />
                   ))}
                 </Bar>
               </BarChart>
