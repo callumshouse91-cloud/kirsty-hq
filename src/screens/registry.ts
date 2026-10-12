@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react'
 import type { ImplementedScreen } from '../lib/screens'
+import { ArchitectureScreen } from './Architecture'
 import { CapabilityView } from './CapabilityView'
 import { ChangesScreen } from './Changes'
 import { DeskView } from './DeskView'
@@ -29,4 +30,5 @@ export const SCREEN_COMPONENTS: Record<ImplementedScreen, ComponentType> = {
   heatmap: HeatmapScreen,
   risk: RiskEventsScreen,
   suggestions: SuggestionsScreen,
+  architecture: ArchitectureScreen,
 }

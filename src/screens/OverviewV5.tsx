@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarClock, CheckCircle2, Database, FileSpreadsheet, GitCompare, History, Tags } from 'lucide-react'
 import { useMemo, type ReactNode } from 'react'
+import { SourceLink } from '../components/common'
 import { fmtMeasure, HeatGrid } from '../components/HeatGrid'
 import { Badge, Button, Card, cx, PageHeader, Segmented } from '../components/ui'
 import { useDemo } from '../demo-store'
@@ -20,16 +21,19 @@ const TONE: Record<Finding['tone'], string> = {
   red: 'bg-brand-red',
 }
 
-function HealthTile({ icon, label, value, sub, good, onClick }: { icon: ReactNode; label: string; value: string; sub: string; good: boolean; onClick: () => void }) {
+const FINDING_PATH: Record<string, string> = { overlap: 'overlap', attest: 'attestation', renew: 'renewals', risk: 'risk', leanix: 'issues', unclassified: 'unclassified' }
+
+function HealthTile({ icon, label, value, sub, good, onClick, source }: { icon: ReactNode; label: string; value: string; sub: string; good: boolean; onClick: () => void; source: string }) {
   return (
-    <button type="button" onClick={onClick} className="group flex items-start gap-3 rounded-md px-2 py-2 text-left hover:bg-slate-50">
+    <div className="group flex items-start gap-3 rounded-md px-2 py-2 hover:bg-slate-50">
       <span className={cx('mt-0.5 rounded-md p-1.5', good ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700')}>{icon}</span>
-      <span className="min-w-0">
+      <button type="button" onClick={onClick} className="min-w-0 flex-1 text-left">
         <span className="block text-[11px] font-bold tracking-wide text-slate-500 uppercase">{label}</span>
         <span className="num block text-[20px] leading-tight font-bold text-navy group-hover:underline">{value}</span>
         <span className="block text-xs text-slate-500">{sub}</span>
-      </span>
-    </button>
+      </button>
+      <SourceLink path={source} className="mt-0.5" />
+    </div>
   )
 }
 
@@ -93,21 +97,26 @@ export function OverviewV5() {
           <ol className="divide-y divide-slate-100">
             {list.map((f, i) => (
               <li key={f.id} className="animate-fade-up" style={{ animationDelay: `${i * 40}ms`, animationFillMode: 'backwards' }}>
-                <button type="button" onClick={() => go(f.screen, f.params as Record<string, string>)} className="group flex w-full items-start gap-3 px-4 py-3 text-left hover:bg-slate-50">
+                <div className="group flex items-start gap-3 px-4 py-3 hover:bg-slate-50">
                   <span className={cx('mt-1.5 h-2 w-2 shrink-0 rounded-full', TONE[f.tone])} />
-                  <span className="flex-1 font-display text-[15px] leading-snug text-ink">{f.sentence}</span>
-                  <ArrowRight size={15} className="mt-1 shrink-0 text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-accent-600" />
-                </button>
+                  <button type="button" onClick={() => go(f.screen, f.params as Record<string, string>)} className="flex-1 text-left font-display text-[15px] leading-snug text-ink hover:text-navy">
+                    {f.sentence}
+                  </button>
+                  <SourceLink path={FINDING_PATH[f.id] ?? 'tools'} className="mt-1" />
+                  <button type="button" onClick={() => go(f.screen, f.params as Record<string, string>)} aria-label="Open the evidence" className="mt-0.5 shrink-0 text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-accent-600">
+                    <ArrowRight size={15} />
+                  </button>
+                </div>
               </li>
             ))}
           </ol>
         </Card>
 
         <Card title="Map health" subtitle="Is the map fit to rely on?" bodyClassName="grid grid-cols-1 gap-1 p-2">
-          <HealthTile icon={<CheckCircle2 size={16} />} label="Attestation coverage" value={`${health.attestation}%`} sub="of desk usage confirmed" good={health.attestation >= 80} onClick={() => go('desk')} />
+          <HealthTile icon={<CheckCircle2 size={16} />} label="Attestation coverage" source="attestation" value={`${health.attestation}%`} sub="of desk usage confirmed" good={health.attestation >= 80} onClick={() => go('desk')} />
           <HealthTile
             icon={<Database size={16} />}
-            label="Data freshness"
+            label="Data freshness" source="freshness"
             value={`${health.sourcesFresh}/${health.sourcesTotal}`}
             sub="sources inside their refresh window"
             good={health.sourcesFresh === health.sourcesTotal}
@@ -115,13 +124,13 @@ export function OverviewV5() {
           />
           <HealthTile
             icon={<GitCompare size={16} />}
-            label="Reconciliation drift"
+            label="Reconciliation drift" source="issues"
             value={String(health.openIssues)}
             sub={`open issues${health.lastDrift !== null ? ` · ${plural(health.lastDrift, 'change')} at the last LeanIX sync` : ' · LeanIX not synced this month'}`}
             good={health.openIssues === 0}
             onClick={() => go('import', { tab: 'issues' })}
           />
-          <HealthTile icon={<Tags size={16} />} label="Unclassified tools" value={String(health.unclassified)} sub="no Tool type or capability" good={health.unclassified === 0} onClick={() => go('suggestions')} />
+          <HealthTile icon={<Tags size={16} />} label="Unclassified tools" source="unclassified" value={String(health.unclassified)} sub="no Tool type or capability" good={health.unclassified === 0} onClick={() => go('suggestions')} />
         </Card>
       </div>
 
@@ -129,7 +138,7 @@ export function OverviewV5() {
         className="mt-4"
         title="Capability × strategy"
         subtitle={HEAT_MEASURES.find((m) => m.id === measure)!.label}
-        actions={<Segmented size="sm" options={HEAT_MEASURES.map((m) => ({ id: m.id, label: m.short }))} value={measure} onChange={(v) => patchParams(route, { measure: v })} />}
+        actions={<span className="flex items-center gap-3"><SourceLink path={measure === 'cost' || measure === 'tools' ? 'cost' : 'risk'} /><Segmented size="sm" options={HEAT_MEASURES.map((m) => ({ id: m.id, label: m.short }))} value={measure} onChange={(v) => patchParams(route, { measure: v })} /></span>}
         bodyClassName="p-3"
       >
         <HeatGrid compact h={h} measure={measure} onCell={(cap, st) => go('heatmap', { measure, cell: heatKey(cap, st) })} />
@@ -139,7 +148,7 @@ export function OverviewV5() {
       </Card>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <Card title="Upcoming renewals" subtitle="Next 120 days" bodyClassName="p-0" actions={<Button size="sm" variant="ghost" onClick={() => go('vendors')}>All contracts <ArrowRight size={13} /></Button>}>
+        <Card title="Upcoming renewals" subtitle="Next 120 days" bodyClassName="p-0" actions={<span className="flex items-center gap-2"><SourceLink path="renewals" /><Button size="sm" variant="ghost" onClick={() => go('vendors')}>All contracts <ArrowRight size={13} /></Button></span>}>
           {renewals.length === 0 ? (
             <p className="p-4 text-xs text-slate-500">No renewals in the next 120 days.</p>
           ) : (

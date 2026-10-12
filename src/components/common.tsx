@@ -4,7 +4,7 @@ import { buildIndex, similarity } from '../lib/match'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtDate } from '../lib/util'
 import { useScreenEnabled } from '../nav'
-import { navigate } from '../router'
+import { href, navigate } from '../router'
 import { useLayerMap, useStore } from '../store'
 import { ATTESTED, type Layer, type Tool, type Vendor } from '../types'
 import { useUi } from '../ui-store'
@@ -143,10 +143,24 @@ export function ToolPicker({
   )
 }
 
-export function Stat({ label, value, sub, onClick, tone }: { label: string; value: ReactNode; sub?: ReactNode; onClick?: () => void; tone?: 'accent' | 'amber' }) {
+/** A small link from an Overview figure to the Architecture tab, with the path behind it lit up. */
+export function SourceLink({ path, className }: { path: string; className?: string }) {
+  const on = useScreenEnabled('architecture')
+  if (!on) return null
+  return (
+    <a href={href('architecture', { path })} className={cx('text-[10px] font-semibold tracking-wide text-slate-400 uppercase hover:text-accent-700 hover:underline', className)} title="Where this number comes from">
+      source
+    </a>
+  )
+}
+
+export function Stat({ label, value, sub, onClick, tone, source }: { label: string; value: ReactNode; sub?: ReactNode; onClick?: () => void; tone?: 'accent' | 'amber'; source?: string }) {
   return (
     <div className="flex min-w-0 flex-col">
-      <span className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">{label}</span>
+      <span className="flex items-baseline justify-between gap-2 text-[11px] font-semibold tracking-wide text-slate-500 uppercase">
+        {label}
+        {source && <SourceLink path={source} />}
+      </span>
       <button
         type="button"
         onClick={onClick}
