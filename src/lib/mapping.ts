@@ -66,7 +66,15 @@ export const EUC_HEADER_MAP: Record<string, string> = {
   status: IGNORE,
 }
 
+/** Known schema: a Jira issue export. Each issue is matched to the tool in its component. */
+export const JIRA_HEADER_MAP: Record<string, string> = {
+  issuekey: fieldKey('externalId'),
+  components: fieldKey('name'),
+  component: fieldKey('name'),
+}
+
 export const LEANIX_SOURCE = 'LeanIX'
+export const JIRA_SOURCE = 'Jira'
 export const EUC_SOURCE = 'EUC register'
 
 /** A tool the EUC register is expected to hold: a desk-built spreadsheet or local build. */
@@ -79,6 +87,8 @@ export function isEuc(t: { name: string; invUserGroup: string }): boolean {
  * are never flagged as missing from it. LeanIX covers everything; the EUC register only EUCs.
  */
 export function inSourceScope(source: string, t: { name: string; invUserGroup: string }): boolean {
+  // Jira only mentions tools that have change work, so a tool without tickets is not a gap.
+  if (source === JIRA_SOURCE) return false
   return source === EUC_SOURCE ? isEuc(t) : true
 }
 
@@ -97,6 +107,7 @@ export function guessSource(headers: string[], fileName: string): string {
   const keys = headers.map(headerKey)
   if (keys.includes('leanixid')) return LEANIX_SOURCE
   if (keys.includes('eucid')) return EUC_SOURCE
+  if (keys.includes('issuekey')) return JIRA_SOURCE
   if (keys.includes('apptooleuc')) return MASTER_SOURCE
   return fileName.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ').trim() || 'Import'
 }
@@ -107,7 +118,7 @@ export function preMap(headers: string[], validCategories: string[]): Record<str
   const used = new Set<string>()
   for (const h of headers) {
     const k = headerKey(h)
-    let target = MASTER_HEADER_MAP[k] ?? LEANIX_HEADER_MAP[k] ?? EUC_HEADER_MAP[k] ?? GENERIC[k]
+    let target = MASTER_HEADER_MAP[k] ?? LEANIX_HEADER_MAP[k] ?? EUC_HEADER_MAP[k] ?? JIRA_HEADER_MAP[k] ?? GENERIC[k]
     if (!target) {
       const cat = validCategories.find((c) => headerKey(c) === k)
       target = cat ? catKey(cat) : IGNORE

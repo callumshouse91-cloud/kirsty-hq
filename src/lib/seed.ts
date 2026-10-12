@@ -67,6 +67,20 @@ export async function loadSeed(): Promise<DataState> {
   return buildSeed(parseCsv(toolsCsv), parseCsv(taxCsv).rows, parseCsv(usageCsv).rows, parseCsv(depCsv).rows)
 }
 
+/**
+ * A master workbook with the same sheets as the demo workbook: a tool list (App / Tool / EUC),
+ * a taxonomy (Category, Term), and optionally desk usage and dependencies. Returns null if it is not one.
+ */
+export function seedFromSheets(sheets: { name: string; headers: string[]; rows: Row[] }[]): DataState | null {
+  const has = (s: { headers: string[] }, ...hs: string[]) => hs.every((h) => s.headers.some((x) => headerKey(x) === headerKey(h)))
+  const master = sheets.find((s) => has(s, 'App / Tool / EUC'))
+  const tax = sheets.find((s) => has(s, 'Category', 'Term'))
+  if (!master || !tax) return null
+  const usage = sheets.find((s) => has(s, 'Desk', 'Strategy', 'Application'))
+  const deps = sheets.find((s) => has(s, 'Application', 'Depends On (Foundation)'))
+  return buildSeed(master, tax.rows, usage?.rows ?? [], deps?.rows ?? [])
+}
+
 function buildSeed(master: { headers: string[]; rows: Row[] }, taxRows: Row[], usageRows: Row[], depRows: Row[]): DataState {
   const ids = new Set<string>()
   const byName = new Map<string, string>()

@@ -3,11 +3,11 @@ import { useMemo, useRef, useState, type ReactNode } from 'react'
 import { useDemo, useFeature, usePermissions } from '../demo-store'
 import { FeedsTab } from './Feeds'
 import { ToolLink, VendorFlag } from '../components/common'
-import { Badge, Button, Card, Chip, cx, EmptyState, Input, Label, PageHeader, Select, Tabs, Td, Th } from '../components/ui'
+import { Badge, Button, Card, Chip, cx, EmptyState, Input, Label, Modal, PageHeader, Select, Tabs, Td, Th } from '../components/ui'
 import { readWorkbook, type ParsedSheet } from '../lib/export'
 import { catKey, FIELD_TARGETS, fieldKey, guessSource, IGNORE, mappedValue, parseTarget, preMap, targetLabel } from '../lib/mapping'
 import { learn, missingType, MISSING_IN_MASTER, NAME_MISMATCH, suggestTool, TYPE_CONFLICT } from '../lib/reconcile'
-import { fetchSampleFile, parseCsv } from '../lib/seed'
+import { fetchSampleFile, parseCsv, seedFromSheets } from '../lib/seed'
 import { CAT, isToolCategory, termsOf } from '../lib/taxonomy'
 import { fmtDate, plural } from '../lib/util'
 import { patchParams, useRoute } from '../router'
@@ -699,6 +699,49 @@ function LogTab({ onOpen }: { onOpen: (importId: string) => void }) {
 
 // ───────────────────────────── screen ─────────────────────────────
 
+/** A whole master workbook (tool list, taxonomy, usage, dependencies) can replace the current map in one go. */
+function MasterBanner({ file, onLoaded }: { file: LoadedFile; onLoaded: () => void }) {
+  const seed = useMemo(() => seedFromSheets(file.sheets), [file])
+  const hydrate = useStore((s) => s.hydrateFrom)
+  const notify = useUi((u) => u.notify)
+  const [confirm, setConfirm] = useState(false)
+  if (!seed) return null
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-3 rounded-lg border border-accent-200 bg-accent-50 px-4 py-3 text-[13px] text-accent-800">
+      <FileSpreadsheet size={18} className="shrink-0" />
+      <span className="min-w-0 flex-1">
+        This is a master workbook: <span className="font-bold">{seed.tools.length.toLocaleString('en-GB')} tools</span>, {seed.usages.length.toLocaleString('en-GB')} desk usage rows and {seed.dependencies.length.toLocaleString('en-GB')} dependencies. Load it as the master list, or reconcile one of its sheets below.
+      </span>
+      <Button variant="primary" onClick={() => setConfirm(true)}>
+        Load as the master list
+      </Button>
+      <Modal
+        open={confirm}
+        onClose={() => setConfirm(false)}
+        title="Replace the master list?"
+        footer={
+          <>
+            <Button onClick={() => setConfirm(false)}>Cancel</Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                hydrate(seed)
+                setConfirm(false)
+                onLoaded()
+                notify(`Loaded ${seed.tools.length.toLocaleString('en-GB')} tools from ${file.fileName}`)
+              }}
+            >
+              Replace
+            </Button>
+          </>
+        }
+      >
+        <p className="text-[13px] text-slate-600">The tool list, taxonomy, desk usage and dependencies are replaced by the ones in {file.fileName}. Imports, aliases and issues start again. Reset data brings back the demo list.</p>
+      </Modal>
+    </div>
+  )
+}
+
 export function ImportScreen() {
   const route = useRoute()
   const state = useDataState()
@@ -739,6 +782,8 @@ export function ImportScreen() {
   else if (runId) body = <Report importId={runId} onNew={() => patchParams(route, { run: null })} />
   else if (file)
     body = (
+      <>
+      {canImport && <MasterBanner file={file} onLoaded={() => setFile(null)} />}
       <Mapper
         key={file.fileName}
         file={file}
@@ -750,6 +795,7 @@ export function ImportScreen() {
           notify(`Reconciled ${sheet.rows.length} rows from ${source}`)
         }}
       />
+      </>
     )
   else if (!canImport)
     body = (
