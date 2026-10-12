@@ -77,3 +77,14 @@ export function plural(n: number, one: string, many = `${one}s`): string {
 export function byName<T extends { name: string }>(a: T, b: T): number {
   return a.name.localeCompare(b.name, 'en', { sensitivity: 'base' })
 }
+
+/** "Today 14:05", "Yesterday 16:40" or "9 Oct 10:15". */
+export function fmtWhen(iso: string): string {
+  const d = new Date(iso)
+  const now = new Date()
+  const hm = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+  const days = Math.round((new Date(now.toDateString()).getTime() - new Date(d.toDateString()).getTime()) / 86_400_000)
+  if (days === 0) return `Today ${hm}`
+  if (days === 1) return `Yesterday ${hm}`
+  return `${d.getDate()} ${MONTHS[d.getMonth()]} ${hm}`
+}

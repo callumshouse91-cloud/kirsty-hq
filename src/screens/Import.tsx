@@ -1,6 +1,7 @@
 import { ArrowRight, Check, CheckCircle2, ChevronDown, ChevronRight, FileSpreadsheet, FileUp, Plus, RotateCcw, Sparkles, Upload, X } from 'lucide-react'
 import { useMemo, useRef, useState, type ReactNode } from 'react'
-import { useFeature, usePermissions } from '../demo-store'
+import { useDemo, useFeature, usePermissions } from '../demo-store'
+import { FeedsTab } from './Feeds'
 import { ToolLink, VendorFlag } from '../components/common'
 import { Badge, Button, Card, Chip, cx, EmptyState, Input, Label, PageHeader, Select, Tabs, Td, Th } from '../components/ui'
 import { readWorkbook, type ParsedSheet } from '../lib/export'
@@ -705,7 +706,10 @@ export function ImportScreen() {
   const notify = useUi((u) => u.notify)
   const [file, setFile] = useState<LoadedFile | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const tab = (['issues', 'log'] as const).find((t) => t === route.params.get('tab')) ?? 'import'
+  const feedsOn = useFeature('leanix-feed')
+  const env = useDemo((d) => d.env)
+  const tabParam = (['issues', 'log', 'feeds'] as const).find((t) => t === route.params.get('tab'))
+  const tab = tabParam === 'feeds' && !feedsOn ? 'import' : tabParam ?? 'import'
   const runId = route.params.get('run')
   const openIssues = state.issues.filter((i) => i.status === 'Open').length
   const canImport = usePermissions().can('import')
@@ -729,7 +733,8 @@ export function ImportScreen() {
   const latestOpen = state.imports.find((l) => l.id !== 'seed' && state.sourceRecords.some((r) => r.importId === l.id))
 
   let body: ReactNode
-  if (tab === 'issues') body = <IssuesTab onReview={(id) => patchParams(route, { tab: null, run: id, type: null, source: null, resolved: null })} />
+  if (tab === 'feeds') body = <FeedsTab onOpenReport={(id) => patchParams(route, { tab: null, run: id })} />
+  else if (tab === 'issues') body = <IssuesTab onReview={(id) => patchParams(route, { tab: null, run: id, type: null, source: null, resolved: null })} />
   else if (tab === 'log') body = <LogTab onOpen={(id) => patchParams(route, { tab: null, run: id })} />
   else if (runId) body = <Report importId={runId} onNew={() => patchParams(route, { run: null })} />
   else if (file)
@@ -810,6 +815,7 @@ export function ImportScreen() {
               ),
             },
             { id: 'log', label: 'Import log' },
+            ...(feedsOn ? [{ id: 'feeds' as const, label: env === 'prod' ? 'Feeds & drift' : 'Sources & drift' }] : []),
           ]}
           value={tab}
           onChange={(t) => patchParams(route, { tab: t === 'import' ? null : t })}

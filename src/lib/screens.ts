@@ -34,7 +34,7 @@ export const NAV_GROUP_LABEL: Record<NavGroup, string> = {
 }
 
 /** Screens that are built. The registry in src/screens/registry.ts must provide exactly these. */
-export const IMPLEMENTED = ['overview', 'import', 'taxonomy', 'explorer', 'capability', 'desk', 'foundation'] as const satisfies readonly ScreenId[]
+export const IMPLEMENTED = ['overview', 'import', 'taxonomy', 'explorer', 'capability', 'desk', 'foundation', 'changes'] as const satisfies readonly ScreenId[]
 export type ImplementedScreen = (typeof IMPLEMENTED)[number]
 
 export function isImplemented(id: ScreenId): id is ImplementedScreen {

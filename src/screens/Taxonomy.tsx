@@ -2,9 +2,9 @@ import { ArrowRightLeft, Check, GitMerge, Pencil, Plus, Tags, Trash2, X } from '
 import { useState, type ReactNode } from 'react'
 import { LayerBadge } from '../components/common'
 import { Badge, Button, cx, EmptyState, Input, Modal, PageHeader, Segmented, Select, Tabs, Td, Th } from '../components/ui'
-import { bindingFor, CAT, layerMap, layerOf, parentCategory, termImpact, termsOf, type TermImpact } from '../lib/taxonomy'
+import { bindingFor, CAT, impactSentence, layerMap, layerOf, parentCategory, termImpact, termsOf, type TermImpact } from '../lib/taxonomy'
 import { plural } from '../lib/util'
-import { usePermissions } from '../demo-store'
+import { useFeature, usePermissions } from '../demo-store'
 import { navigate, patchParams, useRoute } from '../router'
 import { useDataState, useStore } from '../store'
 import { LAYERS, type Layer } from '../types'
@@ -15,14 +15,6 @@ function pivotFieldFor(category: string): string {
   const b = bindingFor(category)
   if (b.kind === 'custom') return `custom:${category}`
   return b.field
-}
-
-function impactSentence(i: TermImpact, verb: string): string {
-  const parts = [plural(i.tools.length, 'tool')]
-  if (i.usages.length) parts.push(plural(i.usages.length, 'usage row'))
-  let s = `This will ${verb} ${parts.join(' and ')}`
-  if (i.children.length) s += `, and re-point ${plural(i.children.length, 'child term')}`
-  return `${s}.`
 }
 
 type Pending =
@@ -42,7 +34,7 @@ function UsedBy({ category, term, impact }: { category: string; term: string; im
         </button>
       )}
       {impact.usages.length > 0 && <span className="text-slate-500">{plural(impact.usages.length, 'usage')}</span>}
-      {impact.children.length > 0 && <span className="text-slate-500">{plural(impact.children.length, 'strategy', 'strategies')}</span>}
+      {impact.children.length > 0 && <span className="text-slate-500">{plural(impact.children.length, `${impact.children[0].category} term`)}</span>}
       <button type="button" className="text-slate-400 hover:text-accent-700 hover:underline" onClick={() => navigate('explorer', { rows: category === CAT.capL2 ? 'capL3' : 'capL2', col: 'none', where: `${pivotFieldFor(category)}:${term}` })}>
         Explore
       </button>
@@ -61,7 +53,10 @@ function TermsPanel({ category }: { category: string }) {
   const isToolType = category === CAT.toolType
   const hasNotes = !parentCat && !isToolType && terms.some((t) => t.parent)
   const lm = layerMap(state.taxonomy)
-  const canEdit = usePermissions().can('editTaxonomy')
+  const { can } = usePermissions()
+  const canEdit = can('editTaxonomy')
+  // From Phase 3, merges and deletes by someone who can't approve go to a change lead first.
+  const needsApproval = useFeature('approvals') && !can('approve')
 
   const [newTerm, setNewTerm] = useState('')
   const [newParent, setNewParent] = useState(parentTerms[0] ?? '')
@@ -88,12 +83,22 @@ function TermsPanel({ category }: { category: string }) {
       notify(`Renamed “${pending.term}” to “${pending.to}”`)
       setEditing(null)
     } else if (pending.kind === 'merge') {
-      s.mergeTerm(category, pending.term, pending.into)
-      notify(`Merged “${pending.term}” into “${pending.into}”`)
+      if (needsApproval) {
+        s.requestApproval({ kind: 'merge', category, term: pending.term, into: pending.into })
+        notify(`Merge sent to a change lead for approval`)
+      } else {
+        s.mergeTerm(category, pending.term, pending.into)
+        notify(`Merged “${pending.term}” into “${pending.into}”`)
+      }
       setMergeFrom(null)
     } else if (pending.kind === 'delete') {
-      s.deleteTerm(category, pending.term)
-      notify(`Deleted “${pending.term}”`)
+      if (needsApproval) {
+        s.requestApproval({ kind: 'delete', category, term: pending.term })
+        notify(`Delete sent to a change lead for approval`)
+      } else {
+        s.deleteTerm(category, pending.term)
+        notify(`Deleted “${pending.term}”`)
+      }
     }
     setPending(null)
   }
@@ -116,7 +121,7 @@ function TermsPanel({ category }: { category: string }) {
         <p className="mt-2 text-slate-500">“{pending.term}” will be removed. Anything already using “{pending.into}” is unchanged.</p>
       </>
     )
-    confirmLabel = 'Merge'
+    confirmLabel = needsApproval ? 'Send for approval' : 'Merge'
   } else if (pending?.kind === 'delete') {
     blocked = inUse(pending.impact)
     modalTitle = blocked ? `Can’t delete “${pending.term}” yet` : `Delete “${pending.term}”?`
@@ -141,7 +146,7 @@ function TermsPanel({ category }: { category: string }) {
     ) : (
       <p>Nothing uses this term. It will be removed from {category}.</p>
     )
-    confirmLabel = 'Delete'
+    confirmLabel = needsApproval ? 'Send for approval' : 'Delete'
   }
 
   return (
@@ -321,6 +326,9 @@ function TermsPanel({ category }: { category: string }) {
         }
       >
         <div className="text-[13px] text-slate-700">{modalBody}</div>
+        {needsApproval && !blocked && (pending?.kind === 'merge' || pending?.kind === 'delete') && (
+          <p className="mt-3 rounded-md border border-accent-200 bg-accent-50 px-3 py-2 text-xs text-accent-800">Merges and deletes need a change lead’s approval. Nothing changes until it is approved on Changes &amp; approvals.</p>
+        )}
       </Modal>
     </div>
   )

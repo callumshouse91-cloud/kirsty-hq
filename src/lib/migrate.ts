@@ -1,3 +1,6 @@
+import type { DataState } from '../types'
+import { seededApprovals, seededHistory } from './seed-history'
+
 /**
  * Migrations for state saved in this browser by earlier builds.
  * v1 → v2: the "Kirsty Cat" category became "Tool type" (field kirstyCat → toolType),
@@ -47,7 +50,21 @@ function deep(v: unknown): unknown {
   return v
 }
 
+/** v2 → v3: change history, approvals and feed runs arrived. Seed them so Phase 3 has something to show. */
+function addHistory(persisted: unknown): unknown {
+  if (!persisted || typeof persisted !== 'object') return persisted
+  const st = persisted as Partial<DataState>
+  return {
+    ...st,
+    history: st.history ?? seededHistory(),
+    approvals: st.approvals ?? seededApprovals({ tools: st.tools ?? [], usages: st.usages ?? [], taxonomy: st.taxonomy ?? [] }),
+    feedRuns: st.feedRuns ?? [],
+  }
+}
+
 export function migrateState(persisted: unknown, version: number): unknown {
-  if (version < 2) return deep(persisted)
-  return persisted
+  let out = persisted
+  if (version < 2) out = deep(out)
+  if (version < 3) out = addHistory(out)
+  return out
 }

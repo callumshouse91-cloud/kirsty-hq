@@ -1,5 +1,5 @@
 import type { DataState, Layer, TaxonomyTerm, Tool, Usage } from '../types'
-import { joinMulti, splitMulti, uniq } from './util'
+import { joinMulti, plural, splitMulti, uniq } from './util'
 
 /**
  * Categories that are bound to a field in the data model. The category *names*
@@ -146,4 +146,13 @@ export function defaultCatFor(taxonomy: TaxonomyTerm[], layer: Layer): string {
   const lm = layerMap(taxonomy)
   for (const [term, l] of lm) if (l === layer) return term
   return ''
+}
+
+/** "This will re-label 14 tools and 37 usage rows." */
+export function impactSentence(i: TermImpact, verb: string): string {
+  const parts = [plural(i.tools.length, 'tool')]
+  if (i.usages.length) parts.push(plural(i.usages.length, 'usage row'))
+  let s = `This will ${verb} ${parts.join(' and ')}`
+  if (i.children.length) s += `, and re-point ${plural(i.children.length, `${i.children[0].category} term`)}`
+  return `${s}.`
 }
