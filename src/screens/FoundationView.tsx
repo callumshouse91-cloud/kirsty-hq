@@ -5,6 +5,8 @@ import { Badge, Button, Card, EmptyState, Label, Modal, PageHeader, Select, Td, 
 import { allocateCost, directDependentCounts, foundationReach, upstream } from '../lib/graph'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { byName, fmtK, plural } from '../lib/util'
+import { usePermissions } from '../demo-store'
+import { useScreenEnabled } from '../nav'
 import { navigate, useRoute } from '../router'
 import { useDataState, useLayerMap, useStore } from '../store'
 import { useUi } from '../ui-store'
@@ -46,6 +48,8 @@ export function FoundationView() {
   const lm = useLayerMap()
   const removeDependency = useStore((s) => s.removeDependency)
   const [adding, setAdding] = useState(false)
+  const canEdit = usePermissions().can('editTools')
+  const deskOn = useScreenEnabled('desk')
 
   const foundations = useMemo(() => state.tools.filter((t) => layerOf(t, lm) === 'Foundation').sort(byName), [state.tools, lm])
   const counts = useMemo(() => directDependentCounts(state), [state])
@@ -152,9 +156,11 @@ export function FoundationView() {
           title="Applications that depend on it"
           subtitle={`${plural(directDeps.length, 'direct link')}${all.length > directDeps.length ? ` · ${all.length - directDeps.length} more indirectly` : ''}`}
           actions={
-            <Button size="sm" icon={<Plus size={13} />} onClick={() => setAdding(true)}>
-              Add dependency
-            </Button>
+            canEdit ? (
+              <Button size="sm" icon={<Plus size={13} />} onClick={() => setAdding(true)}>
+                Add dependency
+              </Button>
+            ) : undefined
           }
           bodyClassName="p-0"
         >
@@ -198,7 +204,7 @@ export function FoundationView() {
                       <Td right>{new Set(c.usages.map((u) => u.desk)).size || <span className="text-slate-300">0</span>}</Td>
                       <Td right>{fmtK(c.tool.costK)}</Td>
                       <Td>
-                        {dep && (
+                        {dep && canEdit && (
                           <button className="rounded p-1 text-slate-400 hover:bg-red-50 hover:text-red-700" title="Remove this dependency link" aria-label={`Remove link from ${c.tool.name}`} onClick={() => removeDependency(dep.id)}>
                             <Trash2 size={14} />
                           </button>
@@ -222,9 +228,13 @@ export function FoundationView() {
                 .concat([...reach.desks.keys()].filter((d) => !termsOf(state.taxonomy, CAT.desk).includes(d)))
                 .map((d) => (
                   <li key={d}>
-                    <button type="button" className="text-[13px] font-medium text-slate-800 hover:text-accent-700 hover:underline" onClick={() => navigate('desk', { desk: d, sitsOn: '1' })}>
-                      {d}
-                    </button>
+                    {deskOn ? (
+                      <button type="button" className="text-[13px] font-medium text-slate-800 hover:text-accent-700 hover:underline" onClick={() => navigate('desk', { desk: d, sitsOn: '1' })}>
+                        {d}
+                      </button>
+                    ) : (
+                      <span className="text-[13px] font-medium text-slate-800">{d}</span>
+                    )}
                     <div className="mt-1 flex flex-wrap gap-1">
                       {[...reach.desks.get(d)!].map((st) => (
                         <Badge key={st}>{st}</Badge>

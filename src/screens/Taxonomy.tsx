@@ -4,6 +4,7 @@ import { LayerBadge } from '../components/common'
 import { Badge, Button, cx, EmptyState, Input, Modal, PageHeader, Segmented, Select, Tabs, Td, Th } from '../components/ui'
 import { bindingFor, CAT, layerMap, layerOf, parentCategory, termImpact, termsOf, type TermImpact } from '../lib/taxonomy'
 import { plural } from '../lib/util'
+import { usePermissions } from '../demo-store'
 import { navigate, patchParams, useRoute } from '../router'
 import { useDataState, useStore } from '../store'
 import { LAYERS, type Layer } from '../types'
@@ -60,6 +61,7 @@ function TermsPanel({ category }: { category: string }) {
   const isToolType = category === CAT.toolType
   const hasNotes = !parentCat && !isToolType && terms.some((t) => t.parent)
   const lm = layerMap(state.taxonomy)
+  const canEdit = usePermissions().can('editTaxonomy')
 
   const [newTerm, setNewTerm] = useState('')
   const [newParent, setNewParent] = useState(parentTerms[0] ?? '')
@@ -153,6 +155,7 @@ function TermsPanel({ category }: { category: string }) {
             {isToolType && ' · Parent sets the layer (see Layer mapping)'}
           </p>
         </div>
+        {canEdit && (
         <form
           className="flex items-center gap-2"
           onSubmit={(e) => {
@@ -176,10 +179,11 @@ function TermsPanel({ category }: { category: string }) {
             Add term
           </Button>
         </form>
+        )}
       </div>
 
       {terms.length === 0 ? (
-        <EmptyState icon={<Tags size={26} />} title="No terms yet" hint={`Add the first ${category} term above, then pick it on any tool’s detail panel.`} />
+        <EmptyState icon={<Tags size={26} />} title="No terms yet" hint={canEdit ? `Add the first ${category} term above, then pick it on any tool’s detail panel.` : `No ${category} terms yet. A change lead or tech lead can add them.`} />
       ) : (
         <div className="overflow-hidden rounded-lg border border-slate-200">
           <table className="w-full text-[13px]">
@@ -190,7 +194,7 @@ function TermsPanel({ category }: { category: string }) {
                 {isToolType && <Th>Layer</Th>}
                 {hasNotes && <Th>Note</Th>}
                 <Th>Used by</Th>
-                <Th right>Actions</Th>
+                {canEdit && <Th right>Actions</Th>}
               </tr>
             </thead>
             <tbody>
@@ -217,6 +221,8 @@ function TermsPanel({ category }: { category: string }) {
                             <X size={15} />
                           </button>
                         </form>
+                      ) : !canEdit ? (
+                        <span className="font-medium text-slate-800">{t.term}</span>
                       ) : (
                         <button type="button" className="group inline-flex items-center gap-1.5 font-medium text-slate-800" onClick={() => setEditing({ term: t.term, value: t.term })} title="Click to rename">
                           {t.term}
@@ -224,7 +230,8 @@ function TermsPanel({ category }: { category: string }) {
                         </button>
                       )}
                     </Td>
-                    {parentCat && (
+                    {parentCat && !canEdit && <Td className="text-xs text-slate-600">{t.parent || '—'}</Td>}
+                    {parentCat && canEdit && (
                       <Td>
                         <Select value={t.parent} onChange={(e) => s.setParent(category, t.term, e.target.value)} className="h-7 text-xs" aria-label={`${parentCat} for ${t.term}`}>
                           {!parentTerms.includes(t.parent) && <option value={t.parent}>{t.parent || '—'}</option>}
@@ -243,6 +250,7 @@ function TermsPanel({ category }: { category: string }) {
                     <Td>
                       <UsedBy category={category} term={t.term} impact={impact} />
                     </Td>
+                    {canEdit && (
                     <Td right className="whitespace-nowrap">
                       {isMerging ? (
                         <span className="inline-flex items-center gap-1">
@@ -286,6 +294,7 @@ function TermsPanel({ category }: { category: string }) {
                         </span>
                       )}
                     </Td>
+                    )}
                   </tr>
                 )
               })}
@@ -326,6 +335,7 @@ function LayerMapping() {
   const [pending, setPending] = useState<Extract<Pending, { kind: 'layer' }> | null>(null)
   const terms = termsOf(state.taxonomy, CAT.toolType)
   const counts = LAYERS.map((l) => state.tools.filter((t) => layerOf(t, lm) === l).length)
+  const canEdit = usePermissions().can('editTaxonomy')
 
   return (
     <div className="max-w-3xl">
@@ -366,7 +376,11 @@ function LayerMapping() {
                     )}
                   </Td>
                   <Td right>
+                    {canEdit ? (
                     <Segmented size="sm" options={LAYERS.map((l) => ({ id: l, label: l }))} value={layer} onChange={(to) => to !== layer && setPending({ kind: 'layer', term, to, from: layer, count: tools.length })} />
+                    ) : (
+                      <LayerBadge layer={layer} />
+                    )}
                   </Td>
                 </tr>
               )
@@ -416,12 +430,18 @@ export function TaxonomyScreen() {
   const addCategory = useStore((s) => s.addCategory)
   const notify = useUi((u) => u.notify)
   const [newCat, setNewCat] = useState('')
+  const { can, role, env } = usePermissions()
+  const canEdit = can('editTaxonomy')
   const tab = route.params.get('tab') === 'mapping' ? 'mapping' : 'terms'
   const category = state.categories.includes(route.params.get('cat') ?? '') ? route.params.get('cat')! : state.categories[0]
 
   return (
     <>
-      <PageHeader title="Taxonomy" description="The reference data behind every label in the app. Rename or merge a term and every tool and usage follows." />
+      <PageHeader
+        title="Taxonomy"
+        description="The reference data behind every label in the app. Rename or merge a term and every tool and usage follows."
+        actions={!canEdit && env === 'prod' ? <Badge tone="neutral">View only · {role.name}</Badge> : undefined}
+      />
       <div className="mb-4">
         <Tabs
           tabs={[
@@ -454,6 +474,7 @@ export function TaxonomyScreen() {
                 )
               })}
             </ul>
+            {canEdit && (
             <form
               className="mt-3 flex gap-1.5 border-t border-slate-200 pt-3"
               onSubmit={(e) => {
@@ -470,6 +491,7 @@ export function TaxonomyScreen() {
               <Input value={newCat} onChange={(e) => setNewCat(e.target.value)} placeholder="New category…" className="min-w-0 flex-1" />
               <Button type="submit" icon={<Plus size={14} />} disabled={!newCat.trim()} aria-label="Add category" />
             </form>
+            )}
           </aside>
           {category ? <TermsPanel key={category} category={category} /> : <EmptyState title="No categories" hint="Add a category on the left to start building reference data." />}
         </div>

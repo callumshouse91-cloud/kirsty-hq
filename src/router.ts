@@ -1,18 +1,21 @@
 import { useSyncExternalStore } from 'react'
 
-export type Screen = 'overview' | 'import' | 'taxonomy' | 'explorer' | 'desk' | 'foundation'
+import type { ScreenId } from './lib/phases'
 
-export const SCREENS: Screen[] = ['overview', 'import', 'taxonomy', 'explorer', 'desk', 'foundation']
+export type Screen = ScreenId
+
+export const SCREENS: Screen[] = ['journey', 'overview', 'import', 'taxonomy', 'explorer', 'capability', 'desk', 'foundation', 'changes', 'modules', 'vendors', 'heatmap', 'risk', 'suggestions', 'architecture']
 
 export interface Route {
-  screen: Screen
+  /** null when the hash names no known screen; the app then sends you to the phase's first screen. */
+  screen: Screen | null
   params: URLSearchParams
 }
 
 function parse(hash: string): Route {
   const h = hash.replace(/^#\/?/, '')
   const [path, query = ''] = h.split('?')
-  const screen = (SCREENS as string[]).includes(path) ? (path as Screen) : 'overview'
+  const screen = (SCREENS as string[]).includes(path) ? (path as Screen) : null
   return { screen, params: new URLSearchParams(query) }
 }
 
@@ -52,6 +55,7 @@ export function navigate(screen: Screen, params: Params = {}, opts: { replace?: 
 
 /** Update some params of the current screen in place (replaces history entry). */
 export function patchParams(route: Route, patch: Params) {
+  if (!route.screen) return
   const params: Params = {}
   route.params.forEach((v, k) => (params[k] = v))
   navigate(route.screen, { ...params, ...patch }, { replace: true })

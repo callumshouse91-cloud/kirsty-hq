@@ -6,6 +6,7 @@ import { exportXlsx } from '../lib/export'
 import { downstream } from '../lib/graph'
 import { CAT, defaultCatFor, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtDate, fmtK, pct, plural } from '../lib/util'
+import { usePermissions } from '../demo-store'
 import { patchParams, useRoute } from '../router'
 import { useDataState, useLayerMap, useStore } from '../store'
 import { ATTESTED, type Tool, type Usage } from '../types'
@@ -18,6 +19,9 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
   const tone = useCriticalityTone()
   const [confirm, setConfirm] = useState(false)
   const attested = usage.attestation === ATTESTED
+  const { can, canAttestDesk } = usePermissions()
+  const canEdit = can('editTools')
+  const canAttest = canAttestDesk(usage.desk)
   return (
     <div className={cx('flex flex-col rounded-md border bg-white p-3', attested ? 'border-slate-200' : 'border-amber-200 bg-amber-50/30')}>
       <div className="flex items-start justify-between gap-2">
@@ -29,7 +33,9 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
         <AttestationBadge status={usage.attestation} on={usage.attestedOn} />
       </div>
       <div className="mt-2.5 flex items-center gap-1.5 border-t border-slate-100 pt-2.5">
-        {confirm ? (
+        {!canEdit && !canAttest ? (
+          <Badge tone={tone(usage.criticality)}>{usage.criticality || 'No criticality'}</Badge>
+        ) : confirm ? (
           <>
             <span className="mr-auto text-xs text-slate-600">Remove from strategy?</span>
             <Button size="sm" onClick={() => setConfirm(false)}>
@@ -41,6 +47,8 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
           </>
         ) : (
           <>
+            {!canEdit && <Badge tone={tone(usage.criticality)} className="mr-auto">{usage.criticality || 'No criticality'}</Badge>}
+            {canEdit && (
             <Select
               value={usage.criticality}
               onChange={(e) => setCriticality(usage.id, e.target.value)}
@@ -55,7 +63,8 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
                 </option>
               ))}
             </Select>
-            {attested ? (
+            )}
+            {!canAttest ? null : attested ? (
               <button type="button" className="rounded p-1.5 text-slate-400 hover:bg-emerald-50 hover:text-emerald-700" title="Re-attest with today’s date" aria-label={`Re-attest ${tool.name}`} onClick={() => attest([usage.id])}>
                 <ShieldCheck size={15} />
               </button>
@@ -64,9 +73,11 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
                 Attest
               </Button>
             )}
+            {canEdit && (
             <button type="button" className="rounded p-1.5 text-slate-400 hover:bg-red-50 hover:text-red-700" title="Remove from this strategy" aria-label={`Remove ${tool.name}`} onClick={() => setConfirm(true)}>
               <Trash2 size={14} />
             </button>
+            )}
           </>
         )}
       </div>
@@ -173,6 +184,7 @@ export function DeskView() {
   const lm = useLayerMap()
   const notify = useUi((s) => s.notify)
   const attest = useStore((s) => s.attest)
+  const { can, canAttestDesk } = usePermissions()
   const desks = termsOf(state.taxonomy, CAT.desk)
   const desk = route.params.get('desk') && desks.includes(route.params.get('desk')!) ? route.params.get('desk')! : desks[0] ?? ''
   const showFoundations = route.params.get('sitsOn') === '1'
@@ -236,6 +248,8 @@ export function DeskView() {
     )
   }
 
+  const canAdd = can('editTools') || canAttestDesk(desk)
+
   return (
     <>
       <PageHeader
@@ -273,7 +287,7 @@ export function DeskView() {
           </span>
         </span>
         {hiddenFoundationUsages > 0 && <span className="text-xs text-slate-500">{plural(hiddenFoundationUsages, 'foundation usage')} hidden — see “What this desk sits on”</span>}
-        {outstanding.length > 0 && (
+        {outstanding.length > 0 && canAttestDesk(desk) && (
           <Button
             size="sm"
             variant="primary"
@@ -318,14 +332,16 @@ export function DeskView() {
                     </span>
                     {us.length > 0 && att === us.length && <Badge tone="green">All attested</Badge>}
                   </button>
-                  <Button size="sm" variant="ghost" icon={<Plus size={13} />} onClick={() => setAdding(st)}>
-                    Add application
-                  </Button>
+                  {canAdd && (
+                    <Button size="sm" variant="ghost" icon={<Plus size={13} />} onClick={() => setAdding(st)}>
+                      Add application
+                    </Button>
+                  )}
                 </header>
                 {open && (
                   <div className="border-t border-slate-100 p-3">
                     {us.length === 0 ? (
-                      <p className="py-3 text-center text-xs text-slate-500">No applications recorded for this strategy yet — use “Add application”.</p>
+                      <p className="py-3 text-center text-xs text-slate-500">No applications recorded for this strategy yet{canAdd ? ' — use “Add application”' : ''}.</p>
                     ) : (
                       <div className="grid grid-cols-[repeat(auto-fill,minmax(232px,1fr))] gap-2.5">
                         {us.map((u) => (

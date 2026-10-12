@@ -3,6 +3,7 @@ import { useMemo, useState, type ReactNode } from 'react'
 import { buildIndex, similarity } from '../lib/match'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtDate } from '../lib/util'
+import { useScreenEnabled } from '../nav'
 import { navigate } from '../router'
 import { useLayerMap, useStore } from '../store'
 import { ATTESTED, type Layer, type Tool, type Vendor } from '../types'
@@ -23,7 +24,9 @@ export function ToolLink({ id, className, children }: { id: string; className?: 
 /** A foundation name that takes you to the Foundation View. */
 export function FoundationLink({ id, className }: { id: string; className?: string }) {
   const tool = useStore((s) => s.tools.find((t) => t.id === id))
+  const on = useScreenEnabled('foundation')
   if (!tool) return null
+  if (!on) return <ToolLink id={id} className={className} />
   return (
     <button type="button" onClick={() => navigate('foundation', { id })} className={cx('text-left font-medium text-slate-800 decoration-accent-500/60 underline-offset-2 hover:text-accent-700 hover:underline', className)}>
       {tool.name}

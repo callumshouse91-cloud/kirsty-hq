@@ -1,5 +1,6 @@
 import { ArrowRight, Check, CheckCircle2, ChevronDown, ChevronRight, FileSpreadsheet, FileUp, Plus, RotateCcw, Sparkles, Upload, X } from 'lucide-react'
 import { useMemo, useRef, useState, type ReactNode } from 'react'
+import { usePermissions } from '../demo-store'
 import { ToolLink, VendorFlag } from '../components/common'
 import { Badge, Button, Card, Chip, cx, EmptyState, Input, Label, PageHeader, Select, Tabs, Td, Th } from '../components/ui'
 import { readWorkbook, type ParsedSheet } from '../lib/export'
@@ -249,6 +250,7 @@ function Mapper({ file, onCancel, onRun }: { file: LoadedFile; onCancel: () => v
 function FuzzyRow({ rec }: { rec: SourceRecord }) {
   const s = useStore()
   const notify = useUi((u) => u.notify)
+  const canImport = usePermissions().can('import')
   const [pick, setPick] = useState(rec.matchedToolId ?? rec.candidates[0]?.toolId ?? '')
   const toolById = new Map(s.tools.map((t) => [t.id, t]))
   const done = rec.resolution === 'accepted'
@@ -287,6 +289,8 @@ function FuzzyRow({ rec }: { rec: SourceRecord }) {
           <Badge tone="green">
             <Check size={11} /> Confirmed · alias saved
           </Badge>
+        ) : !canImport ? (
+          <Badge tone="amber">Awaiting confirmation</Badge>
         ) : (
           <>
             <Button
@@ -313,6 +317,7 @@ function UnmatchedRow({ rec, learned }: { rec: SourceRecord; learned: ReturnType
   const state = useDataState()
   const s = useStore()
   const notify = useUi((u) => u.notify)
+  const canImport = usePermissions().can('import')
   const suggestion = useMemo(() => suggestTool(state, rec, learned), [state, rec, learned])
   const [draft, setDraft] = useState<Omit<Tool, 'id'>>(suggestion.tool)
   const type = mappedValue(rec.raw, rec.headerMap, fieldKey('sourceType'))
@@ -361,6 +366,7 @@ function UnmatchedRow({ rec, learned }: { rec: SourceRecord; learned: ReturnType
             {[rec.externalId, type && `type “${type}”`].filter(Boolean).join(' · ')}
           </span>
         </div>
+        {canImport ? (
         <div className="flex items-center gap-1.5">
           <Button
             size="sm"
@@ -377,6 +383,9 @@ function UnmatchedRow({ rec, learned }: { rec: SourceRecord; learned: ReturnType
             Ignore
           </Button>
         </div>
+        ) : (
+          <Badge tone="violet">Awaiting a decision</Badge>
+        )}
       </div>
       <div className="mt-2 grid grid-cols-3 gap-2">
         {sel(CAT.toolType, 'toolType')}
@@ -518,6 +527,8 @@ function IssueAction({ issue, onReview }: { issue: Issue; onReview: (importId: s
   const s = useStore()
   const [reason, setReason] = useState(REASONS[0])
   const rec = issue.sourceRecordId ? s.sourceRecords.find((r) => r.id === issue.sourceRecordId) : undefined
+  const canImport = usePermissions().can('import')
+  if (!canImport) return <span className="text-xs text-slate-400">{issue.status === 'Resolved' ? 'Resolved' : 'Open'}</span>
   if (issue.status === 'Resolved') {
     return (
       <Button size="sm" variant="ghost" icon={<RotateCcw size={12} />} onClick={() => s.reopenIssue(issue.id)}>
@@ -697,6 +708,7 @@ export function ImportScreen() {
   const tab = (['issues', 'log'] as const).find((t) => t === route.params.get('tab')) ?? 'import'
   const runId = route.params.get('run')
   const openIssues = state.issues.filter((i) => i.status === 'Open').length
+  const canImport = usePermissions().can('import')
 
   const load = async (f: File) => {
     setError(null)
@@ -731,6 +743,21 @@ export function ImportScreen() {
           patchParams(route, { run: id })
           notify(`Reconciled ${sheet.rows.length} rows from ${source}`)
         }}
+      />
+    )
+  else if (!canImport)
+    body = (
+      <EmptyState
+        icon={<FileSpreadsheet size={26} />}
+        title="Imports are run by change leads and tech leads"
+        hint={latestOpen ? 'You can read the latest reconciliation report, the issues and the import log.' : 'No reconciliation has been run yet. The Issues and Import log tabs show what has been done so far.'}
+        action={
+          latestOpen ? (
+            <Button variant="primary" onClick={() => patchParams(route, { run: latestOpen.id })}>
+              Open the last report ({latestOpen.source})
+            </Button>
+          ) : undefined
+        }
       />
     )
   else
