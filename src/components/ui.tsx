@@ -254,3 +254,18 @@ export function Th({ children, className, right }: { children?: ReactNode; class
 export function Td({ children, className, right }: { children?: ReactNode; className?: string; right?: boolean }) {
   return <td className={cx('border-b border-slate-100 px-3 py-1.5 align-middle', right && 'num text-right', className)}>{children}</td>
 }
+
+export function Switch({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label: string }) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      onClick={() => onChange(!checked)}
+      className={cx('relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500', checked ? 'bg-accent-600' : 'bg-slate-300')}
+    >
+      <span className={cx('inline-block h-4 w-4 rounded-full bg-white shadow transition-transform duration-200', checked ? 'translate-x-[18px]' : 'translate-x-0.5')} />
+    </button>
+  )
+}

@@ -48,7 +48,7 @@ export const useDemo = create<DemoState>()(
       phase: 1,
       env: 'sandbox',
       role: 'change-lead',
-      modules: { vendors: true, heatmap: true, risk: true },
+      modules: { vendors: false, heatmap: false, risk: false },
       setPhase: (p) => set((s) => ({ phase: p, env: envFor(p, s.env) })),
       setEnv: (e) => set((s) => ({ env: envFor(s.phase, e) })),
       setRole: (r) => set({ role: r }),

@@ -1,0 +1,19 @@
+Event ID,Date,Title,Tool,Strategy,Category,Loss (£k),Status
+RE-2025-031,2025-11-04,Late trade booking after order routing outage,Order Routing Gateway,Global Credit,Systems failure,85,Closed
+RE-2025-034,2025-11-19,Stale benchmark weights used in rebalance,Benchmark Service,Developed Index,Data quality,140,Closed
+RE-2025-036,2025-12-02,Manual cash forecast error,Cash Forecast Model.xlsx (EUC),Sterling Liquidity,EUC error,25,Closed
+RE-2025-039,2025-12-15,Duplicate order sent from legacy OMS,OMS (Legacy),Global Credit,Process,60,Closed
+RE-2026-002,2026-01-09,Pricing engine timeout at month end,Pricing Engine (In-house),Pension Hedging,Systems failure,210,Closed
+RE-2026-005,2026-01-27,Wrong FX rate in hedge calculation,Liquidity Ladder (EUC),Short-Term Credit,EUC error,35,Closed
+RE-2026-009,2026-02-11,Reference data mismatch on new issue,Reference Data Master,Emerging Market Debt,Data quality,45,Closed
+RE-2026-013,2026-03-03,Optimiser constraint not applied,Bulk Optimiser,Factor Index,Model error,120,Closed
+RE-2026-017,2026-03-24,Compliance rule gap in legacy CRIMS,CRIMS (Legacy),Sovereign Rates,Process,90,Closed
+RE-2026-021,2026-04-16,Data lake load failure delayed risk reports,Snowflake (Inv Data Lake),Diversified Growth,Systems failure,30,Closed
+RE-2026-024,2026-05-07,Allocation error across funds,CRIMS (Core PMS),Global Credit,Process,155,Closed
+RE-2026-028,2026-06-02,Integration message loss overnight,Kafka Event Bus,Retirement Income,Systems failure,20,Closed
+RE-2026-031,2026-06-25,Late collateral call after feed delay,BIRCH,Pension Hedging,Data quality,70,Closed
+RE-2026-035,2026-07-14,Index rebalance date missed,Benchmark Service,Developed Index,Data quality,95,Open
+RE-2026-038,2026-08-05,Legacy OMS fill reported twice,OMS (Legacy),Buy & Maintain,Systems failure,40,Open
+RE-2026-041,2026-08-28,Private credit valuation input wrong,Swapline,Private Credit,Model error,180,Open
+RE-2026-044,2026-09-16,Execution venue outage,Lens,Emerging Market Debt,Systems failure,15,Open
+RE-2026-047,2026-10-01,Unapproved spreadsheet used in pricing,Cash Forecast Model.xlsx (EUC),Sterling Liquidity,EUC error,10,Open
