@@ -1,16 +1,18 @@
 import { ArrowRight } from 'lucide-react'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { FoundationLink, Stat } from '../components/common'
-import { Button, Card, cx, EmptyState, PageHeader, Td, Th } from '../components/ui'
+import { FoundationLink, SourceLink, Stat } from '../components/common'
+import { Badge, Button, Card, cx, EmptyState, PageHeader, Td, Th } from '../components/ui'
+import { AXIS_LABEL_TICK, AXIS_TICK, BRAND } from '../lib/brand'
 import { foundationReach } from '../lib/graph'
 import { BLANK } from '../lib/pivot'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtK, fmtNum, pct, plural } from '../lib/util'
+import { useFeature } from '../demo-store'
 import { navigate } from '../router'
+import { OverviewV5 } from './OverviewV5'
 import { useDataState, useLayerMap } from '../store'
 import { ATTESTED } from '../types'
 
-const ACCENT = '#0f6cbd'
 
 interface CostDatum {
   capL2: string
@@ -33,6 +35,10 @@ function CostTooltip({ active, payload }: { active?: boolean; payload?: { payloa
 }
 
 export function Overview() {
+  return useFeature('overview-v5') ? <OverviewV5 /> : <OverviewV2 />
+}
+
+function OverviewV2() {
   const state = useDataState()
   const lm = useLayerMap()
 
@@ -78,23 +84,28 @@ export function Overview() {
 
   return (
     <>
-      <PageHeader title="Overview" description="The Investments tool estate at a glance. Every number opens the detail behind it." />
+      <PageHeader
+        title="Overview"
+        description="The Investments tool estate at a glance. Every number opens the detail behind it."
+        actions={<Badge tone="neutral" title="Synthetic data; cost is the master list estimate">Illustrative figures</Badge>}
+      />
 
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-3 xl:grid-cols-6">
         {[
-          <Stat key="t" label="Total tools" value={fmtNum(state.tools.length)} sub={`${new Set(state.tools.map((t) => t.kirstyCat)).size} ${CAT.kirstyCat} groups`} onClick={() => navigate('explorer', { rows: 'kirstyCat', col: 'layer', measure: 'tools' })} />,
-          <Stat key="a" label="Applications" value={fmtNum(apps.length)} sub="what users see and use" onClick={() => navigate('explorer', { rows: 'capL2', col: 'none', layer: 'Application' })} />,
-          <Stat key="f" label="Foundations" value={fmtNum(foundations.length)} sub="what applications sit on" onClick={() => navigate('explorer', { rows: 'kirstyCat', col: 'none', layer: 'Foundation' })} />,
-          <Stat key="p" label="Desk usage attested" value={`${pct(attested, state.usages.length)}%`} sub={`${fmtNum(attested)} of ${fmtNum(state.usages.length)} usage rows`} onClick={() => navigate('explorer', { rows: 'desk', col: 'attestation', measure: 'tools' })} />,
+          <Stat key="t" source="tools" label="Total tools" value={fmtNum(state.tools.length)} sub={`${new Set(state.tools.map((t) => t.toolType)).size} ${CAT.toolType} groups`} onClick={() => navigate('explorer', { rows: 'toolType', col: 'layer', measure: 'tools' })} />,
+          <Stat key="a" source="layers" label="Applications" value={fmtNum(apps.length)} sub="what users see and use" onClick={() => navigate('explorer', { rows: 'capL2', col: 'none', layer: 'Application' })} />,
+          <Stat key="f" source="layers" label="Foundations" value={fmtNum(foundations.length)} sub="what applications sit on" onClick={() => navigate('explorer', { rows: 'toolType', col: 'none', layer: 'Foundation' })} />,
+          <Stat key="p" source="attestation" label="Desk usage attested" value={`${pct(attested, state.usages.length)}%`} sub={`${fmtNum(attested)} of ${fmtNum(state.usages.length)} usage rows`} onClick={() => navigate('explorer', { rows: 'desk', col: 'attestation', measure: 'tools' })} />,
           <Stat
             key="i"
+            source="issues"
             label="Open issues"
             value={fmtNum(openIssues.length)}
             tone={openIssues.length ? 'amber' : undefined}
             sub={openIssues.length ? `from ${[...new Set(openIssues.map((i) => i.source))].join(', ')}` : 'import a source to reconcile'}
             onClick={() => navigate('import', { tab: openIssues.length ? 'issues' : null })}
           />,
-          <Stat key="c" label="Est. annual cost" value={fmtK(totalCost)} sub={`£${fmtNum(totalCost)}k across all tools`} onClick={() => navigate('explorer', { rows: 'capL2', col: 'layer', measure: 'cost' })} />,
+          <Stat key="c" source="cost" label="Est. annual cost" value={fmtK(totalCost)} sub={`illustrative · £${fmtNum(totalCost)}k in all`} onClick={() => navigate('explorer', { rows: 'capL2', col: 'layer', measure: 'cost' })} />,
         ].map((el, i) => (
           <div key={i} className="bg-white px-4 py-3.5">
             {el}
@@ -103,27 +114,27 @@ export function Overview() {
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <Card title={`Estimated annual cost by ${CAT.capL2}`} subtitle="£k · click a bar to break it down">
+        <Card title={`Estimated annual cost by ${CAT.capL2}`} subtitle="£k, illustrative · click a bar to break it down" actions={<SourceLink path="cost" />}>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={costData} layout="vertical" margin={{ top: 0, right: 56, bottom: 0, left: 0 }} barCategoryGap={10}>
-                <CartesianGrid horizontal={false} stroke="#eef2f6" />
-                <XAxis type="number" tickFormatter={(v: number) => `£${fmtNum(v)}k`} tick={{ fontSize: 11, fill: '#64748b' }} axisLine={false} tickLine={false} />
-                <YAxis type="category" dataKey="capL2" width={88} tick={{ fontSize: 12, fill: '#334155' }} axisLine={{ stroke: '#cbd5e1' }} tickLine={false} />
+                <CartesianGrid horizontal={false} stroke={BRAND.grid} />
+                <XAxis type="number" tickFormatter={(v: number) => `£${fmtNum(v)}k`} tick={AXIS_TICK} axisLine={false} tickLine={false} />
+                <YAxis type="category" dataKey="capL2" width={92} tick={AXIS_LABEL_TICK} tickFormatter={(v: string) => (v === BLANK ? 'Unclassified' : v)} axisLine={{ stroke: '#cbd5e1' }} tickLine={false} />
                 <Tooltip cursor={{ fill: 'rgba(15,108,189,0.06)' }} content={<CostTooltip />} />
                 <Bar
                   dataKey="cost"
                   radius={[0, 4, 4, 0]}
                   maxBarSize={22}
                   className="cursor-pointer"
-                  label={{ position: 'right', formatter: (v: unknown) => fmtK(Number(v)), fontSize: 11, fill: '#334155' }}
+                  label={{ position: 'right', formatter: (v: unknown) => fmtK(Number(v)), fontSize: 11, fill: BRAND.ink }}
                   onClick={(d: { payload?: CostDatum }) => {
                     const c = d.payload?.capL2
                     if (c && c !== BLANK) navigate('explorer', { rows: 'capL3', col: 'layer', measure: 'cost', where: `capL2:${c}` })
                   }}
                 >
                   {costData.map((d) => (
-                    <Cell key={d.capL2} fill={ACCENT} />
+                    <Cell key={d.capL2} fill={BRAND.blue} />
                   ))}
                 </Bar>
               </BarChart>
@@ -142,7 +153,7 @@ export function Overview() {
           </table>
         </Card>
 
-        <Card title="Most depended-on foundations" subtitle="Top 10 by number of tools sitting directly on them" bodyClassName="p-0">
+        <Card title="Most depended-on foundations" subtitle="Top 10 by number of tools sitting directly on them" bodyClassName="p-0" actions={<SourceLink path="foundations" />}>
           {topFoundations.length === 0 ? (
             <p className="p-4 text-xs text-slate-500">No foundations yet — check the layer mapping in Taxonomy.</p>
           ) : (

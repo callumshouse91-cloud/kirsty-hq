@@ -2,15 +2,15 @@ Application,Depends On (Foundation),Direction
 BBG AIM,Reference Data Master,Both
 BBG AIM,Order Routing Gateway,Writes
 BBG AIM,Kafka Event Bus,Reads
-CRIMS (STOM PMS),Oracle Securities DB,Both
-CRIMS (STOM PMS),Reference Data Master,Writes
-CRIMS (STOM PMS),Kafka Event Bus,Writes
-CRIMS (STOM PMS),OMS Bridge,Writes
-CRIMS (STOM PMS),Phoenix,Both
-CRIMS (STOM PMS),CRIMS Axioma Optimiser,Reads
+CRIMS (Core PMS),Oracle Securities DB,Both
+CRIMS (Core PMS),Reference Data Master,Writes
+CRIMS (Core PMS),Kafka Event Bus,Writes
+CRIMS (Core PMS),OMS Bridge,Writes
+CRIMS (Core PMS),Atlas,Both
+CRIMS (Core PMS),CRIMS Axioma Optimiser,Reads
 CRIMS (Legacy),Oracle Securities DB,Both
 CRIMS (Legacy),OMS Bridge,Reads
-CRIMS (Legacy),Phoenix,Reads
+CRIMS (Legacy),Atlas,Reads
 OMS (Legacy),OMS Bridge,Reads
 OMS (Legacy),Order Routing Gateway,Reads
 OMS (Legacy),Oracle Securities DB,Reads
@@ -26,23 +26,23 @@ Axioma Risk Analytics,Benchmark Service,Writes
 Bloomberg Port,Benchmark Service,Reads
 Bloomberg Port,Bloomberg New Issue Feed,Both
 Bloomberg EMSX,Order Routing Gateway,Both
-Scope,Incursion (Quasar / Scope / Phoenix data),Reads
-Scope,Oracle Securities DB,Reads
-Quasar,Incursion (Quasar / Scope / Phoenix data),Reads
-Quasar,MDMS,Both
-Cash Hub,CEDAR,Both
-Cash Hub,MAPLE,Reads
+Lens,Tributary (Meridian / Lens / Atlas data),Reads
+Lens,Oracle Securities DB,Reads
+Meridian,Tributary (Meridian / Lens / Atlas data),Reads
+Meridian,MDMS,Both
+Cash Hub,BIRCH,Both
+Cash Hub,ROWAN,Reads
 Cash Hub,MDMS,Both
-FactSet Workstation,Marketplace (Historical Data),Both
-Refinitiv Eikon,Marketplace (Historical Data),Reads
+FactSet Workstation,Data Bazaar (Historical Data),Both
+Refinitiv Eikon,Data Bazaar (Historical Data),Reads
 Credit Research Hub,Snowflake (Inv Data Lake),Writes
 Credit Research Hub,Domino Data Lab,Reads
-Credit Research Hub,Marketplace (Non ADP Data),Reads
+Credit Research Hub,Data Bazaar (External Data),Reads
 ESG Scorecard,Snowflake (Inv Data Lake),Reads
 ESG Scorecard,Domino Data Lab,Writes
 ESG Scorecard,Azure Data Factory Pipelines,Reads
-Alice,Domino Data Lab,Writes
-Alice,Snowflake (Inv Data Lake),Both
+Quill,Domino Data Lab,Writes
+Quill,Snowflake (Inv Data Lake),Both
 STT Alpha DP,Azure Data Factory Pipelines,Reads
 STT Alpha DP,Snowflake (Inv Data Lake),Both
 Power BI Service,Snowflake (Inv Data Lake),Writes

@@ -34,17 +34,17 @@ export function Button({
 
 export function Card({ title, subtitle, actions, children, className, bodyClassName }: { title?: ReactNode; subtitle?: ReactNode; actions?: ReactNode; children: ReactNode; className?: string; bodyClassName?: string }) {
   return (
-    <section className={cx('rounded-lg border border-slate-200 bg-white', className)}>
+    <section className={cx('rounded-lg border border-slate-200/90 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04)]', className)}>
       {(title || actions) && (
         <header className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-2.5">
           <div className="min-w-0">
-            {title && <h2 className="truncate text-[13px] font-semibold text-slate-800">{title}</h2>}
+            {title && <h2 className="truncate text-[13px] font-bold text-ink">{title}</h2>}
             {subtitle && <p className="truncate text-xs text-slate-500">{subtitle}</p>}
           </div>
           {actions && <div className="flex shrink-0 items-center gap-2">{actions}</div>}
         </header>
       )}
-      <div className={cx('p-4', bodyClassName)}>{children}</div>
+      <div className={cx(/(^|\s)p-\d/.test(bodyClassName ?? '') ? '' : 'p-4', bodyClassName)}>{children}</div>
     </section>
   )
 }
@@ -112,9 +112,9 @@ export function Modal({ open, title, onClose, children, footer, width = 'max-w-l
   if (!open) return null
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center bg-slate-900/30 p-4 pt-[12vh]" onMouseDown={onClose}>
-      <div className={cx('w-full rounded-lg border border-slate-200 bg-white shadow-xl', width)} onMouseDown={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
+      <div className={cx('animate-fade-up w-full rounded-lg border border-slate-200 bg-white shadow-xl', width)} onMouseDown={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
         <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
-          <h3 className="text-sm font-semibold text-slate-800">{title}</h3>
+          <h3 className="font-display text-[15px] font-bold text-ink">{title}</h3>
           <button className="rounded p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700" onClick={onClose} aria-label="Close">
             <X size={16} />
           </button>
@@ -153,7 +153,7 @@ export function Drawer({
       <aside className={cx('animate-slide-in absolute top-0 right-0 flex h-full max-w-[100vw] flex-col border-l border-slate-200 bg-white shadow-2xl', width)}>
         <div className="flex items-start justify-between gap-3 border-b border-slate-200 px-5 py-3.5">
           <div className="min-w-0">
-            <h2 className="truncate text-base font-semibold text-slate-900">{title}</h2>
+            <h2 className="truncate font-display text-[17px] font-bold text-ink">{title}</h2>
             {subtitle && <div className="mt-0.5 text-xs text-slate-500">{subtitle}</div>}
           </div>
           <button className="rounded p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700" onClick={onClose} aria-label="Close">
@@ -237,10 +237,10 @@ export function Segmented<T extends string>({ options, value, onChange, size = '
 
 export function PageHeader({ title, description, actions }: { title: string; description?: ReactNode; actions?: ReactNode }) {
   return (
-    <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+    <div className="animate-fade-up mb-5 flex flex-wrap items-end justify-between gap-3">
       <div className="min-w-0">
-        <h1 className="text-xl font-semibold tracking-tight text-slate-900">{title}</h1>
-        {description && <p className="mt-0.5 text-[13px] text-slate-500">{description}</p>}
+        <h1 className="font-display text-[22px] leading-tight font-bold text-ink">{title}</h1>
+        {description && <p className="mt-1 max-w-3xl text-[13px] text-slate-500">{description}</p>}
       </div>
       {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
     </div>
@@ -248,9 +248,24 @@ export function PageHeader({ title, description, actions }: { title: string; des
 }
 
 export function Th({ children, className, right }: { children?: ReactNode; className?: string; right?: boolean }) {
-  return <th className={cx('border-b border-slate-200 bg-slate-50 px-3 py-2 text-[11px] font-semibold tracking-wide text-slate-500 uppercase', right ? 'text-right' : 'text-left', className)}>{children}</th>
+  return <th className={cx('border-b border-slate-300 bg-panel px-3 py-2 text-[11px] font-bold tracking-wide text-slate-600 uppercase', right ? 'text-right' : 'text-left', className)}>{children}</th>
 }
 
 export function Td({ children, className, right }: { children?: ReactNode; className?: string; right?: boolean }) {
   return <td className={cx('border-b border-slate-100 px-3 py-1.5 align-middle', right && 'num text-right', className)}>{children}</td>
+}
+
+export function Switch({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label: string }) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      onClick={() => onChange(!checked)}
+      className={cx('relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500', checked ? 'bg-accent-600' : 'bg-slate-300')}
+    >
+      <span className={cx('inline-block h-4 w-4 rounded-full bg-white shadow transition-transform duration-200', checked ? 'translate-x-[18px]' : 'translate-x-0.5')} />
+    </button>
+  )
 }

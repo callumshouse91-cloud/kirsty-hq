@@ -1,11 +1,12 @@
 import { ChevronDown, ChevronRight, Download, FileSpreadsheet, Layers, Plus, ShieldCheck, Trash2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { AttestationBadge, FoundationLink, ToolLink, ToolPicker, useCriticalityTone, VendorFlag } from '../components/common'
-import { Badge, Button, Card, cx, EmptyState, Input, Label, Modal, PageHeader, Select } from '../components/ui'
+import { Badge, Button, Card, cx, EmptyState, Input, Label, Modal, PageHeader, Select, Td, Th } from '../components/ui'
 import { exportXlsx } from '../lib/export'
 import { downstream } from '../lib/graph'
 import { CAT, defaultCatFor, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtDate, fmtK, pct, plural } from '../lib/util'
+import { usePermissions } from '../demo-store'
 import { patchParams, useRoute } from '../router'
 import { useDataState, useLayerMap, useStore } from '../store'
 import { ATTESTED, type Tool, type Usage } from '../types'
@@ -18,6 +19,9 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
   const tone = useCriticalityTone()
   const [confirm, setConfirm] = useState(false)
   const attested = usage.attestation === ATTESTED
+  const { can, canAttestDesk } = usePermissions()
+  const canEdit = can('editTools')
+  const canAttest = canAttestDesk(usage.desk)
   return (
     <div className={cx('flex flex-col rounded-md border bg-white p-3', attested ? 'border-slate-200' : 'border-amber-200 bg-amber-50/30')}>
       <div className="flex items-start justify-between gap-2">
@@ -29,7 +33,9 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
         <AttestationBadge status={usage.attestation} on={usage.attestedOn} />
       </div>
       <div className="mt-2.5 flex items-center gap-1.5 border-t border-slate-100 pt-2.5">
-        {confirm ? (
+        {!canEdit && !canAttest ? (
+          <Badge tone={tone(usage.criticality)}>{usage.criticality || 'No criticality'}</Badge>
+        ) : confirm ? (
           <>
             <span className="mr-auto text-xs text-slate-600">Remove from strategy?</span>
             <Button size="sm" onClick={() => setConfirm(false)}>
@@ -41,6 +47,8 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
           </>
         ) : (
           <>
+            {!canEdit && <Badge tone={tone(usage.criticality)} className="mr-auto">{usage.criticality || 'No criticality'}</Badge>}
+            {canEdit && (
             <Select
               value={usage.criticality}
               onChange={(e) => setCriticality(usage.id, e.target.value)}
@@ -55,7 +63,8 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
                 </option>
               ))}
             </Select>
-            {attested ? (
+            )}
+            {!canAttest ? null : attested ? (
               <button type="button" className="rounded p-1.5 text-slate-400 hover:bg-emerald-50 hover:text-emerald-700" title="Re-attest with today’s date" aria-label={`Re-attest ${tool.name}`} onClick={() => attest([usage.id])}>
                 <ShieldCheck size={15} />
               </button>
@@ -64,9 +73,11 @@ function AppCard({ usage, tool }: { usage: Usage; tool: Tool }) {
                 Attest
               </Button>
             )}
+            {canEdit && (
             <button type="button" className="rounded p-1.5 text-slate-400 hover:bg-red-50 hover:text-red-700" title="Remove from this strategy" aria-label={`Remove ${tool.name}`} onClick={() => setConfirm(true)}>
               <Trash2 size={14} />
             </button>
+            )}
           </>
         )}
       </div>
@@ -91,7 +102,7 @@ function AddAppModal({ desk, strategy, onClose }: { desk: string; strategy: stri
       name: fullName,
       vendor: 'N',
       ownership: '',
-      kirstyCat: defaultCatFor(s.taxonomy, 'Application'),
+      toolType: defaultCatFor(s.taxonomy, 'Application'),
       users: '',
       invUserGroup: 'Desk-built',
       capL2: '',
@@ -159,7 +170,7 @@ function AddAppModal({ desk, strategy, onClose }: { desk: string; strategy: stri
           <Label>Name of the spreadsheet or local build</Label>
           <Input autoFocus value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Duration Bucketing.xlsx" className="w-full" />
           <p className="mt-2 text-xs text-slate-500">
-            Will be created as <span className="font-medium text-slate-700">{name.trim() ? (/\(EUC\)\s*$/i.test(name.trim()) ? name.trim() : `${name.trim()} (EUC)`) : '… (EUC)'}</span> · Vendor N · Inv User Group “Desk-built” · {CAT.kirstyCat} “{defaultCatFor(s.taxonomy, 'Application')}”.
+            Will be created as <span className="font-medium text-slate-700">{name.trim() ? (/\(EUC\)\s*$/i.test(name.trim()) ? name.trim() : `${name.trim()} (EUC)`) : '… (EUC)'}</span> · Vendor N · Inv User Group “Desk-built” · {CAT.toolType} “{defaultCatFor(s.taxonomy, 'Application')}”.
           </p>
         </form>
       )}
@@ -173,11 +184,13 @@ export function DeskView() {
   const lm = useLayerMap()
   const notify = useUi((s) => s.notify)
   const attest = useStore((s) => s.attest)
+  const { can, canAttestDesk } = usePermissions()
   const desks = termsOf(state.taxonomy, CAT.desk)
   const desk = route.params.get('desk') && desks.includes(route.params.get('desk')!) ? route.params.get('desk')! : desks[0] ?? ''
   const showFoundations = route.params.get('sitsOn') === '1'
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
   const [adding, setAdding] = useState<string | null>(null)
+  const [toolkitOpen, setToolkitOpen] = useState(false)
 
   const toolById = useMemo(() => new Map(state.tools.map((t) => [t.id, t])), [state.tools])
   const deskUsages = state.usages.filter((u) => u.desk === desk)
@@ -192,6 +205,9 @@ export function DeskView() {
   ].filter((v, i, a) => a.indexOf(v) === i)
   const attestedCount = appUsages.filter((u) => u.attestation === ATTESTED).length
   const outstanding = appUsages.filter((u) => u.attestation !== ATTESTED)
+  const criticalTerm = termsOf(state.taxonomy, CAT.criticality)[0] ?? ''
+  const critical = appUsages.filter((u) => u.criticality === criticalTerm)
+  const criticalOpen = critical.filter((u) => u.attestation !== ATTESTED)
   const distinctApps = new Set(appUsages.map((u) => u.toolId)).size
 
   const sitsOn = (() => {
@@ -236,6 +252,8 @@ export function DeskView() {
     )
   }
 
+  const canAdd = can('editTools') || canAttestDesk(desk)
+
   return (
     <>
       <PageHeader
@@ -273,11 +291,16 @@ export function DeskView() {
           </span>
         </span>
         {hiddenFoundationUsages > 0 && <span className="text-xs text-slate-500">{plural(hiddenFoundationUsages, 'foundation usage')} hidden — see “What this desk sits on”</span>}
-        {outstanding.length > 0 && (
+        {critical.length > 0 && (
+          <Button size="sm" className="ml-auto" icon={<ShieldCheck size={13} />} onClick={() => setToolkitOpen(true)}>
+            {criticalTerm} toolkit · {critical.length - criticalOpen.length}/{critical.length} attested
+          </Button>
+        )}
+        {outstanding.length > 0 && canAttestDesk(desk) && (
           <Button
             size="sm"
             variant="primary"
-            className="ml-auto"
+            className={critical.length ? undefined : 'ml-auto'}
             icon={<ShieldCheck size={13} />}
             onClick={() => {
               attest(outstanding.map((u) => u.id))
@@ -318,14 +341,16 @@ export function DeskView() {
                     </span>
                     {us.length > 0 && att === us.length && <Badge tone="green">All attested</Badge>}
                   </button>
-                  <Button size="sm" variant="ghost" icon={<Plus size={13} />} onClick={() => setAdding(st)}>
-                    Add application
-                  </Button>
+                  {canAdd && (
+                    <Button size="sm" variant="ghost" icon={<Plus size={13} />} onClick={() => setAdding(st)}>
+                      Add application
+                    </Button>
+                  )}
                 </header>
                 {open && (
                   <div className="border-t border-slate-100 p-3">
                     {us.length === 0 ? (
-                      <p className="py-3 text-center text-xs text-slate-500">No applications recorded for this strategy yet — use “Add application”.</p>
+                      <p className="py-3 text-center text-xs text-slate-500">No applications recorded for this strategy yet{canAdd ? ' — use “Add application”' : ''}.</p>
                     ) : (
                       <div className="grid grid-cols-[repeat(auto-fill,minmax(232px,1fr))] gap-2.5">
                         {us.map((u) => (
@@ -366,6 +391,58 @@ export function DeskView() {
       </div>
 
       {adding && <AddAppModal desk={desk} strategy={adding} onClose={() => setAdding(null)} />}
+      <Modal
+        open={toolkitOpen}
+        onClose={() => setToolkitOpen(false)}
+        title={`${desk}: ${criticalTerm.toLowerCase()} toolkit`}
+        width="max-w-2xl"
+        footer={
+          <>
+            <Button onClick={() => setToolkitOpen(false)}>Close</Button>
+            {canAttestDesk(desk) && (
+              <Button
+                variant="primary"
+                icon={<ShieldCheck size={14} />}
+                disabled={criticalOpen.length === 0}
+                onClick={() => {
+                  attest(criticalOpen.map((u) => u.id))
+                  notify(`Attested the ${criticalTerm.toLowerCase()} toolkit for ${desk}`)
+                  setToolkitOpen(false)
+                }}
+              >
+                {criticalOpen.length ? `Attest all ${criticalOpen.length} outstanding` : 'All attested'}
+              </Button>
+            )}
+          </>
+        }
+      >
+        <p className="mb-3 text-[13px] text-slate-600">
+          Every application this desk marks {criticalTerm.toLowerCase()}, across all its strategies. Check the list is complete, then attest it in one go.
+          {!canAttestDesk(desk) && ' You can read this list; attestation is done by the desk.'}
+        </p>
+        <table className="w-full text-[13px]">
+          <thead>
+            <tr>
+              <Th>Application</Th>
+              <Th>Strategy</Th>
+              <Th>Status</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {critical.map((u) => (
+              <tr key={u.id}>
+                <Td>
+                  <ToolLink id={u.toolId} />
+                </Td>
+                <Td className="text-slate-600">{u.strategy}</Td>
+                <Td>
+                  <AttestationBadge status={u.attestation} on={u.attestedOn} />
+                </Td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Modal>
       <p className="mt-6 text-[11px] text-slate-400">Last attestation on this desk: {appUsages.map((u) => u.attestedOn).filter(Boolean).sort().at(-1) ? fmtDate(appUsages.map((u) => u.attestedOn).filter(Boolean).sort().at(-1)!) : 'none yet'}</p>
     </>
   )

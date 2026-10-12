@@ -1,3 +1,4 @@
+import type { Answer } from './lib/ask'
 import { create } from 'zustand'
 
 export interface CellDrill {
@@ -6,7 +7,19 @@ export interface CellDrill {
   toolIds: string[]
 }
 
+export interface AskTurn {
+  id: string
+  q: string
+  at: string
+  answer: Answer
+}
+
 interface UiState {
+  askOpen: boolean
+  turns: AskTurn[]
+  setAskOpen: (v: boolean) => void
+  addTurn: (t: AskTurn) => void
+  clearTurns: () => void
   toolId: string | null
   cell: CellDrill | null
   toast: string | null
@@ -20,6 +33,11 @@ interface UiState {
 let toastTimer: ReturnType<typeof setTimeout> | undefined
 
 export const useUi = create<UiState>()((set) => ({
+  askOpen: false,
+  turns: [],
+  setAskOpen: (v) => set({ askOpen: v }),
+  addTurn: (t) => set((s) => ({ turns: [...s.turns, t].slice(-20) })),
+  clearTurns: () => set({ turns: [] }),
   toolId: null,
   cell: null,
   toast: null,

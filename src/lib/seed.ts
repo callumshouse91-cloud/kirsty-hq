@@ -12,6 +12,7 @@ import {
   type Vendor,
 } from '../types'
 import { MASTER_HEADER_MAP } from './mapping'
+import { seededApprovals, seededHistory } from './seed-history'
 import { CAT } from './taxonomy'
 import { headerKey, slugify, today, uniqueId } from './util'
 
@@ -84,7 +85,7 @@ function buildSeed(master: { headers: string[]; rows: Row[] }, taxRows: Row[], u
       name,
       vendor: toVendor(col(r, 'Vendor')),
       ownership: col(r, 'Tech Ownership'),
-      kirstyCat: col(r, 'Kirsty Cat'),
+      toolType: col(r, 'Tool type'),
       users: col(r, 'Users'),
       invUserGroup: col(r, 'Inv User Group'),
       capL2: col(r, 'Cap L2'),
@@ -166,6 +167,9 @@ function buildSeed(master: { headers: string[]; rows: Row[] }, taxRows: Row[], u
     sourceRecords,
     aliases: [],
     issues: [],
+    history: seededHistory(),
+    approvals: seededApprovals({ tools, usages, taxonomy }),
+    feedRuns: [],
     imports: [
       {
         id: 'seed',

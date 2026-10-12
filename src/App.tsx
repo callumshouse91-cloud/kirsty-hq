@@ -6,13 +6,12 @@ import { ToolDrawer } from './components/ToolDrawer'
 import { Drawer, Td, Th } from './components/ui'
 import { layerOf } from './lib/taxonomy'
 import { fmtK } from './lib/util'
-import { useRoute } from './router'
-import { DeskView } from './screens/DeskView'
-import { Explorer } from './screens/Explorer'
-import { FoundationView } from './screens/FoundationView'
-import { ImportScreen } from './screens/Import'
-import { Overview } from './screens/Overview'
-import { TaxonomyScreen } from './screens/Taxonomy'
+import { useDemo } from './demo-store'
+import { phase as phaseDef, screenFrom } from './lib/phases'
+import { isImplemented, SCREEN_META } from './lib/screens'
+import { useAvailableScreens } from './nav'
+import { navigate, useRoute } from './router'
+import { SCREEN_COMPONENTS } from './screens/registry'
 import { useLayerMap, useStore } from './store'
 import { useUi } from './ui-store'
 
@@ -73,20 +72,26 @@ function Toast() {
 
 export default function App() {
   const { screen } = useRoute()
+  const phase = useDemo((s) => s.phase)
+  const available = useAvailableScreens()
+  const enabled = screen !== null && available.includes(screen)
   useEffect(() => {
     useUi.getState().closeTool()
     useUi.getState().closeCell()
   }, [screen])
+  // A screen outside the current phase is never rendered: go to the phase's first screen instead.
+  useEffect(() => {
+    if (enabled) return
+    // A bare link opens on the Journey, the start of the story. Otherwise go to the phase's first screen.
+    const first = screen === null && available.includes('journey') ? 'journey' : phaseDef(phase).firstScreen
+    const target = available.includes(first) ? first : available[0]
+    if (screen && SCREEN_META[screen]) useUi.getState().notify(`${SCREEN_META[screen].label} arrives in Phase ${screenFrom(screen)}`)
+    if (target) navigate(target, {}, { replace: true })
+  }, [enabled, screen, phase, available])
+  const Screen = enabled && screen && isImplemented(screen) ? SCREEN_COMPONENTS[screen] : undefined
   return (
     <>
-      <Shell>
-        {screen === 'overview' && <Overview />}
-        {screen === 'import' && <ImportScreen />}
-        {screen === 'taxonomy' && <TaxonomyScreen />}
-        {screen === 'explorer' && <Explorer />}
-        {screen === 'desk' && <DeskView />}
-        {screen === 'foundation' && <FoundationView />}
-      </Shell>
+      <Shell>{Screen && <Screen />}</Shell>
       <CellDrawer />
       <ToolDrawer />
       <Toast />

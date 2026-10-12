@@ -1,14 +1,50 @@
 @import 'tailwindcss';
 
+/* Display face from the brand pack (SIL OFL, bundled locally so the demo runs offline). */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/LibreBaskerville-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/LibreBaskerville-700.woff2') format('woff2');
+}
+
 @theme {
-  --font-sans: 'Segoe UI', Inter, system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --color-accent-50: #eef5fc;
-  --color-accent-100: #d8e8f8;
-  --color-accent-200: #b3d1f0;
-  --color-accent-500: #2b84d6;
-  --color-accent-600: #0f6cbd;
-  --color-accent-700: #0c5a9e;
-  --color-accent-800: #0a4a82;
+  /* Body copy follows the pack: Arial, with close fallbacks. */
+  --font-sans: Arial, 'Helvetica Neue', Helvetica, 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+
+  /* Accent = the Asset Management blue, with tints. */
+  --color-accent-50: #ebf6ff;
+  --color-accent-100: #d6eaff;
+  --color-accent-200: #aed3fb;
+  --color-accent-500: #3d9eff;
+  --color-accent-600: #005dba;
+  --color-accent-700: #004c99;
+  --color-accent-800: #001d6e;
+
+  /* Brand pack colours. */
+  --color-ink: #1d1d1b;
+  --color-navy: #001d6e;
+  --color-brand-blue: #005dba;
+  --color-brand-sky: #aee1f7;
+  --color-brand-green: #00633d;
+  --color-brand-forest: #01312e;
+  --color-brand-mint: #caeedd;
+  --color-brand-red: #c50b30;
+  --color-brand-blush: #fcc6d1;
+  --color-brand-yellow: #ffb600;
+  --color-panel: #f4f5f5;
+  --color-rule: #e9e9e9;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html,
@@ -20,14 +56,19 @@ body,
 body {
   margin: 0;
   background: #ffffff;
-  color: #1e293b;
+  color: var(--color-ink);
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* tabular figures everywhere numbers are compared */
 .num {
   font-variant-numeric: tabular-nums;
+}
+
+.font-display {
+  letter-spacing: -0.005em;
 }
 
 ::selection {
@@ -50,6 +91,28 @@ body {
   }
 }
 
+@keyframes fade-up {
+  from {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .animate-slide-in {
-  animation: slide-in 0.16s ease-out;
+  animation: slide-in 0.18s var(--ease-out-soft);
+}
+
+.animate-fade-up {
+  animation: fade-up 0.22s var(--ease-out-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-in,
+  .animate-fade-up {
+    animation: none;
+  }
 }

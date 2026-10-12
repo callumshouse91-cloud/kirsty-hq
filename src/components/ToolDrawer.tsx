@@ -3,6 +3,8 @@ import { useMemo, useState, type ReactNode } from 'react'
 import { IGNORE, targetLabel } from '../lib/mapping'
 import { CAT, isToolCategory, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtK, joinMulti, splitMulti } from '../lib/util'
+import { useFeature, usePermissions } from '../demo-store'
+import { useScreenEnabled } from '../nav'
 import { navigate } from '../router'
 import { useLayerMap, useStore } from '../store'
 import { VENDORS, type SourceRecord, type Tool, type Vendor } from '../types'
@@ -10,7 +12,7 @@ import { useUi } from '../ui-store'
 import { AttestationBadge, LayerBadge, ToolLink, useCriticalityTone, VendorFlag } from './common'
 import { Badge, Button, cx, Drawer, Input, Label, Select } from './ui'
 
-const BOUND = new Set<string>([CAT.kirstyCat, CAT.capL2, CAT.capL3, CAT.users])
+const BOUND = new Set<string>([CAT.toolType, CAT.capL2, CAT.capL3, CAT.users])
 
 function Section({ title, count, children, actions }: { title: string; count?: number; children: ReactNode; actions?: ReactNode }) {
   return (
@@ -114,6 +116,11 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
   const lm = useLayerMap()
   const critTone = useCriticalityTone()
   const [newAlias, setNewAlias] = useState('')
+  const { can, role, env } = usePermissions()
+  const canEdit = can('editTools')
+  const foundationOn = useScreenEnabled('foundation')
+  const deskOn = useScreenEnabled('desk')
+  const attestationOn = useFeature('attestation')
 
   const layer = layerOf(draft, lm)
   const savedLayer = layerOf(tool, lm)
@@ -154,7 +161,7 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
       }
       footer={
         <>
-          {savedLayer === 'Foundation' && (
+          {savedLayer === 'Foundation' && foundationOn && (
             <Button
               variant="ghost"
               className="mr-auto"
@@ -166,30 +173,36 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
               Open in Foundation View
             </Button>
           )}
-          <Button onClick={() => setDraft({ ...tool, custom: { ...tool.custom } })} disabled={!dirty}>
-            Discard changes
-          </Button>
-          <Button variant="primary" onClick={save} disabled={!dirty}>
-            Save
-          </Button>
+          {canEdit ? (
+            <>
+              <Button onClick={() => setDraft({ ...tool, custom: { ...tool.custom } })} disabled={!dirty}>
+                Discard changes
+              </Button>
+              <Button variant="primary" onClick={save} disabled={!dirty}>
+                Save
+              </Button>
+            </>
+          ) : (
+            <span className="text-xs text-slate-500">View only. {env === 'prod' ? `Signed in as ${role.name}.` : ''}</span>
+          )}
         </>
       }
     >
       <Section title="Details">
-        <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
+        <fieldset disabled={!canEdit} className="grid min-w-0 grid-cols-2 gap-x-3 gap-y-2.5 disabled:opacity-90">
           <label className="col-span-2">
             <Label>Name</Label>
             <Input value={draft.name} onChange={(e) => set('name', e.target.value)} className="w-full" />
           </label>
           <label>
-            <Label>{CAT.kirstyCat}</Label>
-            <TermSelect category={CAT.kirstyCat} value={draft.kirstyCat} onChange={(v) => set('kirstyCat', v)} />
+            <Label>{CAT.toolType}</Label>
+            <TermSelect category={CAT.toolType} value={draft.toolType} onChange={(v) => set('toolType', v)} />
           </label>
           <div>
             <Label>Layer</Label>
             <div className="flex h-8 items-center gap-2">
               <LayerBadge layer={layer} />
-              <span className="text-xs text-slate-400">set by {CAT.kirstyCat}</span>
+              <span className="text-xs text-slate-400">set by {CAT.toolType}</span>
             </div>
           </div>
           <label>
@@ -251,7 +264,7 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
               <TermSelect category={c} value={draft.custom[c] ?? ''} onChange={(v) => setDraft({ ...draft, custom: { ...draft.custom, [c]: v } })} />
             </label>
           ))}
-        </div>
+        </fieldset>
       </Section>
 
       {issues.length > 0 && (
@@ -287,11 +300,15 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
             <span key={a.id} className="inline-flex items-center gap-1 rounded-md border border-slate-200 bg-slate-50 py-0.5 pr-1 pl-2 text-xs text-slate-700">
               {a.alias}
               <span className="text-slate-400">· {a.source}</span>
-              <button className="rounded p-0.5 text-slate-400 hover:bg-slate-200 hover:text-slate-700" onClick={() => s.removeAlias(a.id)} aria-label={`Remove alias ${a.alias}`}>
-                <X size={12} />
-              </button>
+              {canEdit && (
+                <button className="rounded p-0.5 text-slate-400 hover:bg-slate-200 hover:text-slate-700" onClick={() => s.removeAlias(a.id)} aria-label={`Remove alias ${a.alias}`}>
+                  <X size={12} />
+                </button>
+              )}
             </span>
           ))}
+          {aliases.length === 0 && !canEdit && <span className="text-xs text-slate-400">No aliases yet.</span>}
+          {canEdit && (
           <form
             className="flex items-center gap-1"
             onSubmit={(e) => {
@@ -305,6 +322,7 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
               Add
             </Button>
           </form>
+          )}
         </div>
       </Section>
 
@@ -346,16 +364,20 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
         <div className="space-y-2">
           {desks.map((d) => (
             <div key={d}>
-              <button
-                type="button"
-                className="text-xs font-semibold text-slate-700 hover:text-accent-700 hover:underline"
-                onClick={() => {
-                  useUi.getState().closeTool()
-                  navigate('desk', { desk: d })
-                }}
-              >
-                {d}
-              </button>
+              {deskOn ? (
+                <button
+                  type="button"
+                  className="text-xs font-semibold text-slate-700 hover:text-accent-700 hover:underline"
+                  onClick={() => {
+                    useUi.getState().closeTool()
+                    navigate('desk', { desk: d })
+                  }}
+                >
+                  {d}
+                </button>
+              ) : (
+                <span className="text-xs font-semibold text-slate-700">{d}</span>
+              )}
               <ul className="mt-1 space-y-0.5">
                 {usages
                   .filter((u) => u.desk === d)
@@ -364,7 +386,7 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
                       <span className="text-slate-600">{u.strategy}</span>
                       <span className="flex items-center gap-2">
                         <Badge tone={critTone(u.criticality)}>{u.criticality}</Badge>
-                        <AttestationBadge status={u.attestation} on={u.attestedOn} />
+                        {attestationOn && <AttestationBadge status={u.attestation} on={u.attestedOn} />}
                       </span>
                     </li>
                   ))}

@@ -1,6 +1,10 @@
-# Investments Tech Map (prototype)
+# Investments Tech Map (demo)
 
-Front-end-only demo: maps the Investments tool estate (applications vs. the foundations they sit on), who uses what, and how it reconciles with LeanIX. No backend; everything runs in the browser and edits persist in `localStorage`.
+A front-end-only demo of the management-information layer over how Investments runs change. It maps the tool estate (applications and the foundations they sit on), who uses what, and how it reconciles with LeanIX. It grows across five phases, so the conversation can move from the problem now to the problem next and in the future.
+
+There is no backend, no real sign-in and no real API call. Everything runs in the browser and edits persist in `localStorage`. Anything that would be real in production is simulated and labelled "Illustrative". All names, costs, contracts and risk events are synthetic.
+
+LeanIX stays the central record: the map reads from it and reconciles to it, and never writes back. Group's enterprise tool can take its configuration from this map; the map does not replace it.
 
 ## Run it
 
@@ -9,26 +13,77 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173. **Reset to seed data** (top right) restores the CSVs in `public/seed/`.
+Open http://localhost:5173. It opens on the **Journey**. **Reset data** in the dark demo bar restores the CSVs in `public/seed/` and keeps the phase you are on.
 
-## Demo script (about 10 minutes)
+## The phase model
 
-1. **Overview**: headline numbers. Click any of them to drill into the detail.
-2. **Desk View** → *Active Fixed Income*: strategies, criticality, attestation. Attest a card, add an application, or add *"It's a spreadsheet / local build"*. Toggle **What this desk sits on**.
-3. **Foundation View**: pick *Snowflake (Inv Data Lake)* or *Bulk Optimiser* (indirect via Pricing Engine). Show "What breaks if this goes away" and the illustrative cost allocation.
-4. **Explorer**: Rows = Cap L2 › Cap L3, Columns = Desk, Measure = cost. Click a cell, then a tool. **Export this view**.
-5. **Taxonomy**: rename a term (shows the impact preview), merge two terms, change the layer mapping.
-6. **Import & Reconcile**: drag `demo-assets/InvestmentsToolMapping_SYNTHETIC.xlsx` in (the LeanIX_Export sheet is preselected), or click *Use the sample LeanIX export*. Run reconciliation → **6 renames to confirm, 5 only in LeanIX, 8 missing from LeanIX**. Confirm a rename (it's saved as an alias), create or ignore the extras, then work through the **Issues** tab.
+`src/lib/phases.ts` is the single source of truth. Each phase lists its name, horizon, purpose, the client problem it answers, an indicative duration (draft, not agreed), its screens, features, data sources and how each arrives, and its environments. The nav, the Journey and the Architecture tab all read from it.
+
+| Phase | Horizon | Name | Adds |
+|---|---|---|---|
+| 1 | Now | One list, reconciled | Import & Reconcile (LeanIX and the EUC register), Taxonomy, Explorer |
+| 2 | Now | The views for January | Overview, Capability View, Desk View with critical toolkit attestation, Foundation View, XLSX exports |
+| 3 | Next | Connected and shared | Simulated read-only LeanIX feed with drift, Changes & approvals (history with undo, approvals on merges and deletes), role-based editing |
+| 4 | Next | Add a module when you need it | Modules library. Three working modules (Vendors & renewals, Capability heat map, Risk events), four more with detail sheets |
+| 5 | Future | The management-information layer | Findings-first Overview with map health, Ask the map (preview), Suggested labels, Report pack |
+
+Journey and Architecture are present in every phase.
+
+**Phase and environment live in the URL**, so you can link straight to a state: `/?phase=3&env=prod&role=tech-lead#/changes`. They are also saved as a fallback. Switching phase never touches the data.
+
+- **Local sandbox** (Phases 1–3): amber badge, "Runs on this laptop. Files dropped in by hand. Saved in this browser only." You hold every permission.
+- **Production** (all phases; Phases 4–5 are production only): simulated sign-in with a role picker (Change lead, Tech lead, Desk attester, Viewer), a freshness line per source, and an "Illustrative" note. In Phases 1–2 a Viewer is read-only and everyone else can edit. From Phase 3, edits follow the role: only a Change lead approves merges and deletes, and a Desk attester attests one desk only.
+
+Features outside the current phase are not rendered. Module screens appear in the nav only when the module is switched on in Modules (Change lead, Phase 4 on).
+
+## Demo script (about 15 minutes)
+
+1. **Journey** (2 min). Walk the three columns: her problem now, next and in the future. Open a **Talk track** if you want prompts. Press **Show me** on Phase 1.
+2. **Phase 1, Local sandbox** (3 min). On **Import & Reconcile**, click *Use the sample LeanIX export* (or drag `demo-assets/InvestmentsToolMapping_SYNTHETIC.xlsx` in; the LeanIX_Export sheet is preselected) and run reconciliation: **6 renames to confirm, 5 only in LeanIX, 8 missing from LeanIX**. Confirm a rename; it is saved as an alias. Then *Use the sample EUC register*: 2 matched, 4 desk-built tools only in the register. In **Taxonomy**, rename a term to show the impact preview.
+3. **Phase 2, Production** (3 min). Switch to Phase 2 and *Production*. Point at the sign-in, freshness line and "Illustrative". On **Overview**, every figure drills down. Open **Capability View**: *PM › Order Management* has five applications doing the same job. **Desk View** › *Active Fixed Income* › **Critical toolkit**: review and attest it in one go. Switch the role to *Viewer* to show it becomes read-only, then back.
+4. **Architecture** (2 min). Sources to users, left to right. Click *LeanIX* for its owner, format, refresh and dependents. Back on Overview, click **source** on *Est. annual cost* to show the path behind that number. Show the platform band in production ("Proposed, to confirm with the platform team").
+5. **Phase 3** (optional, 1 min). **Import & Reconcile › Feeds & drift** › *Run now (simulated)* twice to show drift since the last sync. In **Changes & approvals**, approve the waiting merge as Change lead, or switch to Tech lead and try a merge in Taxonomy to see it queue.
+6. **Phase 4 Modules** (2 min). Open **Modules**, switch on all three built modules and watch them join the nav. **Vendors & renewals**: contracts grouped by parent company, the calendar and two notice deadlines already passed. **Capability heat map**: switch the measure between platform cost and risk event cost. Open *Product and project mapping* to show a module that is sized but not yet built.
+7. **Phase 5 Overview and Ask the map** (2 min). The findings read as sentences, each with its evidence one click away. Map health shows coverage, freshness, drift and unclassified tools. Click **Ask the map** and use the suggested questions ("What breaks if Snowflake goes away?", "What renews in the next 90 days?"). Each answer cites its screen. Open **Suggested labels** and accept one: it is a suggestion a person approves. Download the **Report pack**.
+
+Notes: the module dates are shifted to the day of the demo, so renewals and notice deadlines read the same whenever it is shown. If the Phase 3 feed has been run, LeanIX has moved on (a new fact sheet, one retired). Use *Reset data* before a run-through to get 6 / 5 / 8 again.
+
+## Screens
+
+| Screen | Phase | What |
+|---|---|---|
+| Journey | all | Her problems now, next and future; phase cards with Show me and a talk track |
+| Overview | 2 (5: findings-first) | Headline figures with drill-down and source links; in Phase 5, findings, map health, heat map, renewals, what changed |
+| Import & Reconcile | 1 | Drop a CSV/XLSX, map columns, reconcile; issues; import log; from Phase 3, feeds and drift |
+| Taxonomy | 1 | Categories and terms with impact previews; layer mapping; approvals from Phase 3 |
+| Explorer | 1 | Pivot grid with XLSX export |
+| Capability View | 2 | Cap L2 › Cap L3 with counts, cost, overlap flags and drill-through |
+| Desk View | 2 | Applications by strategy, attestation, critical toolkit |
+| Foundation View | 2 | What a foundation supports, what breaks, illustrative cost allocation |
+| Changes & approvals | 3 | History with undo, approvals queue, roles |
+| Modules | 4 | Module library and detail sheets |
+| Vendors & renewals | 4 (module) | Renewal calendar, vendor hierarchy, upcoming renewals |
+| Capability heat map | 4 (module) | Capability × strategy by platform cost, risk event count, risk event cost or tool count |
+| Risk events | 4 (module) | Events by capability and strategy, linked to tools |
+| Suggested labels | 5 | Rule-based suggestions for unclassified tools; accept or reject each |
+| Architecture | all | Sources → how it arrives → store → rules → views → who uses it |
 
 ## Layout
 
 | Path | What |
 |---|---|
-| `public/seed/` | Seed CSVs loaded on first run |
+| `public/seed/` | Seed CSVs: master list, taxonomy, desk usage, dependencies, LeanIX export, EUC register, vendor contracts, risk events |
+| `public/brand/`, `public/fonts/` | Logo and Libre Baskerville (SIL OFL, bundled so the demo runs offline) |
 | `demo-assets/` | Workbook for the live import demo (not bundled) |
-| `src/store.ts` | Zustand store + all actions, persisted to localStorage |
-| `src/lib/` | Pure logic: seed parsing, taxonomy bindings, matching, reconciliation, dependency graph, pivot, XLSX I/O |
-| `src/screens/` | The six screens |
-| `src/components/` | Shell, tool detail drawer, shared UI |
+| `src/lib/phases.ts` | The phase model |
+| `src/lib/roles.ts` | Simulated roles and permissions |
+| `src/demo-store.ts` | Phase, environment, role and modules, mirrored to the URL |
+| `src/store.ts` | The map's data and actions, with tracked change history; persisted to localStorage |
+| `src/module-data.ts` | Read-only synthetic data for the modules |
+| `src/lib/` | Pure logic: seed, taxonomy, matching, reconciliation, graph, pivot, capability, heat map, findings, suggestions, Ask the map, architecture, report pack |
+| `src/screens/` | One file per screen; `registry.ts` maps screen ids to components |
+| `src/components/` | Shell, tool drawer, Ask panel, heat grid, shared UI |
 
-Layer is never hard-coded: it comes from the Kirsty Cat terms' *Parent / Note* in the taxonomy (`UI` → Application; `Data`, `Data Tfr`, `Engine` → Foundation) and can be changed in Taxonomy → Layer mapping.
+Layer is never hard-coded: it comes from the Tool type terms' *Parent / Note* in the taxonomy (`UI` → Application; `Data`, `Data Tfr`, `Engine` → Foundation) and can be changed in Taxonomy → Layer mapping.
+
+The brand palette and type come from the client's results pack. Add `?brand=off` to the URL to present without the logo.

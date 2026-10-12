@@ -3,7 +3,8 @@ import { useMemo, useState, type ReactNode } from 'react'
 import { buildIndex, similarity } from '../lib/match'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtDate } from '../lib/util'
-import { navigate } from '../router'
+import { useScreenEnabled } from '../nav'
+import { href, navigate } from '../router'
 import { useLayerMap, useStore } from '../store'
 import { ATTESTED, type Layer, type Tool, type Vendor } from '../types'
 import { useUi } from '../ui-store'
@@ -23,7 +24,9 @@ export function ToolLink({ id, className, children }: { id: string; className?: 
 /** A foundation name that takes you to the Foundation View. */
 export function FoundationLink({ id, className }: { id: string; className?: string }) {
   const tool = useStore((s) => s.tools.find((t) => t.id === id))
+  const on = useScreenEnabled('foundation')
   if (!tool) return null
+  if (!on) return <ToolLink id={id} className={className} />
   return (
     <button type="button" onClick={() => navigate('foundation', { id })} className={cx('text-left font-medium text-slate-800 decoration-accent-500/60 underline-offset-2 hover:text-accent-700 hover:underline', className)}>
       {tool.name}
@@ -127,7 +130,7 @@ export function ToolPicker({
                 <span className="block truncate font-medium text-slate-800">{r.tool.name}</span>
                 <span className="block truncate text-xs text-slate-500">
                   {r.alias ? `also known as “${r.alias}” · ` : ''}
-                  {[r.tool.kirstyCat, r.tool.capL2, r.tool.capL3].filter(Boolean).join(' · ')}
+                  {[r.tool.toolType, r.tool.capL2, r.tool.capL3].filter(Boolean).join(' · ')}
                 </span>
               </span>
               <VendorFlag v={r.tool.vendor} />
@@ -140,15 +143,29 @@ export function ToolPicker({
   )
 }
 
-export function Stat({ label, value, sub, onClick, tone }: { label: string; value: ReactNode; sub?: ReactNode; onClick?: () => void; tone?: 'accent' | 'amber' }) {
+/** A small link from an Overview figure to the Architecture tab, with the path behind it lit up. */
+export function SourceLink({ path, className }: { path: string; className?: string }) {
+  const on = useScreenEnabled('architecture')
+  if (!on) return null
+  return (
+    <a href={href('architecture', { path })} className={cx('text-[10px] font-semibold tracking-wide text-slate-400 uppercase hover:text-accent-700 hover:underline', className)} title="Where this number comes from">
+      source
+    </a>
+  )
+}
+
+export function Stat({ label, value, sub, onClick, tone, source }: { label: string; value: ReactNode; sub?: ReactNode; onClick?: () => void; tone?: 'accent' | 'amber'; source?: string }) {
   return (
     <div className="flex min-w-0 flex-col">
-      <span className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">{label}</span>
+      <span className="flex items-baseline justify-between gap-2 text-[11px] font-semibold tracking-wide text-slate-500 uppercase">
+        {label}
+        {source && <SourceLink path={source} />}
+      </span>
       <button
         type="button"
         onClick={onClick}
         disabled={!onClick}
-        className={cx('num mt-0.5 self-start text-left text-2xl font-semibold tracking-tight', tone === 'amber' ? 'text-amber-700' : 'text-slate-900', onClick && 'hover:text-accent-700 hover:underline decoration-2 underline-offset-4')}
+        className={cx('num mt-1 self-start text-left text-[26px] leading-none font-bold tracking-tight', tone === 'amber' ? 'text-amber-700' : 'text-navy', onClick && 'hover:text-accent-700 hover:underline decoration-2 underline-offset-4')}
       >
         {value}
       </button>

@@ -1,3 +1,5 @@
+import type { Patch } from './lib/history'
+
 export type Vendor = 'Y' | 'N' | '?'
 export type Layer = 'Application' | 'Foundation'
 
@@ -16,7 +18,7 @@ export interface Tool {
   name: string
   vendor: Vendor
   ownership: string
-  kirstyCat: string
+  toolType: string
   /** One or more Users terms joined with " & " (e.g. "Inv & Ops"). */
   users: string
   invUserGroup: string
@@ -110,6 +112,53 @@ export interface ImportLog {
   unmatched: number
 }
 
+export type ChangeKind = 'taxonomy' | 'mapping' | 'tool' | 'usage' | 'dependency' | 'alias' | 'reconcile'
+
+export interface ChangeEvent {
+  id: string
+  /** ISO date-time */
+  at: string
+  actor: string
+  kind: ChangeKind
+  summary: string
+  /** Absent for history that arrived with the demo data, which can't be undone. */
+  patch?: Patch
+  undone?: { at: string; by: string }
+  approvedBy?: string
+}
+
+export type ApprovalAction = { kind: 'merge'; category: string; term: string; into: string } | { kind: 'delete'; category: string; term: string }
+
+export interface Approval {
+  id: string
+  at: string
+  requestedBy: string
+  action: ApprovalAction
+  /** Plain-English impact at the time of the request. */
+  impact: string
+  status: 'Pending' | 'Approved' | 'Rejected'
+  decidedBy?: string
+  decidedAt?: string
+  note?: string
+}
+
+export interface DriftItem {
+  externalId: string
+  name: string
+  change: 'added' | 'removed' | 'changed'
+  /** For 'changed': field → [before, after] */
+  fields?: Record<string, [string, string]>
+}
+
+export interface FeedRun {
+  id: string
+  source: string
+  at: string
+  mode: 'scheduled' | 'manual' | 'file'
+  rows: number
+  drift: DriftItem[]
+}
+
 export interface DataState {
   tools: Tool[]
   categories: string[]
@@ -120,4 +169,7 @@ export interface DataState {
   aliases: Alias[]
   issues: Issue[]
   imports: ImportLog[]
+  history: ChangeEvent[]
+  approvals: Approval[]
+  feedRuns: FeedRun[]
 }

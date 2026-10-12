@@ -1,0 +1,18 @@
+Contract ID,Vendor,Parent company,Tools,Annual value (£k),Start date,Renewal date,Notice (days),Contract owner
+CON-1001,Bloomberg,Bloomberg L.P.,Bloomberg Terminals,2050,2024-02-01,2027-02-01,90,Market data team
+CON-1002,Bloomberg,Bloomberg L.P.,BBG AIM; Bloomberg EMSX; Bloomberg Port,1820,2023-12-01,2026-12-01,120,Investments Change
+CON-1003,Bloomberg,Bloomberg L.P.,Bloomberg New Issue Feed,80,2025-04-01,2027-04-01,60,Market data team
+CON-1010,Charles River Development,State Street,CRIMS (Legacy); CRIMS (Core PMS),2150,2022-11-15,2026-11-15,180,Investments Change
+CON-1011,Charles River Development,State Street,Charles River IMS,1050,2024-06-30,2027-06-30,180,Investments Change
+CON-1012,State Street Alpha,State Street,STT Alpha DP,185,2025-02-01,2027-02-01,90,Operations
+CON-1020,Axioma,Deutsche Börse,Axioma Risk Analytics; CRIMS Axioma Optimiser,560,2024-03-31,2027-03-31,90,Risk
+CON-1030,BlackRock Solutions,BlackRock,Aladdin Risk,1750,2023-05-01,2027-05-01,180,Risk
+CON-1040,Refinitiv,LSEG,Refinitiv Eikon,330,2025-10-01,2026-12-31,60,Market data team
+CON-1041,Tradeweb,LSEG,TradeWeb,280,2024-08-01,2027-08-01,90,Trading
+CON-1050,FactSet,FactSet,FactSet Workstation,505,2025-05-01,2027-05-01,90,Research
+CON-1060,MarketAxess,MarketAxess,MarketAxess,270,2025-09-01,2027-09-01,60,Trading
+CON-1070,Snowflake,Snowflake,Snowflake (Inv Data Lake),930,2025-01-15,2027-01-15,60,Group Technology
+CON-1080,Oracle,Oracle,Oracle Securities DB,470,2023-07-01,2027-07-01,90,Group Technology
+CON-1090,Microsoft,Microsoft,Azure Data Factory Pipelines; Power BI Service,470,2025-07-01,2027-07-01,30,Group Technology
+CON-1100,Domino Data Lab,Domino Data Lab,Domino Data Lab,390,2025-01-15,2027-01-15,60,Research
+CON-1110,Confluent,Confluent,Kafka Event Bus,250,2025-12-15,2026-12-15,45,Group Technology

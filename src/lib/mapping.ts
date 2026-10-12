@@ -30,12 +30,12 @@ export function targetLabel(key: string): string {
   return 'Ignore'
 }
 
-/** Known schema: Kirsty's master list. Keyed by normalised header. */
+/** Known schema: the master tool list. Keyed by normalised header. */
 export const MASTER_HEADER_MAP: Record<string, string> = {
   apptooleuc: fieldKey('name'),
   vendor: fieldKey('vendor'),
   techownership: fieldKey('ownership'),
-  kirstycat: catKey('Kirsty Cat'),
+  tooltype: catKey('Tool type'),
   users: catKey('Users'),
   invusergroup: fieldKey('invUserGroup'),
   capl2: catKey('Cap L2'),
@@ -55,6 +55,33 @@ export const LEANIX_HEADER_MAP: Record<string, string> = {
   criticalitytier: IGNORE,
 }
 
+/** Known schema: the EUC register (attested spreadsheets and local builds). */
+export const EUC_HEADER_MAP: Record<string, string> = {
+  eucid: fieldKey('externalId'),
+  eucname: fieldKey('name'),
+  kind: fieldKey('sourceType'),
+  owningdesk: IGNORE,
+  riskrating: IGNORE,
+  lastattested: IGNORE,
+  status: IGNORE,
+}
+
+export const LEANIX_SOURCE = 'LeanIX'
+export const EUC_SOURCE = 'EUC register'
+
+/** A tool the EUC register is expected to hold: a desk-built spreadsheet or local build. */
+export function isEuc(t: { name: string; invUserGroup: string }): boolean {
+  return /\(EUC\)\s*$/i.test(t.name) || t.invUserGroup.trim().toLowerCase() === 'desk-built'
+}
+
+/**
+ * Which master-list tools a source is expected to cover. Tools outside a source's scope
+ * are never flagged as missing from it. LeanIX covers everything; the EUC register only EUCs.
+ */
+export function inSourceScope(source: string, t: { name: string; invUserGroup: string }): boolean {
+  return source === EUC_SOURCE ? isEuc(t) : true
+}
+
 const GENERIC: Record<string, string> = {
   name: fieldKey('name'),
   toolname: fieldKey('name'),
@@ -68,7 +95,8 @@ const GENERIC: Record<string, string> = {
 
 export function guessSource(headers: string[], fileName: string): string {
   const keys = headers.map(headerKey)
-  if (keys.includes('leanixid')) return 'LeanIX'
+  if (keys.includes('leanixid')) return LEANIX_SOURCE
+  if (keys.includes('eucid')) return EUC_SOURCE
   if (keys.includes('apptooleuc')) return MASTER_SOURCE
   return fileName.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ').trim() || 'Import'
 }
@@ -79,7 +107,7 @@ export function preMap(headers: string[], validCategories: string[]): Record<str
   const used = new Set<string>()
   for (const h of headers) {
     const k = headerKey(h)
-    let target = MASTER_HEADER_MAP[k] ?? LEANIX_HEADER_MAP[k] ?? GENERIC[k]
+    let target = MASTER_HEADER_MAP[k] ?? LEANIX_HEADER_MAP[k] ?? EUC_HEADER_MAP[k] ?? GENERIC[k]
     if (!target) {
       const cat = validCategories.find((c) => headerKey(c) === k)
       target = cat ? catKey(cat) : IGNORE

@@ -1,5 +1,5 @@
 import type { DataState, Layer, TaxonomyTerm, Tool, Usage } from '../types'
-import { joinMulti, splitMulti, uniq } from './util'
+import { joinMulti, plural, splitMulti, uniq } from './util'
 
 /**
  * Categories that are bound to a field in the data model. The category *names*
@@ -7,7 +7,7 @@ import { joinMulti, splitMulti, uniq } from './util'
  * Any other category is a user-added one and lives in Tool.custom.
  */
 export const CAT = {
-  kirstyCat: 'Kirsty Cat',
+  toolType: 'Tool type',
   capL2: 'Cap L2',
   capL3: 'Cap L3',
   users: 'Users',
@@ -16,7 +16,7 @@ export const CAT = {
   criticality: 'Criticality',
 } as const
 
-type ToolCatField = 'kirstyCat' | 'capL2' | 'capL3' | 'users'
+type ToolCatField = 'toolType' | 'capL2' | 'capL3' | 'users'
 type UsageCatField = 'desk' | 'strategy' | 'criticality'
 
 export type Binding =
@@ -26,8 +26,8 @@ export type Binding =
 
 export function bindingFor(category: string): Binding {
   switch (category) {
-    case CAT.kirstyCat:
-      return { kind: 'tool', field: 'kirstyCat', multi: false }
+    case CAT.toolType:
+      return { kind: 'tool', field: 'toolType', multi: false }
     case CAT.capL2:
       return { kind: 'tool', field: 'capL2', multi: false }
     case CAT.capL3:
@@ -87,7 +87,9 @@ export function termImpact(state: DataState, category: string, term: string): Te
 
 /** Which category a category's Parent column refers to (Strategy → Desk). */
 export function parentCategory(category: string): string | null {
-  return category === CAT.strategy ? CAT.desk : null
+  if (category === CAT.strategy) return CAT.desk
+  if (category === CAT.capL3) return CAT.capL2
+  return null
 }
 
 function replaceInTool(tool: Tool, category: string, from: string, to: string): Tool {
@@ -126,22 +128,31 @@ export function relabel(state: DataState, category: string, from: string, to: st
   return { tools, usages, taxonomy }
 }
 
-/** Kirsty Cat term → Layer, read from the taxonomy Parent / Note column. */
+/** Tool type term → Layer, read from the taxonomy Parent / Note column. */
 export function layerMap(taxonomy: TaxonomyTerm[]): Map<string, Layer> {
   const m = new Map<string, Layer>()
   for (const t of taxonomy) {
-    if (t.category === CAT.kirstyCat) m.set(t.term, t.parent.trim().toLowerCase() === 'foundation' ? 'Foundation' : 'Application')
+    if (t.category === CAT.toolType) m.set(t.term, t.parent.trim().toLowerCase() === 'foundation' ? 'Foundation' : 'Application')
   }
   return m
 }
 
 export function layerOf(tool: Tool, lm: Map<string, Layer>): Layer {
-  return lm.get(tool.kirstyCat) ?? 'Application'
+  return lm.get(tool.toolType) ?? 'Application'
 }
 
-/** The first Kirsty Cat term mapped to the given layer (used for new desk-built tools). */
+/** The first Tool type term mapped to the given layer (used for new desk-built tools). */
 export function defaultCatFor(taxonomy: TaxonomyTerm[], layer: Layer): string {
   const lm = layerMap(taxonomy)
   for (const [term, l] of lm) if (l === layer) return term
   return ''
+}
+
+/** "This will re-label 14 tools and 37 usage rows." */
+export function impactSentence(i: TermImpact, verb: string): string {
+  const parts = [plural(i.tools.length, 'tool')]
+  if (i.usages.length) parts.push(plural(i.usages.length, 'usage row'))
+  let s = `This will ${verb} ${parts.join(' and ')}`
+  if (i.children.length) s += `, and re-point ${plural(i.children.length, `${i.children[0].category} term`)}`
+  return `${s}.`
 }

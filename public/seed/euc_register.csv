@@ -1,0 +1,7 @@
+EUC ID,EUC Name,Owning Desk,Kind,Risk Rating,Last Attested,Status
+EUC-0142,Liquidity Ladder (EUC),Cash & Liquidity,Spreadsheet,Medium,2026-08-28,Attested
+EUC-0157,Cash Forecast Model.xlsx (EUC),Cash & Liquidity,Spreadsheet,High,2026-09-02,Attested
+EUC-0163,Duration Bucket Tool,Active Fixed Income,Spreadsheet,Medium,2026-07-15,Attested
+EUC-0171,FX Hedge Calculator,LDI & Solutions,Spreadsheet,High,2026-09-10,Attested
+EUC-0188,Rebalance Checker,Multi-Asset,Python script,Low,2026-06-30,Attested
+EUC-0194,Index Rebalance Calendar,Index Equity,Access database,Medium,,Overdue

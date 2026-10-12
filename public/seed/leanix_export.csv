@@ -1,39 +1,39 @@
 LeanIX ID,Application Name,Fact Sheet Type,Lifecycle,Owning Org,Business Capability,Criticality Tier
-APP-9466,Axioma Risk Analytics,Application,Phase Out,LGIM Investments,Research,Tier 1
-APP-9713,Quasar,Application,Active,LGIM Investments,Research,Tier 3
-APP-1306,Cash Hub,Interface,Phase Out,LGIM Investments,Trading,Tier 3
-APP-1064,CEDAR,Interface,Active,LGIM Investments,Trading,Tier 1
-APP-8757,MAPLE,Interface,Plan,LGIM Investments,Investment Management,Tier 3
-APP-2011,Bloomberg AIM,Application,Active,LGIM Investments,Research,Tier 3
-APP-8905,CRIMS (Legacy),Application,Active,LGIM Investments,Research,Tier 1
-APP-5071,Charles River IMS - STOM,Application,Active,LGIM Investments,Risk,Tier 1
-APP-2601,Bloomberg EMSX,Application,Plan,LGIM Investments,Data Services,Tier 3
-APP-1456,Bloomberg Port,Application,Active,LGIM Investments,Data Services,Tier 2
-APP-9282,Bloomberg Terminal,Application,Plan,LGIM Investments,Research,Tier 1
-APP-5541,Legacy OMS,Application,Phase Out,LGIM Investments,Research,Tier 3
-APP-8832,OTC-X,IT Component,Plan,LGIM Investments,Trading,Tier 3
-APP-9572,CRIMS Axioma Optimiser,Interface,Active,LGIM Investments,Research,Tier 1
-APP-8332,Bloomberg New Issue Feed,Interface,Active,LGIM Investments,Data Services,Tier 1
-APP-7428,OMS Bridge,Data Object,Phase Out,LGIM Investments,Risk,Tier 1
-APP-4942,Incursion (Quasar / Scope / Phoenix data),Data Object,Phase Out,LGIM Investments,Investment Management,Tier 1
-APP-5960,Marketplace,Data Object,Active,LGIM Investments,Trading,Tier 3
-APP-6999,MDMS,Data Object,Active,LGIM Investments,Risk,Tier 1
-APP-8663,Phoenix,Data Object,Active,LGIM Investments,Investment Management,Tier 2
+APP-9466,Axioma Risk Analytics,Application,Phase Out,Investments,Research,Tier 1
+APP-9713,Meridian,Application,Active,Investments,Research,Tier 3
+APP-1306,Cash Hub,Interface,Phase Out,Investments,Trading,Tier 3
+APP-1064,BIRCH,Interface,Active,Investments,Trading,Tier 1
+APP-8757,ROWAN,Interface,Plan,Investments,Investment Management,Tier 3
+APP-2011,Bloomberg AIM,Application,Active,Investments,Research,Tier 3
+APP-8905,CRIMS (Legacy),Application,Active,Investments,Research,Tier 1
+APP-5071,Charles River IMS - Core,Application,Active,Investments,Risk,Tier 1
+APP-2601,Bloomberg EMSX,Application,Plan,Investments,Data Services,Tier 3
+APP-1456,Bloomberg Port,Application,Active,Investments,Data Services,Tier 2
+APP-9282,Bloomberg Terminal,Application,Plan,Investments,Research,Tier 1
+APP-5541,Legacy OMS,Application,Phase Out,Investments,Research,Tier 3
+APP-8832,Swapline,IT Component,Plan,Investments,Trading,Tier 3
+APP-9572,CRIMS Axioma Optimiser,Interface,Active,Investments,Research,Tier 1
+APP-8332,Bloomberg New Issue Feed,Interface,Active,Investments,Data Services,Tier 1
+APP-7428,OMS Bridge,Data Object,Phase Out,Investments,Risk,Tier 1
+APP-4942,Tributary (Meridian / Lens / Atlas data),Data Object,Phase Out,Investments,Investment Management,Tier 1
+APP-5960,Data Bazaar,Data Object,Active,Investments,Trading,Tier 3
+APP-6999,MDMS,Data Object,Active,Investments,Risk,Tier 1
+APP-8663,Atlas,Data Object,Active,Investments,Investment Management,Tier 2
 APP-8983,S: Drive,Application,Active,Group Technology,Trading,Tier 1
 APP-8070,STT Alpha DP,Application,Plan,Group Technology,Data Services,Tier 2
-APP-7902,Aladdin Risk,Application,Active,LGIM Investments,Risk,Tier 2
-APP-2510,Charles River IMS,Application,Active,LGIM Investments,Investment Management,Tier 2
-APP-8514,FactSet Workstation,Application,Phase Out,LGIM Investments,Investment Management,Tier 2
-APP-6431,Refinitiv Eikon,Application,Plan,LGIM Investments,Research,Tier 2
-APP-9392,TradeWeb,Application,Active,LGIM Investments,Investment Management,Tier 1
-APP-2716,MarketAxess,Application,Active,LGIM Investments,Risk,Tier 2
+APP-7902,Aladdin Risk,Application,Active,Investments,Risk,Tier 2
+APP-2510,Charles River IMS,Application,Active,Investments,Investment Management,Tier 2
+APP-8514,FactSet Workstation,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-6431,Refinitiv Eikon,Application,Plan,Investments,Research,Tier 2
+APP-9392,TradeWeb,Application,Active,Investments,Investment Management,Tier 1
+APP-2716,MarketAxess,Application,Active,Investments,Risk,Tier 2
 APP-1648,Snowflake,Data Object,Active,Group Technology,Risk,Tier 1
 APP-7918,Oracle Securities DB,Data Object,Active,Group Technology,Data Services,Tier 1
 APP-9791,Kafka Event Bus,Interface,Plan,Group Technology,Research,Tier 2
 APP-6358,Azure Data Factory Pipelines,Interface,Active,Group Technology,Risk,Tier 1
 APP-4003,Domino Data Lab,IT Component,Phase Out,Group Technology,Investment Management,Tier 2
-APP-1275,Pricing Engine (In-house),IT Component,Active,LGIM Investments,Risk,Tier 1
-APP-4643,Benchmark Service,Data Object,Active,LGIM Investments,Risk,Tier 1
+APP-1275,Pricing Engine (In-house),IT Component,Active,Investments,Risk,Tier 1
+APP-4643,Benchmark Service,Data Object,Active,Investments,Risk,Tier 1
 APP-8434,Reference Data Master,Data Object,Active,Group Technology,Risk,Tier 3
 APP-7844,Power BI Service,Application,Active,Group Technology,Research,Tier 1
 APP-1707,Order Routing Gateway,Interface,Plan,Group Technology,Trading,Tier 1
@@ -42,3 +42,7 @@ APP-3967,Calypso,Application,Active,Group Technology,Data Services,Tier 2
 APP-5997,SimCorp Dimension,Application,Phase Out,Group Technology,Risk,Tier 2
 APP-5750,Informatica MDM,IT Component,Plan,Group Technology,Trading,Tier 2
 APP-3914,Murex,Application,Plan,Group Technology,Data Services,Tier 2
+APP-6120,Trade Surveillance Portal,Application,Active,Investments,Risk,Tier 2
+APP-6184,Collateral Manager,Application,Active,Investments,Investment Management,Tier 2
+APP-6233,Index Data Loader,Interface,Active,Group Technology,Data Services,Tier 3
+APP-6297,Client Reporting Studio,Application,Plan,Investments,Data Services,Tier 3
