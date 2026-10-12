@@ -1,5 +1,5 @@
 import type { DataState, ImportLog, Issue, Layer, SourceRecord, Tool } from '../types'
-import { catKey, fieldKey, mappedValue } from './mapping'
+import { catKey, EUC_SOURCE, fieldKey, inSourceScope, mappedValue } from './mapping'
 import { buildIndex, fuzzyCandidates, matchExact } from './match'
 import { toNumber, toVendor } from './seed'
 import { CAT, layerMap, layerOf, termsOf } from './taxonomy'
@@ -101,14 +101,18 @@ export function suggestTool(state: DataState, record: SourceRecord, learned: Lea
     if (![CAT.toolType, CAT.capL2, CAT.capL3, CAT.users].includes(c as never) && valid(c, record.raw[h])) custom[c] = record.raw[h]
   }
 
+  // A register entry is a desk-built local build: tag it the same way Desk View does.
+  const fromEuc = record.source === EUC_SOURCE
+  const name = fromEuc && !/\(EUC\)\s*$/i.test(record.rawName) ? `${record.rawName} (EUC)` : record.rawName
+
   return {
     tool: {
-      name: record.rawName,
-      vendor: toVendor(get(fieldKey('vendor'))),
+      name,
+      vendor: fromEuc ? 'N' : toVendor(get(fieldKey('vendor'))),
       ownership: get(fieldKey('ownership')),
       toolType,
       users,
-      invUserGroup: get(fieldKey('invUserGroup')),
+      invUserGroup: fromEuc ? 'Desk-built' : get(fieldKey('invUserGroup')),
       capL2,
       capL3,
       costK: toNumber(get(fieldKey('costK'))),
@@ -132,7 +136,7 @@ export function recomputeMissing(state: DataState, source: string): Issue[] {
   })
   const hasIssue = new Set(issues.filter((i) => i.type === type).map((i) => i.toolId))
   for (const t of state.tools) {
-    if (matched.has(t.id)) continue
+    if (matched.has(t.id) || !inSourceScope(source, t)) continue
     if (hasIssue.has(t.id)) {
       // re-open if it had been auto-resolved and is now missing again
       const idx = issues.findIndex((i) => i.type === type && i.toolId === t.id)

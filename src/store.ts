@@ -203,6 +203,8 @@ export const useStore = create<Store>()(
         createFromRecord: (recordId, tool) => {
           const id = get().createTool(tool)
           set((s) => ({ sourceRecords: s.sourceRecords.map((r) => (r.id === recordId ? { ...r, matchedToolId: id, resolution: 'created' } : r)) }))
+          const rec = get().sourceRecords.find((r) => r.id === recordId)
+          if (rec && rec.rawName !== tool.name) get().addAlias(id, rec.rawName, rec.source)
           resolveRecordIssues(recordId, [MISSING_IN_MASTER], `Created as new tool “${tool.name}”`)
           afterRecordChange(recordId)
           return id

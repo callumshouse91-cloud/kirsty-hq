@@ -1,6 +1,6 @@
 import { ArrowRight, Check, CheckCircle2, ChevronDown, ChevronRight, FileSpreadsheet, FileUp, Plus, RotateCcw, Sparkles, Upload, X } from 'lucide-react'
 import { useMemo, useRef, useState, type ReactNode } from 'react'
-import { usePermissions } from '../demo-store'
+import { useFeature, usePermissions } from '../demo-store'
 import { ToolLink, VendorFlag } from '../components/common'
 import { Badge, Button, Card, Chip, cx, EmptyState, Input, Label, PageHeader, Select, Tabs, Td, Th } from '../components/ui'
 import { readWorkbook, type ParsedSheet } from '../lib/export'
@@ -45,7 +45,7 @@ function DropZone({ onFile }: { onFile: (f: File) => void }) {
     >
       <Upload size={28} className={over ? 'text-accent-600' : 'text-slate-400'} />
       <p className="mt-3 text-sm font-medium text-slate-800">Drop a CSV or Excel file here</p>
-      <p className="mt-1 text-xs text-slate-500">or click to browse · .csv, .xlsx — the master list format and LeanIX exports are recognised automatically</p>
+      <p className="mt-1 text-xs text-slate-500">or click to browse · .csv, .xlsx — the master list, LeanIX exports and the EUC register are recognised automatically</p>
       <input
         ref={input}
         type="file"
@@ -709,6 +709,7 @@ export function ImportScreen() {
   const runId = route.params.get('run')
   const openIssues = state.issues.filter((i) => i.status === 'Open').length
   const canImport = usePermissions().can('import')
+  const eucOn = useFeature('euc-register')
 
   const load = async (f: File) => {
     setError(null)
@@ -774,6 +775,16 @@ export function ImportScreen() {
           >
             Use the sample LeanIX export
           </Button>
+          {eucOn && (
+            <Button
+              icon={<FileSpreadsheet size={14} />}
+              onClick={async () => {
+                await load(await fetchSampleFile('euc_register.csv'))
+              }}
+            >
+              Use the sample EUC register
+            </Button>
+          )}
           {latestOpen && (
             <Button variant="link" onClick={() => patchParams(route, { run: latestOpen.id })}>
               Back to the last report ({latestOpen.source}, {fmtDate(latestOpen.date)}) →
@@ -785,7 +796,7 @@ export function ImportScreen() {
 
   return (
     <>
-      <PageHeader title="Import & Reconcile" description="Bring in another source, match it to the master list, and work through the differences." />
+      <PageHeader title="Import & Reconcile" description="Bring in a source, match it to the master list, and work through the differences. LeanIX stays the central record: the map reconciles to it." />
       <div className="mb-4">
         <Tabs
           tabs={[
