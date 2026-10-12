@@ -61,7 +61,7 @@ export function FoundationView() {
     return (
       <>
         <PageHeader title="Foundation View" />
-        <EmptyState icon={<Layers size={28} />} title="No foundations yet" hint="Foundations are tools whose Kirsty Cat maps to the Foundation layer. Check the mapping in Taxonomy → Layer mapping." />
+        <EmptyState icon={<Layers size={28} />} title="No foundations yet" hint="Foundations are tools whose Tool type maps to the Foundation layer. Check the mapping in Taxonomy → Layer mapping." />
       </>
     )
   }
@@ -104,7 +104,7 @@ export function FoundationView() {
         >
           <dl className="grid grid-cols-2 gap-x-6 gap-y-2.5 text-[13px] sm:grid-cols-4">
             {[
-              [CAT.kirstyCat, foundation.kirstyCat],
+              [CAT.toolType, foundation.toolType],
               [CAT.capL2, foundation.capL2],
               [CAT.capL3, foundation.capL3],
               [CAT.users, foundation.users],

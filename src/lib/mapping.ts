@@ -30,12 +30,12 @@ export function targetLabel(key: string): string {
   return 'Ignore'
 }
 
-/** Known schema: Kirsty's master list. Keyed by normalised header. */
+/** Known schema: the master tool list. Keyed by normalised header. */
 export const MASTER_HEADER_MAP: Record<string, string> = {
   apptooleuc: fieldKey('name'),
   vendor: fieldKey('vendor'),
   techownership: fieldKey('ownership'),
-  kirstycat: catKey('Kirsty Cat'),
+  tooltype: catKey('Tool type'),
   users: catKey('Users'),
   invusergroup: fieldKey('invUserGroup'),
   capl2: catKey('Cap L2'),

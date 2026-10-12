@@ -91,7 +91,7 @@ function AddAppModal({ desk, strategy, onClose }: { desk: string; strategy: stri
       name: fullName,
       vendor: 'N',
       ownership: '',
-      kirstyCat: defaultCatFor(s.taxonomy, 'Application'),
+      toolType: defaultCatFor(s.taxonomy, 'Application'),
       users: '',
       invUserGroup: 'Desk-built',
       capL2: '',
@@ -159,7 +159,7 @@ function AddAppModal({ desk, strategy, onClose }: { desk: string; strategy: stri
           <Label>Name of the spreadsheet or local build</Label>
           <Input autoFocus value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Duration Bucketing.xlsx" className="w-full" />
           <p className="mt-2 text-xs text-slate-500">
-            Will be created as <span className="font-medium text-slate-700">{name.trim() ? (/\(EUC\)\s*$/i.test(name.trim()) ? name.trim() : `${name.trim()} (EUC)`) : '… (EUC)'}</span> · Vendor N · Inv User Group “Desk-built” · {CAT.kirstyCat} “{defaultCatFor(s.taxonomy, 'Application')}”.
+            Will be created as <span className="font-medium text-slate-700">{name.trim() ? (/\(EUC\)\s*$/i.test(name.trim()) ? name.trim() : `${name.trim()} (EUC)`) : '… (EUC)'}</span> · Vendor N · Inv User Group “Desk-built” · {CAT.toolType} “{defaultCatFor(s.taxonomy, 'Application')}”.
           </p>
         </form>
       )}

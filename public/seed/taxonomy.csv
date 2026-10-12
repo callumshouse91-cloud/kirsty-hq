@@ -1,8 +1,8 @@
 Category,Term,Parent / Note
-Kirsty Cat,UI,Application
-Kirsty Cat,Data,Foundation
-Kirsty Cat,Data Tfr,Foundation
-Kirsty Cat,Engine,Foundation
+Tool type,UI,Application
+Tool type,Data,Foundation
+Tool type,Data Tfr,Foundation
+Tool type,Engine,Foundation
 Cap L2,PM,
 Cap L2,Trading,
 Cap L2,Research,

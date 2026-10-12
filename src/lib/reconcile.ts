@@ -51,7 +51,7 @@ export function learn(state: DataState, source: string): Learned {
     if (r.source !== source || r.resolution !== 'accepted' || !r.matchedToolId) continue
     const tool = toolById.get(r.matchedToolId)
     if (!tool) continue
-    bump(typeToCat, mappedValue(r.raw, r.headerMap, fieldKey('sourceType')), tool.kirstyCat)
+    bump(typeToCat, mappedValue(r.raw, r.headerMap, fieldKey('sourceType')), tool.toolType)
     bump(capToCapL2, mappedValue(r.raw, r.headerMap, catKey(CAT.capL2)), tool.capL2)
   }
   return { typeToCat, capToCapL2 }
@@ -69,11 +69,11 @@ export function suggestTool(state: DataState, record: SourceRecord, learned: Lea
   const valid = (cat: string, v: string) => termsOf(state.taxonomy, cat).includes(v)
   const inferred: string[] = []
 
-  let kirstyCat = get(catKey(CAT.kirstyCat))
-  if (!valid(CAT.kirstyCat, kirstyCat)) {
+  let toolType = get(catKey(CAT.toolType))
+  if (!valid(CAT.toolType, toolType)) {
     const type = get(fieldKey('sourceType'))
-    kirstyCat = valid(CAT.kirstyCat, type) ? type : majority(learned.typeToCat, type)
-    if (kirstyCat) inferred.push(CAT.kirstyCat)
+    toolType = valid(CAT.toolType, type) ? type : majority(learned.typeToCat, type)
+    if (toolType) inferred.push(CAT.toolType)
   }
 
   let capL2 = get(catKey(CAT.capL2))
@@ -86,10 +86,10 @@ export function suggestTool(state: DataState, record: SourceRecord, learned: Lea
   if (!valid(CAT.capL3, capL3)) {
     const peers = new Map<string, Map<string, number>>()
     for (const t of state.tools) {
-      bump(peers, `${t.capL2}|${t.kirstyCat}`, t.capL3)
+      bump(peers, `${t.capL2}|${t.toolType}`, t.capL3)
       bump(peers, `${t.capL2}|*`, t.capL3)
     }
-    capL3 = majority(peers, `${capL2}|${kirstyCat}`) || majority(peers, `${capL2}|*`)
+    capL3 = majority(peers, `${capL2}|${toolType}`) || majority(peers, `${capL2}|*`)
     if (capL3) inferred.push(CAT.capL3)
   }
 
@@ -98,7 +98,7 @@ export function suggestTool(state: DataState, record: SourceRecord, learned: Lea
   for (const [h, t] of Object.entries(record.headerMap)) {
     if (!t.startsWith('cat:')) continue
     const c = t.slice(4)
-    if (![CAT.kirstyCat, CAT.capL2, CAT.capL3, CAT.users].includes(c as never) && valid(c, record.raw[h])) custom[c] = record.raw[h]
+    if (![CAT.toolType, CAT.capL2, CAT.capL3, CAT.users].includes(c as never) && valid(c, record.raw[h])) custom[c] = record.raw[h]
   }
 
   return {
@@ -106,7 +106,7 @@ export function suggestTool(state: DataState, record: SourceRecord, learned: Lea
       name: record.rawName,
       vendor: toVendor(get(fieldKey('vendor'))),
       ownership: get(fieldKey('ownership')),
-      kirstyCat,
+      toolType,
       users,
       invUserGroup: get(fieldKey('invUserGroup')),
       capL2,
@@ -238,7 +238,7 @@ export function runImport(state: DataState, input: ImportInput): { state: DataSt
     if (!tool || !expected) continue
     const actual = layerOf(tool, lm)
     if (expected !== actual) {
-      next.issues.push({ id: uid('iss'), type: TYPE_CONFLICT, source, toolId: tool.id, sourceRecordId: r.id, detail: `${source} type “${type}” implies ${expected}, but “${tool.name}” is a ${actual} (${tool.kirstyCat})`, status: 'Open', createdOn: today() })
+      next.issues.push({ id: uid('iss'), type: TYPE_CONFLICT, source, toolId: tool.id, sourceRecordId: r.id, detail: `${source} type “${type}” implies ${expected}, but “${tool.name}” is a ${actual} (${tool.toolType})`, status: 'Open', createdOn: today() })
     }
   }
 

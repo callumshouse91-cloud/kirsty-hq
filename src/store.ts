@@ -4,6 +4,7 @@ import { createJSONStorage, persist } from 'zustand/middleware'
 import { useShallow } from 'zustand/react/shallow'
 import { ATTESTED, NOT_ATTESTED, type DataState, type Layer, type Tool } from './types'
 import { MISSING_IN_MASTER, NAME_MISMATCH, recomputeMissing, refreshLog, runImport, type ImportInput } from './lib/reconcile'
+import { migrateState } from './lib/migrate'
 import { loadSeed } from './lib/seed'
 import { CAT, layerMap, relabel } from './lib/taxonomy'
 import { slugify, today, uid, uniqueId } from './lib/util'
@@ -45,7 +46,7 @@ interface Actions {
   mergeTerm: (category: string, from: string, into: string) => void
   deleteTerm: (category: string, term: string) => void
   setParent: (category: string, term: string, parent: string) => void
-  setLayer: (kirstyCat: string, layer: Layer) => void
+  setLayer: (toolType: string, layer: Layer) => void
 
   importRows: (input: ImportInput) => string
   confirmFuzzy: (recordId: string, toolId: string) => void
@@ -165,8 +166,8 @@ export const useStore = create<Store>()(
         deleteTerm: (category, term) => set((s) => ({ taxonomy: s.taxonomy.filter((x) => !(x.category === category && x.term === term)) })),
         setParent: (category, term, parent) =>
           set((s) => ({ taxonomy: s.taxonomy.map((x) => (x.category === category && x.term === term ? { ...x, parent } : x)) })),
-        setLayer: (kirstyCat, layer) =>
-          set((s) => ({ taxonomy: s.taxonomy.map((x) => (x.category === CAT.kirstyCat && x.term === kirstyCat ? { ...x, parent: layer } : x)) })),
+        setLayer: (toolType, layer) =>
+          set((s) => ({ taxonomy: s.taxonomy.map((x) => (x.category === CAT.toolType && x.term === toolType ? { ...x, parent: layer } : x)) })),
 
         importRows: (input) => {
           const { state, importId } = runImport(data(), input)
@@ -217,7 +218,8 @@ export const useStore = create<Store>()(
     },
     {
       name: STORAGE_KEY,
-      version: 1,
+      version: 2,
+      migrate: (persisted, version) => migrateState(persisted, version) as DataState,
       storage: createJSONStorage(() => localStorage),
       partialize: (s): DataState => ({
         tools: s.tools,

@@ -10,7 +10,7 @@ import { useUi } from '../ui-store'
 import { AttestationBadge, LayerBadge, ToolLink, useCriticalityTone, VendorFlag } from './common'
 import { Badge, Button, cx, Drawer, Input, Label, Select } from './ui'
 
-const BOUND = new Set<string>([CAT.kirstyCat, CAT.capL2, CAT.capL3, CAT.users])
+const BOUND = new Set<string>([CAT.toolType, CAT.capL2, CAT.capL3, CAT.users])
 
 function Section({ title, count, children, actions }: { title: string; count?: number; children: ReactNode; actions?: ReactNode }) {
   return (
@@ -182,14 +182,14 @@ function ToolDrawerBody({ tool, close, notify }: { tool: Tool; close: () => void
             <Input value={draft.name} onChange={(e) => set('name', e.target.value)} className="w-full" />
           </label>
           <label>
-            <Label>{CAT.kirstyCat}</Label>
-            <TermSelect category={CAT.kirstyCat} value={draft.kirstyCat} onChange={(v) => set('kirstyCat', v)} />
+            <Label>{CAT.toolType}</Label>
+            <TermSelect category={CAT.toolType} value={draft.toolType} onChange={(v) => set('toolType', v)} />
           </label>
           <div>
             <Label>Layer</Label>
             <div className="flex h-8 items-center gap-2">
               <LayerBadge layer={layer} />
-              <span className="text-xs text-slate-400">set by {CAT.kirstyCat}</span>
+              <span className="text-xs text-slate-400">set by {CAT.toolType}</span>
             </div>
           </div>
           <label>

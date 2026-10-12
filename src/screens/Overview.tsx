@@ -82,9 +82,9 @@ export function Overview() {
 
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-3 xl:grid-cols-6">
         {[
-          <Stat key="t" label="Total tools" value={fmtNum(state.tools.length)} sub={`${new Set(state.tools.map((t) => t.kirstyCat)).size} ${CAT.kirstyCat} groups`} onClick={() => navigate('explorer', { rows: 'kirstyCat', col: 'layer', measure: 'tools' })} />,
+          <Stat key="t" label="Total tools" value={fmtNum(state.tools.length)} sub={`${new Set(state.tools.map((t) => t.toolType)).size} ${CAT.toolType} groups`} onClick={() => navigate('explorer', { rows: 'toolType', col: 'layer', measure: 'tools' })} />,
           <Stat key="a" label="Applications" value={fmtNum(apps.length)} sub="what users see and use" onClick={() => navigate('explorer', { rows: 'capL2', col: 'none', layer: 'Application' })} />,
-          <Stat key="f" label="Foundations" value={fmtNum(foundations.length)} sub="what applications sit on" onClick={() => navigate('explorer', { rows: 'kirstyCat', col: 'none', layer: 'Foundation' })} />,
+          <Stat key="f" label="Foundations" value={fmtNum(foundations.length)} sub="what applications sit on" onClick={() => navigate('explorer', { rows: 'toolType', col: 'none', layer: 'Foundation' })} />,
           <Stat key="p" label="Desk usage attested" value={`${pct(attested, state.usages.length)}%`} sub={`${fmtNum(attested)} of ${fmtNum(state.usages.length)} usage rows`} onClick={() => navigate('explorer', { rows: 'desk', col: 'attestation', measure: 'tools' })} />,
           <Stat
             key="i"

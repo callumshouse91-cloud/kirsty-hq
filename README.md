@@ -31,4 +31,4 @@ Open http://localhost:5173. **Reset to seed data** (top right) restores the CSVs
 | `src/screens/` | The six screens |
 | `src/components/` | Shell, tool detail drawer, shared UI |
 
-Layer is never hard-coded: it comes from the Kirsty Cat terms' *Parent / Note* in the taxonomy (`UI` → Application; `Data`, `Data Tfr`, `Engine` → Foundation) and can be changed in Taxonomy → Layer mapping.
+Layer is never hard-coded: it comes from the Tool type terms' *Parent / Note* in the taxonomy (`UI` → Application; `Data`, `Data Tfr`, `Engine` → Foundation) and can be changed in Taxonomy → Layer mapping.

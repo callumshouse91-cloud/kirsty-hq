@@ -333,7 +333,7 @@ function UnmatchedRow({ rec, learned }: { rec: SourceRecord; learned: ReturnType
     )
   }
 
-  const sel = (category: string, key: 'kirstyCat' | 'capL2' | 'capL3') => (
+  const sel = (category: string, key: 'toolType' | 'capL2' | 'capL3') => (
     <label className="min-w-0">
       <span className="mb-0.5 flex items-center gap-1 text-[10px] font-semibold tracking-wide text-slate-500 uppercase">
         {category}
@@ -379,7 +379,7 @@ function UnmatchedRow({ rec, learned }: { rec: SourceRecord; learned: ReturnType
         </div>
       </div>
       <div className="mt-2 grid grid-cols-3 gap-2">
-        {sel(CAT.kirstyCat, 'kirstyCat')}
+        {sel(CAT.toolType, 'toolType')}
         {sel(CAT.capL2, 'capL2')}
         {sel(CAT.capL3, 'capL3')}
       </div>

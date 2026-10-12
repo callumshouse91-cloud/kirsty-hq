@@ -57,8 +57,8 @@ function TermsPanel({ category }: { category: string }) {
   const terms = state.taxonomy.filter((t) => t.category === category)
   const parentCat = parentCategory(category)
   const parentTerms = parentCat ? termsOf(state.taxonomy, parentCat) : []
-  const isKirsty = category === CAT.kirstyCat
-  const hasNotes = !parentCat && !isKirsty && terms.some((t) => t.parent)
+  const isToolType = category === CAT.toolType
+  const hasNotes = !parentCat && !isToolType && terms.some((t) => t.parent)
   const lm = layerMap(state.taxonomy)
 
   const [newTerm, setNewTerm] = useState('')
@@ -150,7 +150,7 @@ function TermsPanel({ category }: { category: string }) {
           <p className="text-xs text-slate-500">
             {plural(terms.length, 'term')}
             {parentCat && ` · each belongs to a ${parentCat}`}
-            {isKirsty && ' · Parent sets the layer (see Layer mapping)'}
+            {isToolType && ' · Parent sets the layer (see Layer mapping)'}
           </p>
         </div>
         <form
@@ -159,7 +159,7 @@ function TermsPanel({ category }: { category: string }) {
             e.preventDefault()
             if (!newTerm.trim()) return
             if (terms.some((t) => t.term.toLowerCase() === newTerm.trim().toLowerCase())) return notify(`“${newTerm.trim()}” already exists`)
-            s.addTerm(category, newTerm, parentCat ? newParent : isKirsty ? 'Application' : '')
+            s.addTerm(category, newTerm, parentCat ? newParent : isToolType ? 'Application' : '')
             notify(`Added “${newTerm.trim()}” to ${category}`)
             setNewTerm('')
           }}
@@ -187,7 +187,7 @@ function TermsPanel({ category }: { category: string }) {
               <tr>
                 <Th>Term</Th>
                 {parentCat && <Th>{parentCat}</Th>}
-                {isKirsty && <Th>Layer</Th>}
+                {isToolType && <Th>Layer</Th>}
                 {hasNotes && <Th>Note</Th>}
                 <Th>Used by</Th>
                 <Th right>Actions</Th>
@@ -234,7 +234,7 @@ function TermsPanel({ category }: { category: string }) {
                         </Select>
                       </Td>
                     )}
-                    {isKirsty && (
+                    {isToolType && (
                       <Td>
                         <LayerBadge layer={lm.get(t.term) ?? 'Application'} />
                       </Td>
@@ -324,13 +324,13 @@ function LayerMapping() {
   const openCell = useUi((u) => u.openCell)
   const lm = layerMap(state.taxonomy)
   const [pending, setPending] = useState<Extract<Pending, { kind: 'layer' }> | null>(null)
-  const terms = termsOf(state.taxonomy, CAT.kirstyCat)
+  const terms = termsOf(state.taxonomy, CAT.toolType)
   const counts = LAYERS.map((l) => state.tools.filter((t) => layerOf(t, lm) === l).length)
 
   return (
     <div className="max-w-3xl">
       <p className="mb-3 text-[13px] text-slate-600">
-        Each {CAT.kirstyCat} decides a tool’s layer. <span className="font-medium text-slate-800">Applications</span> are what users see and use — they appear in Desk View.{' '}
+        Each {CAT.toolType} decides a tool’s layer. <span className="font-medium text-slate-800">Applications</span> are what users see and use — they appear in Desk View.{' '}
         <span className="font-medium text-slate-800">Foundations</span> are what applications sit on — they appear in Foundation View.
       </p>
       <div className="mb-3 flex gap-4 text-xs text-slate-500">
@@ -344,21 +344,21 @@ function LayerMapping() {
         <table className="w-full text-[13px]">
           <thead>
             <tr>
-              <Th>{CAT.kirstyCat}</Th>
+              <Th>{CAT.toolType}</Th>
               <Th>Tools</Th>
               <Th right>Layer</Th>
             </tr>
           </thead>
           <tbody>
             {terms.map((term) => {
-              const tools = state.tools.filter((t) => t.kirstyCat === term)
+              const tools = state.tools.filter((t) => t.toolType === term)
               const layer = lm.get(term) ?? 'Application'
               return (
                 <tr key={term}>
                   <Td className="font-medium">{term}</Td>
                   <Td>
                     {tools.length ? (
-                      <button type="button" className="text-xs font-medium text-accent-700 hover:underline" onClick={() => openCell({ title: `${CAT.kirstyCat}: ${term}`, subtitle: layer, toolIds: tools.map((t) => t.id) })}>
+                      <button type="button" className="text-xs font-medium text-accent-700 hover:underline" onClick={() => openCell({ title: `${CAT.toolType}: ${term}`, subtitle: layer, toolIds: tools.map((t) => t.id) })}>
                         {plural(tools.length, 'tool')}
                       </button>
                     ) : (
@@ -426,7 +426,7 @@ export function TaxonomyScreen() {
         <Tabs
           tabs={[
             { id: 'terms', label: 'Categories & terms' },
-            { id: 'mapping', label: `Layer mapping (${CAT.kirstyCat} → Layer)` },
+            { id: 'mapping', label: `Layer mapping (${CAT.toolType} → Layer)` },
           ]}
           value={tab}
           onChange={(t) => patchParams(route, { tab: t === 'mapping' ? 'mapping' : null })}

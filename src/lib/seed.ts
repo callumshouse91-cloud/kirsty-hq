@@ -84,7 +84,7 @@ function buildSeed(master: { headers: string[]; rows: Row[] }, taxRows: Row[], u
       name,
       vendor: toVendor(col(r, 'Vendor')),
       ownership: col(r, 'Tech Ownership'),
-      kirstyCat: col(r, 'Kirsty Cat'),
+      toolType: col(r, 'Tool type'),
       users: col(r, 'Users'),
       invUserGroup: col(r, 'Inv User Group'),
       capL2: col(r, 'Cap L2'),

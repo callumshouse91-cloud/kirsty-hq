@@ -28,7 +28,7 @@ export function pivotFields(state: DataState): FieldDef[] {
   const fields: FieldDef[] = [
     { id: 'desk', label: CAT.desk, usageLevel: true, values: (_t, u) => [u ? u.desk || BLANK : NOT_USED], order: termsOf(state.taxonomy, CAT.desk) },
     { id: 'strategy', label: CAT.strategy, usageLevel: true, values: (_t, u) => [u ? u.strategy || BLANK : NOT_USED], order: termsOf(state.taxonomy, CAT.strategy) },
-    { id: 'kirstyCat', label: CAT.kirstyCat, usageLevel: false, values: (t) => tv(t.kirstyCat), order: termsOf(state.taxonomy, CAT.kirstyCat) },
+    { id: 'toolType', label: CAT.toolType, usageLevel: false, values: (t) => tv(t.toolType), order: termsOf(state.taxonomy, CAT.toolType) },
     { id: 'capL2', label: CAT.capL2, usageLevel: false, values: (t) => tv(t.capL2), order: termsOf(state.taxonomy, CAT.capL2) },
     { id: 'capL3', label: CAT.capL3, usageLevel: false, values: (t) => tv(t.capL3), order: termsOf(state.taxonomy, CAT.capL3) },
     {

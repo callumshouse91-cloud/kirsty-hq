@@ -1,47 +1,47 @@
-App / Tool / EUC,Vendor,Tech Ownership,Kirsty Cat,Users,Inv User Group,Cap L2,Cap L3,Est Annual Cost (£k),Layer (derived)
-Axioma Risk Analytics,Y,L&G,UI,Ops,,Other,NON-Inv,420,Application
-Quasar,Y,L&G,UI,Ops,,Other,NON-Inv,180,Application
-Cash Hub,Y,L&G,Data Tfr,Ops,,Other,NON-Inv,95,Foundation
-CEDAR,N,L&G,Data Tfr,Ops,,Other,NON-Inv,60,Foundation
-MAPLE,N,L&G,Data Tfr,Ops,,Other,NON-Inv,45,Foundation
-BBG AIM,Y,L&G,UI,Inv & Ops,,PM,Portfolio Management,1250,Application
-CRIMS (Legacy),Y,L&G,UI,Inv & Ops,,PM,Portfolio Management,900,Application
-CRIMS (STOM PMS),Y,L&G,UI,Inv & Distn & Ops,,PM,Portfolio Management,1400,Application
-Scope,N,L&G,UI,Inv,,Trading,Execution,120,Application
-Bloomberg EMSX,Y,L&G,UI,Inv,,PM,Portfolio Management,380,Application
-Bloomberg Port,Y,L&G,UI,Inv,,PM,Portfolio Management,260,Application
-Bloomberg Terminals,Y,L&G,UI,Inv,,Trading,Execution,2100,Application
-OMS (Legacy),Y,L&G,UI,Inv,,PM,Portfolio Management,640,Application
-OTC-X,Y,L&G,Engine,Inv,,PM,Manage Portfolio,310,Foundation
-CRIMS Axioma Optimiser,Y,L&G,Data Tfr,Inv,,Other,Tech,150,Foundation
-Bloomberg New Issue Feed,Y,L&G,Data Tfr,Inv,,Other,NON-Inv,85,Foundation
-OMS Bridge,N,L&G,Data,ALL,,Other,NON-Inv,70,Foundation
-Incursion (Quasar / Scope / Phoenix data),N,L&G,Data,ALL,,Other,NON-Inv,55,Foundation
-Marketplace (Historical Data),N,L&G,Data,ALL,,Other,NON-Inv,220,Foundation
-Marketplace (Non ADP Data),?,L&G,Data,ALL,,Other,NON-Inv,140,Foundation
-MDMS,?,L&G,Data,ALL,,Other,NON-Inv,330,Foundation
-Phoenix,N,L&G,Data,ALL,,PM,Portfolio Management,410,Foundation
-S: Drive,Y,GTI,UI,Inv,,PM,Portfolio Management,30,Application
-STT Alpha DP,?,GTI,UI,Inv,,Other,NON-Inv,190,Application
-Alice,?,GTI,UI,Inv,,Research,All,0,Application
-Bulk Optimiser,N,L&G,Engine,Inv,,PM,Manage Portfolio,75,Foundation
-Aladdin Risk,Y,L&G,UI,Inv & Ops,,PM,Portfolio Management,1800,Application
-Charles River IMS,Y,L&G,UI,Inv,,Trading,Execution,1100,Application
-FactSet Workstation,Y,L&G,UI,Inv,,Research,All,520,Application
-Refinitiv Eikon,Y,L&G,UI,Inv,,Research,All,340,Application
-Liquidity Ladder (EUC),N,L&G,UI,Inv,Desk-built,PM,Manage Portfolio,0,Application
-Cash Forecast Model.xlsx (EUC),N,L&G,UI,Inv,Desk-built,PM,Manage Portfolio,0,Application
-Credit Research Hub,N,L&G,UI,Inv,,Research,All,210,Application
-ESG Scorecard,N,L&G,UI,Inv & Distn,,Research,All,160,Application
-TradeWeb,Y,L&G,UI,Inv,,Trading,Execution,290,Application
-MarketAxess,Y,L&G,UI,Inv,,Trading,Execution,275,Application
-Snowflake (Inv Data Lake),Y,GTI,Data,ALL,,Other,Tech,950,Foundation
-Oracle Securities DB,Y,GTI,Data,ALL,,Other,Tech,480,Foundation
-Kafka Event Bus,Y,GTI,Data Tfr,ALL,,Other,Tech,260,Foundation
-Azure Data Factory Pipelines,Y,GTI,Data Tfr,ALL,,Other,Tech,310,Foundation
-Domino Data Lab,Y,GTI,Engine,Inv,,Research,All,400,Foundation
-Pricing Engine (In-house),N,L&G,Engine,Inv,,PM,Manage Portfolio,230,Foundation
-Benchmark Service,N,L&G,Data,ALL,,Other,Tech,120,Foundation
-Reference Data Master,Y,GTI,Data,ALL,,Other,Tech,560,Foundation
-Power BI Service,Y,GTI,UI,ALL,,Other,NON-Inv,180,Application
-Order Routing Gateway,N,GTI,Data Tfr,Inv,,Trading,Execution,140,Foundation
+App / Tool / EUC,Vendor,Tech Ownership,Tool type,Users,Inv User Group,Cap L2,Cap L3,Est Annual Cost (£k),Layer (derived)
+Axioma Risk Analytics,Y,In-house,UI,Ops,,Other,NON-Inv,420,Application
+Meridian,Y,In-house,UI,Ops,,Other,NON-Inv,180,Application
+Cash Hub,Y,In-house,Data Tfr,Ops,,Other,NON-Inv,95,Foundation
+BIRCH,N,In-house,Data Tfr,Ops,,Other,NON-Inv,60,Foundation
+ROWAN,N,In-house,Data Tfr,Ops,,Other,NON-Inv,45,Foundation
+BBG AIM,Y,In-house,UI,Inv & Ops,,PM,Portfolio Management,1250,Application
+CRIMS (Legacy),Y,In-house,UI,Inv & Ops,,PM,Portfolio Management,900,Application
+CRIMS (Core PMS),Y,In-house,UI,Inv & Distn & Ops,,PM,Portfolio Management,1400,Application
+Lens,N,In-house,UI,Inv,,Trading,Execution,120,Application
+Bloomberg EMSX,Y,In-house,UI,Inv,,PM,Portfolio Management,380,Application
+Bloomberg Port,Y,In-house,UI,Inv,,PM,Portfolio Management,260,Application
+Bloomberg Terminals,Y,In-house,UI,Inv,,Trading,Execution,2100,Application
+OMS (Legacy),Y,In-house,UI,Inv,,PM,Portfolio Management,640,Application
+Swapline,Y,In-house,Engine,Inv,,PM,Manage Portfolio,310,Foundation
+CRIMS Axioma Optimiser,Y,In-house,Data Tfr,Inv,,Other,Tech,150,Foundation
+Bloomberg New Issue Feed,Y,In-house,Data Tfr,Inv,,Other,NON-Inv,85,Foundation
+OMS Bridge,N,In-house,Data,ALL,,Other,NON-Inv,70,Foundation
+Tributary (Meridian / Lens / Atlas data),N,In-house,Data,ALL,,Other,NON-Inv,55,Foundation
+Data Bazaar (Historical Data),N,In-house,Data,ALL,,Other,NON-Inv,220,Foundation
+Data Bazaar (External Data),?,In-house,Data,ALL,,Other,NON-Inv,140,Foundation
+MDMS,?,In-house,Data,ALL,,Other,NON-Inv,330,Foundation
+Atlas,N,In-house,Data,ALL,,PM,Portfolio Management,410,Foundation
+S: Drive,Y,Group Technology,UI,Inv,,PM,Portfolio Management,30,Application
+STT Alpha DP,?,Group Technology,UI,Inv,,Other,NON-Inv,190,Application
+Quill,?,Group Technology,UI,Inv,,Research,All,0,Application
+Bulk Optimiser,N,In-house,Engine,Inv,,PM,Manage Portfolio,75,Foundation
+Aladdin Risk,Y,In-house,UI,Inv & Ops,,PM,Portfolio Management,1800,Application
+Charles River IMS,Y,In-house,UI,Inv,,Trading,Execution,1100,Application
+FactSet Workstation,Y,In-house,UI,Inv,,Research,All,520,Application
+Refinitiv Eikon,Y,In-house,UI,Inv,,Research,All,340,Application
+Liquidity Ladder (EUC),N,In-house,UI,Inv,Desk-built,PM,Manage Portfolio,0,Application
+Cash Forecast Model.xlsx (EUC),N,In-house,UI,Inv,Desk-built,PM,Manage Portfolio,0,Application
+Credit Research Hub,N,In-house,UI,Inv,,Research,All,210,Application
+ESG Scorecard,N,In-house,UI,Inv & Distn,,Research,All,160,Application
+TradeWeb,Y,In-house,UI,Inv,,Trading,Execution,290,Application
+MarketAxess,Y,In-house,UI,Inv,,Trading,Execution,275,Application
+Snowflake (Inv Data Lake),Y,Group Technology,Data,ALL,,Other,Tech,950,Foundation
+Oracle Securities DB,Y,Group Technology,Data,ALL,,Other,Tech,480,Foundation
+Kafka Event Bus,Y,Group Technology,Data Tfr,ALL,,Other,Tech,260,Foundation
+Azure Data Factory Pipelines,Y,Group Technology,Data Tfr,ALL,,Other,Tech,310,Foundation
+Domino Data Lab,Y,Group Technology,Engine,Inv,,Research,All,400,Foundation
+Pricing Engine (In-house),N,In-house,Engine,Inv,,PM,Manage Portfolio,230,Foundation
+Benchmark Service,N,In-house,Data,ALL,,Other,Tech,120,Foundation
+Reference Data Master,Y,Group Technology,Data,ALL,,Other,Tech,560,Foundation
+Power BI Service,Y,Group Technology,UI,ALL,,Other,NON-Inv,180,Application
+Order Routing Gateway,N,Group Technology,Data Tfr,Inv,,Trading,Execution,140,Foundation

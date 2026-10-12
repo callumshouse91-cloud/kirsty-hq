@@ -16,7 +16,7 @@ export interface Tool {
   name: string
   vendor: Vendor
   ownership: string
-  kirstyCat: string
+  toolType: string
   /** One or more Users terms joined with " & " (e.g. "Inv & Ops"). */
   users: string
   invUserGroup: string

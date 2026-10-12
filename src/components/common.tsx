@@ -127,7 +127,7 @@ export function ToolPicker({
                 <span className="block truncate font-medium text-slate-800">{r.tool.name}</span>
                 <span className="block truncate text-xs text-slate-500">
                   {r.alias ? `also known as “${r.alias}” · ` : ''}
-                  {[r.tool.kirstyCat, r.tool.capL2, r.tool.capL3].filter(Boolean).join(' · ')}
+                  {[r.tool.toolType, r.tool.capL2, r.tool.capL3].filter(Boolean).join(' · ')}
                 </span>
               </span>
               <VendorFlag v={r.tool.vendor} />
