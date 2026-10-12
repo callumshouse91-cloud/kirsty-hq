@@ -43,6 +43,6 @@ APP-5997,SimCorp Dimension,Application,Phase Out,Group Technology,Risk,Tier 2
 APP-5750,Informatica MDM,IT Component,Plan,Group Technology,Trading,Tier 2
 APP-3914,Murex,Application,Plan,Group Technology,Data Services,Tier 2
 APP-6120,Trade Surveillance Portal,Application,Active,Investments,Risk,Tier 2
-APP-6184,Collateral Manager,Application,Active,Investments,Trading,Tier 2
+APP-6184,Collateral Manager,Application,Active,Investments,Investment Management,Tier 2
 APP-6233,Index Data Loader,Interface,Active,Group Technology,Data Services,Tier 3
 APP-6297,Client Reporting Studio,Application,Plan,Investments,Data Services,Tier 3

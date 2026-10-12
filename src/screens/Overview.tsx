@@ -7,7 +7,9 @@ import { foundationReach } from '../lib/graph'
 import { BLANK } from '../lib/pivot'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtK, fmtNum, pct, plural } from '../lib/util'
+import { useFeature } from '../demo-store'
 import { navigate } from '../router'
+import { OverviewV5 } from './OverviewV5'
 import { useDataState, useLayerMap } from '../store'
 import { ATTESTED } from '../types'
 
@@ -33,6 +35,10 @@ function CostTooltip({ active, payload }: { active?: boolean; payload?: { payloa
 }
 
 export function Overview() {
+  return useFeature('overview-v5') ? <OverviewV5 /> : <OverviewV2 />
+}
+
+function OverviewV2() {
   const state = useDataState()
   const lm = useLayerMap()
 

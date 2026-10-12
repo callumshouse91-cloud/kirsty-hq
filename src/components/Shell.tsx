@@ -8,6 +8,7 @@ import {
   Flame,
   GitPullRequestArrow,
   LayoutDashboard,
+  MessageSquareText,
   Layers,
   Network,
   RotateCcw,
@@ -19,7 +20,8 @@ import {
   Workflow,
 } from 'lucide-react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
-import { useDemo } from '../demo-store'
+import { useDemo, useFeature } from '../demo-store'
+import { AskPanel } from './AskPanel'
 import { brandOn, LOGO_SRC } from '../lib/brand'
 import { activeSources, ARRIVAL_LABEL, HORIZON_LABEL, phase as phaseDef, PHASES, type Env, type ScreenId } from '../lib/phases'
 import { freshness, isStale } from '../lib/freshness'
@@ -300,6 +302,9 @@ export function Shell({ children }: { children: ReactNode }) {
   const openIssues = useStore((s) => s.issues.filter((i) => i.status === 'Open').length)
   const env = useDemo((s) => s.env)
   const screens = useAvailableScreens()
+  const askOn = useFeature('ask-map')
+  const askOpen = useUi((u) => u.askOpen)
+  const setAskOpen = useUi((u) => u.setAskOpen)
   const groups: NavGroup[] = ['story', 'map', 'modules']
   return (
     <div className="flex h-full min-w-0 flex-col">
@@ -350,6 +355,15 @@ export function Shell({ children }: { children: ReactNode }) {
             <div className="flex flex-1 justify-center">
               <GlobalSearch />
             </div>
+            {askOn && (
+              <button
+                type="button"
+                onClick={() => setAskOpen(!askOpen)}
+                className={cx('inline-flex h-8 items-center gap-1.5 rounded-md border px-3 text-[13px] font-semibold transition-colors', askOpen ? 'border-accent-600 bg-accent-600 text-white' : 'border-accent-200 bg-accent-50 text-accent-800 hover:bg-accent-100')}
+              >
+                <MessageSquareText size={15} /> Ask the map
+              </button>
+            )}
             {env === 'prod' && <RolePicker />}
           </header>
           <EnvStrip />
@@ -360,6 +374,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </main>
         </div>
       </div>
+      {askOn && <AskPanel />}
     </div>
   )
 }

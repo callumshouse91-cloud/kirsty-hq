@@ -10,6 +10,7 @@ import { Overview } from './Overview'
 import { HeatmapScreen } from './Heatmap'
 import { ModulesScreen } from './Modules'
 import { RiskEventsScreen } from './RiskEvents'
+import { SuggestionsScreen } from './Suggestions'
 import { TaxonomyScreen } from './Taxonomy'
 import { VendorsScreen } from './Vendors'
 
@@ -27,4 +28,5 @@ export const SCREEN_COMPONENTS: Record<ImplementedScreen, ComponentType> = {
   vendors: VendorsScreen,
   heatmap: HeatmapScreen,
   risk: RiskEventsScreen,
+  suggestions: SuggestionsScreen,
 }

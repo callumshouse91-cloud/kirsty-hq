@@ -11,6 +11,9 @@ interface DemoState {
   env: Env
   role: RoleId
   modules: Record<ModuleId, boolean>
+  /** Suggested labels a person rejected, so they are not offered again. */
+  rejected: string[]
+  rejectSuggestion: (key: string) => void
   setPhase: (p: PhaseId) => void
   setEnv: (e: Env) => void
   setRole: (r: RoleId) => void
@@ -49,6 +52,8 @@ export const useDemo = create<DemoState>()(
       env: 'sandbox',
       role: 'change-lead',
       modules: { vendors: false, heatmap: false, risk: false },
+      rejected: [],
+      rejectSuggestion: (key) => set((s) => ({ rejected: s.rejected.includes(key) ? s.rejected : [...s.rejected, key] })),
       setPhase: (p) => set((s) => ({ phase: p, env: envFor(p, s.env) })),
       setEnv: (e) => set((s) => ({ env: envFor(s.phase, e) })),
       setRole: (r) => set({ role: r }),
@@ -58,7 +63,7 @@ export const useDemo = create<DemoState>()(
       name: DEMO_KEY,
       version: 1,
       storage: createJSONStorage(() => localStorage),
-      partialize: (s) => ({ phase: s.phase, env: s.env, role: s.role, modules: s.modules }),
+      partialize: (s) => ({ phase: s.phase, env: s.env, role: s.role, modules: s.modules, rejected: s.rejected }),
       // The URL wins over what was saved, so a shared link always opens the state it names.
       merge: (persisted, current) => {
         const saved = (persisted ?? {}) as Partial<DemoState>

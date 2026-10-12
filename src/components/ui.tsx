@@ -44,7 +44,7 @@ export function Card({ title, subtitle, actions, children, className, bodyClassN
           {actions && <div className="flex shrink-0 items-center gap-2">{actions}</div>}
         </header>
       )}
-      <div className={cx('p-4', bodyClassName)}>{children}</div>
+      <div className={cx(/(^|\s)p-\d/.test(bodyClassName ?? '') ? '' : 'p-4', bodyClassName)}>{children}</div>
     </section>
   )
 }
