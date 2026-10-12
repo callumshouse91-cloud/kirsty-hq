@@ -120,7 +120,7 @@ export function OverviewV5() {
             value={`${health.sourcesFresh}/${health.sourcesTotal}`}
             sub="sources inside their refresh window"
             good={health.sourcesFresh === health.sourcesTotal}
-            onClick={() => go('architecture')}
+            onClick={() => go('import', { tab: 'feeds' })}
           />
           <HealthTile
             icon={<GitCompare size={16} />}

@@ -182,14 +182,14 @@ function DemoBar() {
   return (
     <div className="flex h-10 shrink-0 items-center gap-3 bg-navy px-4 text-white">
       <span className="text-[11px] font-bold tracking-wider text-white/60 uppercase">Demo</span>
-      <div className="flex items-center gap-1" role="radiogroup" aria-label="Phase">
+      <div className="flex items-center gap-1" role="radiogroup" aria-label="Version">
         {PHASES.map((x) => (
           <button
             key={x.id}
             type="button"
             role="radio"
             aria-checked={x.id === phase}
-            title={`Phase ${x.id}: ${x.name}`}
+            title={`Version ${x.id}: ${x.name}`}
             onClick={() => setPhase(x.id)}
             className={cx(
               'num h-7 min-w-7 rounded px-2 text-xs font-bold transition-colors',
@@ -201,7 +201,7 @@ function DemoBar() {
         ))}
       </div>
       <div className="min-w-0 truncate text-[13px]">
-        <span className="font-bold">Phase {p.id}</span>
+        <span className="font-bold">Version {p.id}</span>
         <span className="text-white/60"> · {HORIZON_LABEL[p.horizon]} · </span>
         <span className="font-display">{p.name}</span>
       </div>
@@ -222,7 +222,7 @@ function DemoBar() {
             ))}
           </div>
         ) : (
-          <span className="text-xs text-white/60">Production only from Phase 4</span>
+          <span className="text-xs text-white/60">Production only from Version 4</span>
         )}
         <ResetButton />
       </div>
@@ -281,9 +281,9 @@ function EnvStrip() {
           </span>
         ))}
         {more > 0 && (
-          <a href={href('architecture')} className="font-medium text-accent-700 hover:underline">
+          <span className="font-medium text-slate-500" title={sources.slice(4).map((x) => `${x.def.name}: ${freshness(x.def.id, x.arrives)}`).join('\n')}>
             +{more} more
-          </a>
+          </span>
         )}
       </div>
       <span className="shrink-0 rounded border border-slate-300 bg-white px-1.5 py-px text-[11px] font-semibold text-slate-500" title="Sign-in, sources and figures are simulated in this demo">

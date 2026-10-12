@@ -116,14 +116,15 @@ const P3_SOURCES: PhaseSource[] = [
   { id: 'finance', arrives: drop('scheduled-export') },
 ]
 
-const P1_SCREENS: ScreenId[] = ['journey', 'import', 'taxonomy', 'explorer', 'architecture']
-const P2_SCREENS: ScreenId[] = ['journey', 'overview', 'import', 'taxonomy', 'explorer', 'capability', 'desk', 'foundation', 'architecture']
-const P3_SCREENS: ScreenId[] = [...P2_SCREENS.slice(0, -1), 'changes', 'architecture']
-const P4_SCREENS: ScreenId[] = [...P3_SCREENS.slice(0, -1), 'modules', 'vendors', 'heatmap', 'risk', 'architecture']
-const P5_SCREENS: ScreenId[] = [...P4_SCREENS.slice(0, -1), 'suggestions', 'architecture']
+// Version 1 is the original prototype: all six screens.
+const P1_SCREENS: ScreenId[] = ['overview', 'import', 'taxonomy', 'explorer', 'desk', 'foundation']
+const P2_SCREENS: ScreenId[] = [...P1_SCREENS, 'capability']
+const P3_SCREENS: ScreenId[] = [...P2_SCREENS, 'changes']
+const P4_SCREENS: ScreenId[] = [...P3_SCREENS, 'modules', 'vendors', 'heatmap', 'risk']
+const P5_SCREENS: ScreenId[] = [...P4_SCREENS, 'suggestions']
 
-const P1_FEATURES: FeatureId[] = ['euc-register', 'cost']
-const P2_FEATURES: FeatureId[] = [...P1_FEATURES, 'attestation', 'exports']
+const P1_FEATURES: FeatureId[] = ['cost', 'attestation', 'exports']
+const P2_FEATURES: FeatureId[] = [...P1_FEATURES, 'euc-register']
 const P3_FEATURES: FeatureId[] = [...P2_FEATURES, 'leanix-feed', 'change-history', 'approvals', 'role-editing']
 const P4_FEATURES: FeatureId[] = [...P3_FEATURES, 'modules']
 const P5_FEATURES: FeatureId[] = [...P4_FEATURES, 'overview-v5', 'ask-map', 'suggested-labels', 'report-pack']
@@ -133,7 +134,7 @@ export const PHASES: Phase[] = [
     id: 1,
     name: 'One list, reconciled',
     horizon: 'now',
-    purpose: 'The master list, taxonomy and capability matrix in one place, reconciled against LeanIX and the EUC register.',
+    purpose: 'The prototype: the master list, taxonomy, desk and foundation views in one place, reconciled against LeanIX.',
     problem: 'The tool list is built by hand and checked against LeanIX by scrolling.',
     duration: 'About 4 weeks',
     durationStatus: 'Draft, not agreed',
@@ -141,7 +142,7 @@ export const PHASES: Phase[] = [
     features: P1_FEATURES,
     sources: P1_SOURCES,
     envs: ['sandbox', 'prod'],
-    firstScreen: 'import',
+    firstScreen: 'overview',
     delivers: ['One reconciled tool list', 'The taxonomy has a home, with impact previews on every change', 'A pivot you can slice like Excel', 'Differences with LeanIX and the EUC register listed, not hunted for'],
     dataNeeded: ['Current master tool list', 'Latest LeanIX fact sheet export', 'EUC register export', 'Capability matrix'],
     talkTrack: [
@@ -155,7 +156,7 @@ export const PHASES: Phase[] = [
     id: 2,
     name: 'The views for January',
     horizon: 'now',
-    purpose: 'Overview, desk, foundation and capability views, with attestation and exports for people who won’t log in.',
+    purpose: 'Adds the Capability View with overlaps highlighted, and the EUC register reconciled alongside LeanIX.',
     problem: 'Requests for information land with a week’s notice, and January needs something presentable for the platform and product operating model.',
     duration: 'About 4 weeks',
     durationStatus: 'Draft, not agreed',
