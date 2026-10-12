@@ -1,6 +1,6 @@
 import { addDays, daysUntil } from '../module-data'
 import { ATTESTED } from '../types'
-import { capabilityTree, duplicateCaps, overlapCount } from './capability'
+import { capabilityTree, duplicateCaps, overlapCount, overlapThreshold } from './capability'
 import { exportXlsx, type CellValue } from './export'
 import { findings, type FindingsInput } from './findings'
 import { directDependentCounts, foundationReach } from './graph'
@@ -33,7 +33,7 @@ export function downloadReportPack(input: FindingsInput): string {
   for (const g of tree) for (const n of g.children) caps.push([n.l2, n.l3, n.tools.length, n.apps.length, n.foundations.length, n.desks.size, n.cost, n.tools.map((t) => t.name).join('; ')])
 
   const overlaps: CellValue[][] = [['Capability', 'Layer', 'Tools of that layer', 'Est annual cost (£k)', 'Names']]
-  for (const n of duplicateCaps(tree, 4)) {
+  for (const n of duplicateCaps(tree, overlapThreshold(tree))) {
     const o = overlapCount(n)
     const list = o.layer === 'Application' ? n.apps : n.foundations
     overlaps.push([`${n.l2} › ${n.l3}`, o.layer, o.count, list.reduce((s, t) => s + t.costK, 0), list.map((t) => t.name).join('; ')])

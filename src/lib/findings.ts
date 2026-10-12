@@ -1,7 +1,7 @@
 import { addDays, daysUntil, type Contract, type RiskEvent } from '../module-data'
 import type { Params } from '../router'
 import { ATTESTED, type DataState, type Layer } from '../types'
-import { capabilityTree, capLabel, duplicateCaps } from './capability'
+import { capabilityTree, capLabel, duplicateCaps, overlapThreshold } from './capability'
 import { isStale } from './freshness'
 import { LEANIX_SOURCE } from './mapping'
 import { missingType } from './reconcile'
@@ -29,15 +29,16 @@ export interface FindingsInput {
 export function findings({ state, lm, contracts, events }: FindingsInput): Finding[] {
   const out: Finding[] = []
   const tree = capabilityTree(state, lm)
-  const dups = duplicateCaps(tree, 4)
-  const appDup = dups.find((d) => d.apps.length >= 4)
+  const th = overlapThreshold(tree)
+  const dups = duplicateCaps(tree, th)
+  const appDup = dups.find((d) => d.apps.length >= th)
   if (dups.length) {
     out.push({
       id: 'overlap',
-      sentence: `${plural(dups.length, 'capability', 'capabilities')} ${dups.length === 1 ? 'is' : 'are'} served by 4 or more tools of the same layer. ${appDup ? `${capLabel(appDup)} alone has ${appDup.apps.length} applications.` : `The largest is ${capLabel(dups[0])}.`}`,
+      sentence: `${plural(dups.length, 'capability', 'capabilities')} ${dups.length === 1 ? 'is' : 'are'} served by ${th} or more tools of the same layer. ${appDup ? `${capLabel(appDup)} alone has ${appDup.apps.length} applications.` : `The largest is ${capLabel(dups[0])}.`}`,
       tone: 'amber',
       screen: 'capability',
-      params: { only: '1', dup: '4' },
+      params: { only: '1', dup: String(th) },
     })
   }
 

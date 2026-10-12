@@ -39,6 +39,13 @@ const CAPS = [
   ['Other', 'Reporting & MI', ['Client Reporting', 'Performance', 'Attribution', 'Board MI']],
   ['Other', 'NON-Inv', ['HR', 'Expenses', 'Facilities', 'Learning']],
 ]
+// Real estates are lumpy: some capabilities are crowded, others thin. Weights follow CAPS order.
+const CAP_WEIGHTS = [3, 1, 0.6, 1, 1.5, 2.5, 1.2, 0.6, 2, 1.5, 1.2, 2.5, 0.8]
+const pickCap = () => {
+  let r = rnd() * CAP_WEIGHTS.reduce((a, b) => a + b, 0)
+  for (let i = 0; i < CAPS.length; i++) if ((r -= CAP_WEIGHTS[i]) <= 0) return CAPS[i]
+  return CAPS[CAPS.length - 1]
+}
 const ASSET = ['Credit', 'Rates', 'Equity', 'FX', 'Multi-Asset', 'LDI', 'Index', 'Private Credit', 'Property', 'Sterling', 'EMD', 'Global']
 
 // Function word decides the Tool type and therefore the layer.
@@ -78,7 +85,7 @@ for (const [name, type, l2, l3, vendor, cost] of MARKET) {
   tools.push({ name, vendor, ownership: 'In-house', type, users: pick(USERS), group: '', l2, l3, cost })
 }
 while (tools.length < TARGET_TOOLS) {
-  const [l2, l3, subjects] = pick(CAPS)
+  const [l2, l3, subjects] = pickCap()
   // Non-investment tools are plain applications; investment ones can be any layer.
   const [fn, type] = l3 === 'NON-Inv' ? pick(FUNCTIONS.filter((f) => f[1] === 'UI')) : pick(FUNCTIONS)
   const subject = pick(subjects)
@@ -101,7 +108,8 @@ while (tools.length < TARGET_TOOLS) {
     group: euc ? 'Desk-built' : '',
     l2,
     l3,
-    cost: euc ? 0 : Math.round(base + rnd() * rnd() * 900),
+    // £k a year: most tools are small, a few are large, about £60m across the estate.
+    cost: euc ? 0 : Math.round(base * 0.25 + rnd() * rnd() * rnd() * 400),
   })
 }
 // About 2% arrive unclassified, as they would from a hand-built list.

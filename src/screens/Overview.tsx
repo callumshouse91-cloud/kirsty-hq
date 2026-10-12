@@ -9,7 +9,7 @@ import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtK, fmtNum, pct, plural } from '../lib/util'
 import { useFeature } from '../demo-store'
 import { navigate } from '../router'
-import { OverviewGrowth } from './OverviewGrowth'
+import { GrowthStats, OverviewGrowth, PhaseRibbon } from './OverviewGrowth'
 import { OverviewV5 } from './OverviewV5'
 import { useDataState, useLayerMap } from '../store'
 import { ATTESTED } from '../types'
@@ -90,6 +90,7 @@ function OverviewV2() {
         description="The Investments tool estate at a glance. Every number opens the detail behind it."
         actions={<Badge tone="neutral" title="Synthetic data; cost is the master list estimate">Illustrative figures</Badge>}
       />
+      <PhaseRibbon />
 
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-3 xl:grid-cols-6">
         {[
@@ -114,6 +115,7 @@ function OverviewV2() {
         ))}
       </div>
 
+      <GrowthStats />
       <OverviewGrowth />
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">

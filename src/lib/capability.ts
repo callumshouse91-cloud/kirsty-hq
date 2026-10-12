@@ -101,3 +101,14 @@ export function duplicateCaps(tree: CapGroup[], threshold: number): CapNode[] {
 export function capLabel(n: { l2: string; l3: string }): string {
   return `${n.l2} › ${n.l3}`
 }
+
+/**
+ * How many same-layer tools in one capability count as overlap. At least 4, and scaled to the estate:
+ * half again the typical capability, so a 1,000-tool list flags its outliers, not every capability.
+ */
+export function overlapThreshold(tree: CapGroup[]): number {
+  const counts = tree.flatMap((g) => g.children).filter((n) => n.l3 !== BLANK).map((n) => overlapCount(n).count).sort((a, b) => a - b)
+  if (counts.length === 0) return 4
+  const median = counts[Math.floor(counts.length / 2)]
+  return Math.max(4, Math.ceil(median * 1.5))
+}

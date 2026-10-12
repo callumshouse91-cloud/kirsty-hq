@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import { LayerBadge, ToolLink, VendorFlag } from '../components/common'
 import { Badge, Button, Card, Chip, cx, EmptyState, PageHeader, Segmented, Select, Td, Th } from '../components/ui'
 import { useFeature } from '../demo-store'
-import { capabilityTree, capKey, capLabel, duplicateCaps, overlapCount, reachByTool, type CapNode } from '../lib/capability'
+import { capabilityTree, capKey, capLabel, duplicateCaps, overlapCount, overlapThreshold, reachByTool, type CapNode } from '../lib/capability'
 import { exportXlsx, type CellValue } from '../lib/export'
 import { encodeWhere } from '../lib/pivot'
 import { CAT, layerOf, termsOf } from '../lib/taxonomy'
@@ -13,8 +13,11 @@ import { useDataState, useLayerMap } from '../store'
 import { LAYERS, type Layer } from '../types'
 import { useUi } from '../ui-store'
 
-const THRESHOLDS = [2, 3, 4, 5]
-export const DEFAULT_OVERLAP = 4
+/** Threshold choices around the estate's own default, so a small or large list both read sensibly. */
+function thresholdOptions(base: number): number[] {
+  if (base <= 5) return [2, 3, 4, 5]
+  return [...new Set([Math.round(base * 0.5), Math.round(base * 0.75), base, Math.round(base * 1.25)])]
+}
 
 function CostBar({ value, max }: { value: number; max: number }) {
   const w = max > 0 ? Math.max(2, Math.round((value / max) * 100)) : 0
@@ -116,7 +119,11 @@ export function CapabilityView() {
   const exportsOn = useFeature('exports')
   const p = route.params
   const layer = (LAYERS as string[]).includes(p.get('layer') ?? '') ? (p.get('layer') as Layer) : null
-  const threshold = THRESHOLDS.includes(Number(p.get('dup'))) ? Number(p.get('dup')) : DEFAULT_OVERLAP
+  const baseThreshold = useMemo(() => overlapThreshold(capabilityTree(state, lm)), [state, lm])
+  const options = thresholdOptions(baseThreshold)
+  const asked = Number(p.get('dup'))
+  const threshold = Number.isInteger(asked) && asked >= 2 ? asked : baseThreshold
+  const THRESHOLDS = options.includes(threshold) ? options : [...options, threshold].sort((a, b) => a - b)
   const onlyDup = p.get('only') === '1'
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
 

@@ -2,7 +2,7 @@ import type { Contract } from '../module-data'
 import { daysUntil, addDays } from '../module-data'
 import type { Params } from '../router'
 import type { DataState, Layer, Tool } from '../types'
-import { capabilityTree, capLabel, duplicateCaps, overlapCount } from './capability'
+import { capabilityTree, capLabel, duplicateCaps, overlapCount, overlapThreshold } from './capability'
 import { foundationReach } from './graph'
 import { LEANIX_SOURCE } from './mapping'
 import { tokens } from './match'
@@ -156,18 +156,20 @@ function cost({ state, lm }: AskContext): Answer {
 }
 
 function duplicates({ state, lm }: AskContext): Answer {
-  const dups = duplicateCaps(capabilityTree(state, lm), 4)
+  const tree = capabilityTree(state, lm)
+  const th = overlapThreshold(tree)
+  const dups = duplicateCaps(tree, th)
   return {
     intent: 'duplicates',
     text: dups.length
-      ? [`${plural(dups.length, 'capability', 'capabilities')} ${dups.length === 1 ? 'is' : 'are'} served by 4 or more tools of the same layer.`, `The largest overlap is ${capLabel(dups[0])}: ${plural(overlapCount(dups[0]).count, overlapCount(dups[0]).layer === 'Application' ? 'application' : 'foundation')}, ${fmtK(dups[0].cost)} a year between them.`]
-      : ['No capability is served by 4 or more tools of one layer.'],
+      ? [`${plural(dups.length, 'capability', 'capabilities')} ${dups.length === 1 ? 'is' : 'are'} served by ${th} or more tools of the same layer.`, `The largest overlap is ${capLabel(dups[0])}: ${plural(overlapCount(dups[0]).count, overlapCount(dups[0]).layer === 'Application' ? 'application' : 'foundation')}, ${fmtK(dups[0].cost)} a year between them.`]
+      : [`No capability is served by ${th} or more tools of one layer.`],
     rows: dups.map((n) => {
       const o = overlapCount(n)
       const list = o.layer === 'Application' ? n.apps : n.foundations
       return { label: capLabel(n), value: list.map((t) => t.name).join(', ') }
     }),
-    cite: { screen: 'capability', params: { only: '1', dup: '4' }, label: 'Capability View', filters: 'overlaps only, 4+ tools' },
+    cite: { screen: 'capability', params: { only: '1', dup: String(th) }, label: 'Capability View', filters: `overlaps only, ${th}+ tools` },
     followUps: ['What is the cost by capability?', 'What renews in the next 90 days?'],
   }
 }

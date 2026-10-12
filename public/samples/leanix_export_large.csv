@@ -1,1052 +1,1048 @@
 LeanIX ID,Application Name,Fact Sheet Type,Lifecycle,Owning Org,Business Capability,Criticality Tier
-APP-10000,Bloomberg Terminals,Application,End of Life,Investments,Trading,Tier 2
-APP-10001,Bloomberg AIM,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10002,Charles River IMS,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10003,Aladdin Risk,Application,Active,Investments,Risk,Tier 3
-APP-10004,FactSet Workstation (Prod),Application,End of Life,Investments,Research,Tier 1
-APP-10005,Refinitiv Eikon,Application,End of Life,Investments,Trading,Tier 2
-APP-10006,TradeWeb,Application,Phase Out,Investments,Trading,Tier 2
-APP-10007,MarketAxess,Application,End of Life,Investments,Trading,Tier 2
-APP-10008,Snowflake (Inv Data Lake),Data Object,End of Life,Investments,Data Services,Tier 3
-APP-10009,Kafka Event Bus,Interface,End of Life,Investments,Data Services,Tier 2
-APP-10010,Power BI Service,Application,Plan,Investments,Data Services,Tier 2
-APP-10011,Azure Data Factory Pipelines,Interface,Plan,Investments,Data Services,Tier 2
-APP-10012,Domino Data Lab,IT Component,Phase Out,Investments,Research,Tier 2
-APP-10013,Axioma Risk Analytics,Application,Active,Investments,Risk,Tier 2
-APP-10014,Oracle Securities DB,Data Object,Plan,Investments,Data Services,Tier 2
-APP-10015,Market Data Dashboard,Application,Active,Investments,Trading,Tier 1
-APP-10016,Learning Monitor,Application,Active,Group Technology,Data Services,Tier 3
-APP-10017,Private Credit Portfolio Simulator,IT Component,End of Life,Investments,Investment Management,Tier 2
-APP-10018,Allocation Store,Data Object,Phase Out,Investments,Investment Management,Tier 3
-APP-10019,Attribution Database,Data Object,Plan,Investments,Data Services,Tier 1
-APP-10020,Performance Portal,Application,Plan,Investments,Data Services,Tier 2
-APP-10021,Sterling Rebalance Feed,Interface,Active,Investments,Investment Management,Tier 3
-APP-10022,File Transfer Monitor,Application,Plan,Investments,Data Services,Tier 3
-APP-10023,FX Portfolio Dashboard,Application,Active,Investments,Investment Management,Tier 2
-APP-10024,Optimiser Workbench,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10025,Private Credit Execution Tracker,Application,Active,Investments,Trading,Tier 2
-APP-10026,Liquidity Loader,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10027,FX Curve Loader,Interface,Plan,Group Technology,Trading,Tier 2
-APP-10028,LDI Cash Model,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10029,Holdings Feed,Interface,Plan,Investments,Data Services,Tier 2
-APP-10030,LDI Risk Workbench,Application,Plan,Investments,Risk,Tier 1
-APP-10031,Property Index Data Gateway,Interface,End of Life,Group Technology,Trading,Tier 1
-APP-10032,Credit Tax Lot Simulator,IT Component,Plan,Investments,Investment Management,Tier 1
-APP-10033,Positions Cache,Data Object,End of Life,Investments,Data Services,Tier 2
-APP-10034,Rates Credit Research Model,IT Component,Plan,Investments,Research,Tier 3
-APP-10035,Rebalance Mart,Data Object,Plan,Group Technology,Investment Management,Tier 1
-APP-10036,ESG Mart,Data Object,Active,Group Technology,Research,Tier 2
-APP-10037,RFQ Blotter,Application,End of Life,Group Technology,Trading,Tier 2
-APP-10038,Stewardship Blotter,Application,Active,Group Technology,Research,Tier 1
-APP-10039,Private Credit Execution Model,IT Component,Phase Out,Investments,Trading,Tier 1
-APP-10040,Sterling Tax Lot Blotter,Application,Active,Group Technology,Investment Management,Tier 1
-APP-10041,Market Data Calculator,Application,Active,Investments,Trading,Tier 2
-APP-10042,Equity Cash Engine,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10043,Credit Screening Workbench,Application,Active,Investments,Research,Tier 2
-APP-10044,Tax Lot Service,IT Component,Plan,Investments,Investment Management,Tier 3
-APP-10045,Rates Index Data Tracker,Application,Active,Investments,Trading,Tier 2
-APP-10046,Global Rebalance Blotter,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10047,Curve Gateway,Interface,Phase Out,Investments,Trading,Tier 2
-APP-10048,Expenses Workbench,Application,Active,Group Technology,Data Services,Tier 2
-APP-10049,Board MI Pipeline,Interface,Active,Investments,Data Services,Tier 2
-APP-10050,Constraint Cache,Data Object,Plan,Group Technology,Investment Management,Tier 1
-APP-10051,Equity Research Mart,Data Object,Phase Out,Investments,Research,Tier 2
-APP-10052,Execution Workbench,Application,End of Life,Group Technology,Trading,Tier 2
-APP-10053,Equity Optimiser Calculator,Application,Active,Investments,Investment Management,Tier 2
-APP-10054,Client Reporting Store,Data Object,Active,Investments,Data Services,Tier 2
-APP-10055,Multi-Asset Allocation Pipeline,Interface,Active,Investments,Investment Management,Tier 1
-APP-10056,Property Climate Gateway,Interface,Phase Out,Group Technology,Research,Tier 2
-APP-10057,Liquidity Loader Legacy,Interface,Phase Out,Group Technology,Investment Management,Tier 3
-APP-10058,Mandate Bridge,Interface,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10059,Private Credit Engagement Workbench,Application,Active,Group Technology,Research,Tier 3
-APP-10060,Reference Data Simulator,IT Component,End of Life,Group Technology,Data Services,Tier 2
-APP-10061,FX Exposure Workbench,Application,End of Life,Group Technology,Risk,Tier 1
-APP-10062,Trade Feed Portal,Application,Active,Group Technology,Data Services,Tier 2
-APP-10063,Holdings Engine,IT Component,Plan,Investments,Data Services,Tier 2
-APP-10064,Credit Research Mart,Data Object,Plan,Investments,Research,Tier 2
-APP-10065,Facilities Viewer,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10066,Equity Macro Model,IT Component,Phase Out,Group Technology,Research,Tier 3
-APP-10067,EMD Venue Dashboard,Application,Active,Investments,Trading,Tier 1
-APP-10068,Margin Blotter,Application,Active,Investments,Investment Management,Tier 1
-APP-10069,Private Credit Optimiser Monitor,Application,Active,Investments,Investment Management,Tier 2
-APP-10070,Liquidity Gateway,Interface,End of Life,Group Technology,Investment Management,Tier 2
-APP-10071,Multi-Asset Rebalance Engine,IT Component,Active,Investments,Investment Management,Tier 1
-APP-10072,Stewardship Blotter Pro,Application,Active,Investments,Research,Tier 3
-APP-10073,Stress Model,IT Component,Active,Investments,Risk,Tier 1
-APP-10074,Property Venue Gateway,Interface,End of Life,Investments,Trading,Tier 2
-APP-10075,Engagement Store,Data Object,Active,Investments,Research,Tier 1
-APP-10076,EMD Exposure Feed,Interface,Plan,Investments,Risk,Tier 2
-APP-10077,Multi-Asset Portfolio Monitor,Application,Phase Out,Group Technology,Investment Management,Tier 3
-APP-10078,Rates Equity Research Database,Data Object,Active,Investments,Research,Tier 1
-APP-10079,Stewardship Mart,Data Object,End of Life,Investments,Research,Tier 2
-APP-10080,Private Credit Market Data Mart,Data Object,End of Life,Investments,Trading,Tier 2
-APP-10081,Security Master Pipeline,Application,End of Life,Group Technology,Data Services,Tier 2
-APP-10082,Rates RFQ Calculator,Application,Plan,Investments,Trading,Tier 2
-APP-10083,Liquidity Database,Data Object,Plan,Group Technology,Investment Management,Tier 3
-APP-10084,File Transfer Feed,Interface,Active,Investments,Data Services,Tier 2
-APP-10085,Global Execution Portal,Application,End of Life,Investments,Trading,Tier 2
-APP-10086,LDI Optimiser Loader,Interface,End of Life,Group Technology,Investment Management,Tier 1
-APP-10087,Credit Research Pipeline,Interface,Phase Out,Investments,Research,Tier 2
-APP-10088,Exposure Simulator,IT Component,Active,Investments,Risk,Tier 3
-APP-10089,Margin Pipeline,Interface,Active,Investments,Investment Management,Tier 2
-APP-10090,Trade Feed Calculator,Application,End of Life,Group Technology,Data Services,Tier 3
-APP-10091,Index Price Monitor,Application,Active,Group Technology,Trading,Tier 2
-APP-10092,Equity Research Feed,Interface,Active,Investments,Research,Tier 3
-APP-10093,Board MI Database,Data Object,Active,Investments,Data Services,Tier 2
-APP-10094,File Transfer Model,IT Component,Phase Out,Investments,Data Services,Tier 2
-APP-10095,VaR Dashboard (EUC),Application,Plan,Investments,Risk,Tier 2
-APP-10096,FX Order Dashboard,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10097,Macro Cache,Data Object,Active,Group Technology,Research,Tier 3
-APP-10098,RFQ Monitor,Application,End of Life,Group Technology,Trading,Tier 1
-APP-10099,Attribution Calculator,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10100,LDI Model Portfolio Calculator,Application,Plan,Investments,Investment Management,Tier 1
-APP-10101,Index Portfolio Engine,IT Component,End of Life,Investments,Investment Management,Tier 2
-APP-10102,Screening Pipeline,Interface,End of Life,Investments,Research,Tier 1
-APP-10103,Learning Tracker,Application,End of Life,Investments,Data Services,Tier 3
-APP-10104,Facilities Portal,Application,Active,Group Technology,Data Services,Tier 3
-APP-10105,HR Calculator,Application,Active,Group Technology,Data Services,Tier 2
-APP-10106,Rebalance Loader,Interface,Active,Investments,Investment Management,Tier 3
-APP-10107,Expenses Tracker Legacy,Application,Active,Investments,Data Services,Tier 2
-APP-10108,Event Model,IT Component,Active,Group Technology,Data Services,Tier 2
-APP-10109,Board MI Store,Data Object,Active,Investments,Data Services,Tier 1
-APP-10110,Client Reporting Feed,Interface,Active,Investments,Data Services,Tier 2
-APP-10111,LDI Market Data Cache,Data Object,Phase Out,Investments,Trading,Tier 2
-APP-10112,Risk Portal,Application,Plan,Investments,Risk,Tier 1
-APP-10113,LDI Margin Blotter,Application,Active,Investments,Investment Management,Tier 2
-APP-10114,Rates Algo Pipeline,Interface,Active,Investments,Trading,Tier 1
-APP-10115,Private Credit Algo Portal,Application,Phase Out,Investments,Trading,Tier 2
-APP-10116,Message Bridge,Interface,Active,Group Technology,Data Services,Tier 1
-APP-10117,Allocation Mart,Data Object,Active,Investments,Investment Management,Tier 3
-APP-10118,LDI Order Workbench,Application,Plan,Group Technology,Investment Management,Tier 2
-APP-10119,Expenses Portal Platform,Application,Active,Investments,Data Services,Tier 2
-APP-10120,Margin Model,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10121,Global Climate Calculator,Application,End of Life,Investments,Research,Tier 3
-APP-10122,Facilities Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-10123,LDI Margin Viewer,Application,End of Life,Group Technology,Investment Management,Tier 2
-APP-10124,Performance Gateway,Interface,End of Life,Group Technology,Data Services,Tier 1
-APP-10125,Event Calculator,Application,Active,Investments,Data Services,Tier 2
-APP-10126,Sterling Collateral Model,IT Component,Phase Out,Group Technology,Investment Management,Tier 1
-APP-10127,Execution Portal,Application,Active,Investments,Trading,Tier 1
-APP-10128,Risk Simulator,IT Component,End of Life,Group Technology,Risk,Tier 2
-APP-10129,Equity Engagement Gateway,Interface,Active,Group Technology,Research,Tier 2
-APP-10130,Sterling Credit Research Loader,Interface,Active,Investments,Research,Tier 3
-APP-10131,Sterling Market Data Feed,Interface,Active,Investments,Trading,Tier 1
-APP-10132,Climate Store,Data Object,Active,Investments,Research,Tier 2
-APP-10133,Facilities Blotter II,Application,End of Life,Investments,Data Services,Tier 1
-APP-10134,Sterling Execution Model,Application,Active,Investments,Data Services,Tier 2
-APP-10135,Equity RFQ Blotter,Application,End of Life,Investments,Trading,Tier 2
-APP-10136,Tax Lot Cache,Data Object,End of Life,Investments,Investment Management,Tier 2
-APP-10137,Equity Execution Model,IT Component,Phase Out,Group Technology,Trading,Tier 2
-APP-10138,Multi-Asset Screening Model,IT Component,Phase Out,Investments,Research,Tier 3
-APP-10139,Collateral Workbench,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10140,Risk Workbench,Application,Plan,Investments,Risk,Tier 2
-APP-10141,Macro Dashboard,Application,Plan,Investments,Research,Tier 2
-APP-10142,Index Optimiser Store,Data Object,Active,Investments,Investment Management,Tier 1
-APP-10143,Stress Feed,Interface,End of Life,Investments,Risk,Tier 3
-APP-10144,Margin Calculator,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10145,Trade Feed Blotter,Application,Active,Investments,Data Services,Tier 1
-APP-10146,EMD Fund Structure Loader,Interface,Active,Investments,Investment Management,Tier 2
-APP-10147,Learning Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-10148,Multi-Asset Tax Lot Store,Data Object,Active,Investments,Investment Management,Tier 3
-APP-10149,HR Viewer,Application,Active,Group Technology,Data Services,Tier 3
-APP-10150,Client Reporting Engine,IT Component,Active,Investments,Data Services,Tier 1
-APP-10151,Expenses Tracker Hub,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10152,Market Data Dashboard Lite,Application,Active,Investments,Trading,Tier 3
-APP-10153,Tax Lot Workbench Platform,Application,Active,Investments,Investment Management,Tier 3
-APP-10154,Exposure Gateway,Interface,Plan,Investments,Risk,Tier 2
-APP-10155,File Transfer Viewer,Application,Plan,Investments,Data Services,Tier 1
-APP-10156,FX VaR Cache,Data Object,Active,Group Technology,Risk,Tier 2
-APP-10157,Model Portfolio Workbench,Application,Active,Investments,Investment Management,Tier 2
-APP-10158,Rebalance Viewer,Application,Phase Out,Group Technology,Investment Management,Tier 1
-APP-10159,Stewardship Service,IT Component,Active,Investments,Research,Tier 3
-APP-10160,Sterling Curve Mart,Data Object,Plan,Group Technology,Trading,Tier 3
-APP-10161,Property Liquidity Feed,Interface,Active,Investments,Investment Management,Tier 2
-APP-10162,Attribution Store,Data Object,Phase Out,Investments,Data Services,Tier 2
-APP-10163,Equity Mandate Mart,Data Object,End of Life,Group Technology,Investment Management,Tier 3
-APP-10164,Allocation Simulator,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10165,Learning Monitor Legacy,Application,Active,Investments,Data Services,Tier 2
-APP-10166,Rates Algo Portal,Application,Active,Group Technology,Trading,Tier 2
-APP-10167,Private Credit Order Loader,Interface,Active,Group Technology,Investment Management,Tier 3
-APP-10168,Macro Engine,IT Component,Active,Group Technology,Research,Tier 1
-APP-10169,Risk Store,Data Object,Active,Group Technology,Risk,Tier 2
-APP-10170,Performance Database,Data Object,Active,Group Technology,Data Services,Tier 3
-APP-10171,Trade Feed Monitor,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10172,Index Equity Research Portal,Application,Phase Out,Group Technology,Research,Tier 3
-APP-10173,Message Gateway,Interface,End of Life,Investments,Data Services,Tier 2
-APP-10174,FX Constraint Tracker,Application,End of Life,Investments,Investment Management,Tier 1
-APP-10175,Rates Tax Lot Model,IT Component,Active,Investments,Investment Management,Tier 3
-APP-10176,Holdings Workbench,Application,Active,Investments,Data Services,Tier 3
-APP-10177,Credit Screening Workbench Legacy,Application,Active,Investments,Research,Tier 2
-APP-10178,Equity Model Portfolio Database,Data Object,Phase Out,Investments,Investment Management,Tier 1
-APP-10179,Model Portfolio Database,Data Object,Plan,Investments,Investment Management,Tier 1
-APP-10180,Message Calculator,Application,End of Life,Investments,Data Services,Tier 1
-APP-10181,LDI Macro Loader,Interface,End of Life,Investments,Research,Tier 1
-APP-10182,Macro Loader,Interface,Active,Group Technology,Research,Tier 3
-APP-10183,Security Master Engine,IT Component,Active,Group Technology,Data Services,Tier 3
-APP-10184,Credit Order Model,IT Component,Active,Investments,Investment Management,Tier 1
-APP-10185,LDI Equity Research Portal,Application,End of Life,Investments,Research,Tier 2
-APP-10186,Reference Data Gateway,Interface,Phase Out,Investments,Data Services,Tier 1
-APP-10187,Equity Constraint Viewer,Application,Phase Out,Investments,Investment Management,Tier 3
-APP-10188,Trade Feed Workbench,Application,Active,Group Technology,Data Services,Tier 1
-APP-10189,Board MI Tracker,Application,Active,Group Technology,Data Services,Tier 2
-APP-10190,Execution Calculator,Application,End of Life,Group Technology,Trading,Tier 1
-APP-10191,Board MI Bridge,Interface,Phase Out,Investments,Data Services,Tier 1
-APP-10192,Global Climate Blotter,Application,Active,Investments,Research,Tier 2
-APP-10193,Performance Cache,Data Object,Active,Investments,Data Services,Tier 1
-APP-10194,Trade Feed Service,IT Component,End of Life,Investments,Data Services,Tier 3
-APP-10195,Learning Portal,Application,Active,Investments,Data Services,Tier 1
-APP-10196,Risk Monitor Platform,Application,Active,Group Technology,Risk,Tier 3
-APP-10197,Tax Lot Blotter,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10198,Facilities Monitor,Application,Plan,Investments,Data Services,Tier 3
-APP-10199,Algo Model,IT Component,Plan,Investments,Trading,Tier 1
-APP-10200,Portfolio Bridge,Interface,Phase Out,Investments,Investment Management,Tier 3
-APP-10201,Attribution Engine,IT Component,Plan,Group Technology,Data Services,Tier 1
-APP-10202,Holdings Workbench Legacy,Application,Phase Out,Investments,Data Services,Tier 3
-APP-10203,Client Reporting Calculator,Application,Plan,Investments,Data Services,Tier 2
-APP-10204,LDI ESG Model,IT Component,Plan,Group Technology,Research,Tier 2
-APP-10205,EMD RFQ Portal Platform,Application,Plan,Investments,Trading,Tier 3
-APP-10206,Allocation Engine,IT Component,Active,Group Technology,Investment Management,Tier 1
-APP-10207,Liquidity Monitor,Application,Active,Investments,Investment Management,Tier 1
-APP-10208,ESG Blotter,Application,Active,Group Technology,Research,Tier 1
-APP-10209,Macro Portal,Application,Active,Investments,Data Services,Tier 2
-APP-10210,LDI Margin Mart,Data Object,End of Life,Group Technology,Investment Management,Tier 2
-APP-10211,Private Credit Optimiser Service (Prod),IT Component,Active,Investments,Investment Management,Tier 1
-APP-10212,Facilities Tracker,Application,End of Life,Investments,Data Services,Tier 2
-APP-10213,Expenses Workbench II,Application,Active,Investments,Data Services,Tier 2
-APP-10214,FX Portfolio Service,IT Component,End of Life,Investments,Investment Management,Tier 2
-APP-10215,Property Macro Mart,Data Object,Active,Investments,Research,Tier 2
-APP-10216,Global Index Data Engine,IT Component,Active,Investments,Trading,Tier 3
-APP-10217,Liquidity Risk Blotter,Application,Active,Investments,Risk,Tier 2
-APP-10218,Execution Database,Data Object,Active,Group Technology,Trading,Tier 3
-APP-10219,Event Loader,Interface,Active,Group Technology,Data Services,Tier 3
-APP-10220,Event Simulator,IT Component,End of Life,Investments,Data Services,Tier 2
-APP-10221,Constraint Bridge,Interface,Active,Investments,Investment Management,Tier 2
-APP-10222,Board MI Tracker Lite,Application,Active,Investments,Data Services,Tier 3
-APP-10223,Event Model Next Platform,IT Component,Active,Investments,Data Services,Tier 3
-APP-10224,Trade Feed Store,Data Object,Active,Investments,Data Services,Tier 1
-APP-10225,HR Portal,Application,End of Life,Investments,Data Services,Tier 3
-APP-10226,Performance Cache Legacy,Data Object,Active,Investments,Data Services,Tier 1
-APP-10227,Mandate Dashboard,Application,Active,Investments,Investment Management,Tier 3
-APP-10228,Cash Portal,Application,Phase Out,Investments,Investment Management,Tier 3
-APP-10229,Engagement Gateway,Interface,Active,Investments,Research,Tier 2
-APP-10230,Property Macro Bridge,Interface,Active,Investments,Research,Tier 2
-APP-10231,Allocation Store Hub,Data Object,Active,Investments,Investment Management,Tier 2
-APP-10232,File Transfer Tracker,Application,Active,Group Technology,Data Services,Tier 2
-APP-10233,Positions Service,IT Component,Active,Group Technology,Data Services,Tier 2
-APP-10234,Global Execution Mart,Data Object,Active,Group Technology,Trading,Tier 2
-APP-10235,Trade Feed Pipeline,Interface,Active,Investments,Data Services,Tier 1
-APP-10236,Sterling Credit Research Gateway,Interface,Active,Investments,Research,Tier 2
-APP-10237,Positions Gateway,Interface,End of Life,Investments,Data Services,Tier 2
-APP-10238,Private Credit Constraint Viewer,Application,End of Life,Group Technology,Investment Management,Tier 1
-APP-10239,Learning Portal Next,Application,Plan,Investments,Data Services,Tier 1
-APP-10240,Optimiser Engine,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10241,Equity Liquidity Monitor,Application,Plan,Group Technology,Investment Management,Tier 1
-APP-10242,Equity Screening Calculator,Application,Active,Group Technology,Research,Tier 2
-APP-10243,Algo Service,IT Component,Active,Investments,Trading,Tier 2
-APP-10244,Sterling Execution Blotter,Application,Active,Investments,Trading,Tier 1
-APP-10245,Property RFQ Workbench,Application,Phase Out,Group Technology,Trading,Tier 3
-APP-10246,Climate Blotter,Application,Active,Investments,Research,Tier 1
-APP-10247,Expenses Calculator,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10248,File Transfer Feed Pro,Interface,Plan,Group Technology,Data Services,Tier 2
-APP-10249,Liquidity Monitor II,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10250,Model Portfolio Mart,Data Object,Active,Group Technology,Investment Management,Tier 2
-APP-10251,Credit Margin Store,Data Object,End of Life,Group Technology,Investment Management,Tier 1
-APP-10252,Exposure Viewer,Application,Phase Out,Investments,Risk,Tier 1
-APP-10253,Holdings Blotter,Application,Active,Investments,Data Services,Tier 3
-APP-10254,FX Stress Database,Data Object,Active,Group Technology,Risk,Tier 1
-APP-10255,Multi-Asset Trade Blotter Viewer,Application,Active,Investments,Investment Management,Tier 1
-APP-10256,Global Margin Tracker,Application,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10257,Trade Feed Viewer,Application,Active,Group Technology,Data Services,Tier 1
-APP-10258,HR Calculator Lite,Application,Active,Investments,Data Services,Tier 2
-APP-10259,Positions Portal,Application,Plan,Group Technology,Data Services,Tier 1
-APP-10260,Private Credit Tax Lot Dashboard,Application,End of Life,Group Technology,Investment Management,Tier 2
-APP-10261,Exposure Tracker,Application,Active,Investments,Risk,Tier 2
-APP-10262,Learning Workbench,Application,Active,Investments,Data Services,Tier 2
-APP-10263,Performance Simulator (Prod),IT Component,Active,Group Technology,Data Services,Tier 2
-APP-10264,Model Portfolio Pipeline,Interface,Active,Group Technology,Investment Management,Tier 2
-APP-10265,Sterling Tax Lot Database,Data Object,Plan,Investments,Investment Management,Tier 3
-APP-10266,Global Index Data Portal,Application,Plan,Investments,Trading,Tier 1
-APP-10267,Attribution Monitor,Application,End of Life,Group Technology,Data Services,Tier 2
-APP-10268,Positions Blotter,Application,End of Life,Investments,Data Services,Tier 2
-APP-10269,Trade Blotter Monitor,Application,End of Life,Investments,Investment Management,Tier 3
-APP-10270,Private Credit Climate Calculator,Application,Phase Out,Group Technology,Research,Tier 3
-APP-10271,Trade Blotter Tracker,Application,End of Life,Investments,Investment Management,Tier 1
-APP-10272,Multi-Asset Macro Model,IT Component,Plan,Investments,Research,Tier 2
-APP-10273,Multi-Asset Mandate Workbench,Application,Plan,Investments,Investment Management,Tier 3
-APP-10274,Stewardship Loader (Prod),Interface,Plan,Investments,Research,Tier 2
-APP-10275,Rates Venue Viewer (EUC),Application,Active,Group Technology,Trading,Tier 2
-APP-10276,Sterling Order Calculator,Application,Plan,Investments,Investment Management,Tier 1
-APP-10277,Global Collateral Gateway,Interface,Active,Group Technology,Investment Management,Tier 2
-APP-10278,FX Execution Viewer,Application,Active,Group Technology,Trading,Tier 2
-APP-10279,Equity Macro Dashboard,Application,Active,Investments,Data Services,Tier 1
-APP-10280,Holdings Bridge,Interface,Plan,Investments,Data Services,Tier 2
-APP-10281,Global Market Data Mart,Data Object,Active,Investments,Trading,Tier 1
-APP-10282,Board MI Database Hub,Data Object,End of Life,Investments,Data Services,Tier 3
-APP-10283,Venue Mart,Data Object,Plan,Investments,Trading,Tier 1
-APP-10284,Execution Dashboard,Application,Plan,Investments,Trading,Tier 3
-APP-10285,EMD RFQ Database,Data Object,Active,Investments,Trading,Tier 2
-APP-10286,Sterling Equity Research Loader,Interface,End of Life,Investments,Research,Tier 1
-APP-10287,Positions Pipeline,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10288,Allocation Viewer,Application,End of Life,Group Technology,Investment Management,Tier 3
-APP-10289,RFQ Dashboard,Application,Phase Out,Investments,Trading,Tier 2
-APP-10290,Sterling RFQ Viewer,Application,Plan,Investments,Trading,Tier 2
-APP-10291,Index Engagement Simulator,IT Component,Active,Group Technology,Research,Tier 2
-APP-10292,Expenses Portal Hub,Application,Plan,Investments,Data Services,Tier 2
-APP-10293,Execution Simulator Platform,IT Component,Active,Investments,Trading,Tier 1
-APP-10294,Index Constraint Engine (Prod),IT Component,Active,Investments,Investment Management,Tier 1
-APP-10295,EMD VaR Engine,IT Component,Active,Investments,Risk,Tier 3
-APP-10296,Multi-Asset Trade Blotter Gateway,Interface,Active,Investments,Investment Management,Tier 3
-APP-10297,Cash Gateway,Interface,Active,Investments,Investment Management,Tier 3
-APP-10298,Equity Portfolio Bridge,Interface,Active,Investments,Investment Management,Tier 2
-APP-10299,Security Master Tracker,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10300,Facilities Portal II,Application,Active,Group Technology,Data Services,Tier 3
-APP-10301,Security Master Model,IT Component,Phase Out,Investments,Data Services,Tier 1
-APP-10302,Global Collateral Calculator,Application,Plan,Group Technology,Investment Management,Tier 1
-APP-10303,Engagement Dashboard,Application,End of Life,Investments,Research,Tier 2
-APP-10304,Performance Loader,Interface,End of Life,Group Technology,Data Services,Tier 2
-APP-10305,Mandate Model,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10306,Private Credit Venue Cache,Data Object,Active,Group Technology,Trading,Tier 3
-APP-10307,Board MI Viewer,Application,Plan,Investments,Data Services,Tier 1
-APP-10308,FX Margin Gateway,Interface,Phase Out,Investments,Investment Management,Tier 2
-APP-10309,Message Feed,Interface,Active,Investments,Data Services,Tier 2
-APP-10310,Board MI Database Next,Data Object,Active,Investments,Data Services,Tier 3
-APP-10311,Private Credit Risk Dashboard,Application,Plan,Group Technology,Risk,Tier 3
-APP-10312,Security Master Dashboard,Application,Active,Investments,Data Services,Tier 2
-APP-10313,Trade Feed Store Next,Data Object,Active,Group Technology,Data Services,Tier 3
-APP-10314,Index Stewardship Feed,Interface,Plan,Investments,Research,Tier 3
-APP-10315,Liquidity Tracker,Application,Active,Investments,Investment Management,Tier 3
-APP-10316,Equity Liquidity Database,Data Object,End of Life,Investments,Investment Management,Tier 2
-APP-10317,Order Workbench,Application,End of Life,Group Technology,Investment Management,Tier 2
-APP-10318,Message Mart,Data Object,Phase Out,Group Technology,Data Services,Tier 2
-APP-10319,Facilities Tracker Lite,Application,Plan,Investments,Data Services,Tier 3
-APP-10320,Sterling Market Data Blotter,Application,Active,Investments,Trading,Tier 2
-APP-10321,Engagement Pipeline,Interface,Active,Group Technology,Research,Tier 2
-APP-10322,Margin Blotter Next,Application,Plan,Investments,Investment Management,Tier 1
-APP-10323,Mandate Service,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10324,Holdings Service,IT Component,Active,Investments,Data Services,Tier 3
-APP-10325,Performance Database Next,Application,End of Life,Investments,Data Services,Tier 2
-APP-10326,File Transfer Cache,Data Object,Active,Investments,Data Services,Tier 2
-APP-10327,Liquidity Risk Viewer,Application,Phase Out,Investments,Risk,Tier 3
-APP-10328,EMD Trade Blotter Service,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10329,FX Margin Calculator,Application,Active,Investments,Investment Management,Tier 2
-APP-10330,RFQ Monitor Legacy,Application,Active,Investments,Trading,Tier 3
-APP-10331,HR Calculator Next,Application,Active,Investments,Data Services,Tier 2
-APP-10332,Positions Service Next,IT Component,Active,Investments,Data Services,Tier 2
-APP-10333,HR Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-10334,Climate Pipeline,Interface,Active,Investments,Research,Tier 1
-APP-10335,Sterling Credit Research Mart,Data Object,Active,Investments,Research,Tier 2
-APP-10336,Private Credit Index Data Gateway,Interface,Active,Investments,Trading,Tier 2
-APP-10337,Holdings Cache,Data Object,Active,Investments,Data Services,Tier 2
-APP-10338,Reference Data Engine,IT Component,Phase Out,Investments,Data Services,Tier 2
-APP-10339,Sterling Optimiser Portal,Application,End of Life,Group Technology,Investment Management,Tier 1
-APP-10340,EMD Equity Research Portal,Application,Active,Investments,Research,Tier 1
-APP-10341,HR Tracker,Application,Phase Out,Group Technology,Data Services,Tier 1
-APP-10342,Tax Lot Cache II,Data Object,Active,Group Technology,Investment Management,Tier 3
-APP-10343,Trade Feed Viewer Lite,Application,End of Life,Investments,Data Services,Tier 1
-APP-10344,Trade Blotter Dashboard,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10345,Client Reporting Dashboard,Application,Plan,Group Technology,Data Services,Tier 3
-APP-10346,LDI Liquidity Risk Loader,Interface,Phase Out,Investments,Risk,Tier 3
-APP-10347,Credit Mandate Simulator,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10348,Private Credit RFQ Store,Data Object,End of Life,Group Technology,Trading,Tier 1
-APP-10349,Global Portfolio Simulator,IT Component,Active,Investments,Investment Management,Tier 3
-APP-10350,Multi-Asset Macro Monitor,Application,Active,Group Technology,Research,Tier 1
-APP-10351,Equity Execution Cache,Data Object,Active,Investments,Trading,Tier 3
-APP-10352,Multi-Asset Rebalance Blotter,Application,End of Life,Investments,Investment Management,Tier 3
-APP-10353,FX Exposure Database,Data Object,Phase Out,Investments,Risk,Tier 2
-APP-10354,Price Dashboard,Application,Active,Group Technology,Trading,Tier 2
-APP-10355,Private Credit Risk Mart,Data Object,Plan,Investments,Risk,Tier 2
-APP-10356,RFQ Store,Data Object,Active,Group Technology,Trading,Tier 2
-APP-10357,Property Tax Lot Bridge,Interface,Active,Investments,Investment Management,Tier 1
-APP-10358,Reference Data Model,IT Component,Active,Group Technology,Data Services,Tier 3
-APP-10359,Attribution Loader,Interface,End of Life,Investments,Data Services,Tier 1
-APP-10360,Reference Data Simulator Next,IT Component,Active,Investments,Data Services,Tier 2
-APP-10361,Facilities Calculator,Application,Active,Group Technology,Data Services,Tier 1
-APP-10362,Credit Screening Bridge,Interface,Active,Group Technology,Research,Tier 2
-APP-10363,Holdings Bridge Lite,Interface,Phase Out,Investments,Data Services,Tier 3
-APP-10364,Model Portfolio Dashboard,Application,Active,Investments,Investment Management,Tier 2
-APP-10365,Order Engine,IT Component,End of Life,Investments,Investment Management,Tier 1
-APP-10366,Exposure Pipeline,Interface,Plan,Group Technology,Risk,Tier 2
-APP-10367,Facilities Monitor Hub,Application,Active,Investments,Data Services,Tier 2
-APP-10368,Constraint Dashboard,Application,Plan,Group Technology,Investment Management,Tier 2
-APP-10369,Cash Cache,Data Object,Active,Investments,Investment Management,Tier 3
-APP-10370,Private Credit Constraint Bridge,Interface,Active,Group Technology,Investment Management,Tier 1
-APP-10371,Venue Database,Data Object,Active,Investments,Trading,Tier 1
-APP-10372,Equity Risk Workbench,Application,Phase Out,Group Technology,Risk,Tier 3
-APP-10373,Tax Lot Pipeline,Interface,Active,Investments,Investment Management,Tier 1
-APP-10374,Property Algo Feed,Interface,End of Life,Investments,Trading,Tier 3
-APP-10375,Sterling Tax Lot Portal,Application,Active,Investments,Data Services,Tier 3
-APP-10376,Message Monitor Platform,Application,End of Life,Investments,Data Services,Tier 2
-APP-10377,Rebalance Service,IT Component,Active,Group Technology,Investment Management,Tier 3
-APP-10378,Expenses Monitor,Application,Plan,Group Technology,Data Services,Tier 1
-APP-10379,Rates Fund Structure Database,Data Object,Phase Out,Investments,Investment Management,Tier 2
-APP-10380,Trade Blotter Gateway,Interface,Active,Investments,Investment Management,Tier 1
-APP-10381,Property Execution Service,IT Component,Active,Investments,Trading,Tier 3
-APP-10382,LDI Price Workbench,Application,Phase Out,Investments,Trading,Tier 1
-APP-10383,Credit Venue Feed,Interface,Active,Investments,Trading,Tier 2
-APP-10384,Order Engine Legacy,IT Component,End of Life,Investments,Investment Management,Tier 2
-APP-10385,Sterling ESG Dashboard,Application,Plan,Investments,Research,Tier 3
-APP-10386,FX Constraint Tracker Hub,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10387,Property Rebalance Feed,Interface,Active,Investments,Investment Management,Tier 2
-APP-10388,Client Reporting Store II,Data Object,Active,Group Technology,Data Services,Tier 3
-APP-10389,Price Monitor,Application,Phase Out,Group Technology,Trading,Tier 2
-APP-10390,Property Liquidity Cache,Data Object,End of Life,Investments,Investment Management,Tier 2
-APP-10391,Board MI Loader,Interface,End of Life,Investments,Data Services,Tier 3
-APP-10392,Performance Loader II,Interface,Plan,Investments,Data Services,Tier 2
-APP-10393,Property Index Data Calculator,Application,Plan,Group Technology,Trading,Tier 2
-APP-10394,Credit Stress Tracker,Application,Active,Investments,Risk,Tier 1
-APP-10395,Message Loader,Interface,Phase Out,Investments,Data Services,Tier 3
-APP-10396,Facilities Workbench,Application,Active,Investments,Data Services,Tier 1
-APP-10397,Board MI Workbench,Application,Active,Investments,Data Services,Tier 2
-APP-10398,Event Viewer,Application,Active,Investments,Data Services,Tier 1
-APP-10399,Private Credit Rebalance Model,IT Component,Plan,Investments,Investment Management,Tier 1
-APP-10400,Sterling Engagement Database,Data Object,Active,Group Technology,Research,Tier 1
-APP-10401,File Transfer Bridge,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10402,Client Reporting Service,IT Component,Active,Investments,Data Services,Tier 1
-APP-10403,Property Model Portfolio Service,IT Component,End of Life,Group Technology,Investment Management,Tier 1
-APP-10404,FX Exposure Workbench Hub,Application,End of Life,Investments,Risk,Tier 2
-APP-10405,Rates Venue Portal,Application,End of Life,Investments,Trading,Tier 2
-APP-10406,Client Reporting Bridge Legacy,Interface,End of Life,Investments,Data Services,Tier 3
-APP-10407,File Transfer Loader,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10408,Multi-Asset Index Data Dashboard,Application,End of Life,Investments,Trading,Tier 2
-APP-10409,Private Credit Exposure Bridge,Interface,End of Life,Investments,Risk,Tier 2
-APP-10410,Performance Viewer Platform,Application,End of Life,Investments,Data Services,Tier 1
-APP-10411,FX Constraint Database,Data Object,Active,Investments,Investment Management,Tier 2
-APP-10412,Global VaR Tracker,Application,Active,Investments,Risk,Tier 3
-APP-10413,FX Risk Pipeline,Interface,Active,Investments,Risk,Tier 3
-APP-10414,Private Credit Margin Dashboard,Application,End of Life,Group Technology,Investment Management,Tier 3
-APP-10415,Mandate Service Next,IT Component,Plan,Group Technology,Investment Management,Tier 1
-APP-10416,Allocation Gateway,Interface,Phase Out,Investments,Investment Management,Tier 2
-APP-10417,Equity Mandate Calculator,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10418,Client Reporting Feed II,Interface,Phase Out,Investments,Data Services,Tier 1
-APP-10419,Rates Tax Lot Bridge,Interface,Plan,Investments,Investment Management,Tier 3
-APP-10420,Fund Structure Gateway,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10421,Order Pipeline,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10422,Positions Cache Next,Data Object,Active,Investments,Data Services,Tier 2
-APP-10423,Sterling Constraint Simulator,IT Component,Plan,Group Technology,Investment Management,Tier 1
-APP-10424,Macro Database,Data Object,Active,Group Technology,Research,Tier 2
-APP-10425,Order Monitor,Application,Active,Investments,Investment Management,Tier 3
-APP-10426,Sterling Curve Model,IT Component,Active,Group Technology,Trading,Tier 3
-APP-10427,Private Credit Mandate Tracker,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10428,Board MI Monitor,Application,Active,Investments,Data Services,Tier 2
-APP-10429,File Transfer Store,Data Object,End of Life,Investments,Data Services,Tier 1
-APP-10430,Market Data Monitor,Application,Phase Out,Group Technology,Trading,Tier 3
-APP-10431,ESG Gateway,Application,Active,Investments,Data Services,Tier 2
-APP-10432,Attribution Portal,Application,Phase Out,Investments,Data Services,Tier 3
-APP-10433,Index Order Blotter,Application,Plan,Investments,Investment Management,Tier 2
-APP-10434,Property Credit Research Tracker,Application,Phase Out,Investments,Research,Tier 2
-APP-10435,Holdings Gateway,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10436,Trade Blotter Model,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10437,Sterling ESG Cache,Data Object,Active,Investments,Research,Tier 1
-APP-10438,Multi-Asset Trade Blotter Tracker,Application,End of Life,Investments,Investment Management,Tier 3
-APP-10439,Index Liquidity Risk Viewer,Application,Phase Out,Group Technology,Risk,Tier 1
-APP-10440,EMD Execution Pipeline,Interface,Active,Investments,Trading,Tier 2
-APP-10441,Optimiser Tracker,Application,Active,Investments,Investment Management,Tier 3
-APP-10442,FUND STRUCTURE SIMULATOR,IT Component,End of Life,Investments,Investment Management,Tier 3
-APP-10443,Multi-Asset Stress Store,Data Object,Active,Investments,Risk,Tier 1
-APP-10444,Credit Risk Cache,Data Object,Active,Group Technology,Risk,Tier 3
-APP-10445,Curve Model,IT Component,Plan,Investments,Trading,Tier 3
-APP-10446,Trade Feed Loader,Interface,End of Life,Investments,Data Services,Tier 1
-APP-10447,Optimiser Model,IT Component,Plan,Investments,Investment Management,Tier 2
-APP-10448,Credit Liquidity Risk Service,IT Component,End of Life,Group Technology,Risk,Tier 2
-APP-10449,FX Liquidity Workbench,Application,Active,Investments,Investment Management,Tier 3
-APP-10450,HR Monitor,Application,Active,Investments,Data Services,Tier 2
-APP-10451,FX Collateral Calculator,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10452,Positions Bridge,Interface,Active,Investments,Data Services,Tier 1
-APP-10453,Cash Viewer,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10454,Client Reporting Service Lite,IT Component,Phase Out,Group Technology,Data Services,Tier 2
-APP-10455,Liquidity Risk Pipeline,Interface,Active,Investments,Risk,Tier 3
-APP-10456,HR Calculator Legacy,Application,Active,Investments,Data Services,Tier 1
-APP-10457,Equity Research Database,Data Object,Active,Group Technology,Research,Tier 1
-APP-10458,Screening Workbench,Application,Active,Group Technology,Research,Tier 1
-APP-10459,Curve Blotter,Application,Plan,Group Technology,Trading,Tier 3
-APP-10460,Trade Blotter Service Legacy,IT Component,Phase Out,Investments,Investment Management,Tier 3
-APP-10461,Positions Mart,Data Object,End of Life,Investments,Data Services,Tier 2
-APP-10462,Algo Viewer,Application,Active,Investments,Trading,Tier 3
-APP-10463,Equity Liquidity Bridge,Interface,Active,Group Technology,Investment Management,Tier 2
-APP-10464,Optimiser Viewer,Application,End of Life,Group Technology,Investment Management,Tier 2
-APP-10465,Security Master Pipeline Next,Interface,Plan,Group Technology,Data Services,Tier 2
-APP-10466,Risk Feed,Interface,End of Life,Investments,Risk,Tier 1
-APP-10467,Sterling Macro Blotter,Application,Phase Out,Investments,Research,Tier 2
-APP-10468,Tax Lot Monitor,Application,Phase Out,Investments,Investment Management,Tier 1
-APP-10469,Attribution Tracker,Application,Plan,Investments,Data Services,Tier 2
-APP-10470,Expenses Workbench Lite,Application,Active,Group Technology,Data Services,Tier 1
-APP-10471,LDI Collateral Model,IT Component,End of Life,Group Technology,Investment Management,Tier 3
-APP-10472,Climate Model,Application,Active,Group Technology,Data Services,Tier 1
-APP-10473,Stress Loader,Interface,Active,Investments,Risk,Tier 2
-APP-10474,Multi-Asset VaR Blotter,Application,Active,Investments,Risk,Tier 3
-APP-10475,Liquidity Risk Tracker,Application,Plan,Investments,Risk,Tier 2
-APP-10476,Execution Database Legacy,Data Object,Active,Group Technology,Trading,Tier 2
-APP-10477,HR Dashboard,Application,Active,Investments,Data Services,Tier 2
-APP-10478,Venue Blotter,Application,End of Life,Investments,Trading,Tier 1
-APP-10479,Venue Database II,Data Object,Active,Investments,Trading,Tier 3
-APP-10480,FX Exposure Store,Data Object,End of Life,Investments,Risk,Tier 2
-APP-10481,Reference Data Gateway Lite,Interface,Active,Investments,Data Services,Tier 1
-APP-10482,Event Calculator Hub,Application,Active,Group Technology,Data Services,Tier 2
-APP-10483,Sterling Liquidity Store,Data Object,Active,Group Technology,Investment Management,Tier 1
-APP-10484,Board MI Bridge Hub,Interface,Active,Investments,Data Services,Tier 2
-APP-10485,Equity Research Model,IT Component,End of Life,Investments,Research,Tier 2
-APP-10486,Property Constraint Simulator,IT Component,Phase Out,Investments,Investment Management,Tier 3
-APP-10487,Macro Dashboard Hub,Application,Phase Out,Group Technology,Research,Tier 3
-APP-10488,Attribution Model,IT Component,Phase Out,Group Technology,Data Services,Tier 1
-APP-10489,LDI Order Simulator,IT Component,End of Life,Investments,Investment Management,Tier 2
-APP-10490,Equity Price Workbench,Application,Phase Out,Group Technology,Trading,Tier 2
-APP-10491,Curve Gateway Pro,Interface,Active,Group Technology,Trading,Tier 1
-APP-10492,Reference Data Engine II Platform,IT Component,Phase Out,Investments,Data Services,Tier 2
-APP-10493,Performance Workbench,Application,Plan,Investments,Data Services,Tier 1
-APP-10494,Attribution Pipeline,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10495,Expenses Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-10496,Curve Feed,Interface,Active,Investments,Trading,Tier 3
-APP-10497,Model Portfolio Feed,Interface,Active,Investments,Investment Management,Tier 3
-APP-10498,Property Stewardship Feed,Interface,Active,Investments,Research,Tier 3
-APP-10499,HR Blotter Lite,Application,Active,Group Technology,Data Services,Tier 2
-APP-10500,Trade Feed Model,IT Component,Active,Investments,Data Services,Tier 2
-APP-10501,Positions Monitor,Application,Plan,Investments,Data Services,Tier 2
-APP-10502,Private Credit Risk Database,Application,Active,Investments,Data Services,Tier 2
-APP-10503,Sterling Stress Cache,Data Object,Active,Group Technology,Risk,Tier 2
-APP-10504,ESG Service,IT Component,End of Life,Investments,Research,Tier 2
-APP-10505,Mandate Loader,Interface,Active,Investments,Investment Management,Tier 2
-APP-10506,Client Reporting Engine II (Prod),Application,Active,Investments,Data Services,Tier 2
-APP-10507,Equity Collateral Mart,Data Object,End of Life,Investments,Investment Management,Tier 2
-APP-10508,RFQ Blotter Hub,Application,Active,Group Technology,Trading,Tier 3
-APP-10509,Rates Engagement Monitor,Application,Plan,Investments,Research,Tier 2
-APP-10510,LDI Price Cache,Data Object,Active,Investments,Trading,Tier 2
-APP-10511,Client Reporting Tracker,Application,Active,Group Technology,Data Services,Tier 1
-APP-10512,Board MI Pipeline II,Interface,Phase Out,Investments,Data Services,Tier 2
-APP-10513,Performance Pipeline,Interface,Active,Investments,Data Services,Tier 1
-APP-10514,Credit Liquidity Store,Data Object,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10515,Macro Cache Lite,Data Object,Active,Investments,Research,Tier 2
-APP-10516,Multi-Asset Execution Portal,Application,End of Life,Group Technology,Trading,Tier 3
-APP-10517,Constraint Gateway,Interface,Active,Investments,Investment Management,Tier 2
-APP-10518,EMD ESG Blotter,Application,Active,Investments,Research,Tier 3
-APP-10519,Holdings Portal,Application,Phase Out,Investments,Data Services,Tier 3
-APP-10520,Margin Viewer,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10521,Trade Blotter Loader II,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10522,Equity Macro Monitor,Application,Active,Investments,Research,Tier 1
-APP-10523,Message Dashboard,Application,Phase Out,Investments,Data Services,Tier 1
-APP-10524,Index Climate Store,Data Object,Active,Investments,Research,Tier 2
-APP-10525,Performance Monitor,Application,Active,Investments,Data Services,Tier 2
-APP-10526,Private Credit Execution Monitor,Application,Active,Group Technology,Trading,Tier 2
-APP-10527,Equity RFQ Feed,Interface,Active,Group Technology,Trading,Tier 3
-APP-10528,FX Portfolio Blotter,Application,Plan,Investments,Investment Management,Tier 3
-APP-10529,Trade Feed Service Hub,IT Component,End of Life,Group Technology,Data Services,Tier 3
-APP-10530,Screening Calculator,Application,Active,Investments,Research,Tier 2
-APP-10531,Index Market Data Pipeline,Interface,End of Life,Investments,Trading,Tier 2
-APP-10532,Constraint Bridge II Platform,Interface,Active,Investments,Investment Management,Tier 2
-APP-10533,FX Curve Simulator,IT Component,Phase Out,Investments,Trading,Tier 2
-APP-10534,Liquidity Monitor Legacy,Application,Plan,Group Technology,Investment Management,Tier 3
-APP-10535,Positions Pipeline Legacy,Interface,Active,Investments,Data Services,Tier 1
-APP-10536,Multi-Asset Credit Research Mart,Data Object,Active,Group Technology,Research,Tier 2
-APP-10537,Mandate Workbench,Application,End of Life,Group Technology,Investment Management,Tier 2
-APP-10538,Credit Constraint Service,IT Component,Phase Out,Investments,Investment Management,Tier 1
-APP-10539,Equity Model Portfolio Calculator,Application,End of Life,Group Technology,Investment Management,Tier 3
-APP-10540,File Transfer Monitor Next (Prod),Application,Plan,Investments,Data Services,Tier 2
-APP-10541,Global Stress Simulator,IT Component,Active,Investments,Risk,Tier 3
-APP-10542,LDI Credit Research Pipeline,Application,Active,Group Technology,Data Services,Tier 2
-APP-10543,Global Index Data Mart,Data Object,End of Life,Investments,Trading,Tier 3
-APP-10544,Sterling Stress Dashboard,Application,Active,Investments,Risk,Tier 2
-APP-10545,Optimiser Mart,Data Object,Active,Investments,Investment Management,Tier 3
-APP-10546,Exposure Simulator II,IT Component,Active,Investments,Risk,Tier 2
-APP-10547,Equity Tax Lot Tracker,Application,Plan,Investments,Investment Management,Tier 3
-APP-10548,File Transfer Service,IT Component,End of Life,Investments,Data Services,Tier 2
-APP-10549,CREDIT ALLOCATION VIEWER,Application,Active,Investments,Investment Management,Tier 2
-APP-10550,FX Screening Feed,Interface,End of Life,Group Technology,Research,Tier 2
-APP-10551,Liquidity Mart,Data Object,Plan,Group Technology,Investment Management,Tier 2
-APP-10552,Message Database,Data Object,Active,Investments,Data Services,Tier 1
-APP-10553,Message Workbench,Application,Active,Investments,Data Services,Tier 3
-APP-10554,Private Credit Equity Research Service,IT Component,End of Life,Group Technology,Research,Tier 3
-APP-10555,Climate Monitor,Application,Active,Investments,Research,Tier 2
-APP-10556,Index Stress Cache,Data Object,Active,Investments,Risk,Tier 2
-APP-10557,Facilities Monitor II,Application,Active,Investments,Data Services,Tier 2
-APP-10558,File Transfer Model Lite,IT Component,Active,Investments,Data Services,Tier 1
-APP-10559,Property Algo Bridge,Interface,Active,Investments,Trading,Tier 2
-APP-10560,Global Model Portfolio Monitor,Application,Active,Investments,Investment Management,Tier 3
-APP-10561,Execution Service,IT Component,Phase Out,Investments,Trading,Tier 2
-APP-10562,Learning Calculator,Application,Phase Out,Group Technology,Data Services,Tier 2
-APP-10563,Global Tax Lot Engine,IT Component,Plan,Investments,Investment Management,Tier 1
-APP-10564,Board MI Dashboard,Application,Active,Investments,Data Services,Tier 2
-APP-10565,Liquidity Risk Service,Application,Active,Investments,Data Services,Tier 2
-APP-10566,Curve Bridge,Interface,Phase Out,Investments,Trading,Tier 2
-APP-10567,Rebalance Service Hub,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10568,HR Workbench,Application,Active,Group Technology,Data Services,Tier 3
-APP-10569,Client Reporting Dashboard Legacy,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10570,Sterling Engagement Cache,Data Object,Phase Out,Investments,Research,Tier 2
-APP-10571,Equity Stewardship Store,Data Object,Active,Investments,Research,Tier 1
-APP-10572,Multi-Asset Credit Research Feed,Interface,Active,Investments,Research,Tier 1
-APP-10573,Performance Loader Legacy,Interface,Active,Investments,Data Services,Tier 2
-APP-10574,Index Market Data Engine,IT Component,Plan,Investments,Trading,Tier 2
-APP-10575,Screening Model,IT Component,Plan,Investments,Research,Tier 2
-APP-10576,Index Data Mart,Data Object,Active,Group Technology,Trading,Tier 2
-APP-10577,Multi-Asset Constraint Database,Data Object,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10578,Board MI Mart,Data Object,Active,Investments,Data Services,Tier 1
-APP-10579,Macro Model,IT Component,Phase Out,Group Technology,Research,Tier 3
-APP-10580,Performance Pipeline Lite,Interface,Active,Group Technology,Data Services,Tier 3
-APP-10581,Positions Feed,Interface,Active,Investments,Data Services,Tier 2
-APP-10582,Rates Stewardship Workbench,Application,Active,Group Technology,Research,Tier 2
-APP-10583,Risk Store Lite,Data Object,Plan,Group Technology,Risk,Tier 1
-APP-10584,Stress Viewer,Application,Active,Group Technology,Risk,Tier 1
-APP-10585,Event Workbench,Application,Phase Out,Group Technology,Data Services,Tier 2
-APP-10586,Performance Service,IT Component,Plan,Investments,Data Services,Tier 1
-APP-10587,Rates VaR Simulator,IT Component,Phase Out,Investments,Risk,Tier 2
-APP-10588,Property Venue Model,IT Component,Active,Investments,Trading,Tier 2
-APP-10589,Global RFQ Service,IT Component,Phase Out,Group Technology,Trading,Tier 2
-APP-10590,Risk Gateway,Interface,Active,Investments,Risk,Tier 2
-APP-10591,Stress Pipeline,Interface,Active,Group Technology,Risk,Tier 2
-APP-10592,Message Bridge Next,Interface,Phase Out,Investments,Data Services,Tier 2
-APP-10593,Attribution Dashboard,Application,Plan,Investments,Data Services,Tier 2
-APP-10594,EMD Tax Lot Pipeline,Interface,End of Life,Investments,Investment Management,Tier 3
-APP-10595,Collateral Database,Data Object,Active,Group Technology,Investment Management,Tier 2
-APP-10596,LDI RFQ Simulator Platform,IT Component,Active,Investments,Trading,Tier 1
-APP-10597,Security Master Calculator,Application,Active,Investments,Data Services,Tier 1
-APP-10598,Attribution Simulator,IT Component,Active,Investments,Data Services,Tier 2
-APP-10599,Expenses Viewer,Application,End of Life,Investments,Data Services,Tier 1
-APP-10600,Portfolio Feed,Interface,End of Life,Group Technology,Investment Management,Tier 3
-APP-10601,Private Credit Portfolio Tracker,Application,Active,Investments,Investment Management,Tier 1
-APP-10602,Multi-Asset Tax Lot Cache,Data Object,Active,Investments,Investment Management,Tier 1
-APP-10603,Attribution Bridge,Interface,Plan,Group Technology,Data Services,Tier 3
-APP-10604,Facilities Tracker Pro,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10605,Positions Pipeline Next,Interface,Active,Investments,Data Services,Tier 1
-APP-10606,Equity Research Dashboard,Application,Active,Investments,Research,Tier 2
-APP-10607,Sterling Algo Viewer,Application,Phase Out,Investments,Trading,Tier 3
-APP-10608,Trade Feed Engine,IT Component,Phase Out,Investments,Data Services,Tier 1
-APP-10609,Multi-Asset Risk Cache,Data Object,Phase Out,Group Technology,Risk,Tier 1
-APP-10610,Tax Lot Calculator,Application,End of Life,Investments,Investment Management,Tier 3
-APP-10611,Reference Data Bridge,Interface,Active,Investments,Data Services,Tier 3
-APP-10612,Reference Data Pipeline,Interface,Active,Group Technology,Data Services,Tier 3
-APP-10613,Positions Calculator,Application,Plan,Investments,Data Services,Tier 2
-APP-10614,Positions Portal Next,Application,Plan,Investments,Data Services,Tier 1
-APP-10615,Constraint Gateway Next,Interface,Active,Investments,Investment Management,Tier 3
-APP-10616,Index Collateral Portal,Application,Active,Investments,Investment Management,Tier 2
-APP-10617,Global Credit Research Model,IT Component,End of Life,Investments,Research,Tier 3
-APP-10618,Price Monitor II,Application,Plan,Investments,Trading,Tier 2
-APP-10619,FX Model Portfolio Database,Data Object,Plan,Group Technology,Investment Management,Tier 3
-APP-10620,LDI Mandate Viewer,Application,Active,Investments,Investment Management,Tier 3
-APP-10621,LDI Exposure Bridge,Interface,End of Life,Investments,Risk,Tier 2
-APP-10622,Multi-Asset Model Portfolio Cache,Data Object,Active,Investments,Investment Management,Tier 1
-APP-10623,EMD Engagement Model,IT Component,Plan,Group Technology,Research,Tier 1
-APP-10624,Private Credit Optimiser Engine,IT Component,Phase Out,Investments,Investment Management,Tier 1
-APP-10625,Reference Data Cache,Data Object,Active,Investments,Data Services,Tier 2
-APP-10626,Optimiser Bridge,Interface,End of Life,Group Technology,Investment Management,Tier 3
-APP-10627,Equity Research Engine,IT Component,Phase Out,Investments,Research,Tier 3
-APP-10628,Index Screening Loader,Interface,Plan,Investments,Research,Tier 1
-APP-10629,Credit Execution Engine,IT Component,Active,Investments,Trading,Tier 2
-APP-10630,Board MI Mart Next,Data Object,Active,Investments,Data Services,Tier 1
-APP-10631,Equity Constraint Simulator,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10632,Rates Optimiser Feed,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10633,ESG Model,IT Component,Active,Group Technology,Research,Tier 2
-APP-10634,Exposure Pipeline Next,Interface,Active,Group Technology,Risk,Tier 1
-APP-10635,Tax Lot Simulator,IT Component,Active,Group Technology,Investment Management,Tier 1
-APP-10636,Portfolio Bridge Legacy,Interface,Active,Investments,Investment Management,Tier 1
-APP-10637,Constraint Service,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10638,Positions Mart Next,Data Object,Active,Group Technology,Data Services,Tier 1
-APP-10639,Client Reporting Database,Data Object,Active,Group Technology,Data Services,Tier 3
-APP-10640,Allocation Tracker,Application,Phase Out,Investments,Data Services,Tier 1
-APP-10641,Market Data Loader,Interface,Phase Out,Group Technology,Trading,Tier 3
-APP-10642,FX Order Mart,Data Object,End of Life,Investments,Investment Management,Tier 3
-APP-10643,Rates Model Portfolio Tracker,Application,Plan,Investments,Investment Management,Tier 2
-APP-10644,HR Viewer Legacy,Application,Plan,Investments,Data Services,Tier 1
-APP-10645,Curve Simulator,IT Component,Active,Investments,Trading,Tier 1
-APP-10646,Tax Lot Tracker,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10647,Private Credit Screening Bridge,Interface,Active,Investments,Research,Tier 3
-APP-10648,Model Portfolio Database Next,Data Object,Active,Investments,Investment Management,Tier 3
-APP-10649,Reference Data Tracker,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10650,EMD Screening Calculator,Application,Plan,Group Technology,Research,Tier 2
-APP-10651,Mandate Blotter,Application,Phase Out,Investments,Investment Management,Tier 3
-APP-10652,Tax Lot Tracker Hub Platform,Application,Active,Investments,Investment Management,Tier 1
-APP-10653,CASH TRACKER,Application,End of Life,Investments,Investment Management,Tier 3
-APP-10654,Model Portfolio Cache,Data Object,End of Life,Group Technology,Investment Management,Tier 2
-APP-10655,Engagement Loader,Interface,End of Life,Investments,Research,Tier 2
-APP-10656,Reference Data Bridge II,Interface,Active,Investments,Data Services,Tier 3
-APP-10657,Liquidity Risk Mart,Data Object,Active,Group Technology,Risk,Tier 3
-APP-10658,Property Constraint Monitor,Application,Active,Investments,Investment Management,Tier 2
-APP-10659,EMD Rebalance Loader,Interface,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10660,Attribution Viewer,Application,Plan,Group Technology,Data Services,Tier 3
-APP-10661,Rates Curve Workbench,Application,Active,Investments,Trading,Tier 2
-APP-10662,File Transfer Portal,Application,End of Life,Investments,Data Services,Tier 2
-APP-10663,EMD Engagement Tracker,Application,Active,Investments,Research,Tier 3
-APP-10664,HR Monitor Next,Application,End of Life,Investments,Data Services,Tier 2
-APP-10665,Fund Structure Feed,Interface,Phase Out,Investments,Investment Management,Tier 2
-APP-10666,Multi-Asset Credit Research Monitor,Application,Active,Investments,Research,Tier 2
-APP-10667,Holdings Pipeline,Interface,Active,Investments,Data Services,Tier 2
-APP-10668,Sterling Stress Gateway,Interface,Active,Group Technology,Risk,Tier 1
-APP-10669,Rebalance Dashboard,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10670,EMD Price Dashboard,Application,End of Life,Group Technology,Trading,Tier 3
-APP-10671,Private Credit Risk Calculator,Application,Active,Investments,Risk,Tier 1
-APP-10672,Stress Mart,Data Object,End of Life,Investments,Risk,Tier 2
-APP-10673,File Transfer Blotter,Application,Plan,Investments,Data Services,Tier 2
-APP-10674,Equity Fund Structure Dashboard,Application,Plan,Group Technology,Investment Management,Tier 3
-APP-10675,Security Master Loader,Interface,Active,Investments,Data Services,Tier 1
-APP-10676,Margin Engine,IT Component,Active,Investments,Investment Management,Tier 1
-APP-10677,Margin Bridge,Interface,End of Life,Investments,Investment Management,Tier 3
-APP-10678,Allocation Model,IT Component,End of Life,Investments,Investment Management,Tier 1
-APP-10679,Security Master Gateway,Interface,End of Life,Investments,Data Services,Tier 2
-APP-10680,Private Credit Stewardship Workbench,Application,Active,Group Technology,Research,Tier 3
-APP-10681,FX Engagement Service,IT Component,Plan,Investments,Research,Tier 1
-APP-10682,Tax Lot Mart,Data Object,Active,Investments,Investment Management,Tier 1
-APP-10683,Attribution Monitor II,Application,Active,Investments,Data Services,Tier 2
-APP-10684,Collateral Simulator,IT Component,Plan,Group Technology,Investment Management,Tier 3
-APP-10685,Performance Bridge,Interface,Active,Investments,Data Services,Tier 2
-APP-10686,Global Liquidity Blotter,Application,Active,Investments,Investment Management,Tier 3
-APP-10687,Property Price Simulator,IT Component,Active,Investments,Trading,Tier 1
-APP-10688,Rates Trade Blotter Model,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10689,Multi-Asset Market Data Calculator (EUC),Application,Active,Investments,Trading,Tier 1
-APP-10690,Global Liquidity Monitor,Application,Plan,Investments,Investment Management,Tier 2
-APP-10691,Index Portfolio Cache,Data Object,Active,Investments,Investment Management,Tier 2
-APP-10692,Multi-Asset Screening Dashboard,Application,Active,Investments,Research,Tier 2
-APP-10693,Credit Cash Cache,Data Object,Active,Investments,Investment Management,Tier 2
-APP-10694,LDI Screening Engine,IT Component,Active,Investments,Research,Tier 1
-APP-10695,Facilities Blotter Lite,Application,Active,Investments,Data Services,Tier 1
-APP-10696,Exposure Mart,Data Object,Active,Investments,Risk,Tier 3
-APP-10697,Positions Pipeline Lite,Interface,End of Life,Investments,Data Services,Tier 2
-APP-10698,Multi-Asset Tax Lot Pipeline,Interface,Active,Group Technology,Investment Management,Tier 1
-APP-10699,Attribution Model Legacy,IT Component,Active,Investments,Data Services,Tier 2
-APP-10700,Security Master Mart,Data Object,Active,Investments,Data Services,Tier 1
-APP-10701,Multi-Asset Constraint Calculator,Application,Plan,Group Technology,Investment Management,Tier 3
-APP-10702,Trade Blotter Bridge,Interface,Active,Investments,Investment Management,Tier 2
-APP-10703,Fund Structure Calculator,Application,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10704,Security Master Viewer,Application,Active,Group Technology,Data Services,Tier 1
-APP-10705,Global RFQ Pipeline,Interface,Active,Group Technology,Trading,Tier 3
-APP-10706,Multi-Asset Optimiser Monitor,Application,Active,Investments,Investment Management,Tier 1
-APP-10707,Property Credit Research Model,IT Component,End of Life,Group Technology,Research,Tier 2
-APP-10708,Private Credit Allocation Calculator,Application,End of Life,Group Technology,Investment Management,Tier 3
-APP-10709,Board MI Model,IT Component,Active,Investments,Data Services,Tier 3
-APP-10710,Sterling Price Tracker,Application,Active,Investments,Trading,Tier 1
-APP-10711,Trade Feed Simulator,IT Component,Plan,Investments,Data Services,Tier 2
-APP-10712,LDI Credit Research Engine,IT Component,End of Life,Investments,Research,Tier 1
-APP-10713,Global Stewardship Store,Data Object,Plan,Group Technology,Research,Tier 2
-APP-10714,Index Cash Pipeline,Interface,Active,Investments,Investment Management,Tier 2
-APP-10715,Rates Algo Mart,Data Object,Active,Investments,Trading,Tier 2
-APP-10716,Fund Structure Bridge,Interface,Active,Group Technology,Investment Management,Tier 1
-APP-10717,Rebalance Pipeline,Interface,End of Life,Investments,Investment Management,Tier 2
-APP-10718,Stress Engine,IT Component,Plan,Investments,Risk,Tier 2
-APP-10719,Sterling Cash Mart,Data Object,End of Life,Investments,Investment Management,Tier 2
-APP-10720,LDI Mandate Store,Data Object,Plan,Investments,Investment Management,Tier 2
-APP-10721,File Transfer Dashboard,Application,Active,Investments,Data Services,Tier 1
-APP-10722,Private Credit Liquidity Mart,Data Object,End of Life,Investments,Investment Management,Tier 1
-APP-10723,Property Fund Structure Service,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10724,Mandate Workbench Next,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10725,Market Data Engine,IT Component,Active,Investments,Trading,Tier 2
-APP-10726,Global Order Model,IT Component,Plan,Group Technology,Investment Management,Tier 3
-APP-10727,Curve Gateway II,Interface,Phase Out,Investments,Trading,Tier 3
-APP-10728,Collateral Monitor Platform,Application,End of Life,Group Technology,Investment Management,Tier 2
-APP-10729,Attribution Store II,Data Object,Active,Group Technology,Data Services,Tier 2
-APP-10730,Trade Feed Gateway,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10731,HR Dashboard Hub,Application,Active,Investments,Data Services,Tier 3
-APP-10732,Private Credit Algo Model,IT Component,Active,Investments,Trading,Tier 2
-APP-10733,Tax Lot Pipeline Hub,Interface,Active,Group Technology,Investment Management,Tier 3
-APP-10734,FX Order Model,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10735,Expenses Tracker Pro,Application,Plan,Investments,Data Services,Tier 3
-APP-10736,Positions Tracker,Application,Active,Investments,Data Services,Tier 3
-APP-10737,Expenses Monitor Legacy,Application,End of Life,Investments,Data Services,Tier 3
-APP-10738,Reference Data Tracker Pro,Application,End of Life,Investments,Data Services,Tier 3
-APP-10739,Client Reporting Loader,Interface,Plan,Investments,Data Services,Tier 2
-APP-10740,Security Master Bridge,Interface,Active,Investments,Data Services,Tier 2
-APP-10741,Equity Constraint Feed,Interface,End of Life,Group Technology,Investment Management,Tier 1
-APP-10742,FX Allocation Store,Data Object,End of Life,Investments,Investment Management,Tier 3
-APP-10743,Expenses Viewer Lite,Application,Phase Out,Investments,Data Services,Tier 1
-APP-10744,Margin Workbench,Application,Active,Investments,Investment Management,Tier 2
-APP-10745,HR Portal Hub,Application,Active,Investments,Data Services,Tier 2
-APP-10746,Optimiser Database,Data Object,Active,Group Technology,Investment Management,Tier 2
-APP-10747,Property Optimiser Cache,Data Object,End of Life,Investments,Investment Management,Tier 2
-APP-10748,Learning Viewer,Application,End of Life,Investments,Data Services,Tier 2
-APP-10749,EMD Execution Loader,Interface,Plan,Investments,Trading,Tier 2
-APP-10750,Private Credit Execution Dashboard,Application,Plan,Investments,Trading,Tier 2
-APP-10751,Equity Research Engine Pro,IT Component,Phase Out,Investments,Research,Tier 2
-APP-10752,Global Collateral Dashboard,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10753,Sterling Tax Lot Portal Pro,Application,Active,Group Technology,Investment Management,Tier 3
-APP-10754,Property Market Data Workbench,Application,Active,Group Technology,Trading,Tier 1
-APP-10755,Trade Blotter Service Pro,IT Component,End of Life,Investments,Investment Management,Tier 3
-APP-10756,Credit Research Monitor,Application,Plan,Investments,Research,Tier 2
-APP-10757,Engagement Monitor,Application,Active,Investments,Research,Tier 2
-APP-10758,EMD Fund Structure Loader Next,Interface,End of Life,Investments,Investment Management,Tier 2
-APP-10759,Reference Data Feed,Interface,Active,Investments,Data Services,Tier 1
-APP-10760,EMD Equity Research Cache,Data Object,Active,Group Technology,Research,Tier 2
-APP-10761,Index Order Service,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10762,Attribution Service,IT Component,Phase Out,Investments,Data Services,Tier 3
-APP-10763,Expenses Portal Lite,Application,End of Life,Investments,Data Services,Tier 3
-APP-10764,Rates Credit Research Store,Data Object,End of Life,Investments,Research,Tier 3
-APP-10765,Model Portfolio Bridge,Interface,Phase Out,Investments,Investment Management,Tier 1
-APP-10766,Equity Research Tracker,Application,End of Life,Investments,Research,Tier 2
-APP-10767,Credit Risk Store,Data Object,Plan,Group Technology,Risk,Tier 3
-APP-10768,Learning Calculator Legacy,Application,End of Life,Group Technology,Data Services,Tier 2
-APP-10769,Index Model Portfolio Engine,IT Component,Plan,Investments,Investment Management,Tier 1
-APP-10770,Event Calculator Next,Application,Plan,Investments,Data Services,Tier 2
-APP-10771,Risk Cache,Data Object,End of Life,Investments,Risk,Tier 3
-APP-10772,Attribution Simulator Hub,IT Component,Active,Investments,Data Services,Tier 3
-APP-10773,Order Mart,Data Object,Plan,Investments,Investment Management,Tier 1
-APP-10774,Rates Trade Blotter Database,Data Object,End of Life,Group Technology,Investment Management,Tier 3
-APP-10775,Attribution Portal Next,Application,Active,Investments,Data Services,Tier 2
-APP-10776,Margin Pipeline Pro,Interface,Phase Out,Investments,Investment Management,Tier 2
-APP-10777,Macro Calculator,Application,Phase Out,Investments,Research,Tier 2
-APP-10778,Index Rebalance Pipeline,Interface,Active,Investments,Investment Management,Tier 3
-APP-10779,Stress Cache,Data Object,Active,Investments,Risk,Tier 2
-APP-10780,Equity Risk Gateway,Interface,Active,Investments,Risk,Tier 2
-APP-10781,Property Macro Bridge Legacy,Interface,Active,Investments,Research,Tier 3
-APP-10782,Property Equity Research Store,Data Object,Active,Investments,Research,Tier 2
-APP-10783,Holdings Calculator,Application,Phase Out,Group Technology,Data Services,Tier 1
-APP-10784,Equity Macro Engine,IT Component,Active,Investments,Research,Tier 2
-APP-10785,Private Credit Liquidity Risk Feed,Interface,Active,Investments,Risk,Tier 3
-APP-10786,Index Engagement Engine,IT Component,Plan,Group Technology,Research,Tier 2
-APP-10787,Board MI Bridge Next,Interface,Phase Out,Investments,Data Services,Tier 1
-APP-10788,Equity Screening Pipeline,Interface,Plan,Investments,Research,Tier 1
-APP-10789,Message Engine,IT Component,Active,Investments,Data Services,Tier 1
-APP-10790,Property VaR Viewer (Prod),Application,Plan,Group Technology,Risk,Tier 1
-APP-10791,RFQ Bridge,Interface,Active,Group Technology,Trading,Tier 1
-APP-10792,Holdings Bridge II,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10793,Market Data Cache,Application,Active,Group Technology,Data Services,Tier 2
-APP-10794,HR Monitor Pro,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10795,Liquidity Bridge,Interface,Active,Investments,Investment Management,Tier 1
-APP-10796,Facilities Calculator Next,Application,End of Life,Investments,Data Services,Tier 1
-APP-10797,Algo Gateway,Interface,Phase Out,Group Technology,Trading,Tier 3
-APP-10798,Index Data Viewer,Application,Active,Investments,Trading,Tier 2
-APP-10799,Tax Lot Workbench Next,Application,Phase Out,Investments,Investment Management,Tier 1
-APP-10800,Screening Gateway,Interface,End of Life,Investments,Research,Tier 2
-APP-10801,Performance Monitor Next,Application,Phase Out,Investments,Data Services,Tier 1
-APP-10802,Holdings Loader,Application,End of Life,Investments,Data Services,Tier 3
-APP-10803,Security Master Monitor,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10804,Trade Feed Model II,IT Component,Active,Investments,Data Services,Tier 1
-APP-10805,Optimiser Mart II,Data Object,Phase Out,Investments,Investment Management,Tier 3
-APP-10806,RFQ Dashboard Hub,Application,Active,Investments,Trading,Tier 3
-APP-10807,Security Master Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-10808,Expenses Calculator II,Application,End of Life,Investments,Data Services,Tier 3
-APP-10809,ESG Model Lite,IT Component,Phase Out,Investments,Research,Tier 2
-APP-10810,HR Dashboard Pro,Application,Active,Investments,Data Services,Tier 2
-APP-10811,Multi-Asset Credit Research Tracker,Application,Active,Group Technology,Research,Tier 1
-APP-10812,Multi-Asset Price Tracker,Application,Active,Investments,Trading,Tier 1
-APP-10813,Learning Dashboard,Application,Active,Investments,Data Services,Tier 3
-APP-10814,Index Liquidity Calculator,Application,Plan,Investments,Investment Management,Tier 3
-APP-10815,Global Liquidity Blotter Hub,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10816,Property Credit Research Engine,IT Component,Active,Group Technology,Research,Tier 3
-APP-10817,Security Master Workbench,Application,Plan,Investments,Data Services,Tier 2
-APP-10818,Optimiser Pipeline,Interface,Active,Investments,Investment Management,Tier 2
-APP-10819,Equity Index Data Monitor,Application,Phase Out,Group Technology,Trading,Tier 2
-APP-10820,Order Monitor Legacy,Application,Plan,Investments,Investment Management,Tier 1
-APP-10821,Portfolio Viewer,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10822,LDI Portfolio Portal,Application,Plan,Investments,Investment Management,Tier 1
-APP-10823,Portfolio Database,Data Object,Active,Investments,Investment Management,Tier 2
-APP-10824,Learning Blotter Pro,Application,Active,Investments,Data Services,Tier 2
-APP-10825,Sterling Engagement Service,IT Component,Plan,Investments,Research,Tier 3
-APP-10826,Rebalance Mart Pro,Data Object,End of Life,Investments,Investment Management,Tier 3
-APP-10827,Holdings Gateway Hub,Interface,Active,Investments,Data Services,Tier 2
-APP-10828,Holdings Mart,Data Object,Active,Group Technology,Data Services,Tier 3
-APP-10829,Board MI Model Legacy,IT Component,Active,Investments,Data Services,Tier 2
-APP-10830,Sterling Stress Feed,Interface,Active,Investments,Risk,Tier 2
-APP-10831,Attribution Cache,Data Object,End of Life,Group Technology,Data Services,Tier 2
-APP-10832,Equity Research Dashboard Hub,Application,Phase Out,Group Technology,Research,Tier 1
-APP-10833,Attribution Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-10834,Margin Feed,Application,Phase Out,Investments,Data Services,Tier 1
-APP-10835,Facilities Dashboard,Application,Active,Investments,Data Services,Tier 2
-APP-10836,Holdings Dashboard,Application,End of Life,Investments,Data Services,Tier 3
-APP-10837,Equity Price Service,IT Component,End of Life,Investments,Trading,Tier 2
-APP-10838,LDI Macro Bridge,Interface,Active,Investments,Research,Tier 2
-APP-10839,Cash Tracker Legacy,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10840,Expenses Dashboard,Application,End of Life,Group Technology,Data Services,Tier 1
-APP-10841,Client Reporting Dashboard Next,Application,Active,Investments,Data Services,Tier 2
-APP-10842,Equity Liquidity Portal,Application,Active,Investments,Investment Management,Tier 3
-APP-10843,Credit Research Pipeline II,Interface,Plan,Investments,Research,Tier 1
-APP-10844,Liquidity Risk Cache,Data Object,Phase Out,Investments,Risk,Tier 2
-APP-10845,Performance Mart,Data Object,Active,Group Technology,Data Services,Tier 2
-APP-10846,Sterling Fund Structure Store,Data Object,Active,Investments,Investment Management,Tier 2
-APP-10847,Index Venue Pipeline,Interface,Active,Investments,Trading,Tier 3
-APP-10848,Macro Monitor,Application,Plan,Group Technology,Research,Tier 2
-APP-10849,Multi-Asset Screening Tracker,Application,Plan,Group Technology,Research,Tier 2
-APP-10850,VaR Monitor,Application,Active,Group Technology,Risk,Tier 2
-APP-10851,Execution Mart,Data Object,Plan,Investments,Trading,Tier 3
-APP-10852,Client Reporting Mart,Data Object,End of Life,Investments,Data Services,Tier 2
-APP-10853,Client Reporting Mart Hub,Data Object,Active,Investments,Data Services,Tier 2
-APP-10854,Constraint Engine,IT Component,Plan,Investments,Investment Management,Tier 3
-APP-10855,Venue Store,Data Object,Phase Out,Investments,Trading,Tier 2
-APP-10856,Equity Collateral Cache,Data Object,End of Life,Group Technology,Investment Management,Tier 1
-APP-10857,Holdings Tracker,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10858,Rebalance Engine,IT Component,Phase Out,Investments,Investment Management,Tier 2
-APP-10859,Attribution Feed,Interface,Active,Investments,Data Services,Tier 2
-APP-10860,Trade Feed Blotter Lite,Application,Active,Group Technology,Data Services,Tier 2
-APP-10861,Liquidity Engine,IT Component,Active,Group Technology,Investment Management,Tier 3
-APP-10862,Portfolio Bridge Pro,Interface,Active,Investments,Investment Management,Tier 2
-APP-10863,Liquidity Simulator,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10864,Index Venue Workbench Platform,Application,Active,Investments,Trading,Tier 2
-APP-10865,Rebalance Dashboard Lite,Application,Active,Investments,Investment Management,Tier 3
-APP-10866,Stewardship Blotter Legacy,Application,End of Life,Group Technology,Research,Tier 2
-APP-10867,FX Credit Research Simulator,IT Component,Active,Investments,Research,Tier 1
-APP-10868,Stress Cache II,Data Object,Active,Investments,Risk,Tier 1
-APP-10869,Sterling Cash Model,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10870,Index Liquidity Risk Simulator,IT Component,Active,Investments,Risk,Tier 2
-APP-10871,HR Monitor Lite,Application,Active,Group Technology,Data Services,Tier 1
-APP-10872,Holdings Workbench Hub,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10873,Global Collateral Monitor,Application,Active,Investments,Investment Management,Tier 2
-APP-10874,Property Order Model,IT Component,End of Life,Group Technology,Investment Management,Tier 1
-APP-10875,Tax Lot Calculator Lite,Application,Plan,Investments,Investment Management,Tier 3
-APP-10876,Liquidity Risk Feed Platform,Interface,Phase Out,Investments,Risk,Tier 2
-APP-10877,Global Screening Feed,Interface,Active,Investments,Research,Tier 1
-APP-10878,Allocation Feed,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10879,File Transfer Monitor II,Application,Plan,Investments,Data Services,Tier 2
-APP-10880,Constraint Gateway Hub,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10881,Optimiser Feed,Interface,Active,Investments,Investment Management,Tier 2
-APP-10882,Trade Feed Portal Hub,Application,Active,Investments,Data Services,Tier 2
-APP-10883,Tax Lot Mart Pro,Data Object,Plan,Investments,Investment Management,Tier 3
-APP-10884,Multi-Asset Optimiser Service,IT Component,Active,Investments,Investment Management,Tier 1
-APP-10885,FX Execution Tracker,Application,Plan,Investments,Trading,Tier 2
-APP-10886,Credit Margin Bridge,Interface,Phase Out,Investments,Investment Management,Tier 1
-APP-10887,Stress Database,Data Object,Active,Group Technology,Risk,Tier 2
-APP-10888,Equity Optimiser Tracker (Prod),Application,Active,Group Technology,Investment Management,Tier 2
-APP-10889,Reference Data Blotter,Application,End of Life,Investments,Data Services,Tier 2
-APP-10890,Event Mart,Data Object,End of Life,Investments,Data Services,Tier 1
-APP-10891,Venue Tracker,Application,Plan,Investments,Trading,Tier 2
-APP-10892,Message Service,IT Component,Active,Investments,Data Services,Tier 3
-APP-10893,Equity Margin Engine,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-10894,Facilities Blotter Pro,Application,Active,Investments,Data Services,Tier 1
-APP-10895,Positions Viewer,Application,Active,Investments,Data Services,Tier 2
-APP-10896,Order Simulator,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10897,Sterling Equity Research Engine,IT Component,Active,Investments,Research,Tier 2
-APP-10898,Reference Data Dashboard,Application,Active,Group Technology,Data Services,Tier 3
-APP-10899,Sterling Risk Engine,IT Component,Active,Investments,Risk,Tier 2
-APP-10900,Board MI Blotter,Application,Active,Investments,Data Services,Tier 1
-APP-10901,Risk Feed Pro,Interface,End of Life,Investments,Risk,Tier 2
-APP-10902,Performance Store,Data Object,Phase Out,Investments,Data Services,Tier 3
-APP-10903,Global Optimiser Model,IT Component,Active,Investments,Investment Management,Tier 1
-APP-10904,Message Viewer,Application,Active,Investments,Data Services,Tier 3
-APP-10905,Facilities Workbench Pro,Application,End of Life,Investments,Data Services,Tier 2
-APP-10906,Liquidity Calculator,Application,Active,Investments,Investment Management,Tier 2
-APP-10907,Security Master Tracker II,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10908,Private Credit Curve Portal (EUC),Application,Active,Investments,Trading,Tier 1
-APP-10909,FX ESG Model,IT Component,Plan,Investments,Research,Tier 1
-APP-10910,EMD Optimiser Simulator,IT Component,Plan,Group Technology,Investment Management,Tier 3
-APP-10911,LDI Screening Blotter,Application,Phase Out,Group Technology,Research,Tier 2
-APP-10912,Execution Feed,Interface,End of Life,Group Technology,Trading,Tier 2
-APP-10913,Private Credit Allocation Tracker,Application,Phase Out,Group Technology,Investment Management,Tier 2
-APP-10914,Multi-Asset Curve Mart,Application,Phase Out,Investments,Data Services,Tier 2
-APP-10915,Holdings Model (Prod),IT Component,Active,Investments,Data Services,Tier 2
-APP-10916,Credit Execution Bridge,Interface,Plan,Group Technology,Trading,Tier 1
-APP-10917,Performance Calculator,Application,Active,Group Technology,Data Services,Tier 2
-APP-10918,Mandate Viewer,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10919,Security Master Calculator Pro,Application,End of Life,Investments,Data Services,Tier 1
-APP-10920,Facilities Blotter Next,Application,End of Life,Group Technology,Data Services,Tier 1
-APP-10921,Collateral Engine,IT Component,Plan,Investments,Investment Management,Tier 3
-APP-10922,LDI Credit Research Dashboard,Application,Active,Investments,Research,Tier 1
-APP-10923,Private Credit Model Portfolio Service,IT Component,Active,Investments,Investment Management,Tier 2
-APP-10924,FX Exposure Simulator,IT Component,End of Life,Investments,Risk,Tier 1
-APP-10925,Index Optimiser Blotter,Application,Active,Investments,Investment Management,Tier 2
-APP-10926,Trade Feed Loader Lite,Interface,Active,Investments,Data Services,Tier 3
-APP-10927,Fund Structure Monitor,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10928,Credit Equity Research Mart,Data Object,End of Life,Investments,Research,Tier 2
-APP-10929,Allocation Blotter,Application,Active,Investments,Investment Management,Tier 1
-APP-10930,FX Risk Mart,Data Object,Active,Group Technology,Risk,Tier 3
-APP-10931,Sterling Model Portfolio Tracker,Application,Phase Out,Investments,Investment Management,Tier 2
-APP-10932,LDI Model Portfolio Monitor,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10933,FX Fund Structure Tracker,Application,Active,Investments,Investment Management,Tier 3
-APP-10934,Attribution Loader Next,Interface,End of Life,Investments,Data Services,Tier 3
-APP-10935,Equity Credit Research Blotter,Application,Plan,Group Technology,Research,Tier 3
-APP-10936,Stewardship Cache,Data Object,Active,Group Technology,Research,Tier 3
-APP-10937,Global Portfolio Model,IT Component,Active,Investments,Investment Management,Tier 3
-APP-10938,HR Tracker Lite,Application,Phase Out,Group Technology,Data Services,Tier 1
-APP-10939,Global VaR Database,Data Object,Active,Investments,Risk,Tier 1
-APP-10940,Global Portfolio Gateway,Interface,Active,Group Technology,Investment Management,Tier 2
-APP-10941,Rates Execution Pipeline,Interface,Active,Investments,Trading,Tier 3
-APP-10942,Rates Market Data Service,IT Component,Plan,Group Technology,Trading,Tier 3
-APP-10943,Cash Feed,Interface,Active,Investments,Investment Management,Tier 2
-APP-10944,Market Data Service,IT Component,Active,Investments,Trading,Tier 3
-APP-10945,Event Blotter,Application,Plan,Group Technology,Data Services,Tier 2
-APP-10946,LDI Optimiser Database,Data Object,Plan,Investments,Investment Management,Tier 2
-APP-10947,LDI Exposure Cache,Data Object,Active,Investments,Risk,Tier 3
-APP-10948,Positions Viewer II Platform,Application,Active,Group Technology,Data Services,Tier 1
-APP-10949,File Transfer Gateway,Interface,Plan,Investments,Data Services,Tier 2
-APP-10950,Trade Feed Database,Data Object,Active,Group Technology,Data Services,Tier 2
-APP-10951,Learning Tracker Next,Application,Active,Investments,Data Services,Tier 3
-APP-10952,Client Reporting Gateway,Interface,Active,Investments,Data Services,Tier 2
-APP-10953,Event Model Pro,IT Component,Plan,Group Technology,Data Services,Tier 1
-APP-10954,FILE TRANSFER STORE PRO,Data Object,Active,Investments,Data Services,Tier 3
-APP-10955,Index Data Blotter,Application,Phase Out,Investments,Trading,Tier 1
-APP-10956,HR Viewer II,Application,Active,Investments,Data Services,Tier 2
-APP-10957,Trade Feed Bridge,Interface,Active,Group Technology,Data Services,Tier 1
-APP-10958,Liquidity Cache,Data Object,Active,Group Technology,Investment Management,Tier 2
-APP-10959,Market Data Gateway,Interface,Active,Investments,Trading,Tier 3
-APP-10960,Trade Blotter Tracker II,Application,End of Life,Investments,Investment Management,Tier 2
-APP-10961,Portfolio Bridge Next,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10962,Credit RFQ Database,Data Object,Active,Group Technology,Trading,Tier 2
-APP-10963,Message Calculator Lite,Application,Active,Investments,Data Services,Tier 2
-APP-10964,Rates Mandate Service,IT Component,End of Life,Investments,Investment Management,Tier 2
-APP-10965,Attribution Cache Legacy,Data Object,Phase Out,Investments,Data Services,Tier 3
-APP-10966,Holdings Calculator Hub,Application,Active,Investments,Data Services,Tier 1
-APP-10967,Order Calculator,Application,Active,Group Technology,Investment Management,Tier 2
-APP-10968,Holdings Blotter Hub,Application,Active,Investments,Data Services,Tier 3
-APP-10969,FX Engagement Dashboard,Application,Active,Investments,Data Services,Tier 3
-APP-10970,Index Execution Loader,Interface,Active,Group Technology,Trading,Tier 1
-APP-10971,Global Cash Calculator,Application,Active,Investments,Investment Management,Tier 2
-APP-10972,Attribution Mart Pro,Data Object,Phase Out,Group Technology,Data Services,Tier 2
-APP-10973,Margin Model II Platform,IT Component,Plan,Group Technology,Investment Management,Tier 2
-APP-10974,Credit Research Bridge,Interface,Active,Investments,Research,Tier 2
-APP-10975,Event Dashboard,Application,Active,Group Technology,Data Services,Tier 2
-APP-10976,Global Curve Service,IT Component,End of Life,Investments,Trading,Tier 3
-APP-10977,Credit Liquidity Portal,Application,Active,Group Technology,Investment Management,Tier 3
-APP-10978,Equity Research Model II,IT Component,Phase Out,Investments,Research,Tier 1
-APP-10979,RFQ Service,IT Component,Phase Out,Investments,Trading,Tier 3
-APP-10980,Constraint Store,Data Object,Plan,Investments,Investment Management,Tier 2
-APP-10981,Message Pipeline,Interface,Active,Group Technology,Data Services,Tier 2
-APP-10982,Security Master Dashboard Next,Application,Active,Investments,Data Services,Tier 2
-APP-10983,Trade Blotter Cache,Data Object,Active,Investments,Investment Management,Tier 1
-APP-10984,Security Master Tracker Pro,Application,Plan,Investments,Data Services,Tier 3
-APP-10985,Global ESG Tracker,Application,Active,Group Technology,Research,Tier 2
-APP-10986,RFQ Cache,Data Object,End of Life,Group Technology,Trading,Tier 3
-APP-10987,Private Credit Constraint Monitor,Application,Plan,Group Technology,Investment Management,Tier 1
-APP-10988,Model Portfolio Store,Data Object,Plan,Investments,Investment Management,Tier 1
-APP-10989,Portfolio Gateway,Interface,Plan,Investments,Investment Management,Tier 2
-APP-10990,Multi-Asset Curve Feed,Interface,End of Life,Investments,Trading,Tier 2
-APP-10991,Performance Store Hub,Data Object,Plan,Investments,Data Services,Tier 2
-APP-10992,Risk Database,Data Object,End of Life,Investments,Risk,Tier 3
-APP-10993,RFQ Mart,Data Object,Phase Out,Investments,Trading,Tier 1
-APP-10994,Board MI Simulator,IT Component,Active,Group Technology,Data Services,Tier 2
-APP-10995,Model Portfolio Calculator,Application,Active,Investments,Investment Management,Tier 2
-APP-10996,Performance Engine,IT Component,End of Life,Investments,Data Services,Tier 1
-APP-10997,Holdings Bridge Legacy,Interface,End of Life,Group Technology,Data Services,Tier 2
-APP-10998,Attribution Feed Lite,Interface,Plan,Group Technology,Data Services,Tier 1
-APP-10999,Market Data Blotter,Application,Active,Investments,Trading,Tier 2
-APP-11000,File Transfer Cache II,Data Object,Phase Out,Investments,Data Services,Tier 3
-APP-11001,Multi-Asset Liquidity Portal,Application,Phase Out,Investments,Investment Management,Tier 3
-APP-11002,Property Allocation Feed,Interface,Active,Group Technology,Investment Management,Tier 3
-APP-11003,Performance Viewer II,Application,Active,Investments,Data Services,Tier 2
-APP-11004,Client Reporting Blotter,Application,Active,Investments,Data Services,Tier 2
-APP-11005,Engagement Service,IT Component,Active,Investments,Research,Tier 2
-APP-11006,Trade Blotter Dashboard Lite,Application,Plan,Investments,Investment Management,Tier 2
-APP-11007,Learning Viewer Hub,Application,Active,Group Technology,Data Services,Tier 1
-APP-11008,Global Equity Research Portal,Application,Active,Investments,Research,Tier 2
-APP-11009,Model Portfolio Bridge Legacy,Interface,Active,Group Technology,Investment Management,Tier 2
-APP-11010,File Transfer Mart,Data Object,Plan,Investments,Data Services,Tier 2
-APP-11011,Credit Fund Structure Pipeline,Interface,Active,Group Technology,Investment Management,Tier 3
-APP-11012,Client Reporting Store Legacy,Data Object,Active,Investments,Data Services,Tier 3
-APP-11013,Learning Workbench Hub,Application,End of Life,Investments,Data Services,Tier 2
-APP-11014,Learning Tracker Lite,Application,Phase Out,Investments,Data Services,Tier 3
-APP-11015,Holdings Gateway Pro,Interface,Plan,Investments,Data Services,Tier 3
-APP-11016,Macro Bridge,Interface,Active,Investments,Research,Tier 2
-APP-11017,File Transfer Bridge Lite,Interface,Active,Investments,Data Services,Tier 2
-APP-11018,File Transfer Pipeline,Interface,Plan,Investments,Data Services,Tier 2
-APP-11019,Optimiser Pipeline Pro,Interface,End of Life,Investments,Investment Management,Tier 2
-APP-11020,Allocation Simulator Hub,IT Component,Phase Out,Group Technology,Investment Management,Tier 3
-APP-11021,Credit Research Viewer,Application,End of Life,Group Technology,Research,Tier 3
-APP-11022,Credit Curve Loader,Interface,End of Life,Investments,Trading,Tier 1
-APP-11023,HR Tracker Next,Application,End of Life,Investments,Data Services,Tier 1
-APP-11024,File Transfer Loader Pro,Interface,Active,Group Technology,Data Services,Tier 1
-APP-11025,Macro Simulator,IT Component,Active,Investments,Research,Tier 3
-APP-11026,Macro Service,IT Component,Phase Out,Group Technology,Research,Tier 2
-APP-11027,Liquidity Calculator Hub,Application,Active,Investments,Investment Management,Tier 2
-APP-11028,Portfolio Model,IT Component,Active,Group Technology,Investment Management,Tier 2
-APP-11029,EMD Stewardship Mart,Data Object,Active,Investments,Research,Tier 3
-APP-11030,Attribution Feed Pro,Interface,Active,Investments,Data Services,Tier 2
-APP-11031,Murex,Application,Plan,Investments,Investment Management,Tier 2
-APP-11032,Calypso,Application,Plan,Investments,Data Services,Tier 2
-APP-11033,SimCorp Dimension,Application,Plan,Group Technology,Trading,Tier 3
-APP-11034,Clearwater Analytics,Application,Plan,Group Technology,Research,Tier 2
-APP-11035,Informatica MDM,Application,Plan,Group Technology,Trading,Tier 3
-APP-11036,Bloomberg PORT Enterprise,Application,Plan,Group Technology,Risk,Tier 3
-APP-11037,ION Trading,Application,Plan,Group Technology,Trading,Tier 3
-APP-11038,Broadridge Gloss,Application,Plan,Investments,Research,Tier 2
-APP-11039,Workday Finance,Application,Active,Investments,Research,Tier 2
-APP-11040,ServiceNow ITSM,Application,Active,Investments,Research,Tier 2
-APP-11041,Confluence Wiki,Application,Plan,Investments,Data Services,Tier 2
-APP-11042,Tableau Server,Application,Active,Investments,Risk,Tier 2
-APP-11043,MSCI RiskMetrics,Application,Active,Group Technology,Risk,Tier 2
-APP-11044,Sustainalytics Feed,Application,Active,Investments,Data Services,Tier 2
-APP-11045,ICE Data Services,Application,Plan,Group Technology,Data Services,Tier 2
-APP-11046,S&P Capital IQ,Application,Plan,Group Technology,Data Services,Tier 2
-APP-11047,Moody’s Analytics,Application,Active,Investments,Research,Tier 3
-APP-11048,Enfusion,Application,Plan,Investments,Trading,Tier 2
-APP-11049,Arcesium Forge,Application,Active,Group Technology,Risk,Tier 2
-APP-11050,Linedata Longview,Application,Active,Group Technology,Trading,Tier 3
+APP-10000,Bloomberg Terminals,Application,Active,Investments,Trading,Tier 1
+APP-10001,Bloomberg AIM,Application,Active,Investments,Investment Management,Tier 2
+APP-10002,Charles River IMS,Application,Active,Investments,Investment Management,Tier 1
+APP-10003,Aladdin Risk,Application,Plan,Investments,Risk,Tier 3
+APP-10004,FactSet Workstation,Application,Phase Out,Investments,Research,Tier 2
+APP-10005,Refinitiv Eikon,Application,Active,Investments,Trading,Tier 2
+APP-10006,TradeWeb,Application,Active,Investments,Trading,Tier 2
+APP-10007,MarketAxess,Application,Active,Investments,Trading,Tier 1
+APP-10008,Snowflake (Inv Data Lake),Data Object,Active,Investments,Data Services,Tier 2
+APP-10009,Kafka Event Bus,Interface,Plan,Investments,Data Services,Tier 2
+APP-10010,Power BI Service,Application,Active,Investments,Data Services,Tier 1
+APP-10011,Azure Data Factory Pipelines,Interface,End of Life,Investments,Data Services,Tier 3
+APP-10012,Axioma Risk Analytics,Application,Plan,Investments,Risk,Tier 1
+APP-10013,Oracle Securities DB,Data Object,Plan,Investments,Data Services,Tier 3
+APP-10014,Market Data Dashboard,Application,Active,Investments,Trading,Tier 2
+APP-10015,Price Simulator,IT Component,End of Life,Investments,Trading,Tier 1
+APP-10016,Credit Research Store,Data Object,Active,Group Technology,Research,Tier 2
+APP-10017,Stress Portal,Application,End of Life,Group Technology,Risk,Tier 3
+APP-10018,Positions Mart,Data Object,Active,Investments,Data Services,Tier 2
+APP-10019,Trade Feed Workbench,Application,Plan,Group Technology,Data Services,Tier 2
+APP-10020,Sterling Stewardship Gateway,Interface,Plan,Investments,Research,Tier 2
+APP-10021,LDI Algo Blotter,Application,Active,Investments,Trading,Tier 3
+APP-10022,Equity Trade Blotter Simulator,IT Component,Active,Investments,Investment Management,Tier 1
+APP-10023,LDI Price Portal (Prod),Application,Active,Investments,Trading,Tier 1
+APP-10024,FX Curve Loader,Application,Active,Group Technology,Data Services,Tier 3
+APP-10025,Client Reporting Dashboard,Application,Active,Investments,Data Services,Tier 3
+APP-10026,Index Curve Gateway,Interface,Active,Investments,Trading,Tier 3
+APP-10027,Global Price Pipeline,Interface,Active,Investments,Trading,Tier 2
+APP-10028,Positions Service,IT Component,Plan,Group Technology,Data Services,Tier 2
+APP-10029,Private Credit Price Dashboard,Application,Active,Group Technology,Trading,Tier 3
+APP-10030,EMD Risk Pipeline,Interface,Phase Out,Investments,Risk,Tier 1
+APP-10031,Credit Research Loader,Interface,Plan,Group Technology,Research,Tier 1
+APP-10032,Private Credit Curve Pipeline,Interface,End of Life,Group Technology,Trading,Tier 2
+APP-10033,Global RFQ Mart,Data Object,End of Life,Group Technology,Trading,Tier 2
+APP-10034,EMD Algo Engine,IT Component,Plan,Investments,Trading,Tier 2
+APP-10035,LDI Execution Pipeline,Interface,Active,Investments,Trading,Tier 3
+APP-10036,Positions Engine,IT Component,Plan,Investments,Data Services,Tier 1
+APP-10037,Credit Allocation Database,Data Object,Phase Out,Investments,Investment Management,Tier 2
+APP-10038,Credit Market Data Viewer,Application,Active,Investments,Trading,Tier 2
+APP-10039,Rates Venue Dashboard,Application,Active,Group Technology,Trading,Tier 3
+APP-10040,Performance Calculator,Application,Plan,Group Technology,Data Services,Tier 3
+APP-10041,Credit ESG Calculator,Application,Active,Investments,Research,Tier 2
+APP-10042,Attribution Feed,Interface,Active,Investments,Data Services,Tier 3
+APP-10043,Board MI Pipeline,Interface,Plan,Investments,Data Services,Tier 3
+APP-10044,Liquidity Risk Loader,Interface,Active,Group Technology,Risk,Tier 3
+APP-10045,Board MI Calculator,Application,End of Life,Investments,Data Services,Tier 2
+APP-10046,Learning Workbench,Application,End of Life,Investments,Data Services,Tier 2
+APP-10047,Venue Service,IT Component,Phase Out,Investments,Trading,Tier 2
+APP-10048,Positions Service Pro,IT Component,Plan,Investments,Data Services,Tier 3
+APP-10049,Property Model Portfolio Calculator,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10050,Rates Trade Blotter Workbench,Application,Active,Investments,Investment Management,Tier 2
+APP-10051,Venue Gateway,Interface,Plan,Investments,Trading,Tier 1
+APP-10052,Global VaR Viewer,Application,Plan,Investments,Risk,Tier 2
+APP-10053,Positions Gateway,Interface,Active,Investments,Data Services,Tier 3
+APP-10054,Board MI Workbench,Application,End of Life,Group Technology,Data Services,Tier 2
+APP-10055,VaR Database,Data Object,Active,Investments,Risk,Tier 2
+APP-10056,Client Reporting Database,Data Object,Phase Out,Investments,Data Services,Tier 3
+APP-10057,Venue Bridge,Interface,Plan,Investments,Trading,Tier 2
+APP-10058,Margin Pipeline,Interface,Active,Investments,Investment Management,Tier 2
+APP-10059,LDI Venue Bridge,Interface,Active,Investments,Trading,Tier 3
+APP-10060,Engagement Gateway,Interface,Active,Investments,Research,Tier 2
+APP-10061,HR Portal,Application,Active,Investments,Data Services,Tier 2
+APP-10062,Multi-Asset Execution Engine,IT Component,Active,Group Technology,Trading,Tier 2
+APP-10063,Rates Order Store,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10064,Performance Portal,Application,Active,Group Technology,Data Services,Tier 2
+APP-10065,Learning Dashboard,Application,Active,Investments,Data Services,Tier 2
+APP-10066,FX Rebalance Service,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10067,Collateral Blotter,Application,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10068,Property Venue Gateway,Interface,End of Life,Investments,Trading,Tier 1
+APP-10069,LDI Stress Model,IT Component,Active,Investments,Risk,Tier 1
+APP-10070,Multi-Asset Algo Viewer,Application,Phase Out,Investments,Trading,Tier 1
+APP-10071,Price Feed,Interface,Active,Investments,Trading,Tier 3
+APP-10072,Board MI Simulator,IT Component,End of Life,Investments,Data Services,Tier 1
+APP-10073,EMD Equity Research Portal,Application,Active,Investments,Research,Tier 2
+APP-10074,Multi-Asset Market Data Loader,Interface,Plan,Investments,Trading,Tier 3
+APP-10075,Cash Tracker Pro,Application,Phase Out,Group Technology,Investment Management,Tier 3
+APP-10076,Index Venue Bridge,Interface,Plan,Investments,Trading,Tier 2
+APP-10077,Multi-Asset Index Data Cache,Data Object,End of Life,Investments,Trading,Tier 1
+APP-10078,Board MI Feed,Interface,Active,Investments,Data Services,Tier 3
+APP-10079,Sterling Tax Lot Bridge,Interface,Active,Group Technology,Investment Management,Tier 1
+APP-10080,Performance Gateway,Interface,Active,Group Technology,Data Services,Tier 3
+APP-10081,Engagement Service,IT Component,Phase Out,Investments,Research,Tier 3
+APP-10082,Tax Lot Loader,Interface,Plan,Investments,Investment Management,Tier 1
+APP-10083,Property Constraint Pipeline,Interface,Plan,Group Technology,Investment Management,Tier 3
+APP-10084,Attribution Dashboard,Application,Plan,Group Technology,Data Services,Tier 2
+APP-10085,Trade Blotter Simulator,IT Component,Plan,Group Technology,Investment Management,Tier 2
+APP-10086,Sterling Rebalance Model,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10087,Allocation Dashboard,Application,Phase Out,Investments,Investment Management,Tier 1
+APP-10088,Screening Service,IT Component,Active,Investments,Research,Tier 1
+APP-10089,File Transfer Portal,Application,Active,Investments,Data Services,Tier 1
+APP-10090,Rebalance Database,Data Object,Active,Group Technology,Investment Management,Tier 2
+APP-10091,Trade Feed Tracker,Application,Phase Out,Investments,Data Services,Tier 3
+APP-10092,Multi-Asset Exposure Workbench,Application,Phase Out,Investments,Risk,Tier 3
+APP-10093,Private Credit Index Data Bridge,Interface,Active,Group Technology,Trading,Tier 3
+APP-10094,Rebalance Simulator,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10095,Cash Mart,Data Object,Phase Out,Investments,Investment Management,Tier 1
+APP-10096,Market Data Simulator,IT Component,Plan,Investments,Trading,Tier 2
+APP-10097,Global Macro Tracker,Application,Active,Group Technology,Research,Tier 3
+APP-10098,Equity Screening Cache,Data Object,End of Life,Group Technology,Research,Tier 2
+APP-10099,Risk Pipeline,Interface,Active,Group Technology,Risk,Tier 3
+APP-10100,VaR Viewer,Application,Active,Investments,Risk,Tier 2
+APP-10101,Allocation Gateway,Interface,End of Life,Investments,Investment Management,Tier 1
+APP-10102,Property Market Data Loader,Interface,Plan,Investments,Trading,Tier 1
+APP-10103,Event Dashboard,Application,End of Life,Investments,Data Services,Tier 3
+APP-10104,Event Feed,Interface,Active,Investments,Data Services,Tier 3
+APP-10105,Rebalance Calculator Platform,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10106,Multi-Asset Collateral Mart,Data Object,Active,Group Technology,Investment Management,Tier 3
+APP-10107,Property Order Simulator,IT Component,Plan,Investments,Investment Management,Tier 1
+APP-10108,Expenses Portal,Application,Plan,Investments,Data Services,Tier 1
+APP-10109,Attribution Engine,IT Component,Active,Investments,Data Services,Tier 2
+APP-10110,Execution Gateway,Interface,Phase Out,Group Technology,Trading,Tier 2
+APP-10111,Attribution Simulator,IT Component,Active,Investments,Data Services,Tier 2
+APP-10112,Multi-Asset Liquidity Simulator Platform,IT Component,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10113,Equity Research Blotter,Application,Active,Investments,Research,Tier 2
+APP-10114,FX Constraint Store,Data Object,Plan,Group Technology,Investment Management,Tier 2
+APP-10115,Security Master Bridge,Interface,Plan,Investments,Data Services,Tier 2
+APP-10116,Rates Model Portfolio Calculator,Application,Active,Investments,Investment Management,Tier 2
+APP-10117,Attribution Blotter,Application,End of Life,Investments,Data Services,Tier 2
+APP-10118,Credit Stress Cache,Data Object,Phase Out,Group Technology,Risk,Tier 3
+APP-10119,Equity Allocation Loader,Interface,Active,Group Technology,Investment Management,Tier 2
+APP-10120,Macro Store,Data Object,Active,Investments,Research,Tier 3
+APP-10121,Client Reporting Mart,Data Object,Active,Investments,Data Services,Tier 2
+APP-10122,Client Reporting Dashboard Hub,Application,Active,Investments,Data Services,Tier 2
+APP-10123,Exposure Blotter,Application,Active,Group Technology,Risk,Tier 3
+APP-10124,Index Data Simulator,Application,End of Life,Investments,Data Services,Tier 2
+APP-10125,Curve Tracker,Application,Active,Investments,Trading,Tier 2
+APP-10126,LDI Curve Feed Platform,Interface,Plan,Investments,Trading,Tier 2
+APP-10127,Portfolio Workbench Platform,Application,Plan,Investments,Investment Management,Tier 2
+APP-10128,Allocation Database,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10129,Equity Collateral Cache,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10130,Learning Viewer,Application,Phase Out,Investments,Data Services,Tier 1
+APP-10131,Holdings Simulator,IT Component,Active,Group Technology,Data Services,Tier 3
+APP-10132,EMD Liquidity Tracker,Application,Active,Group Technology,Investment Management,Tier 3
+APP-10133,Trade Feed Blotter,Application,Active,Investments,Data Services,Tier 3
+APP-10134,Price Service,IT Component,Active,Investments,Trading,Tier 3
+APP-10135,Board MI Simulator II,IT Component,End of Life,Investments,Data Services,Tier 2
+APP-10136,Multi-Asset Price Blotter,Application,Phase Out,Group Technology,Trading,Tier 3
+APP-10137,File Transfer Calculator,Application,Active,Investments,Data Services,Tier 3
+APP-10138,Global Curve Simulator,IT Component,Active,Investments,Trading,Tier 2
+APP-10139,Trade Blotter Workbench,Application,Active,Investments,Investment Management,Tier 2
+APP-10140,Reference Data Service,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10141,LDI Order Portal,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10142,Exposure Gateway,Interface,Plan,Investments,Risk,Tier 2
+APP-10143,Liquidity Database,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10144,Event Calculator,Application,Active,Investments,Data Services,Tier 2
+APP-10145,Index Curve Engine,IT Component,Active,Investments,Trading,Tier 1
+APP-10146,Reference Data Model,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10147,GLOBAL MARKET DATA SIMULATOR,IT Component,Phase Out,Investments,Trading,Tier 2
+APP-10148,File Transfer Service,IT Component,End of Life,Group Technology,Data Services,Tier 2
+APP-10149,Global RFQ Mart Legacy,Data Object,End of Life,Investments,Trading,Tier 3
+APP-10150,Order Database,Data Object,Plan,Investments,Investment Management,Tier 3
+APP-10151,Attribution Portal,Application,Active,Investments,Data Services,Tier 3
+APP-10152,Private Credit Liquidity Risk Dashboard,Application,Active,Investments,Risk,Tier 1
+APP-10153,Board MI Mart,Data Object,Active,Investments,Data Services,Tier 2
+APP-10154,Client Reporting Viewer,Application,Phase Out,Group Technology,Data Services,Tier 2
+APP-10155,Screening Engine,IT Component,Plan,Investments,Research,Tier 1
+APP-10156,Global Liquidity Risk Bridge,Interface,End of Life,Group Technology,Risk,Tier 1
+APP-10157,Performance Model,IT Component,Active,Investments,Data Services,Tier 3
+APP-10158,Rates Exposure Dashboard,Application,Active,Investments,Risk,Tier 2
+APP-10159,Private Credit Algo Pipeline,Interface,Active,Investments,Trading,Tier 2
+APP-10160,Index Model Portfolio Loader,Interface,Active,Investments,Investment Management,Tier 2
+APP-10161,Sterling Tax Lot Cache,Data Object,Phase Out,Investments,Investment Management,Tier 2
+APP-10162,Performance Store,Data Object,Active,Investments,Data Services,Tier 1
+APP-10163,Holdings Workbench,Application,Active,Investments,Data Services,Tier 2
+APP-10164,Rates Rebalance Engine,IT Component,Active,Investments,Investment Management,Tier 3
+APP-10165,Equity Allocation Database,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10166,Positions Blotter,Application,Phase Out,Investments,Data Services,Tier 2
+APP-10167,Property Risk Pipeline,Interface,Active,Group Technology,Risk,Tier 2
+APP-10168,FX Curve Service,IT Component,Phase Out,Investments,Trading,Tier 1
+APP-10169,Facilities Calculator,Application,End of Life,Group Technology,Data Services,Tier 1
+APP-10170,Credit Risk Gateway,Interface,Active,Investments,Risk,Tier 1
+APP-10171,Credit Order Model,IT Component,End of Life,Investments,Investment Management,Tier 2
+APP-10172,Sterling Credit Research Dashboard,Application,Active,Investments,Research,Tier 3
+APP-10173,Index Risk Monitor,Application,End of Life,Investments,Risk,Tier 3
+APP-10174,Sterling Exposure Model,IT Component,End of Life,Investments,Risk,Tier 2
+APP-10175,Equity VaR Monitor,Application,Active,Group Technology,Risk,Tier 2
+APP-10176,Property Constraint Model,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10177,Message Pipeline,Interface,Plan,Investments,Data Services,Tier 1
+APP-10178,Expenses Workbench,Application,End of Life,Group Technology,Data Services,Tier 2
+APP-10179,Allocation Simulator,IT Component,Active,Group Technology,Investment Management,Tier 2
+APP-10180,Rates Price Gateway,Interface,Active,Group Technology,Trading,Tier 1
+APP-10181,Optimiser Blotter,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10182,Mandate Blotter,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10183,FX Price Mart,Data Object,Phase Out,Group Technology,Trading,Tier 2
+APP-10184,Rates Rebalance Tracker,Application,Active,Investments,Investment Management,Tier 3
+APP-10185,Board MI Feed Legacy,Interface,Active,Investments,Data Services,Tier 1
+APP-10186,Holdings Workbench Legacy,Application,Active,Investments,Data Services,Tier 1
+APP-10187,Index Algo Dashboard,Application,Active,Investments,Trading,Tier 1
+APP-10188,Private Credit Index Data Model,IT Component,Plan,Investments,Trading,Tier 3
+APP-10189,Trade Feed Portal,Application,Phase Out,Investments,Data Services,Tier 3
+APP-10190,Stress Simulator,IT Component,End of Life,Investments,Risk,Tier 2
+APP-10191,FX Exposure Store,Data Object,Active,Investments,Risk,Tier 3
+APP-10192,Attribution Bridge,Interface,Active,Investments,Data Services,Tier 2
+APP-10193,Private Credit Order Tracker,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-10194,Security Master Model,IT Component,Plan,Group Technology,Data Services,Tier 2
+APP-10195,Global Trade Blotter Model,IT Component,End of Life,Investments,Investment Management,Tier 1
+APP-10196,Credit Risk Simulator,IT Component,Phase Out,Investments,Risk,Tier 2
+APP-10197,Performance Monitor,Application,Phase Out,Investments,Data Services,Tier 1
+APP-10198,Security Master Store,Data Object,Plan,Group Technology,Data Services,Tier 2
+APP-10199,Global Index Data Engine,IT Component,Active,Investments,Trading,Tier 1
+APP-10200,RFQ Service,IT Component,End of Life,Investments,Trading,Tier 3
+APP-10201,Positions Dashboard,Application,Active,Investments,Data Services,Tier 1
+APP-10202,RFQ Calculator,Application,Active,Investments,Trading,Tier 2
+APP-10203,Price Gateway,Interface,Active,Investments,Trading,Tier 3
+APP-10204,Message Loader,Interface,Plan,Group Technology,Data Services,Tier 2
+APP-10205,Model Portfolio Portal,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10206,Allocation Calculator,Application,Active,Investments,Investment Management,Tier 2
+APP-10207,Credit Optimiser Service,IT Component,End of Life,Investments,Investment Management,Tier 1
+APP-10208,Private Credit Execution Cache,Data Object,Active,Investments,Trading,Tier 3
+APP-10209,Rebalance Viewer,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10210,Fund Structure Workbench,Application,Active,Investments,Investment Management,Tier 1
+APP-10211,Board MI Calculator Next,Application,Active,Investments,Data Services,Tier 2
+APP-10212,Client Reporting Monitor,Application,Active,Group Technology,Data Services,Tier 1
+APP-10213,Sterling Liquidity Risk Simulator,IT Component,Active,Investments,Risk,Tier 2
+APP-10214,Board MI Database,Data Object,End of Life,Investments,Data Services,Tier 2
+APP-10215,Credit Equity Research Model,IT Component,Phase Out,Investments,Research,Tier 3
+APP-10216,FX Curve Calculator,Application,Phase Out,Investments,Trading,Tier 3
+APP-10217,Property Trade Blotter Gateway,Interface,Phase Out,Investments,Investment Management,Tier 1
+APP-10218,LDI ESG Loader,Interface,End of Life,Investments,Research,Tier 2
+APP-10219,Market Data Simulator Legacy,IT Component,Phase Out,Investments,Trading,Tier 2
+APP-10220,Cash Service,IT Component,Active,Investments,Investment Management,Tier 3
+APP-10221,Positions Cache,Data Object,Phase Out,Investments,Data Services,Tier 2
+APP-10222,Private Credit Macro Blotter,Application,Active,Group Technology,Research,Tier 2
+APP-10223,Board MI Simulator Lite,IT Component,Plan,Investments,Data Services,Tier 1
+APP-10224,Fund Structure Gateway,Interface,Active,Investments,Investment Management,Tier 2
+APP-10225,Allocation Pipeline,Interface,Active,Investments,Investment Management,Tier 3
+APP-10226,Climate Blotter,Application,Active,Investments,Research,Tier 3
+APP-10227,Message Loader Legacy,Interface,Active,Investments,Data Services,Tier 3
+APP-10228,EMD Algo Simulator,IT Component,Active,Investments,Trading,Tier 2
+APP-10229,Board MI Loader,Interface,Active,Investments,Data Services,Tier 2
+APP-10230,Index Price Model,IT Component,Plan,Investments,Trading,Tier 2
+APP-10231,Order Mart,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10232,Positions Loader,Interface,Active,Group Technology,Data Services,Tier 2
+APP-10233,Board MI Blotter,Application,End of Life,Investments,Data Services,Tier 2
+APP-10234,Private Credit Venue Feed,Interface,Active,Investments,Trading,Tier 2
+APP-10235,Attribution Engine Legacy (Prod),IT Component,Active,Group Technology,Data Services,Tier 2
+APP-10236,Performance Monitor Hub,Application,End of Life,Investments,Data Services,Tier 2
+APP-10237,Sterling Rebalance Service,IT Component,Active,Investments,Investment Management,Tier 3
+APP-10238,Private Credit Mandate Dashboard,Application,Plan,Group Technology,Investment Management,Tier 2
+APP-10239,HR Blotter,Application,Active,Investments,Data Services,Tier 1
+APP-10240,Performance Simulator,IT Component,Active,Group Technology,Data Services,Tier 3
+APP-10241,Global Liquidity Risk Calculator,Application,Active,Group Technology,Risk,Tier 3
+APP-10242,Event Engine,IT Component,Active,Investments,Data Services,Tier 1
+APP-10243,Credit Research Simulator,IT Component,End of Life,Investments,Research,Tier 1
+APP-10244,Stress Mart,Data Object,Phase Out,Investments,Risk,Tier 2
+APP-10245,Global Price Loader,Interface,End of Life,Investments,Trading,Tier 2
+APP-10246,Holdings Bridge,Interface,Active,Investments,Data Services,Tier 2
+APP-10247,Trade Blotter Tracker,Application,Active,Investments,Investment Management,Tier 3
+APP-10248,Performance Pipeline,Interface,End of Life,Investments,Data Services,Tier 2
+APP-10249,Multi-Asset Rebalance Workbench,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-10250,Index Index Data Loader,Interface,Plan,Investments,Trading,Tier 2
+APP-10251,Order Monitor,Application,Active,Investments,Investment Management,Tier 2
+APP-10252,Private Credit Screening Portal,Application,Active,Investments,Research,Tier 2
+APP-10253,Learning Viewer Lite,Application,Active,Investments,Data Services,Tier 3
+APP-10254,File Transfer Service Pro,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10255,Execution Feed,Interface,Plan,Investments,Trading,Tier 2
+APP-10256,Mandate Feed,Interface,Phase Out,Investments,Investment Management,Tier 1
+APP-10257,Global Market Data Mart,Data Object,End of Life,Investments,Trading,Tier 2
+APP-10258,Positions Cache Next,Data Object,End of Life,Group Technology,Data Services,Tier 2
+APP-10259,File Transfer Pipeline,Interface,Active,Group Technology,Data Services,Tier 2
+APP-10260,FX Curve Pipeline,Interface,End of Life,Investments,Trading,Tier 2
+APP-10261,Macro Dashboard Platform,Application,Active,Investments,Research,Tier 2
+APP-10262,Equity Research Pipeline,Interface,Phase Out,Investments,Research,Tier 2
+APP-10263,Client Reporting Viewer Lite,Application,Plan,Investments,Data Services,Tier 3
+APP-10264,Client Reporting Blotter,Application,Active,Group Technology,Data Services,Tier 1
+APP-10265,Index Allocation Tracker,Application,Active,Investments,Investment Management,Tier 2
+APP-10266,Sterling RFQ Viewer,Application,End of Life,Investments,Trading,Tier 2
+APP-10267,Expenses Calculator,Application,Phase Out,Investments,Data Services,Tier 1
+APP-10268,Performance Calculator Next,Application,End of Life,Investments,Data Services,Tier 3
+APP-10269,EMD Mandate Model (Prod),IT Component,Plan,Investments,Investment Management,Tier 2
+APP-10270,Equity Research Gateway,Interface,Active,Investments,Research,Tier 3
+APP-10271,Client Reporting Blotter Next,Application,Active,Investments,Data Services,Tier 2
+APP-10272,Global RFQ Portal,Application,End of Life,Investments,Trading,Tier 3
+APP-10273,Rates Market Data Blotter,Application,Active,Group Technology,Trading,Tier 2
+APP-10274,Security Master Tracker,Application,Active,Group Technology,Data Services,Tier 3
+APP-10275,Execution Gateway Legacy,Interface,Active,Investments,Trading,Tier 2
+APP-10276,Equity Equity Research Mart,Data Object,Plan,Investments,Research,Tier 3
+APP-10277,Trade Blotter Database,Data Object,End of Life,Investments,Investment Management,Tier 2
+APP-10278,CLIENT REPORTING MART PRO,Data Object,Active,Group Technology,Data Services,Tier 2
+APP-10279,EMD Trade Blotter Dashboard,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-10280,Private Credit Venue Cache,Data Object,Plan,Group Technology,Trading,Tier 2
+APP-10281,LDI Margin Engine,IT Component,Active,Group Technology,Investment Management,Tier 1
+APP-10282,Index Order Calculator,Application,Active,Group Technology,Investment Management,Tier 3
+APP-10283,Stewardship Gateway,Interface,End of Life,Group Technology,Research,Tier 3
+APP-10284,Equity Curve Feed,Interface,Active,Investments,Trading,Tier 2
+APP-10285,LDI Curve Blotter,Application,Active,Investments,Trading,Tier 2
+APP-10286,EMD Stress Portal,Application,Active,Group Technology,Data Services,Tier 2
+APP-10287,Reference Data Tracker,Application,Active,Investments,Data Services,Tier 1
+APP-10288,Portfolio Loader,Interface,Active,Investments,Investment Management,Tier 2
+APP-10289,FX Optimiser Database,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10290,Credit Cash Database,Data Object,Phase Out,Investments,Investment Management,Tier 2
+APP-10291,File Transfer Gateway,Interface,Phase Out,Investments,Data Services,Tier 2
+APP-10292,Attribution Simulator Next,IT Component,Plan,Investments,Data Services,Tier 1
+APP-10293,Sterling Market Data Blotter,Application,Active,Investments,Trading,Tier 2
+APP-10294,Property Liquidity Risk Service,IT Component,Active,Investments,Risk,Tier 2
+APP-10295,Multi-Asset VaR Service,IT Component,Active,Investments,Risk,Tier 3
+APP-10296,EMD Risk Loader,Interface,Active,Group Technology,Risk,Tier 1
+APP-10297,Trade Blotter Database Legacy,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10298,Board MI Cache,Data Object,Active,Investments,Data Services,Tier 2
+APP-10299,Positions Viewer,Application,Active,Investments,Data Services,Tier 3
+APP-10300,EMD Trade Blotter Service,IT Component,Plan,Investments,Investment Management,Tier 2
+APP-10301,Equity Collateral Engine,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10302,Fund Structure Mart,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10303,Client Reporting Model,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10304,Positions Service Next,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10305,Attribution Portal Lite,Application,Active,Investments,Data Services,Tier 2
+APP-10306,Reference Data Workbench,Application,Phase Out,Investments,Data Services,Tier 2
+APP-10307,Liquidity Workbench,Application,Active,Investments,Investment Management,Tier 1
+APP-10308,Property Rebalance Model,IT Component,Phase Out,Investments,Investment Management,Tier 3
+APP-10309,Global Liquidity Risk Mart,Data Object,Active,Investments,Risk,Tier 3
+APP-10310,Rates Fund Structure Feed,Interface,Active,Group Technology,Investment Management,Tier 2
+APP-10311,Screening Viewer,Application,Active,Group Technology,Research,Tier 2
+APP-10312,Private Credit Fund Structure Simulator,IT Component,Plan,Investments,Investment Management,Tier 1
+APP-10313,Sterling Index Data Model,IT Component,Active,Investments,Trading,Tier 1
+APP-10314,Liquidity Risk Feed,Interface,Phase Out,Investments,Risk,Tier 2
+APP-10315,Reference Data Viewer (EUC),Application,Plan,Group Technology,Data Services,Tier 1
+APP-10316,Constraint Gateway,Interface,Phase Out,Investments,Investment Management,Tier 2
+APP-10317,LDI Allocation Gateway,Interface,Active,Group Technology,Investment Management,Tier 2
+APP-10318,Global Allocation Workbench,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-10319,Holdings Store,Data Object,Active,Investments,Data Services,Tier 2
+APP-10320,Price Monitor,Application,Active,Investments,Trading,Tier 2
+APP-10321,Price Feed II,Interface,Plan,Group Technology,Trading,Tier 2
+APP-10322,Global Trade Blotter Calculator,Application,Plan,Investments,Investment Management,Tier 3
+APP-10323,Exposure Engine,IT Component,End of Life,Investments,Risk,Tier 1
+APP-10324,Positions Cache II,Data Object,Phase Out,Investments,Data Services,Tier 2
+APP-10325,Positions Blotter Next,Application,Active,Investments,Data Services,Tier 3
+APP-10326,Facilities Workbench,Application,Active,Investments,Data Services,Tier 2
+APP-10327,Client Reporting Bridge,Interface,Active,Investments,Data Services,Tier 2
+APP-10328,Client Reporting Blotter Hub,Application,Active,Investments,Data Services,Tier 2
+APP-10329,FX Model Portfolio Portal,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10330,Credit Tax Lot Feed,Interface,Active,Investments,Investment Management,Tier 2
+APP-10331,VaR Simulator,IT Component,Active,Group Technology,Risk,Tier 2
+APP-10332,Global Stress Simulator,IT Component,Phase Out,Investments,Risk,Tier 2
+APP-10333,Multi-Asset Rebalance Mart,Data Object,Plan,Investments,Investment Management,Tier 1
+APP-10334,Rebalance Service,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10335,Curve Store,Data Object,Phase Out,Investments,Trading,Tier 1
+APP-10336,Attribution Engine Lite,IT Component,Phase Out,Group Technology,Data Services,Tier 2
+APP-10337,Optimiser Viewer,Application,Active,Investments,Investment Management,Tier 2
+APP-10338,Credit Trade Blotter Tracker,Application,Active,Investments,Investment Management,Tier 3
+APP-10339,Property VaR Pipeline,Interface,End of Life,Investments,Risk,Tier 2
+APP-10340,EMD Order Mart,Application,End of Life,Investments,Data Services,Tier 2
+APP-10341,Trade Feed Monitor,Application,End of Life,Group Technology,Data Services,Tier 3
+APP-10342,Holdings Simulator Next,IT Component,Phase Out,Group Technology,Data Services,Tier 3
+APP-10343,Multi-Asset Venue Service,IT Component,Active,Investments,Trading,Tier 2
+APP-10344,Market Data Tracker,Application,Phase Out,Investments,Trading,Tier 3
+APP-10345,HR Portal II,Application,Active,Group Technology,Data Services,Tier 2
+APP-10346,Curve Simulator,IT Component,End of Life,Group Technology,Trading,Tier 3
+APP-10347,Index Rebalance Portal,Application,Plan,Group Technology,Investment Management,Tier 2
+APP-10348,Global Price Viewer (EUC),Application,End of Life,Group Technology,Trading,Tier 2
+APP-10349,Private Credit Index Data Workbench,Application,Phase Out,Investments,Trading,Tier 2
+APP-10350,Order Portal,Application,Active,Investments,Investment Management,Tier 1
+APP-10351,Reference Data Monitor,Application,Active,Investments,Data Services,Tier 1
+APP-10352,Trade Feed Gateway,Interface,Plan,Investments,Data Services,Tier 1
+APP-10353,Rates Exposure Bridge,Interface,Phase Out,Investments,Risk,Tier 1
+APP-10354,Reference Data Bridge,Interface,Active,Investments,Data Services,Tier 2
+APP-10355,Message Feed,Interface,End of Life,Investments,Data Services,Tier 3
+APP-10356,Private Credit Macro Calculator,Application,Phase Out,Group Technology,Research,Tier 3
+APP-10357,Event Model,IT Component,Plan,Investments,Data Services,Tier 1
+APP-10358,Price Loader,Interface,Active,Group Technology,Trading,Tier 2
+APP-10359,LDI Mandate Loader,Interface,Active,Investments,Investment Management,Tier 1
+APP-10360,Climate Tracker,Application,Active,Investments,Research,Tier 2
+APP-10361,Global Screening Workbench,Application,Plan,Investments,Research,Tier 2
+APP-10362,Positions Workbench,Application,Plan,Investments,Data Services,Tier 2
+APP-10363,Attribution Pipeline,Interface,Active,Investments,Data Services,Tier 1
+APP-10364,Positions Model,IT Component,Active,Group Technology,Data Services,Tier 3
+APP-10365,Positions Model II,IT Component,Active,Investments,Data Services,Tier 3
+APP-10366,Performance Gateway Legacy,Interface,Plan,Group Technology,Data Services,Tier 2
+APP-10367,Equity Allocation Calculator,Application,Active,Investments,Investment Management,Tier 1
+APP-10368,FX Order Blotter,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-10369,Global Rebalance Database,Data Object,Phase Out,Group Technology,Investment Management,Tier 1
+APP-10370,Performance Feed,Interface,Active,Investments,Data Services,Tier 3
+APP-10371,Venue Bridge Hub,Interface,Phase Out,Investments,Trading,Tier 3
+APP-10372,Exposure Workbench,Application,Active,Investments,Risk,Tier 2
+APP-10373,Property Liquidity Mart,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10374,Property Mandate Simulator,IT Component,Active,Group Technology,Investment Management,Tier 1
+APP-10375,Attribution Store,Data Object,Active,Investments,Data Services,Tier 1
+APP-10376,Credit Stress Blotter,Application,Phase Out,Investments,Risk,Tier 2
+APP-10377,Order Workbench,Application,End of Life,Investments,Investment Management,Tier 3
+APP-10378,EMD Stress Dashboard,Application,Active,Group Technology,Risk,Tier 2
+APP-10379,Client Reporting Bridge Lite,Interface,Plan,Investments,Data Services,Tier 1
+APP-10380,Trade Blotter Engine,IT Component,End of Life,Investments,Investment Management,Tier 2
+APP-10381,Trade Blotter Gateway,Interface,Active,Investments,Investment Management,Tier 3
+APP-10382,Rebalance Workbench,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-10383,Sterling Engagement Gateway,Interface,Active,Group Technology,Research,Tier 2
+APP-10384,Property Risk Dashboard,Application,Active,Investments,Risk,Tier 2
+APP-10385,Client Reporting Store,Data Object,Phase Out,Group Technology,Data Services,Tier 3
+APP-10386,Private Credit Rebalance Tracker,Application,Phase Out,Group Technology,Investment Management,Tier 3
+APP-10387,Index Fund Structure Engine,IT Component,Active,Group Technology,Investment Management,Tier 2
+APP-10388,LDI Tax Lot Gateway,Interface,Phase Out,Investments,Investment Management,Tier 2
+APP-10389,HR Viewer,Application,Plan,Investments,Data Services,Tier 3
+APP-10390,Exposure Mart,Data Object,Plan,Investments,Risk,Tier 2
+APP-10391,Multi-Asset Optimiser Database,Data Object,Plan,Investments,Investment Management,Tier 3
+APP-10392,Message Dashboard,Application,Active,Investments,Data Services,Tier 1
+APP-10393,Constraint Simulator Platform,IT Component,Phase Out,Investments,Investment Management,Tier 3
+APP-10394,Order Database Legacy,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10395,Sterling Risk Cache,Data Object,End of Life,Investments,Risk,Tier 2
+APP-10396,Multi-Asset Tax Lot Cache,Data Object,End of Life,Investments,Investment Management,Tier 2
+APP-10397,EMD Liquidity Engine,IT Component,End of Life,Group Technology,Investment Management,Tier 1
+APP-10398,Risk Viewer,Application,Active,Investments,Risk,Tier 3
+APP-10399,Tax Lot Store,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10400,Attribution Database,Data Object,End of Life,Investments,Data Services,Tier 1
+APP-10401,Property Price Portal,Application,Active,Investments,Trading,Tier 3
+APP-10402,Multi-Asset Trade Blotter Viewer,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10403,Index Data Portal,Application,Plan,Investments,Trading,Tier 2
+APP-10404,Portfolio Model,IT Component,Phase Out,Investments,Investment Management,Tier 2
+APP-10405,EMD Order Calculator,Application,Active,Group Technology,Investment Management,Tier 1
+APP-10406,Credit Rebalance Simulator,IT Component,End of Life,Investments,Investment Management,Tier 3
+APP-10407,Multi-Asset Fund Structure Store,Data Object,End of Life,Group Technology,Investment Management,Tier 1
+APP-10408,Reference Data Bridge II,Interface,End of Life,Investments,Data Services,Tier 2
+APP-10409,Rates Venue Service,IT Component,Active,Investments,Trading,Tier 3
+APP-10410,Client Reporting Bridge Hub,Interface,Plan,Group Technology,Data Services,Tier 1
+APP-10411,Execution Engine,IT Component,Active,Investments,Trading,Tier 1
+APP-10412,Global Risk Simulator,IT Component,Active,Investments,Risk,Tier 2
+APP-10413,Holdings Gateway,Interface,Plan,Investments,Data Services,Tier 3
+APP-10414,Global Mandate Service,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10415,Model Portfolio Feed,Interface,Active,Investments,Investment Management,Tier 3
+APP-10416,Trade Blotter Dashboard,Application,Active,Investments,Investment Management,Tier 1
+APP-10417,Positions Mart Legacy,Data Object,Active,Investments,Data Services,Tier 2
+APP-10418,Client Reporting Engine,IT Component,Active,Investments,Data Services,Tier 1
+APP-10419,FX Equity Research Loader,Interface,Plan,Investments,Research,Tier 2
+APP-10420,Fund Structure Blotter,Application,Active,Investments,Investment Management,Tier 2
+APP-10421,Sterling Macro Blotter,Application,Active,Investments,Research,Tier 2
+APP-10422,Mandate Blotter II,Application,Active,Investments,Investment Management,Tier 2
+APP-10423,Climate Blotter Hub,Application,Active,Investments,Research,Tier 1
+APP-10424,EMD Model Portfolio Feed,Interface,Active,Investments,Investment Management,Tier 1
+APP-10425,Macro Viewer,Application,Active,Group Technology,Research,Tier 3
+APP-10426,Stress Loader,Interface,End of Life,Investments,Risk,Tier 2
+APP-10427,Private Credit Execution Store,Data Object,Active,Investments,Trading,Tier 1
+APP-10428,Global Constraint Service,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10429,Global Rebalance Store,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10430,LDI Screening Workbench,Application,Plan,Investments,Research,Tier 3
+APP-10431,Property Algo Pipeline,Interface,Active,Group Technology,Trading,Tier 2
+APP-10432,Message Model,IT Component,Phase Out,Investments,Data Services,Tier 2
+APP-10433,Constraint Gateway Pro,Interface,Active,Investments,Investment Management,Tier 1
+APP-10434,Global Exposure Cache,Data Object,Active,Group Technology,Risk,Tier 3
+APP-10435,Sterling Liquidity Store,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10436,Engagement Cache,Data Object,End of Life,Group Technology,Research,Tier 2
+APP-10437,Index Data Engine,IT Component,End of Life,Investments,Trading,Tier 3
+APP-10438,Trade Blotter Database Pro,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10439,Index Data Simulator Legacy,IT Component,Active,Investments,Trading,Tier 1
+APP-10440,Message Database,Data Object,Plan,Investments,Data Services,Tier 2
+APP-10441,LDI Allocation Gateway Lite,Interface,Active,Investments,Investment Management,Tier 2
+APP-10442,Security Master Pipeline,Interface,Plan,Group Technology,Data Services,Tier 1
+APP-10443,Client Reporting Viewer II,Application,Plan,Investments,Data Services,Tier 3
+APP-10444,Risk Workbench,Application,Plan,Group Technology,Data Services,Tier 3
+APP-10445,Multi-Asset Order Loader,Interface,Active,Investments,Investment Management,Tier 2
+APP-10446,Performance Service,IT Component,Active,Investments,Data Services,Tier 3
+APP-10447,Credit Index Data Mart,Data Object,Plan,Investments,Trading,Tier 3
+APP-10448,Holdings Gateway Pro,Interface,Plan,Group Technology,Data Services,Tier 3
+APP-10449,Reference Data Store,Data Object,Active,Group Technology,Data Services,Tier 3
+APP-10450,Rates Constraint Service,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10451,Index Curve Monitor,Application,Active,Investments,Trading,Tier 2
+APP-10452,Client Reporting Database Legacy,Data Object,Plan,Investments,Data Services,Tier 3
+APP-10453,Private Credit Risk Database,Data Object,Phase Out,Investments,Risk,Tier 2
+APP-10454,Trade Feed Loader,Interface,Plan,Investments,Data Services,Tier 2
+APP-10455,ESG Service,IT Component,End of Life,Investments,Research,Tier 2
+APP-10456,Index Data Pipeline,Interface,Phase Out,Investments,Trading,Tier 3
+APP-10457,Equity Collateral Mart,Data Object,Plan,Investments,Investment Management,Tier 1
+APP-10458,Global RFQ Store,Data Object,Active,Group Technology,Trading,Tier 1
+APP-10459,FX Portfolio Service,IT Component,Phase Out,Investments,Investment Management,Tier 2
+APP-10460,Trade Feed Blotter II,Application,Phase Out,Group Technology,Data Services,Tier 2
+APP-10461,Message Model Hub,IT Component,Plan,Group Technology,Data Services,Tier 1
+APP-10462,Performance Pipeline II,Interface,End of Life,Investments,Data Services,Tier 3
+APP-10463,Property Execution Tracker,Application,Plan,Investments,Trading,Tier 2
+APP-10464,Global Mandate Monitor,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10465,Multi-Asset Execution Portal,Application,End of Life,Group Technology,Trading,Tier 2
+APP-10466,Macro Service,IT Component,End of Life,Investments,Research,Tier 1
+APP-10467,Fund Structure Viewer,Application,Phase Out,Investments,Investment Management,Tier 1
+APP-10468,Rates Liquidity Risk Gateway,Interface,Plan,Investments,Risk,Tier 2
+APP-10469,Order Mart Legacy,Data Object,Plan,Investments,Investment Management,Tier 2
+APP-10470,Board MI Dashboard,Application,Active,Investments,Data Services,Tier 2
+APP-10471,LDI Credit Research Model,IT Component,Phase Out,Group Technology,Research,Tier 3
+APP-10472,Index Optimiser Model,IT Component,Active,Group Technology,Investment Management,Tier 3
+APP-10473,Stress Portal Pro,Application,Active,Group Technology,Risk,Tier 3
+APP-10474,Private Credit Execution Monitor,Application,Plan,Group Technology,Trading,Tier 1
+APP-10475,Equity Market Data Mart,Data Object,Active,Investments,Trading,Tier 2
+APP-10476,Model Portfolio Blotter,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10477,Model Portfolio Engine,IT Component,End of Life,Investments,Investment Management,Tier 2
+APP-10478,Credit Order Gateway,Interface,Plan,Investments,Investment Management,Tier 2
+APP-10479,Credit Research Dashboard,Application,Plan,Investments,Research,Tier 2
+APP-10480,Index Rebalance Monitor,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-10481,Board MI Feed Next,Interface,Active,Investments,Data Services,Tier 2
+APP-10482,Global Credit Research Tracker,Application,Active,Investments,Research,Tier 3
+APP-10483,Positions Pipeline,Interface,Active,Investments,Data Services,Tier 1
+APP-10484,Multi-Asset Market Data Mart,Data Object,End of Life,Group Technology,Trading,Tier 3
+APP-10485,Trade Blotter Bridge,Interface,Plan,Group Technology,Investment Management,Tier 2
+APP-10486,Performance Mart,Data Object,Active,Investments,Data Services,Tier 2
+APP-10487,Equity Allocation Calculator Hub,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10488,Attribution Bridge Lite,Interface,Active,Investments,Data Services,Tier 1
+APP-10489,Index Data Dashboard,Application,Active,Group Technology,Trading,Tier 2
+APP-10490,Allocation Pipeline Legacy,Interface,Active,Group Technology,Investment Management,Tier 2
+APP-10491,Index Order Mart,Data Object,Phase Out,Investments,Investment Management,Tier 3
+APP-10492,Private Credit Stress Feed,Interface,Phase Out,Investments,Risk,Tier 1
+APP-10493,Performance Database,Data Object,End of Life,Investments,Data Services,Tier 2
+APP-10494,Equity Mandate Tracker,Application,Active,Investments,Investment Management,Tier 1
+APP-10495,Client Reporting Service,IT Component,Active,Group Technology,Data Services,Tier 1
+APP-10496,FX Market Data Loader,Interface,End of Life,Investments,Trading,Tier 2
+APP-10497,Performance Feed Hub,Interface,Phase Out,Investments,Data Services,Tier 2
+APP-10498,Price Engine,IT Component,Active,Investments,Trading,Tier 3
+APP-10499,Performance Viewer,Application,Phase Out,Group Technology,Data Services,Tier 2
+APP-10500,Stress Viewer,Application,End of Life,Investments,Risk,Tier 2
+APP-10501,Holdings Workbench II,Application,End of Life,Investments,Data Services,Tier 2
+APP-10502,Facilities Blotter,Application,Active,Investments,Data Services,Tier 2
+APP-10503,Index Data Bridge,Application,Phase Out,Investments,Data Services,Tier 2
+APP-10504,Margin Monitor Platform,Application,Active,Investments,Investment Management,Tier 1
+APP-10505,Property Index Data Bridge,Interface,Plan,Investments,Trading,Tier 3
+APP-10506,Allocation Blotter,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-10507,Attribution Portal Pro,Application,Active,Group Technology,Data Services,Tier 2
+APP-10508,Risk Engine,IT Component,Phase Out,Investments,Risk,Tier 2
+APP-10509,Price Blotter,Application,Active,Investments,Trading,Tier 2
+APP-10510,Reference Data Store Hub,Data Object,Active,Investments,Data Services,Tier 2
+APP-10511,Board MI Cache Legacy,Data Object,Plan,Group Technology,Data Services,Tier 3
+APP-10512,Property Stress Simulator,IT Component,Active,Group Technology,Risk,Tier 3
+APP-10513,HR Workbench,Application,Active,Group Technology,Data Services,Tier 2
+APP-10514,Allocation Dashboard Legacy,Application,Active,Investments,Investment Management,Tier 2
+APP-10515,Index Allocation Cache,Data Object,Plan,Investments,Investment Management,Tier 2
+APP-10516,Algo Gateway,Interface,Plan,Investments,Trading,Tier 1
+APP-10517,EMD Trade Blotter Loader,Interface,Phase Out,Investments,Investment Management,Tier 2
+APP-10518,Stress Monitor,Application,Active,Group Technology,Risk,Tier 3
+APP-10519,Index Data Mart,Data Object,Phase Out,Group Technology,Trading,Tier 3
+APP-10520,Security Master Database,Data Object,Plan,Investments,Data Services,Tier 1
+APP-10521,Board MI Mart Next,Data Object,Active,Investments,Data Services,Tier 2
+APP-10522,Risk Engine Next,Application,Plan,Investments,Data Services,Tier 1
+APP-10523,Property Liquidity Risk Cache,Data Object,Phase Out,Investments,Risk,Tier 2
+APP-10524,Multi-Asset Rebalance Calculator,Application,Active,Investments,Investment Management,Tier 1
+APP-10525,Global VaR Mart,Data Object,End of Life,Investments,Risk,Tier 1
+APP-10526,Stress Viewer Legacy,Application,Phase Out,Investments,Risk,Tier 3
+APP-10527,Price Monitor II,Application,Active,Group Technology,Trading,Tier 2
+APP-10528,Mandate Service,IT Component,Phase Out,Investments,Investment Management,Tier 1
+APP-10529,Event Bridge,Interface,End of Life,Group Technology,Data Services,Tier 2
+APP-10530,RFQ Loader,Interface,Phase Out,Investments,Trading,Tier 1
+APP-10531,Screening Feed,Interface,End of Life,Investments,Research,Tier 3
+APP-10532,Multi-Asset Algo Loader,Interface,Phase Out,Investments,Trading,Tier 2
+APP-10533,Private Credit Price Loader,Interface,Active,Investments,Trading,Tier 1
+APP-10534,Rates Liquidity Risk Dashboard,Application,Phase Out,Investments,Risk,Tier 3
+APP-10535,Index Macro Database,Data Object,Active,Group Technology,Research,Tier 3
+APP-10536,Rebalance Feed,Interface,Active,Investments,Investment Management,Tier 2
+APP-10537,EMD Portfolio Simulator,IT Component,End of Life,Group Technology,Investment Management,Tier 3
+APP-10538,Macro Blotter,Application,Phase Out,Investments,Research,Tier 2
+APP-10539,Algo Tracker,Application,Active,Investments,Trading,Tier 2
+APP-10540,Positions Viewer Next,Application,Active,Investments,Data Services,Tier 1
+APP-10541,Model Portfolio Cache,Data Object,Plan,Investments,Investment Management,Tier 2
+APP-10542,Credit Market Data Engine,IT Component,Active,Investments,Trading,Tier 1
+APP-10543,Client Reporting Dashboard Pro,Application,Active,Investments,Data Services,Tier 2
+APP-10544,Screening Store,Data Object,Active,Investments,Research,Tier 2
+APP-10545,Rebalance Cache,Data Object,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10546,Equity Research Dashboard,Application,Active,Investments,Research,Tier 2
+APP-10547,Liquidity Model,IT Component,Plan,Investments,Investment Management,Tier 2
+APP-10548,Trade Feed Engine,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10549,Security Master Portal,Application,End of Life,Group Technology,Data Services,Tier 2
+APP-10550,Multi-Asset Algo Bridge,Interface,End of Life,Investments,Trading,Tier 3
+APP-10551,Sterling Portfolio Cache,Data Object,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10552,Portfolio Workbench Hub,Application,Active,Investments,Investment Management,Tier 2
+APP-10553,Positions Portal,Application,Phase Out,Investments,Data Services,Tier 1
+APP-10554,Fund Structure Gateway Next,Interface,Active,Investments,Investment Management,Tier 3
+APP-10555,Model Portfolio Bridge,Interface,Active,Investments,Investment Management,Tier 3
+APP-10556,Margin Pipeline Pro,Interface,Phase Out,Investments,Investment Management,Tier 2
+APP-10557,FX Allocation Simulator,IT Component,Active,Investments,Investment Management,Tier 3
+APP-10558,FX Allocation Database,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10559,Sterling Collateral Gateway,Interface,End of Life,Investments,Investment Management,Tier 1
+APP-10560,Private Credit Stewardship Viewer,Application,Active,Group Technology,Research,Tier 3
+APP-10561,Constraint Bridge,Application,Active,Investments,Data Services,Tier 3
+APP-10562,Stewardship Pipeline,Interface,Plan,Investments,Research,Tier 1
+APP-10563,LDI Screening Database,Data Object,Active,Group Technology,Research,Tier 3
+APP-10564,Property Stress Database,Data Object,Active,Investments,Risk,Tier 1
+APP-10565,Message Tracker,Application,Plan,Group Technology,Data Services,Tier 3
+APP-10566,Equity Research Engine,IT Component,Active,Investments,Research,Tier 3
+APP-10567,Curve Simulator Pro,IT Component,Active,Group Technology,Trading,Tier 2
+APP-10568,Credit Order Gateway Next,Interface,Active,Group Technology,Investment Management,Tier 3
+APP-10569,HR Tracker,Application,Active,Group Technology,Data Services,Tier 3
+APP-10570,Rates VaR Mart,Data Object,Plan,Investments,Risk,Tier 1
+APP-10571,Security Master Feed,Interface,Plan,Investments,Data Services,Tier 1
+APP-10572,Allocation Gateway II,Interface,End of Life,Investments,Investment Management,Tier 2
+APP-10573,Trade Feed Mart,Data Object,Active,Investments,Data Services,Tier 2
+APP-10574,Stewardship Service Platform,IT Component,Active,Investments,Research,Tier 2
+APP-10575,Performance Workbench,Application,Phase Out,Investments,Data Services,Tier 1
+APP-10576,Equity Stress Calculator,Application,Plan,Group Technology,Risk,Tier 1
+APP-10577,Curve Mart,Data Object,Active,Investments,Trading,Tier 1
+APP-10578,Client Reporting Database II,Data Object,Phase Out,Investments,Data Services,Tier 1
+APP-10579,Macro Store Next,Data Object,Active,Investments,Research,Tier 2
+APP-10580,Board MI Pipeline II,Interface,Active,Investments,Data Services,Tier 2
+APP-10581,Rates Venue Feed,Interface,End of Life,Investments,Trading,Tier 2
+APP-10582,Facilities Monitor,Application,Plan,Group Technology,Data Services,Tier 1
+APP-10583,Performance Store Next,Data Object,Active,Investments,Data Services,Tier 3
+APP-10584,Holdings Gateway Hub,Interface,End of Life,Investments,Data Services,Tier 2
+APP-10585,Fund Structure Bridge,Interface,Active,Investments,Investment Management,Tier 2
+APP-10586,Order Portal Hub,Application,Active,Investments,Investment Management,Tier 2
+APP-10587,Global Model Portfolio Mart,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10588,EMD Rebalance Workbench,Application,Plan,Investments,Investment Management,Tier 1
+APP-10589,ENGAGEMENT DASHBOARD,Application,Active,Investments,Research,Tier 2
+APP-10590,Venue Loader,Interface,Plan,Group Technology,Trading,Tier 3
+APP-10591,Index Optimiser Viewer,Application,Plan,Investments,Investment Management,Tier 1
+APP-10592,Model Portfolio Tracker,Application,Active,Investments,Investment Management,Tier 1
+APP-10593,Cash Tracker Next,Application,Active,Investments,Investment Management,Tier 2
+APP-10594,Curve Pipeline,Interface,Active,Investments,Trading,Tier 2
+APP-10595,Holdings Mart,Data Object,Plan,Investments,Data Services,Tier 2
+APP-10596,Property Rebalance Calculator,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10597,Equity Risk Simulator,IT Component,Active,Investments,Risk,Tier 1
+APP-10598,Attribution Mart,Data Object,Active,Investments,Data Services,Tier 1
+APP-10599,EMD Rebalance Loader,Interface,Plan,Group Technology,Investment Management,Tier 1
+APP-10600,Global Margin Mart,Data Object,Active,Group Technology,Investment Management,Tier 3
+APP-10601,Global Order Store,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10602,Equity Allocation Simulator,IT Component,Phase Out,Investments,Investment Management,Tier 2
+APP-10603,LDI Rebalance Engine,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10604,Index VaR Simulator,IT Component,End of Life,Investments,Risk,Tier 1
+APP-10605,Tax Lot Cache,Data Object,Plan,Investments,Investment Management,Tier 3
+APP-10606,Credit Credit Research Pipeline Platform,Interface,Phase Out,Investments,Research,Tier 2
+APP-10607,Holdings Feed,Interface,Active,Investments,Data Services,Tier 1
+APP-10608,Credit Screening Monitor,Application,Phase Out,Investments,Research,Tier 2
+APP-10609,FX Cash Feed,Interface,Plan,Investments,Investment Management,Tier 2
+APP-10610,Security Master Mart,Data Object,Plan,Investments,Data Services,Tier 2
+APP-10611,VaR Service,IT Component,Active,Investments,Risk,Tier 2
+APP-10612,Sterling Liquidity Risk Store,Data Object,Active,Group Technology,Risk,Tier 2
+APP-10613,Equity Trade Blotter Dashboard,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10614,Sterling Curve Loader,Interface,Plan,Investments,Trading,Tier 2
+APP-10615,Board MI Service,IT Component,Plan,Group Technology,Data Services,Tier 2
+APP-10616,RFQ Pipeline,Interface,Phase Out,Group Technology,Trading,Tier 1
+APP-10617,Index Equity Research Dashboard,Application,Active,Investments,Research,Tier 2
+APP-10618,Attribution Feed Hub (Prod),Interface,Active,Group Technology,Data Services,Tier 2
+APP-10619,Equity Cash Viewer,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-10620,Client Reporting Model Next,IT Component,End of Life,Investments,Data Services,Tier 1
+APP-10621,Index Data Viewer,Application,Plan,Group Technology,Trading,Tier 2
+APP-10622,Climate Loader,Interface,Active,Investments,Research,Tier 3
+APP-10623,Market Data Service,IT Component,Active,Investments,Trading,Tier 2
+APP-10624,Curve Bridge,Interface,Active,Investments,Trading,Tier 1
+APP-10625,Client Reporting Gateway,Interface,Active,Group Technology,Data Services,Tier 2
+APP-10626,Model Portfolio Feed Legacy Platform,Interface,Active,Investments,Investment Management,Tier 1
+APP-10627,Trade Feed Portal Lite,Application,End of Life,Investments,Data Services,Tier 1
+APP-10628,Rebalance Tracker,Application,Plan,Investments,Investment Management,Tier 1
+APP-10629,Expenses Portal Pro,Application,Active,Investments,Data Services,Tier 2
+APP-10630,Sterling Rebalance Database,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10631,Trade Blotter Simulator Next,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10632,Exposure Mart Pro,Data Object,Active,Investments,Risk,Tier 2
+APP-10633,LDI Rebalance Tracker,Application,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10634,Attribution Mart Pro,Data Object,Active,Investments,Data Services,Tier 2
+APP-10635,Market Data Cache,Data Object,Phase Out,Group Technology,Trading,Tier 3
+APP-10636,Venue Store,Data Object,Plan,Investments,Trading,Tier 1
+APP-10637,RFQ Model,IT Component,End of Life,Group Technology,Trading,Tier 2
+APP-10638,Trade Feed Monitor Pro,Application,Active,Investments,Data Services,Tier 2
+APP-10639,Rates Allocation Engine,IT Component,Plan,Investments,Investment Management,Tier 1
+APP-10640,Trade Feed Workbench Hub,Application,Active,Investments,Data Services,Tier 1
+APP-10641,Multi-Asset Cash Cache,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10642,Positions Pipeline Hub,Interface,Active,Investments,Data Services,Tier 2
+APP-10643,Sterling Price Tracker,Application,Active,Investments,Trading,Tier 1
+APP-10644,Facilities Dashboard,Application,Active,Group Technology,Data Services,Tier 1
+APP-10645,Global Exposure Store,Data Object,Active,Group Technology,Risk,Tier 2
+APP-10646,Trade Feed Dashboard,Application,Active,Investments,Data Services,Tier 2
+APP-10647,Mandate Workbench,Application,Active,Investments,Investment Management,Tier 2
+APP-10648,Message Loader II,Interface,End of Life,Investments,Data Services,Tier 1
+APP-10649,Credit Constraint Blotter,Application,End of Life,Investments,Investment Management,Tier 1
+APP-10650,Multi-Asset Curve Mart,Data Object,Plan,Group Technology,Trading,Tier 3
+APP-10651,FX Margin Tracker,Application,Active,Investments,Investment Management,Tier 1
+APP-10652,Attribution Monitor,Application,Active,Group Technology,Data Services,Tier 2
+APP-10653,Macro Dashboard Pro,Application,End of Life,Investments,Research,Tier 1
+APP-10654,ESG Store,Data Object,Active,Investments,Research,Tier 2
+APP-10655,Private Credit Stress Engine,IT Component,Active,Investments,Risk,Tier 1
+APP-10656,EMD Order Viewer,Application,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10657,Risk Bridge,Interface,Active,Investments,Risk,Tier 3
+APP-10658,Rates Trade Blotter Store,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10659,Exposure Simulator,IT Component,Active,Investments,Risk,Tier 3
+APP-10660,Board MI Cache Next,Data Object,Phase Out,Investments,Data Services,Tier 2
+APP-10661,Collateral Bridge,Interface,Active,Investments,Investment Management,Tier 2
+APP-10662,Venue Pipeline,Interface,Active,Investments,Trading,Tier 3
+APP-10663,Property Price Simulator,IT Component,End of Life,Investments,Trading,Tier 3
+APP-10664,EMD Market Data Bridge,Interface,Plan,Investments,Trading,Tier 3
+APP-10665,Screening Cache,Data Object,Active,Investments,Research,Tier 3
+APP-10666,EMD Portfolio Store,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10667,Positions Gateway Lite,Interface,Phase Out,Group Technology,Data Services,Tier 1
+APP-10668,Holdings Bridge Hub,Interface,Active,Investments,Data Services,Tier 1
+APP-10669,Stress Mart Lite,Data Object,Active,Investments,Risk,Tier 2
+APP-10670,Model Portfolio Database,Data Object,Active,Group Technology,Investment Management,Tier 3
+APP-10671,Security Master Simulator,IT Component,Plan,Group Technology,Data Services,Tier 3
+APP-10672,Credit Stewardship Gateway,Interface,Active,Investments,Research,Tier 2
+APP-10673,EMD Risk Pipeline Pro,Interface,Active,Investments,Risk,Tier 3
+APP-10674,Cash Viewer,Application,Plan,Investments,Investment Management,Tier 2
+APP-10675,ESG Tracker,Application,Plan,Group Technology,Research,Tier 2
+APP-10676,Equity Allocation Calculator Legacy,Application,Active,Group Technology,Data Services,Tier 3
+APP-10677,Trade Blotter Service Platform,IT Component,Active,Investments,Investment Management,Tier 1
+APP-10678,Market Data Monitor,Application,Plan,Investments,Trading,Tier 2
+APP-10679,Mandate Model,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10680,Curve Monitor,Application,Active,Group Technology,Trading,Tier 3
+APP-10681,Attribution Gateway,Application,Active,Investments,Data Services,Tier 2
+APP-10682,Property Portfolio Pipeline,Interface,Plan,Investments,Investment Management,Tier 1
+APP-10683,GLOBAL INDEX DATA LOADER,Interface,Active,Investments,Trading,Tier 3
+APP-10684,Model Portfolio Simulator,IT Component,Phase Out,Investments,Investment Management,Tier 1
+APP-10685,LDI Risk Dashboard,Application,Active,Investments,Risk,Tier 2
+APP-10686,Attribution Store II,Data Object,Active,Investments,Data Services,Tier 2
+APP-10687,Margin Simulator,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10688,Index Allocation Engine,IT Component,End of Life,Investments,Investment Management,Tier 2
+APP-10689,Algo Blotter,Application,Phase Out,Investments,Trading,Tier 2
+APP-10690,Allocation Engine,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10691,HR Workbench Next,Application,Phase Out,Group Technology,Data Services,Tier 1
+APP-10692,File Transfer Portal Pro,Application,Active,Group Technology,Data Services,Tier 2
+APP-10693,FX VaR Dashboard,Application,Plan,Group Technology,Risk,Tier 1
+APP-10694,Private Credit Allocation Feed,Interface,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10695,Attribution Dashboard Lite,Application,Active,Investments,Data Services,Tier 3
+APP-10696,Stress Cache,Data Object,Active,Investments,Risk,Tier 2
+APP-10697,EMD Credit Research Dashboard,Application,End of Life,Investments,Research,Tier 2
+APP-10698,Trade Blotter Mart,Data Object,End of Life,Group Technology,Investment Management,Tier 1
+APP-10699,Curve Loader,Interface,Active,Investments,Trading,Tier 2
+APP-10700,Macro Portal,Application,Active,Investments,Research,Tier 2
+APP-10701,Mandate Engine,IT Component,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10702,Multi-Asset Risk Blotter Platform,Application,Plan,Group Technology,Risk,Tier 2
+APP-10703,Board MI Bridge,Interface,Active,Investments,Data Services,Tier 2
+APP-10704,Equity Index Data Pipeline,Interface,Active,Investments,Trading,Tier 2
+APP-10705,Index Portfolio Calculator,Application,End of Life,Group Technology,Investment Management,Tier 3
+APP-10706,Cash Loader,Application,Active,Investments,Data Services,Tier 3
+APP-10707,Private Credit Curve Blotter,Application,Phase Out,Investments,Trading,Tier 1
+APP-10708,Holdings Database,Data Object,Phase Out,Investments,Data Services,Tier 3
+APP-10709,Rates Risk Calculator,Application,Plan,Group Technology,Risk,Tier 2
+APP-10710,File Transfer Tracker,Application,Active,Group Technology,Data Services,Tier 2
+APP-10711,Rates Allocation Monitor,Application,Active,Investments,Investment Management,Tier 2
+APP-10712,Exposure Gateway Legacy,Interface,Active,Investments,Risk,Tier 1
+APP-10713,Stress Service,IT Component,Plan,Group Technology,Risk,Tier 3
+APP-10714,Security Master Pipeline Pro,Interface,Active,Investments,Data Services,Tier 2
+APP-10715,Client Reporting Pipeline,Interface,End of Life,Group Technology,Data Services,Tier 3
+APP-10716,Screening Pipeline,Interface,Plan,Investments,Research,Tier 1
+APP-10717,Index Screening Model,IT Component,Plan,Investments,Research,Tier 1
+APP-10718,Curve Gateway,Interface,Plan,Investments,Trading,Tier 2
+APP-10719,Credit Credit Research Pipeline Legacy,Interface,End of Life,Investments,Research,Tier 2
+APP-10720,Equity Model Portfolio Viewer,Application,Plan,Group Technology,Investment Management,Tier 3
+APP-10721,Property Tax Lot Blotter,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-10722,Performance Database Pro,Data Object,Active,Investments,Data Services,Tier 1
+APP-10723,Curve Portal,Application,Phase Out,Group Technology,Trading,Tier 1
+APP-10724,Client Reporting Calculator,Application,Plan,Investments,Data Services,Tier 3
+APP-10725,Order Mart Lite,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10726,EMD Curve Feed,Interface,Active,Investments,Trading,Tier 1
+APP-10727,FX Liquidity Risk Tracker,Application,Active,Investments,Risk,Tier 2
+APP-10728,Multi-Asset Price Tracker,Application,Active,Investments,Trading,Tier 2
+APP-10729,Property Order Engine,IT Component,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10730,Rates Screening Mart,Data Object,Phase Out,Investments,Research,Tier 3
+APP-10731,Learning Workbench Pro,Application,End of Life,Investments,Data Services,Tier 3
+APP-10732,Global Rebalance Workbench,Application,Active,Investments,Investment Management,Tier 2
+APP-10733,Portfolio Pipeline,Interface,Active,Investments,Investment Management,Tier 2
+APP-10734,Sterling Model Portfolio Simulator,IT Component,Phase Out,Group Technology,Investment Management,Tier 2
+APP-10735,Sterling Fund Structure Dashboard,Application,Active,Investments,Investment Management,Tier 2
+APP-10736,Multi-Asset Order Mart,Data Object,Active,Investments,Investment Management,Tier 3
+APP-10737,Index Credit Research Monitor,Application,Active,Investments,Research,Tier 1
+APP-10738,Order Database Hub,Data Object,Active,Group Technology,Investment Management,Tier 2
+APP-10739,Facilities Monitor Next,Application,Phase Out,Investments,Data Services,Tier 2
+APP-10740,Order Cache,Data Object,Phase Out,Investments,Investment Management,Tier 2
+APP-10741,Equity Research Workbench,Application,Active,Group Technology,Data Services,Tier 3
+APP-10742,VaR Mart,Data Object,End of Life,Investments,Risk,Tier 2
+APP-10743,Macro Blotter Next,Application,Phase Out,Group Technology,Research,Tier 3
+APP-10744,Rebalance Blotter,Application,Plan,Investments,Investment Management,Tier 3
+APP-10745,Attribution Store Hub,Data Object,Active,Investments,Data Services,Tier 2
+APP-10746,Private Credit Market Data Bridge,Interface,Active,Group Technology,Trading,Tier 2
+APP-10747,Allocation Model,IT Component,Plan,Investments,Investment Management,Tier 2
+APP-10748,Algo Feed,Interface,End of Life,Investments,Trading,Tier 2
+APP-10749,Index Allocation Database,Data Object,Phase Out,Investments,Investment Management,Tier 3
+APP-10750,Private Credit Order Calculator,Application,End of Life,Investments,Investment Management,Tier 3
+APP-10751,Message Calculator,Application,End of Life,Investments,Data Services,Tier 1
+APP-10752,Expenses Viewer,Application,Active,Investments,Data Services,Tier 3
+APP-10753,Positions Monitor,Application,End of Life,Group Technology,Data Services,Tier 2
+APP-10754,Index Data Cache,Data Object,Active,Investments,Trading,Tier 2
+APP-10755,Performance Database Lite,Data Object,Active,Investments,Data Services,Tier 3
+APP-10756,LDI Macro Service (Prod),IT Component,Active,Investments,Research,Tier 2
+APP-10757,Liquidity Risk Cache,Data Object,Active,Investments,Risk,Tier 2
+APP-10758,Index Algo Gateway,Interface,Active,Group Technology,Trading,Tier 3
+APP-10759,Learning Workbench II,Application,Active,Group Technology,Data Services,Tier 2
+APP-10760,Private Credit Equity Research Bridge,Interface,Active,Investments,Research,Tier 2
+APP-10761,Client Reporting Feed,Interface,Phase Out,Group Technology,Data Services,Tier 1
+APP-10762,Curve Monitor Lite,Application,Active,Group Technology,Trading,Tier 2
+APP-10763,FX Equity Research Viewer,Application,Active,Investments,Research,Tier 2
+APP-10764,Sterling Market Data Simulator,IT Component,Active,Investments,Trading,Tier 3
+APP-10765,File Transfer Bridge,Interface,Plan,Investments,Data Services,Tier 3
+APP-10766,Liquidity Risk Cache Hub,Data Object,Active,Investments,Risk,Tier 3
+APP-10767,Message Engine,IT Component,Active,Group Technology,Data Services,Tier 2
+APP-10768,File Transfer Tracker Hub,Application,Active,Investments,Data Services,Tier 2
+APP-10769,Index Data Viewer Lite,Application,Active,Group Technology,Trading,Tier 2
+APP-10770,Private Credit Constraint Mart,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10771,Attribution Feed Pro,Interface,Active,Investments,Data Services,Tier 1
+APP-10772,Order Viewer,Application,Active,Investments,Investment Management,Tier 2
+APP-10773,Positions Service II,IT Component,Plan,Investments,Data Services,Tier 2
+APP-10774,Index Data Pipeline Pro,Interface,Active,Investments,Trading,Tier 3
+APP-10775,Multi-Asset Equity Research Gateway,Interface,Plan,Investments,Research,Tier 2
+APP-10776,Global Credit Research Calculator,Application,Plan,Investments,Research,Tier 2
+APP-10777,Liquidity Risk Feed Next,Interface,Active,Group Technology,Risk,Tier 2
+APP-10778,Screening Pipeline Hub,Interface,Active,Group Technology,Research,Tier 2
+APP-10779,Algo Pipeline,Interface,Active,Group Technology,Trading,Tier 1
+APP-10780,File Transfer Blotter,Application,End of Life,Group Technology,Data Services,Tier 1
+APP-10781,Global Fund Structure Model,IT Component,Phase Out,Investments,Investment Management,Tier 2
+APP-10782,File Transfer Calculator (EUC),Application,Active,Investments,Data Services,Tier 2
+APP-10783,Board MI Service Legacy,IT Component,Active,Investments,Data Services,Tier 2
+APP-10784,Equity Allocation Database Next,Data Object,End of Life,Group Technology,Investment Management,Tier 2
+APP-10785,Cash Dashboard,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10786,HR Calculator,Application,End of Life,Investments,Data Services,Tier 2
+APP-10787,Private Credit Tax Lot Workbench,Application,Active,Group Technology,Investment Management,Tier 3
+APP-10788,Learning Viewer II,Application,Active,Group Technology,Data Services,Tier 2
+APP-10789,Equity Allocation Simulator Pro,IT Component,Phase Out,Investments,Investment Management,Tier 2
+APP-10790,Margin Loader,Interface,Active,Investments,Investment Management,Tier 1
+APP-10791,Equity Fund Structure Model,IT Component,Active,Group Technology,Investment Management,Tier 2
+APP-10792,Multi-Asset Index Data Loader,Interface,Plan,Group Technology,Trading,Tier 1
+APP-10793,Credit Order Cache,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10794,Attribution Monitor Hub Platform,Application,Active,Investments,Data Services,Tier 1
+APP-10795,Global RFQ Mart Lite,Data Object,Active,Investments,Trading,Tier 1
+APP-10796,Index Exposure Dashboard,Application,Phase Out,Investments,Risk,Tier 1
+APP-10797,Property Portfolio Portal,Application,Phase Out,Investments,Investment Management,Tier 2
+APP-10798,FX Execution Monitor,Application,End of Life,Investments,Trading,Tier 2
+APP-10799,Reference Data Blotter,Application,Active,Investments,Data Services,Tier 3
+APP-10800,Risk Calculator,Application,Active,Investments,Risk,Tier 2
+APP-10801,Private Credit Macro Tracker,Application,Active,Group Technology,Research,Tier 2
+APP-10802,Exposure Mart Legacy,Data Object,End of Life,Investments,Risk,Tier 2
+APP-10803,Positions Engine II,IT Component,Active,Group Technology,Data Services,Tier 2
+APP-10804,Model Portfolio Database Legacy,Data Object,Active,Group Technology,Investment Management,Tier 3
+APP-10805,Risk Bridge II,Interface,Plan,Investments,Risk,Tier 1
+APP-10806,Sterling Equity Research Engine,IT Component,Plan,Investments,Research,Tier 2
+APP-10807,Global Order Dashboard,Application,Phase Out,Investments,Investment Management,Tier 3
+APP-10808,Event Loader,Interface,Active,Investments,Data Services,Tier 1
+APP-10809,Event Model Pro,IT Component,Active,Investments,Data Services,Tier 2
+APP-10810,Market Data Service II,IT Component,Phase Out,Group Technology,Trading,Tier 3
+APP-10811,Facilities Blotter Lite,Application,Plan,Investments,Data Services,Tier 2
+APP-10812,Rebalance Bridge,Interface,Active,Investments,Investment Management,Tier 2
+APP-10813,Sterling Trade Blotter Gateway,Interface,Plan,Investments,Investment Management,Tier 1
+APP-10814,FX Price Monitor,Application,Active,Investments,Trading,Tier 2
+APP-10815,Property Stewardship Model,IT Component,Plan,Investments,Research,Tier 1
+APP-10816,Trade Feed Bridge,Interface,Active,Investments,Data Services,Tier 2
+APP-10817,Curve Simulator II,IT Component,End of Life,Investments,Trading,Tier 1
+APP-10818,File Transfer Tracker II,Application,Phase Out,Investments,Data Services,Tier 1
+APP-10819,LDI Index Data Blotter (Prod),Application,End of Life,Group Technology,Trading,Tier 3
+APP-10820,Property Curve Tracker (Prod),Application,Active,Investments,Trading,Tier 3
+APP-10821,Stress Database,Data Object,Phase Out,Investments,Risk,Tier 2
+APP-10822,FX Rebalance Feed,Interface,Active,Group Technology,Investment Management,Tier 2
+APP-10823,Index Data Dashboard Next,Application,Plan,Investments,Trading,Tier 1
+APP-10824,Credit Execution Bridge,Interface,Active,Group Technology,Trading,Tier 2
+APP-10825,EMD Venue Gateway,Interface,Active,Group Technology,Trading,Tier 2
+APP-10826,Client Reporting Engine Legacy,IT Component,Phase Out,Investments,Data Services,Tier 1
+APP-10827,Index Data Bridge Legacy,Interface,Active,Investments,Trading,Tier 3
+APP-10828,Tax Lot Engine,IT Component,Active,Investments,Investment Management,Tier 1
+APP-10829,LDI Allocation Dashboard,Application,End of Life,Investments,Investment Management,Tier 3
+APP-10830,LDI RFQ Portal,Application,Active,Investments,Trading,Tier 2
+APP-10831,Venue Feed,Interface,Active,Investments,Trading,Tier 2
+APP-10832,EMD Equity Research Pipeline,Interface,Phase Out,Investments,Research,Tier 3
+APP-10833,Order Simulator,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10834,Equity Exposure Blotter,Application,Plan,Investments,Risk,Tier 2
+APP-10835,Attribution Gateway Pro,Interface,End of Life,Investments,Data Services,Tier 2
+APP-10836,Private Credit Price Dashboard Legacy,Application,Active,Group Technology,Trading,Tier 2
+APP-10837,Sterling Allocation Calculator,Application,Active,Group Technology,Investment Management,Tier 1
+APP-10838,Message Cache,Data Object,Active,Group Technology,Data Services,Tier 1
+APP-10839,Venue Dashboard,Application,Plan,Investments,Trading,Tier 2
+APP-10840,Risk Gateway,Application,Phase Out,Investments,Data Services,Tier 3
+APP-10841,Reference Data Dashboard,Application,Active,Investments,Data Services,Tier 2
+APP-10842,Order Cache Lite,Data Object,Plan,Group Technology,Investment Management,Tier 3
+APP-10843,Allocation Service,IT Component,Active,Group Technology,Investment Management,Tier 2
+APP-10844,Equity Market Data Blotter,Application,Active,Group Technology,Trading,Tier 3
+APP-10845,File Transfer Feed,Interface,Active,Group Technology,Data Services,Tier 1
+APP-10846,Client Reporting Dashboard Next,Application,End of Life,Group Technology,Data Services,Tier 2
+APP-10847,Fund Structure Viewer Hub,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10848,Expenses Workbench Lite,Application,Active,Investments,Data Services,Tier 1
+APP-10849,Reference Data Engine,IT Component,Active,Investments,Data Services,Tier 2
+APP-10850,Global Rebalance Blotter,Application,Plan,Investments,Investment Management,Tier 3
+APP-10851,Global Risk Blotter,Application,Phase Out,Investments,Risk,Tier 1
+APP-10852,Sterling Trade Blotter Workbench,Application,Active,Group Technology,Investment Management,Tier 3
+APP-10853,Equity Margin Tracker,Application,Active,Investments,Investment Management,Tier 2
+APP-10854,Trade Feed Viewer,Application,Active,Investments,Data Services,Tier 2
+APP-10855,Credit Cash Cache,Data Object,Plan,Investments,Investment Management,Tier 1
+APP-10856,Client Reporting Engine Next,IT Component,Plan,Investments,Data Services,Tier 1
+APP-10857,Trade Feed Cache Lite,Data Object,Active,Investments,Data Services,Tier 2
+APP-10858,Order Blotter,Application,Plan,Group Technology,Investment Management,Tier 1
+APP-10859,Rates Constraint Dashboard,Application,End of Life,Investments,Investment Management,Tier 1
+APP-10860,Curve Feed,Interface,End of Life,Investments,Trading,Tier 1
+APP-10861,Price Database,Data Object,Active,Investments,Trading,Tier 2
+APP-10862,VaR Feed,Interface,Active,Investments,Risk,Tier 2
+APP-10863,Message Blotter,Application,Plan,Group Technology,Data Services,Tier 3
+APP-10864,Trade Feed Pipeline,Interface,End of Life,Group Technology,Data Services,Tier 3
+APP-10865,Margin Store,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10866,Performance Cache,Data Object,Active,Group Technology,Data Services,Tier 1
+APP-10867,Equity Research Monitor,Application,Phase Out,Group Technology,Research,Tier 2
+APP-10868,Positions Engine Pro,IT Component,End of Life,Group Technology,Data Services,Tier 2
+APP-10869,Venue Model,IT Component,Phase Out,Investments,Trading,Tier 2
+APP-10870,Performance Portal Hub,Application,Active,Investments,Data Services,Tier 2
+APP-10871,Margin Bridge,Interface,Plan,Group Technology,Investment Management,Tier 2
+APP-10872,Exposure Database,Data Object,Phase Out,Group Technology,Risk,Tier 1
+APP-10873,Macro Model Platform,IT Component,Active,Investments,Research,Tier 2
+APP-10874,Client Reporting Mart II,Data Object,Active,Group Technology,Data Services,Tier 2
+APP-10875,Allocation Loader,Interface,End of Life,Investments,Investment Management,Tier 3
+APP-10876,Risk Simulator,IT Component,End of Life,Group Technology,Risk,Tier 2
+APP-10877,Sterling Macro Gateway,Interface,Plan,Investments,Research,Tier 1
+APP-10878,FX Allocation Cache,Data Object,Plan,Investments,Investment Management,Tier 2
+APP-10879,Market Data Loader,Interface,Active,Investments,Trading,Tier 3
+APP-10880,Security Master Mart Hub,Data Object,Plan,Group Technology,Data Services,Tier 2
+APP-10881,Rates Curve Engine,IT Component,Active,Investments,Trading,Tier 1
+APP-10882,Event Dashboard Next,Application,Active,Group Technology,Data Services,Tier 3
+APP-10883,Rates Venue Feed Pro,Interface,Plan,Investments,Trading,Tier 2
+APP-10884,Macro Service Pro,IT Component,Active,Investments,Research,Tier 2
+APP-10885,Board MI Blotter Legacy,Application,Plan,Investments,Data Services,Tier 1
+APP-10886,LDI VaR Database,Data Object,Phase Out,Investments,Risk,Tier 3
+APP-10887,FX Index Data Simulator,IT Component,Plan,Investments,Trading,Tier 2
+APP-10888,Credit Order Tracker,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10889,Index Order Database,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10890,Global Risk Tracker,Application,End of Life,Group Technology,Risk,Tier 3
+APP-10891,File Transfer Bridge II,Interface,End of Life,Investments,Data Services,Tier 3
+APP-10892,Attribution Viewer,Application,Phase Out,Group Technology,Data Services,Tier 2
+APP-10893,Equity VaR Feed,Interface,Plan,Group Technology,Risk,Tier 2
+APP-10894,Sterling VaR Cache,Data Object,Plan,Investments,Risk,Tier 2
+APP-10895,Reference Data Feed,Interface,Active,Investments,Data Services,Tier 2
+APP-10896,Board MI Viewer,Application,Active,Investments,Data Services,Tier 2
+APP-10897,Multi-Asset Exposure Model,IT Component,Plan,Investments,Risk,Tier 2
+APP-10898,Engagement Database,Data Object,Active,Investments,Research,Tier 1
+APP-10899,Allocation Calculator II,Application,Phase Out,Investments,Investment Management,Tier 1
+APP-10900,Cash Calculator,Application,Active,Group Technology,Investment Management,Tier 2
+APP-10901,HR Monitor,Application,End of Life,Group Technology,Data Services,Tier 1
+APP-10902,Board MI Engine,IT Component,Phase Out,Group Technology,Data Services,Tier 1
+APP-10903,Attribution Calculator,Application,Active,Investments,Data Services,Tier 2
+APP-10904,Credit Market Data Service,IT Component,Active,Investments,Trading,Tier 2
+APP-10905,Equity Research Viewer,Application,Active,Group Technology,Research,Tier 2
+APP-10906,Positions Tracker Platform,Application,Active,Investments,Data Services,Tier 1
+APP-10907,Trade Blotter Bridge Legacy,Interface,Active,Investments,Investment Management,Tier 1
+APP-10908,Trade Blotter Simulator Lite,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10909,Liquidity Risk Service,IT Component,Active,Group Technology,Risk,Tier 2
+APP-10910,Sterling Index Data Gateway,Interface,Active,Investments,Trading,Tier 2
+APP-10911,RFQ Pipeline Legacy,Interface,Active,Investments,Trading,Tier 2
+APP-10912,Global Stress Pipeline,Interface,Active,Investments,Risk,Tier 3
+APP-10913,Client Reporting Store Legacy,Data Object,Active,Investments,Data Services,Tier 3
+APP-10914,Index Constraint Model,IT Component,Phase Out,Group Technology,Investment Management,Tier 1
+APP-10915,Rates Venue Store,Data Object,Phase Out,Group Technology,Trading,Tier 2
+APP-10916,Curve Bridge Pro,Interface,Active,Group Technology,Trading,Tier 3
+APP-10917,Learning Monitor,Application,Active,Group Technology,Data Services,Tier 2
+APP-10918,Trade Blotter Service Hub,IT Component,Active,Investments,Investment Management,Tier 2
+APP-10919,Property Stress Tracker,Application,End of Life,Investments,Risk,Tier 3
+APP-10920,Performance Model Legacy,IT Component,End of Life,Investments,Data Services,Tier 2
+APP-10921,Attribution Cache,Data Object,Phase Out,Group Technology,Data Services,Tier 3
+APP-10922,Reference Data Gateway,Interface,Plan,Investments,Data Services,Tier 1
+APP-10923,Credit Order Bridge,Interface,Active,Investments,Investment Management,Tier 3
+APP-10924,Trade Feed Pipeline Legacy,Interface,End of Life,Group Technology,Data Services,Tier 3
+APP-10925,Performance Database Hub,Data Object,Plan,Group Technology,Data Services,Tier 2
+APP-10926,Global Index Data Bridge,Interface,Plan,Group Technology,Trading,Tier 3
+APP-10927,EMD Algo Loader,Interface,Active,Investments,Trading,Tier 3
+APP-10928,Attribution Monitor Legacy,Application,Active,Group Technology,Data Services,Tier 3
+APP-10929,LDI Allocation Engine,IT Component,Active,Investments,Investment Management,Tier 1
+APP-10930,Property Allocation Dashboard,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-10931,Sterling Engagement Feed,Interface,Plan,Investments,Research,Tier 2
+APP-10932,Private Credit Liquidity Risk Model,IT Component,Active,Group Technology,Risk,Tier 2
+APP-10933,Board MI Tracker,Application,Plan,Investments,Data Services,Tier 2
+APP-10934,Sterling Curve Database,Data Object,Active,Group Technology,Trading,Tier 2
+APP-10935,Exposure Viewer,Application,End of Life,Investments,Risk,Tier 1
+APP-10936,EMD Curve Dashboard,Application,Active,Investments,Trading,Tier 2
+APP-10937,Allocation Calculator Lite,Application,Phase Out,Investments,Investment Management,Tier 3
+APP-10938,Rates Market Data Tracker,Application,Active,Investments,Trading,Tier 3
+APP-10939,Positions Service Lite,IT Component,Active,Group Technology,Data Services,Tier 2
+APP-10940,Venue Loader Lite,Interface,Plan,Investments,Trading,Tier 2
+APP-10941,Event Dashboard II,Application,Active,Investments,Data Services,Tier 3
+APP-10942,File Transfer Workbench,Application,Active,Investments,Data Services,Tier 3
+APP-10943,Facilities Viewer,Application,End of Life,Investments,Data Services,Tier 2
+APP-10944,Multi-Asset VaR Feed,Interface,Active,Investments,Risk,Tier 2
+APP-10945,Price Service Hub,IT Component,Plan,Group Technology,Trading,Tier 2
+APP-10946,Rates Algo Monitor,Application,Active,Investments,Trading,Tier 3
+APP-10947,Market Data Cache Legacy,Data Object,Plan,Investments,Trading,Tier 1
+APP-10948,Allocation Database Lite,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10949,Facilities Blotter Legacy,Application,End of Life,Investments,Data Services,Tier 1
+APP-10950,Performance Service II,IT Component,Active,Investments,Data Services,Tier 1
+APP-10951,Price Monitor Lite,Application,End of Life,Investments,Trading,Tier 1
+APP-10952,LDI Tax Lot Database,Data Object,Phase Out,Investments,Investment Management,Tier 3
+APP-10953,LDI Stress Loader,Interface,Active,Investments,Risk,Tier 3
+APP-10954,Index Cash Store,Data Object,Plan,Investments,Investment Management,Tier 2
+APP-10955,Global Venue Monitor,Application,Plan,Group Technology,Trading,Tier 2
+APP-10956,Trade Feed Model,IT Component,Plan,Investments,Data Services,Tier 1
+APP-10957,Cash Portal,Application,End of Life,Investments,Investment Management,Tier 2
+APP-10958,Positions Mart Lite,Data Object,End of Life,Group Technology,Data Services,Tier 2
+APP-10959,Event Mart,Data Object,Phase Out,Investments,Data Services,Tier 3
+APP-10960,Holdings Store Legacy,Data Object,Active,Investments,Data Services,Tier 3
+APP-10961,Equity Rebalance Database,Data Object,Active,Group Technology,Investment Management,Tier 2
+APP-10962,Client Reporting Gateway Next,Interface,Plan,Investments,Data Services,Tier 2
+APP-10963,Private Credit Venue Tracker,Application,Phase Out,Investments,Trading,Tier 2
+APP-10964,Index VaR Tracker,Application,Active,Group Technology,Risk,Tier 2
+APP-10965,Order Store,Data Object,Active,Group Technology,Investment Management,Tier 1
+APP-10966,Multi-Asset Liquidity Loader,Interface,Active,Investments,Investment Management,Tier 1
+APP-10967,Allocation Gateway Lite,Interface,Active,Investments,Investment Management,Tier 3
+APP-10968,Order Tracker,Application,Active,Investments,Investment Management,Tier 2
+APP-10969,Board MI Dashboard Next,Application,Active,Investments,Data Services,Tier 1
+APP-10970,Learning Monitor II,Application,End of Life,Investments,Data Services,Tier 2
+APP-10971,Performance Monitor Next,Application,End of Life,Group Technology,Data Services,Tier 3
+APP-10972,Market Data Loader Lite,Interface,Phase Out,Investments,Trading,Tier 3
+APP-10973,ESG Monitor,Application,End of Life,Investments,Research,Tier 1
+APP-10974,Attribution Simulator Legacy,IT Component,Active,Investments,Data Services,Tier 1
+APP-10975,Event Workbench,Application,End of Life,Group Technology,Data Services,Tier 3
+APP-10976,Sterling RFQ Portal,Application,Active,Investments,Trading,Tier 3
+APP-10977,EMD ESG Database,Data Object,Plan,Investments,Research,Tier 2
+APP-10978,Sterling Liquidity Risk Calculator,Application,Active,Group Technology,Risk,Tier 2
+APP-10979,Positions Dashboard Pro,Application,Active,Investments,Data Services,Tier 1
+APP-10980,Rates Curve Monitor,Application,Active,Investments,Trading,Tier 3
+APP-10981,Trade Feed Cache Pro,Data Object,Active,Investments,Data Services,Tier 1
+APP-10982,File Transfer Store,Data Object,Active,Investments,Data Services,Tier 2
+APP-10983,Event Monitor,Application,Active,Investments,Data Services,Tier 2
+APP-10984,Equity Equity Research Service,IT Component,Active,Investments,Research,Tier 2
+APP-10985,Sterling Curve Blotter,Application,Active,Investments,Trading,Tier 2
+APP-10986,Positions Workbench Legacy,Application,Active,Group Technology,Data Services,Tier 3
+APP-10987,VaR Workbench,Application,Active,Investments,Risk,Tier 1
+APP-10988,Venue Dashboard Lite,Application,End of Life,Group Technology,Trading,Tier 3
+APP-10989,RFQ Pipeline Lite,Interface,Phase Out,Investments,Trading,Tier 2
+APP-10990,Fund Structure Service,IT Component,Phase Out,Investments,Investment Management,Tier 3
+APP-10991,Sterling Credit Research Dashboard Pro,Application,Active,Investments,Research,Tier 1
+APP-10992,Performance Store Legacy,Data Object,Active,Investments,Data Services,Tier 2
+APP-10993,Event Mart Hub,Data Object,Plan,Group Technology,Data Services,Tier 3
+APP-10994,Attribution Database Next,Data Object,Active,Investments,Data Services,Tier 1
+APP-10995,Index Data Blotter,Application,End of Life,Investments,Trading,Tier 2
+APP-10996,Property Margin Store,Data Object,Active,Investments,Investment Management,Tier 1
+APP-10997,Equity Trade Blotter Store,Data Object,Active,Investments,Investment Management,Tier 2
+APP-10998,EMD Market Data Loader,Interface,End of Life,Investments,Trading,Tier 2
+APP-10999,Holdings Workbench Hub,Application,Active,Investments,Data Services,Tier 2
+APP-11000,Liquidity Risk Service Pro Platform,IT Component,Active,Investments,Risk,Tier 3
+APP-11001,HR Dashboard,Application,Active,Group Technology,Data Services,Tier 2
+APP-11002,Order Dashboard,Application,End of Life,Investments,Investment Management,Tier 2
+APP-11003,Credit Trade Blotter Gateway,Interface,Plan,Group Technology,Investment Management,Tier 2
+APP-11004,LDI Portfolio Cache,Application,Active,Investments,Data Services,Tier 2
+APP-11005,Sterling Constraint Gateway,Interface,Phase Out,Investments,Investment Management,Tier 1
+APP-11006,Private Credit Order Bridge,Interface,Phase Out,Group Technology,Investment Management,Tier 2
+APP-11007,Positions Gateway II,Interface,End of Life,Investments,Data Services,Tier 2
+APP-11008,Board MI Model,IT Component,End of Life,Group Technology,Data Services,Tier 2
+APP-11009,Message Service,IT Component,Active,Investments,Data Services,Tier 1
+APP-11010,EMD Order Workbench,Application,Active,Investments,Investment Management,Tier 3
+APP-11011,Property Portfolio Dashboard,Application,Active,Group Technology,Investment Management,Tier 1
+APP-11012,Price Tracker,Application,Active,Investments,Trading,Tier 2
+APP-11013,LDI Trade Blotter Model,IT Component,Active,Investments,Investment Management,Tier 1
+APP-11014,Venue Gateway Pro,Interface,Active,Investments,Trading,Tier 3
+APP-11015,Message Viewer,Application,Active,Investments,Data Services,Tier 3
+APP-11016,Equity Screening Calculator,Application,End of Life,Investments,Research,Tier 2
+APP-11017,Security Master Database Legacy,Data Object,Active,Group Technology,Data Services,Tier 1
+APP-11018,Client Reporting Viewer Next,Application,Active,Investments,Data Services,Tier 2
+APP-11019,Index Cash Pipeline,Interface,Active,Investments,Investment Management,Tier 1
+APP-11020,Property Trade Blotter Dashboard,Application,End of Life,Group Technology,Investment Management,Tier 2
+APP-11021,Message Bridge,Interface,Plan,Investments,Data Services,Tier 2
+APP-11022,Attribution Blotter Hub,Application,Plan,Investments,Data Services,Tier 2
+APP-11023,Index Stress Database,Data Object,Plan,Investments,Risk,Tier 3
+APP-11024,Trade Blotter Simulator Hub,IT Component,Phase Out,Group Technology,Investment Management,Tier 3
+APP-11025,Price Blotter Legacy,Application,Phase Out,Group Technology,Trading,Tier 2
+APP-11026,Price Pipeline Pro,Interface,Plan,Investments,Trading,Tier 3
+APP-11027,Murex,Application,Active,Investments,Research,Tier 2
+APP-11028,Calypso,Application,Plan,Investments,Research,Tier 3
+APP-11029,SimCorp Dimension,Application,Active,Investments,Research,Tier 2
+APP-11030,Clearwater Analytics,Application,Plan,Investments,Data Services,Tier 3
+APP-11031,Informatica MDM,Application,Active,Investments,Trading,Tier 2
+APP-11032,Bloomberg PORT Enterprise,Application,Active,Investments,Research,Tier 2
+APP-11033,ION Trading,Application,Active,Group Technology,Research,Tier 2
+APP-11034,Broadridge Gloss,Application,Active,Group Technology,Data Services,Tier 2
+APP-11035,Workday Finance,Application,Plan,Investments,Risk,Tier 3
+APP-11036,ServiceNow ITSM,Application,Plan,Investments,Data Services,Tier 2
+APP-11037,Confluence Wiki,Application,Active,Investments,Data Services,Tier 3
+APP-11038,Tableau Server,Application,Plan,Group Technology,Research,Tier 2
+APP-11039,MSCI RiskMetrics,Application,Plan,Group Technology,Data Services,Tier 3
+APP-11040,Sustainalytics Feed,Application,Active,Group Technology,Research,Tier 2
+APP-11041,ICE Data Services,Application,Active,Investments,Investment Management,Tier 3
+APP-11042,S&P Capital IQ,Application,Plan,Investments,Data Services,Tier 2
+APP-11043,Moody’s Analytics,Application,Plan,Group Technology,Risk,Tier 3
+APP-11044,Enfusion,Application,Plan,Investments,Research,Tier 3
+APP-11045,Arcesium Forge,Application,Plan,Group Technology,Risk,Tier 3
+APP-11046,Linedata Longview,Application,Plan,Investments,Research,Tier 3

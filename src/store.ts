@@ -13,7 +13,7 @@ import { plural, slugify, today, uid, uniqueId } from './lib/util'
 import { ATTESTED, NOT_ATTESTED, type ApprovalAction, type ChangeKind, type DataState, type FeedRun, type Layer, type Tool } from './types'
 
 /** v2: the demo now runs on the large sample dataset, so older saved maps are left behind. */
-export const STORAGE_KEY = 'investments-tech-map:v2'
+export const STORAGE_KEY = 'investments-tech-map:v3'
 
 const EMPTY: DataState = {
   tools: [],
