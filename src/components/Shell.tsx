@@ -23,7 +23,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { useDemo, useFeature } from '../demo-store'
 import { AskPanel } from './AskPanel'
 import { brandOn, LOGO_SRC } from '../lib/brand'
-import { activeSources, ARRIVAL_LABEL, HORIZON_LABEL, phase as phaseDef, PHASES, type Env, type ScreenId } from '../lib/phases'
+import { activeSources, ARRIVAL_LABEL, phase as phaseDef, PHASES, type ScreenId } from '../lib/phases'
 import { freshness, isStale } from '../lib/freshness'
 import { ROLES, type RoleId } from '../lib/roles'
 import { NAV_GROUP_LABEL, SCREEN_META, type NavGroup } from '../lib/screens'
@@ -171,25 +171,22 @@ function ResetButton() {
   )
 }
 
-/** Presenter controls: phase and environment. Kept visually apart from the product chrome. */
+/** Presenter controls: the phase. The environment follows from it. Kept visually apart from the product chrome. */
 function DemoBar() {
   const phase = useDemo((s) => s.phase)
-  const env = useDemo((s) => s.env)
   const setPhase = useDemo((s) => s.setPhase)
-  const setEnv = useDemo((s) => s.setEnv)
   const p = phaseDef(phase)
-  const envs = p.envs
   return (
     <div className="flex h-10 shrink-0 items-center gap-3 bg-navy px-4 text-white">
       <span className="text-[11px] font-bold tracking-wider text-white/60 uppercase">Demo</span>
-      <div className="flex items-center gap-1" role="radiogroup" aria-label="Version">
+      <div className="flex items-center gap-1" role="radiogroup" aria-label="Phase">
         {PHASES.map((x) => (
           <button
             key={x.id}
             type="button"
             role="radio"
             aria-checked={x.id === phase}
-            title={`Version ${x.id}: ${x.name}`}
+            title={`Phase ${x.id}: ${x.name}`}
             onClick={() => setPhase(x.id)}
             className={cx(
               'num h-7 min-w-7 rounded px-2 text-xs font-bold transition-colors',
@@ -201,29 +198,11 @@ function DemoBar() {
         ))}
       </div>
       <div className="min-w-0 truncate text-[13px]">
-        <span className="font-bold">Version {p.id}</span>
-        <span className="text-white/60"> · {HORIZON_LABEL[p.horizon]} · </span>
+        <span className="font-bold">Phase {p.id}</span>
+        <span className="text-white/60"> · </span>
         <span className="font-display">{p.name}</span>
       </div>
       <div className="ml-auto flex items-center gap-3">
-        {envs.length > 1 ? (
-          <div className="inline-flex rounded bg-white/10 p-0.5" role="radiogroup" aria-label="Environment">
-            {(['sandbox', 'prod'] as Env[]).map((e) => (
-              <button
-                key={e}
-                type="button"
-                role="radio"
-                aria-checked={env === e}
-                onClick={() => setEnv(e)}
-                className={cx('h-6 rounded px-2.5 text-xs font-semibold transition-colors', env === e ? 'bg-white text-navy' : 'text-white/75 hover:text-white')}
-              >
-                {e === 'sandbox' ? 'Local sandbox' : 'Production'}
-              </button>
-            ))}
-          </div>
-        ) : (
-          <span className="text-xs text-white/60">Production only from Version 4</span>
-        )}
         <ResetButton />
       </div>
     </div>
@@ -261,8 +240,8 @@ function EnvStrip() {
   if (env === 'sandbox') {
     return (
       <div className="flex shrink-0 items-center gap-2.5 border-b border-amber-200 bg-amber-50 px-5 py-1.5 text-xs text-amber-900">
-        <span className="rounded bg-amber-400/90 px-1.5 py-px text-[11px] font-bold text-amber-950">Local sandbox</span>
-        <span>Runs on this laptop. Files dropped in by hand. Saved in this browser only.</span>
+        <span className="rounded bg-amber-400/90 px-1.5 py-px text-[11px] font-bold text-amber-950">{phase === 1 ? 'Local' : 'Sandbox'}</span>
+        <span>{phase === 1 ? 'Runs on this laptop. Files dropped in by hand. Saved in this browser only.' : 'A test copy her team can try together. Files dropped in by hand. Not connected to live systems.'}</span>
       </div>
     )
   }
