@@ -9,6 +9,7 @@ import { CAT, layerOf, termsOf } from '../lib/taxonomy'
 import { fmtK, fmtNum, pct, plural } from '../lib/util'
 import { useFeature } from '../demo-store'
 import { navigate } from '../router'
+import { OverviewGrowth } from './OverviewGrowth'
 import { OverviewV5 } from './OverviewV5'
 import { useDataState, useLayerMap } from '../store'
 import { ATTESTED } from '../types'
@@ -112,6 +113,8 @@ function OverviewV2() {
           </div>
         ))}
       </div>
+
+      <OverviewGrowth />
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Card title={`Estimated annual cost by ${CAT.capL2}`} subtitle="£k, illustrative · click a bar to break it down" actions={<SourceLink path="cost" />}>
