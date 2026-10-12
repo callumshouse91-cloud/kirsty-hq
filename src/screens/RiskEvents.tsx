@@ -1,6 +1,6 @@
 import { AlertTriangle, Download, X } from 'lucide-react'
 import { useMemo } from 'react'
-import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { ToolLink } from '../components/common'
 import { Badge, Button, Card, Chip, cx, EmptyState, PageHeader, Segmented, Td, Th } from '../components/ui'
 import { AXIS_LABEL_TICK, AXIS_TICK, BRAND } from '../lib/brand'
@@ -140,12 +140,12 @@ export function RiskEventsScreen() {
                   radius={[0, 4, 4, 0]}
                   maxBarSize={18}
                   className="cursor-pointer"
-                  label={{ position: 'right', fontSize: 11, fill: BRAND.ink, formatter: (v: unknown) => (measure === 'cost' ? fmtK(Number(v)) : String(v)) }}
                   onClick={(d: { payload?: Datum }) => d.payload && patchParams(route, { cap: d.payload.key === capF ? null : d.payload.key })}
                 >
                   {byCap.map((d) => (
                     <Cell key={d.key} fill={!capF || capF === d.key ? BRAND.red : BRAND.blush} />
                   ))}
+                  <LabelList dataKey={measure} position="right" fontSize={11} fill={BRAND.ink} formatter={(v: unknown) => (measure === 'cost' ? fmtK(Number(v)) : String(v))} />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
