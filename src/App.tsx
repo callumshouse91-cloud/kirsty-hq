@@ -82,7 +82,8 @@ export default function App() {
   // A screen outside the current phase is never rendered: go to the phase's first screen instead.
   useEffect(() => {
     if (enabled) return
-    const first = phaseDef(phase).firstScreen
+    // A bare link opens on the Journey, the start of the story. Otherwise go to the phase's first screen.
+    const first = screen === null && available.includes('journey') ? 'journey' : phaseDef(phase).firstScreen
     const target = available.includes(first) ? first : available[0]
     if (screen && SCREEN_META[screen]) useUi.getState().notify(`${SCREEN_META[screen].label} arrives in Phase ${screenFrom(screen)}`)
     if (target) navigate(target, {}, { replace: true })

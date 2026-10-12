@@ -287,3 +287,46 @@ export function envFor(id: PhaseId, wanted: Env): Env {
   const envs = phase(id).envs
   return envs.includes(wanted) ? wanted : envs[0]
 }
+
+export interface HorizonDef {
+  id: Horizon
+  title: string
+  problems: string[]
+  answeredBy: PhaseId[]
+}
+
+/** Her problems, in her terms, for the Journey tab. */
+export const HORIZONS: HorizonDef[] = [
+  {
+    id: 'now',
+    title: 'Her problem now',
+    problems: [
+      'Requests for information land with about a week’s notice.',
+      'The tool list is built by hand.',
+      'LeanIX is incomplete and slow to update, so she validates by scrolling.',
+      'The taxonomy is hers but has nowhere to live.',
+      'She needs something presentable by January for the move to the platform and product operating model.',
+    ],
+    answeredBy: [1, 2],
+  },
+  {
+    id: 'next',
+    title: 'Her problem next',
+    problems: [
+      'More than one person has to use and maintain it without it decaying.',
+      'The centre needs to see the same picture.',
+      'Vendor renewals, risk events, and cost by capability and strategy each live somewhere else.',
+    ],
+    answeredBy: [3, 4],
+  },
+  {
+    id: 'future',
+    title: 'Her problem in the future',
+    problems: [
+      'One management-information layer for how Investments runs change and product delivery.',
+      'Products and projects, people and skills, change data, and benefits after go-live.',
+      'Each new view should be configuration, not a new build.',
+    ],
+    answeredBy: [5],
+  },
+]
