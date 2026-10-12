@@ -55,9 +55,12 @@ async function fetchText(name: string): Promise<string> {
   return res.text()
 }
 
+/** A file from public/samples, as if it had been dropped in. */
 export async function fetchSampleFile(name: string): Promise<File> {
-  const text = await fetchText(name)
-  return new File([text], name, { type: 'text/csv' })
+  const res = await fetch(`${import.meta.env.BASE_URL}samples/${name}`)
+  if (!res.ok) throw new Error(`Could not load samples/${name}`)
+  const blob = await res.blob()
+  return new File([blob], name, { type: name.endsWith('.xlsx') ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' : 'text/csv' })
 }
 
 export async function loadSeed(): Promise<DataState> {
@@ -188,7 +191,7 @@ function buildSeed(master: { headers: string[]; rows: Row[] }, taxRows: Row[], u
       {
         id: 'seed',
         source: MASTER_SOURCE,
-        fileName: 'full_tech_list.csv',
+        fileName: 'Master workbook',
         date: today(),
         rowCount: tools.length,
         matched: 0,

@@ -1,0 +1,91 @@
+Event ID,Date,Title,Tool,Strategy,Category,Loss (£k),Status
+RE-2025-101,2025-10-20,Bad data in LDI Collateral Model,LDI Collateral Model,Developed Index,Data quality,139,Closed
+RE-2025-130,2025-10-20,Wrong assumption in Holdings Blotter Hub,Holdings Blotter Hub,Property Debt,Model error,103,Closed
+RE-2025-108,2025-10-23,Spreadsheet error in Rates Venue Viewer (EUC),Rates Venue Viewer (EUC),Retirement Income,EUC error,38,Closed
+RE-2025-143,2025-10-23,Wrong assumption in Risk Gateway,Risk Gateway,Sterling Liquidity,Model error,146,Closed
+RE-2025-136,2025-10-31,Outage delayed Fund Structure Simulator,Fund Structure Simulator,Developed Index,Systems failure,119,Closed
+RE-2025-104,2025-11-04,Outage delayed Rebalance Service Hub,Rebalance Service Hub,Emerging Market Debt,Systems failure,41,Closed
+RE-2025-168,2025-11-05,Wrong assumption in Rates Trade Blotter Model,Rates Trade Blotter Model,Factor Index,Model error,20,Closed
+RE-2025-158,2025-11-08,Spreadsheet error in Fund Structure Viewer (EUC),Fund Structure Viewer (EUC),Property Debt,EUC error,24,Closed
+RE-2025-103,2025-11-10,Outage delayed Constraint Service,Constraint Service,Global Credit,Systems failure,14,Closed
+RE-2025-145,2025-11-14,Outage delayed Private Credit Screening Bridge,Private Credit Screening Bridge,Emerging Market Debt,Systems failure,14,Closed
+RE-2025-123,2025-11-15,Outage delayed Property Constraint Monitor,Property Constraint Monitor,Developed Index,Systems failure,76,Closed
+RE-2025-134,2025-11-22,Bad data in RFQ Monitor Legacy,RFQ Monitor Legacy,Factor Index,Data quality,66,Closed
+RE-2025-167,2025-11-22,Manual step missed in Attribution Model Legacy,Attribution Model Legacy,Buy & Maintain,Process,8,Closed
+RE-2025-128,2025-11-26,Outage delayed Sterling Credit Research Gateway,Sterling Credit Research Gateway,Short-Term Credit,Systems failure,36,Closed
+RE-2025-160,2025-11-27,Manual step missed in File Transfer Dashboard,File Transfer Dashboard,Diversified Growth,Process,11,Closed
+RE-2025-113,2025-11-28,Bad data in Liquidity Risk Mart,Liquidity Risk Mart,Property Debt,Data quality,160,Closed
+RE-2025-179,2025-11-30,Bad data in Security Master Bridge,Security Master Bridge,Short-Term Credit,Data quality,74,Closed
+RE-2025-102,2025-12-02,Bad data in Rebalance Mart,Rebalance Mart,Sovereign Rates,Data quality,60,Closed
+RE-2025-165,2025-12-13,Spreadsheet error in Performance Monitor (EUC),Performance Monitor (EUC),Global Credit,EUC error,137,Closed
+RE-2025-129,2025-12-15,Spreadsheet error in Performance Monitor Lite (EUC),Performance Monitor Lite (EUC),Property Debt,EUC error,132,Closed
+RE-2025-110,2025-12-20,Wrong assumption in Sterling Equity Research Engine,Sterling Equity Research Engine,Developed Index,Model error,22,Closed
+RE-2026-135,2026-01-04,Spreadsheet error in Rates Venue Viewer (EUC),Rates Venue Viewer (EUC),Emerging Market Debt,EUC error,73,Closed
+RE-2026-137,2026-01-10,Manual step missed in Board MI Bridge,Board MI Bridge,Buy & Maintain,Process,7,Closed
+RE-2026-180,2026-01-13,Bad data in Trade Blotter Model,Trade Blotter Model,Buy & Maintain,Data quality,7,Closed
+RE-2026-150,2026-01-17,Outage delayed RFQ Monitor Legacy,RFQ Monitor Legacy,Sovereign Rates,Systems failure,44,Closed
+RE-2026-154,2026-01-20,Outage delayed Tax Lot Pipeline Hub,Tax Lot Pipeline Hub,Emerging Market Debt,Systems failure,15,Closed
+RE-2026-106,2026-01-25,Manual step missed in Equity Model Portfolio Calculator,Equity Model Portfolio Calculator,Global Credit,Process,15,Closed
+RE-2026-151,2026-02-02,Bad data in Stress Mart,Stress Mart,Diversified Growth,Data quality,39,Closed
+RE-2026-120,2026-02-04,Spreadsheet error in EMD Execution Workbench (EUC),EMD Execution Workbench (EUC),Global Credit,EUC error,208,Closed
+RE-2026-118,2026-02-07,Wrong assumption in Security Master Cache,Security Master Cache,Developed Index,Model error,81,Closed
+RE-2026-184,2026-02-07,Bad data in Private Credit Order Loader,Private Credit Order Loader,Buy & Maintain,Data quality,17,Closed
+RE-2026-111,2026-02-19,Spreadsheet error in Holdings Viewer (EUC),Holdings Viewer (EUC),Short-Term Credit,EUC error,15,Closed
+RE-2026-138,2026-02-19,Bad data in Reference Data Simulator,Reference Data Simulator,Sterling Liquidity,Data quality,8,Closed
+RE-2026-169,2026-02-20,Outage delayed Order Pipeline,Order Pipeline,Property Debt,Systems failure,163,Closed
+RE-2026-163,2026-02-25,Manual step missed in Rates Credit Research Store,Rates Credit Research Store,Emerging Market Debt,Process,25,Closed
+RE-2026-133,2026-02-27,Bad data in Rebalance Pipeline,Rebalance Pipeline,Buy & Maintain,Data quality,9,Closed
+RE-2026-172,2026-02-28,Wrong assumption in FX Allocation Store,FX Allocation Store,Emerging Market Debt,Model error,6,Closed
+RE-2026-149,2026-03-01,Manual step missed in Order Pipeline,Order Pipeline,Private Credit,Process,33,Closed
+RE-2026-178,2026-03-09,Wrong assumption in EMD Trade Blotter Service,EMD Trade Blotter Service,Pension Hedging,Model error,80,Closed
+RE-2026-159,2026-03-12,Wrong assumption in Positions Mart Next,Positions Mart Next,Short-Term Credit,Model error,10,Closed
+RE-2026-152,2026-03-16,Spreadsheet error in Performance Tracker (EUC),Performance Tracker (EUC),Short-Term Credit,EUC error,82,Closed
+RE-2026-155,2026-03-16,Spreadsheet error in EMD VaR Tracker (EUC),EMD VaR Tracker (EUC),Sovereign Rates,EUC error,11,Closed
+RE-2026-157,2026-03-18,Bad data in Rebalance Viewer,Rebalance Viewer,Developed Index,Data quality,119,Closed
+RE-2026-161,2026-03-19,Bad data in Rebalance Pipeline,Rebalance Pipeline,Diversified Growth,Data quality,113,Closed
+RE-2026-122,2026-03-22,Bad data in Market Data Dashboard,Market Data Dashboard,Property Debt,Data quality,12,Closed
+RE-2026-148,2026-03-23,Manual step missed in Holdings Workbench Legacy,Holdings Workbench Legacy,Sterling Liquidity,Process,189,Closed
+RE-2026-115,2026-03-29,Manual step missed in Trade Blotter Tracker,Trade Blotter Tracker,Sovereign Rates,Process,167,Closed
+RE-2026-173,2026-04-01,Manual step missed in Holdings Gateway Hub,Holdings Gateway Hub,Short-Term Credit,Process,11,Closed
+RE-2026-147,2026-04-11,Bad data in Reference Data Gateway,Reference Data Gateway,Property Debt,Data quality,14,Closed
+RE-2026-164,2026-04-11,Outage delayed Order Engine Legacy,Order Engine Legacy,Diversified Growth,Systems failure,6,Closed
+RE-2026-140,2026-04-16,Manual step missed in Allocation Store Hub,Allocation Store Hub,Private Credit,Process,43,Closed
+RE-2026-144,2026-04-16,Manual step missed in Holdings Workbench Legacy,Holdings Workbench Legacy,Pension Hedging,Process,31,Closed
+RE-2026-139,2026-04-21,Wrong assumption in Attribution Model Legacy,Attribution Model Legacy,Retirement Income,Model error,77,Closed
+RE-2026-105,2026-04-22,Manual step missed in Equity Research Model,Equity Research Model,Emerging Market Debt,Process,40,Closed
+RE-2026-141,2026-04-22,Bad data in Multi-Asset Curve Feed,Multi-Asset Curve Feed,Buy & Maintain,Data quality,194,Closed
+RE-2026-142,2026-04-25,Wrong assumption in FX Curve Loader,FX Curve Loader,Developed Index,Model error,179,Closed
+RE-2026-186,2026-05-08,Wrong assumption in Positions Pipeline Legacy,Positions Pipeline Legacy,Developed Index,Model error,56,Closed
+RE-2026-126,2026-05-09,Manual step missed in Positions Pipeline,Positions Pipeline,Sterling Liquidity,Process,14,Closed
+RE-2026-170,2026-05-09,Wrong assumption in Rebalance Service Hub,Rebalance Service Hub,Buy & Maintain,Model error,201,Closed
+RE-2026-119,2026-05-11,Bad data in Multi-Asset Tax Lot Cache,Multi-Asset Tax Lot Cache,Sterling Liquidity,Data quality,26,Closed
+RE-2026-112,2026-05-26,Bad data in Equity Research Engine Pro,Equity Research Engine Pro,Property Debt,Data quality,24,Closed
+RE-2026-185,2026-05-30,Manual step missed in FX Order Model,FX Order Model,Pension Hedging,Process,15,Closed
+RE-2026-156,2026-06-02,Outage delayed Security Master Feed,Security Master Feed,Property Debt,Systems failure,164,Closed
+RE-2026-125,2026-06-05,Outage delayed MarketAxess,MarketAxess,Sovereign Rates,Systems failure,154,Closed
+RE-2026-182,2026-06-06,Outage delayed Equity Model Portfolio Calculator,Equity Model Portfolio Calculator,Global Credit,Systems failure,266,Closed
+RE-2026-175,2026-06-14,Spreadsheet error in Stress Monitor (EUC),Stress Monitor (EUC),Private Credit,EUC error,14,Closed
+RE-2026-176,2026-06-27,Wrong assumption in FX Liquidity Workbench,FX Liquidity Workbench,Global Credit,Model error,37,Closed
+RE-2026-177,2026-07-04,Outage delayed Rates Venue Portal,Rates Venue Portal,Buy & Maintain,Systems failure,82,Closed
+RE-2026-181,2026-07-08,Bad data in Rebalance Viewer,Rebalance Viewer,Diversified Growth,Data quality,28,Closed
+RE-2026-153,2026-07-14,Wrong assumption in Holdings Workbench Legacy,Holdings Workbench Legacy,Pension Hedging,Model error,17,Closed
+RE-2026-117,2026-07-19,Outage delayed Liquidity Risk Pipeline,Liquidity Risk Pipeline,Emerging Market Debt,Systems failure,171,Closed
+RE-2026-187,2026-07-19,Manual step missed in Charles River IMS,Charles River IMS,Retirement Income,Process,27,Open
+RE-2026-189,2026-07-29,Bad data in Rebalance Pipeline,Rebalance Pipeline,Pension Hedging,Data quality,70,Open
+RE-2026-174,2026-08-05,Wrong assumption in Charles River IMS,Charles River IMS,Short-Term Credit,Model error,39,Open
+RE-2026-162,2026-08-07,Spreadsheet error in Holdings Viewer (EUC),Holdings Viewer (EUC),Short-Term Credit,EUC error,84,Open
+RE-2026-114,2026-08-09,Outage delayed Domino Data Lab,Domino Data Lab,Pension Hedging,Systems failure,141,Open
+RE-2026-116,2026-08-13,Bad data in Positions Blotter,Positions Blotter,Developed Index,Data quality,27,Open
+RE-2026-166,2026-08-15,Wrong assumption in Multi-Asset Trade Blotter Tracker,Multi-Asset Trade Blotter Tracker,Emerging Market Debt,Model error,14,Closed
+RE-2026-132,2026-08-23,Wrong assumption in Property Order Model,Property Order Model,Short-Term Credit,Model error,45,Open
+RE-2026-121,2026-08-26,Wrong assumption in Curve Gateway Pro,Curve Gateway Pro,Sovereign Rates,Model error,6,Open
+RE-2026-171,2026-08-28,Manual step missed in Private Credit Allocation Calculator,Private Credit Allocation Calculator,Factor Index,Process,110,Open
+RE-2026-131,2026-09-08,Spreadsheet error in Sterling Credit Research Portal (EUC),Sterling Credit Research Portal (EUC),Property Debt,EUC error,15,Closed
+RE-2026-107,2026-09-10,Wrong assumption in Attribution Blotter,Attribution Blotter,Buy & Maintain,Model error,42,Open
+RE-2026-146,2026-09-21,Manual step missed in Credit Order Model,Credit Order Model,Buy & Maintain,Process,86,Closed
+RE-2026-188,2026-09-25,Bad data in Bloomberg AIM,Bloomberg AIM,Developed Index,Data quality,55,Open
+RE-2026-183,2026-09-27,Manual step missed in Multi-Asset Trade Blotter Tracker,Multi-Asset Trade Blotter Tracker,Developed Index,Process,140,Closed
+RE-2026-100,2026-09-28,Wrong assumption in Reference Data Model,Reference Data Model,Buy & Maintain,Model error,133,Open
+RE-2026-127,2026-09-28,Bad data in Execution Database Legacy,Execution Database Legacy,Emerging Market Debt,Data quality,121,Open
+RE-2026-124,2026-09-29,Wrong assumption in Trade Blotter Service Pro,Trade Blotter Service Pro,Developed Index,Model error,7,Open
+RE-2026-109,2026-10-06,Wrong assumption in Order Simulator,Order Simulator,Property Debt,Model error,64,Closed

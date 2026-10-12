@@ -13,8 +13,8 @@ import type { DriftItem, FeedRun } from '../types'
 import { useUi } from '../ui-store'
 
 const FEEDS: { source: string; sourceId: SourceId; file: string }[] = [
-  { source: LEANIX_SOURCE, sourceId: 'leanix', file: 'leanix_export.csv' },
-  { source: EUC_SOURCE, sourceId: 'euc', file: 'euc_register.csv' },
+  { source: LEANIX_SOURCE, sourceId: 'leanix', file: 'leanix_export_large.csv' },
+  { source: EUC_SOURCE, sourceId: 'euc', file: 'euc_register_large.csv' },
 ]
 
 function DriftList({ drift }: { drift: DriftItem[] }) {

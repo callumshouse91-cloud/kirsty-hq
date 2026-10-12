@@ -47,7 +47,7 @@ function OverviewV2() {
     return (
       <>
         <PageHeader title="Overview" />
-        <EmptyState title="No tools loaded" hint="Use “Reset to seed data” in the header, or import a master list on Import & Reconcile." />
+        <EmptyState title="No tools loaded yet" hint="Drop the master workbook in on Import & Reconcile and choose “Load as the master list”. Or switch to Demo data in the top bar." action={<Button variant="primary" onClick={() => navigate('import')}>Go to Import &amp; Reconcile</Button>} />
       </>
     )
   }

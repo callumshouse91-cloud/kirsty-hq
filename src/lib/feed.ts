@@ -15,21 +15,21 @@ interface Delta {
 const DELTAS: Delta[] = [
   {
     change: [
-      { id: 'APP-5541', field: 'Lifecycle', to: 'End of Life' },
-      { id: 'APP-7902', field: 'Criticality Tier', to: 'Tier 1' },
+      { id: 'APP-10010', field: 'Lifecycle', to: 'End of Life' },
+      { id: 'APP-10020', field: 'Criticality Tier', to: 'Tier 1' },
     ],
-    add: [{ 'LeanIX ID': 'APP-6355', 'Application Name': 'Market Risk Engine', 'Fact Sheet Type': 'Application', Lifecycle: 'Plan', 'Owning Org': 'Investments', 'Business Capability': 'Risk', 'Criticality Tier': 'Tier 2' }],
+    add: [{ 'LeanIX ID': 'APP-19001', 'Application Name': 'Market Risk Engine', 'Fact Sheet Type': 'Application', Lifecycle: 'Plan', 'Owning Org': 'Investments', 'Business Capability': 'Risk', 'Criticality Tier': 'Tier 2' }],
   },
   {
     change: [
-      { id: 'APP-1648', field: 'Owning Org', to: 'Investments' },
-      { id: 'APP-8514', field: 'Lifecycle', to: 'End of Life' },
+      { id: 'APP-10030', field: 'Owning Org', to: 'Investments' },
+      { id: 'APP-10040', field: 'Lifecycle', to: 'End of Life' },
     ],
-    remove: ['APP-3914'],
+    remove: ['APP-10500'],
   },
   {
-    change: [{ id: 'APP-6355', field: 'Lifecycle', to: 'Active' }],
-    add: [{ 'LeanIX ID': 'APP-6402', 'Application Name': 'Liquidity Stress Model', 'Fact Sheet Type': 'Application', Lifecycle: 'Plan', 'Owning Org': 'Investments', 'Business Capability': 'Risk', 'Criticality Tier': 'Tier 2' }],
+    change: [{ id: 'APP-19001', field: 'Lifecycle', to: 'Active' }],
+    add: [{ 'LeanIX ID': 'APP-19002', 'Application Name': 'Liquidity Stress Model', 'Fact Sheet Type': 'Application', Lifecycle: 'Plan', 'Owning Org': 'Investments', 'Business Capability': 'Risk', 'Criticality Tier': 'Tier 2' }],
   },
 ]
 

@@ -79,10 +79,13 @@ for (const [name, type, l2, l3, vendor, cost] of MARKET) {
 }
 while (tools.length < TARGET_TOOLS) {
   const [l2, l3, subjects] = pick(CAPS)
-  const [fn, type] = pick(FUNCTIONS)
+  // Non-investment tools are plain applications; investment ones can be any layer.
+  const [fn, type] = l3 === 'NON-Inv' ? pick(FUNCTIONS.filter((f) => f[1] === 'UI')) : pick(FUNCTIONS)
   const subject = pick(subjects)
-  const prefix = chance(0.55) ? `${pick(ASSET)} ` : ''
-  const euc = type === 'UI' && chance(0.12)
+  // Never repeat a word ("Model Portfolio Model", "Trade Blotter Blotter").
+  if (subject.toLowerCase().split(' ').some((w) => fn.toLowerCase().startsWith(w.slice(0, 5)))) continue
+  const prefix = l2 !== 'Other' && chance(0.55) ? `${pick(ASSET)} ` : ''
+  const euc = type === 'UI' && l3 !== 'NON-Inv' && chance(0.12)
   let name = `${prefix}${subject} ${fn}${euc ? ' (EUC)' : ''}`
   if (seen.has(name)) name = `${name.replace(' (EUC)', '')} ${pick(['II', 'Lite', 'Pro', 'Next', 'Legacy', 'Hub'])}${euc ? ' (EUC)' : ''}`
   if (seen.has(name)) continue
@@ -241,6 +244,95 @@ for (let i = 0; i < 1500; i++) {
   })
 }
 
+// ── Vendor contracts: vendor products grouped under parent companies ─────────
+const VENDOR_GROUPS = [
+  ['Bloomberg', 'Bloomberg L.P.'], ['Charles River Development', 'State Street'], ['State Street Alpha', 'State Street'], ['Axioma', 'Deutsche Börse'], ['SimCorp', 'Deutsche Börse'],
+  ['BlackRock Solutions', 'BlackRock'], ['Refinitiv', 'LSEG'], ['Tradeweb', 'LSEG'], ['FactSet', 'FactSet'], ['MarketAxess', 'MarketAxess'], ['Snowflake', 'Snowflake'],
+  ['Oracle', 'Oracle'], ['Microsoft', 'Microsoft'], ['Domino Data Lab', 'Domino Data Lab'], ['Confluent', 'Confluent'], ['MSCI', 'MSCI'], ['ICE Data Services', 'Intercontinental Exchange'], ['S&P Global', 'S&P Global'],
+]
+const KNOWN_VENDOR = {
+  'Bloomberg Terminals': 'Bloomberg', 'Bloomberg AIM': 'Bloomberg', 'Charles River IMS': 'Charles River Development', 'Aladdin Risk': 'BlackRock Solutions', 'FactSet Workstation': 'FactSet',
+  'Refinitiv Eikon': 'Refinitiv', TradeWeb: 'Tradeweb', MarketAxess: 'MarketAxess', 'Snowflake (Inv Data Lake)': 'Snowflake', 'Kafka Event Bus': 'Confluent', 'Power BI Service': 'Microsoft',
+  'Azure Data Factory Pipelines': 'Microsoft', 'Domino Data Lab': 'Domino Data Lab', 'Axioma Risk Analytics': 'Axioma', 'Oracle Securities DB': 'Oracle',
+}
+// Vendors that plausibly sell into each capability.
+const VENDOR_BY_CAP = {
+  'Order Management': ['Charles River Development', 'Bloomberg'], Execution: ['Bloomberg', 'Tradeweb', 'MarketAxess'], 'Market Data': ['Bloomberg', 'Refinitiv', 'ICE Data Services', 'S&P Global'],
+  'Risk Analytics': ['MSCI', 'Axioma', 'BlackRock Solutions'], 'Portfolio Construction': ['BlackRock Solutions', 'SimCorp'], Optimisation: ['Axioma', 'SimCorp'], 'Cash Management': ['State Street Alpha', 'SimCorp'],
+  'Research & Analytics': ['FactSet', 'S&P Global', 'Bloomberg'], ESG: ['MSCI', 'S&P Global'], 'Data Platform': ['Snowflake', 'Oracle'], Integration: ['Confluent', 'Microsoft'], 'Reporting & MI': ['Microsoft', 'State Street Alpha'], 'NON-Inv': ['Microsoft'],
+}
+const byVendor = new Map()
+for (const t of tools.filter((x) => x.vendor === 'Y')) {
+  const v = KNOWN_VENDOR[t.name] ?? pick(VENDOR_BY_CAP[t.l3] ?? ['Microsoft'])
+  byVendor.set(v, [...(byVendor.get(v) ?? []), t])
+}
+const contracts = []
+let con = 2001
+// Renewals spread over the next 15 months; the first two have already passed their notice date.
+let order = 0
+for (const [vendor, ts] of byVendor) {
+  const parent = VENDOR_GROUPS.find((g) => g[0] === vendor)[1]
+  for (let i = 0; i < ts.length; i += 12) {
+    const chunk = ts.slice(i, i + 12)
+    const notice = pick([30, 60, 90, 90, 120, 180])
+    const daysAhead = order < 2 ? int(20, 60) : int(25, 450)
+    const effNotice = order < 2 ? Math.max(notice, daysAhead + 30) : Math.min(notice, daysAhead - 10)
+    order++
+    const renewal = new Date('2026-10-12T00:00:00Z')
+    renewal.setUTCDate(renewal.getUTCDate() + daysAhead)
+    const start = new Date(renewal)
+    start.setUTCFullYear(start.getUTCFullYear() - pick([1, 2, 3]))
+    contracts.push({
+      'Contract ID': `CON-${con++}`,
+      Vendor: vendor,
+      'Parent company': parent,
+      Tools: chunk.map((t) => t.name).join('; '),
+      'Annual value (£k)': Math.round(chunk.reduce((a, t) => a + t.cost, 0) * (0.9 + rnd() * 0.2)),
+      'Start date': start.toISOString().slice(0, 10),
+      'Renewal date': renewal.toISOString().slice(0, 10),
+      'Notice (days)': Math.max(30, effNotice),
+      'Contract owner': pick(['Investments Change', 'Market data team', 'Group Technology', 'Risk', 'Trading', 'Research']),
+    })
+  }
+}
+
+// ── Risk events: biased towards EUCs, legacy and order management, as real logs are ──
+const usageByApp = new Map()
+for (const u of usage) usageByApp.set(u.Application, [...(usageByApp.get(u.Application) ?? []), u.Strategy])
+const allStrategies = strategies.map((x) => x[1])
+const CATEGORIES = [['Systems failure', 'outage delayed'], ['Data quality', 'bad data in'], ['Process', 'manual step missed in'], ['EUC error', 'spreadsheet error in'], ['Model error', 'wrong assumption in']]
+const riskPool = tools.filter((t) => t.type && (t.group === 'Desk-built' || /Legacy/.test(t.name) || t.l3 === 'Order Management' || t.l3 === 'Data Platform' || chance(0.15)))
+const events = []
+for (let i = 0; i < 90; i++) {
+  const t = pick(riskPool)
+  const [cat, phrase] = t.group === 'Desk-built' ? CATEGORIES[3] : pick(CATEGORIES.filter((c) => c[0] !== 'EUC error'))
+  const days = int(3, 360)
+  events.push({
+    'Event ID': `RE-${2026 - (days > 285 ? 1 : 0)}-${String(100 + i).padStart(3, '0')}`,
+    Date: isoDay(days),
+    Title: `${phrase[0].toUpperCase()}${phrase.slice(1)} ${t.name}`,
+    Tool: t.name,
+    Strategy: pick(usageByApp.get(t.name) ?? allStrategies),
+    Category: cat,
+    'Loss (£k)': Math.round(5 + rnd() * rnd() * 300),
+    Status: days < 90 && chance(0.6) ? 'Open' : 'Closed',
+  })
+}
+events.sort((a, b) => a.Date.localeCompare(b.Date))
+
+// ── EUC register: most desk-built tools, a few the master list has not caught ──
+const eucTools = tools.filter((t) => t.group === 'Desk-built')
+const euc = []
+let eucId = 300
+for (const t of eucTools) {
+  if (chance(0.05)) continue
+  const attested = chance(0.85)
+  euc.push({ 'EUC ID': `EUC-${eucId++}`, 'EUC Name': t.name, 'Owning Desk': pick(Object.keys(DESKS)), Kind: pick(['Spreadsheet', 'Spreadsheet', 'Access database', 'Python script']), 'Risk Rating': pick(['Low', 'Medium', 'High']), 'Last Attested': attested ? isoDay(int(5, 200)) : '', Status: attested ? 'Attested' : 'Overdue' })
+}
+for (const n of ['Duration Bucket Tool', 'FX Hedge Calculator', 'Rebalance Checker', 'Index Rebalance Calendar', 'Coupon Schedule Builder', 'Fund Flow Forecaster']) {
+  euc.push({ 'EUC ID': `EUC-${eucId++}`, 'EUC Name': n, 'Owning Desk': pick(Object.keys(DESKS)), Kind: 'Spreadsheet', 'Risk Rating': pick(['Medium', 'High']), 'Last Attested': isoDay(int(5, 120)), Status: 'Attested' })
+}
+
 // ── Write ────────────────────────────────────────────────────────────────────
 const sheet = (rows) => XLSX.utils.json_to_sheet(rows)
 const wb = XLSX.utils.book_new()
@@ -264,7 +356,10 @@ XLSX.writeFile(wb, path.join(OUT, 'InvestmentsToolMapping_LARGE.xlsx'), { compre
 const csv = (rows) => XLSX.utils.sheet_to_csv(XLSX.utils.json_to_sheet(rows))
 fs.writeFileSync(path.join(OUT, 'leanix_export_large.csv'), csv(leanix))
 fs.writeFileSync(path.join(OUT, 'jira_export_large.csv'), csv(jira))
+fs.writeFileSync(path.join(OUT, 'vendor_contracts_large.csv'), csv(contracts))
+fs.writeFileSync(path.join(OUT, 'risk_events_large.csv'), csv(events))
+fs.writeFileSync(path.join(OUT, 'euc_register_large.csv'), csv(euc))
 
 console.log(`master ${masterRows.length} tools (${apps.length} applications, ${foundations.length} foundations), usage ${usage.length}, deps ${deps.length}`)
 console.log(`leanix ${leanix.length} rows: ${renamed} renamed, ${missing} master tools missing, ${EXTRA.length} only in LeanIX`)
-console.log(`jira ${jira.length} issues`)
+console.log(`jira ${jira.length} issues, contracts ${contracts.length}, risk events ${events.length}, EUC register ${euc.length}`)

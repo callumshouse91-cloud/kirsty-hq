@@ -7,6 +7,7 @@ import { Badge, Button, Card, Chip, cx, EmptyState, Input, Label, Modal, PageHea
 import { readWorkbook, type ParsedSheet } from '../lib/export'
 import { catKey, FIELD_TARGETS, fieldKey, guessSource, IGNORE, mappedValue, parseTarget, preMap, targetLabel } from '../lib/mapping'
 import { learn, missingType, MISSING_IN_MASTER, NAME_MISMATCH, suggestTool, TYPE_CONFLICT } from '../lib/reconcile'
+import { SAMPLE_FILES } from '../lib/demoData'
 import { fetchSampleFile, parseCsv, seedFromSheets } from '../lib/seed'
 import { CAT, isToolCategory, termsOf } from '../lib/taxonomy'
 import { fmtDate, plural } from '../lib/util'
@@ -46,7 +47,7 @@ function DropZone({ onFile }: { onFile: (f: File) => void }) {
     >
       <Upload size={28} className={over ? 'text-accent-600' : 'text-slate-400'} />
       <p className="mt-3 text-sm font-medium text-slate-800">Drop a CSV or Excel file here</p>
-      <p className="mt-1 text-xs text-slate-500">or click to browse · .csv, .xlsx — the master list, LeanIX exports and the EUC register are recognised automatically</p>
+      <p className="mt-1 text-xs text-slate-500">or click to browse · .csv, .xlsx — the master workbook, LeanIX, Jira and EUC register exports are recognised automatically</p>
       <input
         ref={input}
         type="file"
@@ -818,24 +819,17 @@ export function ImportScreen() {
         <DropZone onFile={load} />
         {error && <p className="text-[13px] text-red-700">{error}</p>}
         <div className="flex flex-wrap items-center gap-3 text-[13px]">
-          <Button
-            icon={<FileSpreadsheet size={14} />}
-            onClick={async () => {
-              await load(await fetchSampleFile('leanix_export.csv'))
-            }}
-          >
-            Use the sample LeanIX export
-          </Button>
-          {eucOn && (
-            <Button
-              icon={<FileSpreadsheet size={14} />}
-              onClick={async () => {
-                await load(await fetchSampleFile('euc_register.csv'))
-              }}
-            >
-              Use the sample EUC register
+          <span className="text-xs font-semibold text-slate-500">Or use a sample file:</span>
+          {[
+            { file: SAMPLE_FILES.master, label: state.tools.length ? 'Master workbook' : '1. Master workbook' },
+            { file: SAMPLE_FILES.leanix, label: state.tools.length ? 'LeanIX export' : '2. LeanIX export' },
+            { file: SAMPLE_FILES.jira, label: 'Jira export' },
+            ...(eucOn ? [{ file: SAMPLE_FILES.euc, label: 'EUC register' }] : []),
+          ].map((x) => (
+            <Button key={x.file} icon={<FileSpreadsheet size={14} />} onClick={async () => load(await fetchSampleFile(x.file))}>
+              {x.label}
             </Button>
-          )}
+          ))}
           {latestOpen && (
             <Button variant="link" onClick={() => patchParams(route, { run: latestOpen.id })}>
               Back to the last report ({latestOpen.source}, {fmtDate(latestOpen.date)}) →

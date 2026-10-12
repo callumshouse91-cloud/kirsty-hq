@@ -23,6 +23,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { useDemo, useFeature } from '../demo-store'
 import { AskPanel } from './AskPanel'
 import { brandOn, LOGO_SRC } from '../lib/brand'
+import { buildData, type DataMode } from '../lib/demoData'
 import { activeSources, ARRIVAL_LABEL, phase as phaseDef, PHASES, type ScreenId } from '../lib/phases'
 import { freshness, isStale } from '../lib/freshness'
 import { ROLES, type RoleId } from '../lib/roles'
@@ -143,7 +144,7 @@ function ResetButton() {
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-        title="Reset to seed data?"
+        title="Reset the data?"
         footer={
           <>
             <Button onClick={() => setOpen(false)}>Cancel</Button>
@@ -157,7 +158,7 @@ function ResetButton() {
                 useUi.getState().closeCell()
                 setBusy(false)
                 setOpen(false)
-                notify('Data reset to the seed files')
+                notify('Data reset')
               }}
             >
               Reset
@@ -165,9 +166,47 @@ function ResetButton() {
           </>
         }
       >
-        <p className="text-[13px] text-slate-600">All edits, imports, aliases and resolved issues will be replaced with the original seed files. The phase and environment stay as they are. This can’t be undone.</p>
+        <p className="text-[13px] text-slate-600">All edits, imports, aliases and resolved issues are cleared and the map goes back to its starting point for this mode (sample data in Demo, empty in Manual). The phase stays as it is. This can’t be undone.</p>
       </Modal>
     </>
+  )
+}
+
+/** Demo: sample data already there. Manual: start empty and drop the files in. */
+function DataModeToggle() {
+  const mode = useDemo((s) => s.dataMode)
+  const setMode = useDemo((s) => s.setDataMode)
+  const hydrate = useStore((s) => s.hydrateFrom)
+  const notify = useUi((s) => s.notify)
+  const [busy, setBusy] = useState(false)
+  const choose = async (m: DataMode) => {
+    if (m === mode || busy) return
+    setBusy(true)
+    setMode(m)
+    useUi.getState().closeTool()
+    useUi.getState().closeCell()
+    hydrate(await buildData(m))
+    setBusy(false)
+    notify(m === 'demo' ? 'Demo data loaded: 1,100 tools, with LeanIX, EUC register and Jira reconciled' : 'Manual mode: the map is empty. Drop the files in on Import & Reconcile.')
+    if (m === 'manual') window.location.hash = '#/import'
+  }
+  return (
+    <div className="inline-flex items-center rounded bg-white/10 p-0.5" role="radiogroup" aria-label="Data">
+      {(['demo', 'manual'] as DataMode[]).map((m) => (
+        <button
+          key={m}
+          type="button"
+          role="radio"
+          aria-checked={mode === m}
+          disabled={busy}
+          onClick={() => void choose(m)}
+          title={m === 'demo' ? 'Sample data already loaded and reconciled' : 'Start empty and drop the files in yourself'}
+          className={cx('h-6 rounded px-2.5 text-xs font-semibold transition-colors', mode === m ? 'bg-white text-navy' : 'text-white/75 hover:text-white', busy && 'opacity-60')}
+        >
+          {m === 'demo' ? 'Demo data' : 'Manual'}
+        </button>
+      ))}
+    </div>
   )
 }
 
@@ -203,6 +242,7 @@ function DemoBar() {
         <span className="font-display">{p.name}</span>
       </div>
       <div className="ml-auto flex items-center gap-3">
+        <DataModeToggle />
         <ResetButton />
       </div>
     </div>

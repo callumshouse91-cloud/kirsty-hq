@@ -49,8 +49,8 @@ function shift(iso: string): string {
 }
 
 async function csv(name: string) {
-  const res = await fetch(`${import.meta.env.BASE_URL}seed/${name}`)
-  if (!res.ok) throw new Error(`Could not load seed/${name}`)
+  const res = await fetch(`${import.meta.env.BASE_URL}samples/${name}`)
+  if (!res.ok) throw new Error(`Could not load samples/${name}`)
   return parseCsv(await res.text()).rows
 }
 
@@ -60,7 +60,7 @@ export const useModuleData = create<ModuleData>()((set, get) => ({
   riskEvents: [],
   load: async () => {
     if (get().loaded) return
-    const [c, r] = await Promise.all([csv('vendor_contracts.csv'), csv('risk_events.csv')])
+    const [c, r] = await Promise.all([csv('vendor_contracts_large.csv'), csv('risk_events_large.csv')])
     set({
       loaded: true,
       contracts: c.map((x) => {

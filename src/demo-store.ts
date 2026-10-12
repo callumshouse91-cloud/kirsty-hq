@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
+import type { DataMode } from './lib/demoData'
 import { envFor, hasFeature, phase as phaseDef, PHASE_IDS, type Env, type FeatureId, type PhaseId } from './lib/phases'
 import { permissionsFor, role as roleDef, ROLES, type Permission, type RoleId } from './lib/roles'
 
@@ -11,6 +12,9 @@ interface DemoState {
   env: Env
   role: RoleId
   modules: Record<ModuleId, boolean>
+  /** Demo: sample data already loaded. Manual: start empty and drop the files in. */
+  dataMode: DataMode
+  setDataMode: (m: DataMode) => void
   /** Suggested labels a person rejected, so they are not offered again. */
   rejected: string[]
   rejectSuggestion: (key: string) => void
@@ -52,6 +56,8 @@ export const useDemo = create<DemoState>()(
       env: 'sandbox',
       role: 'change-lead',
       modules: { vendors: false, heatmap: false, risk: false },
+      dataMode: 'demo',
+      setDataMode: (m) => set({ dataMode: m }),
       rejected: [],
       rejectSuggestion: (key) => set((s) => ({ rejected: s.rejected.includes(key) ? s.rejected : [...s.rejected, key] })),
       setPhase: (p) => set((s) => ({ phase: p, env: envFor(p, s.env) })),
@@ -63,7 +69,7 @@ export const useDemo = create<DemoState>()(
       name: DEMO_KEY,
       version: 1,
       storage: createJSONStorage(() => localStorage),
-      partialize: (s) => ({ phase: s.phase, env: s.env, role: s.role, modules: s.modules, rejected: s.rejected }),
+      partialize: (s) => ({ phase: s.phase, env: s.env, role: s.role, modules: s.modules, rejected: s.rejected, dataMode: s.dataMode }),
       // The URL wins over what was saved, so a shared link always opens the state it names.
       merge: (persisted, current) => {
         const saved = (persisted ?? {}) as Partial<DemoState>

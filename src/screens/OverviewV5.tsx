@@ -2,7 +2,7 @@ import { ArrowRight, CalendarClock, CheckCircle2, Database, FileSpreadsheet, Git
 import { useMemo, type ReactNode } from 'react'
 import { SourceLink } from '../components/common'
 import { fmtMeasure, HeatGrid } from '../components/HeatGrid'
-import { Badge, Button, Card, cx, PageHeader, Segmented } from '../components/ui'
+import { Badge, Button, Card, cx, EmptyState, PageHeader, Segmented } from '../components/ui'
 import { useDemo } from '../demo-store'
 import { findings, mapHealth, type Finding } from '../lib/findings'
 import { HEAT_MEASURES, heatKey, heatMatrix, type HeatMeasure } from '../lib/heatmap'
@@ -66,6 +66,15 @@ export function OverviewV5() {
       navigate('modules')
       notify('Switch the module on to open that view')
     }
+  }
+
+  if (state.tools.length === 0) {
+    return (
+      <>
+        <PageHeader title="Overview" />
+        <EmptyState title="No tools loaded yet" hint="Drop the master workbook in on Import & Reconcile and choose “Load as the master list”. Or switch to Demo data in the top bar." action={<Button variant="primary" onClick={() => navigate('import')}>Go to Import &amp; Reconcile</Button>} />
+      </>
+    )
   }
 
   return (

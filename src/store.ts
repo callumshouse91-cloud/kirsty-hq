@@ -7,12 +7,13 @@ import { diffState, revert, touched } from './lib/history'
 import { migrateState } from './lib/migrate'
 import { MISSING_IN_MASTER, NAME_MISMATCH, recomputeMissing, refreshLog, runImport, type ImportInput } from './lib/reconcile'
 import { role as roleDef } from './lib/roles'
-import { loadSeed } from './lib/seed'
+import { buildData } from './lib/demoData'
 import { CAT, impactSentence, layerMap, relabel, termImpact } from './lib/taxonomy'
 import { plural, slugify, today, uid, uniqueId } from './lib/util'
 import { ATTESTED, NOT_ATTESTED, type ApprovalAction, type ChangeKind, type DataState, type FeedRun, type Layer, type Tool } from './types'
 
-export const STORAGE_KEY = 'investments-tech-map:v1'
+/** v2: the demo now runs on the large sample dataset, so older saved maps are left behind. */
+export const STORAGE_KEY = 'investments-tech-map:v2'
 
 const EMPTY: DataState = {
   tools: [],
@@ -133,7 +134,7 @@ export const useStore = create<Store>()(
 
         hydrateFrom: (s) => set({ ...EMPTY, ...s }),
         resetToSeed: async () => {
-          const seed = await loadSeed()
+          const seed = await buildData(useDemo.getState().dataMode)
           set({ ...EMPTY, ...seed })
         },
 
