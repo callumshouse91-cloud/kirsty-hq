@@ -6,13 +6,21 @@ Tool type,Engine,Foundation
 Cap L2,PM,
 Cap L2,Trading,
 Cap L2,Research,
+Cap L2,Risk,
 Cap L2,Other,
-Cap L3,Portfolio Management,
-Cap L3,Manage Portfolio,
-Cap L3,Execution,
-Cap L3,All,
-Cap L3,NON-Inv,
-Cap L3,Tech,
+Cap L3,Order Management,PM
+Cap L3,Portfolio Construction,PM
+Cap L3,Optimisation,PM
+Cap L3,Cash Management,PM
+Cap L3,Execution,Trading
+Cap L3,Market Data,Trading
+Cap L3,Research & Analytics,Research
+Cap L3,ESG,Research
+Cap L3,Risk Analytics,Risk
+Cap L3,Data Platform,Other
+Cap L3,Integration,Other
+Cap L3,Reporting & MI,Other
+Cap L3,NON-Inv,Other
 Users,Inv,
 Users,Ops,
 Users,Distn,

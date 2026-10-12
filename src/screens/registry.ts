@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react'
 import type { ImplementedScreen } from '../lib/screens'
+import { CapabilityView } from './CapabilityView'
 import { DeskView } from './DeskView'
 import { Explorer } from './Explorer'
 import { FoundationView } from './FoundationView'
@@ -13,6 +14,7 @@ export const SCREEN_COMPONENTS: Record<ImplementedScreen, ComponentType> = {
   import: ImportScreen,
   taxonomy: TaxonomyScreen,
   explorer: Explorer,
+  capability: CapabilityView,
   desk: DeskView,
   foundation: FoundationView,
 }

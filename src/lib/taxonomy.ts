@@ -87,7 +87,9 @@ export function termImpact(state: DataState, category: string, term: string): Te
 
 /** Which category a category's Parent column refers to (Strategy → Desk). */
 export function parentCategory(category: string): string | null {
-  return category === CAT.strategy ? CAT.desk : null
+  if (category === CAT.strategy) return CAT.desk
+  if (category === CAT.capL3) return CAT.capL2
+  return null
 }
 
 function replaceInTool(tool: Tool, category: string, from: string, to: string): Tool {

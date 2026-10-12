@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { FoundationLink, Stat } from '../components/common'
-import { Button, Card, cx, EmptyState, PageHeader, Td, Th } from '../components/ui'
+import { Badge, Button, Card, cx, EmptyState, PageHeader, Td, Th } from '../components/ui'
 import { AXIS_LABEL_TICK, AXIS_TICK, BRAND } from '../lib/brand'
 import { foundationReach } from '../lib/graph'
 import { BLANK } from '../lib/pivot'
@@ -78,7 +78,11 @@ export function Overview() {
 
   return (
     <>
-      <PageHeader title="Overview" description="The Investments tool estate at a glance. Every number opens the detail behind it." />
+      <PageHeader
+        title="Overview"
+        description="The Investments tool estate at a glance. Every number opens the detail behind it."
+        actions={<Badge tone="neutral" title="Synthetic data; cost is the master list estimate">Illustrative figures</Badge>}
+      />
 
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-3 xl:grid-cols-6">
         {[
@@ -94,7 +98,7 @@ export function Overview() {
             sub={openIssues.length ? `from ${[...new Set(openIssues.map((i) => i.source))].join(', ')}` : 'import a source to reconcile'}
             onClick={() => navigate('import', { tab: openIssues.length ? 'issues' : null })}
           />,
-          <Stat key="c" label="Est. annual cost" value={fmtK(totalCost)} sub={`£${fmtNum(totalCost)}k across all tools`} onClick={() => navigate('explorer', { rows: 'capL2', col: 'layer', measure: 'cost' })} />,
+          <Stat key="c" label="Est. annual cost · illustrative" value={fmtK(totalCost)} sub={`£${fmtNum(totalCost)}k across all tools`} onClick={() => navigate('explorer', { rows: 'capL2', col: 'layer', measure: 'cost' })} />,
         ].map((el, i) => (
           <div key={i} className="bg-white px-4 py-3.5">
             {el}
@@ -103,7 +107,7 @@ export function Overview() {
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <Card title={`Estimated annual cost by ${CAT.capL2}`} subtitle="£k · click a bar to break it down">
+        <Card title={`Estimated annual cost by ${CAT.capL2}`} subtitle="£k, illustrative · click a bar to break it down">
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={costData} layout="vertical" margin={{ top: 0, right: 56, bottom: 0, left: 0 }} barCategoryGap={10}>
